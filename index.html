@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gustavo | Engenharia de Dados & Estratégia Digital</title>
+    <title>Gustavo | Desenvolvimento & Automação</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
@@ -11,255 +11,319 @@
         :root {
             --bg: #050505;
             --bg-card: #0c0c0c;
-            --bg-elevated: #111111;
+            --bg-elevated: #111;
             --accent: #8b5cf6;
-            --accent-dim: rgba(139, 92, 246, 0.12);
-            --accent-glow: rgba(139, 92, 246, 0.4);
-            --border: rgba(255,255,255,0.07);
-            --border-accent: rgba(139, 92, 246, 0.3);
+            --accent-dim: rgba(139,92,246,.12);
+            --accent-glow: rgba(139,92,246,.4);
+            --border: rgba(255,255,255,.07);
+            --border-accent: rgba(139,92,246,.3);
             --text: #f0f0f0;
             --text-muted: #555;
             --text-secondary: #888;
+            --green: #22c55e;
             --font-display: 'Syne', sans-serif;
             --font-mono: 'DM Mono', monospace;
             --font-serif: 'Instrument Serif', serif;
         }
-        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        html { scroll-behavior: smooth; }
-        body { background: var(--bg); color: var(--text); font-family: var(--font-display); overflow-x: hidden; cursor: none; }
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+        html{scroll-behavior:smooth}
+        body{background:var(--bg);color:var(--text);font-family:var(--font-display);overflow-x:hidden;cursor:none}
 
-        body::before {
-            content: '';
-            position: fixed; inset: 0;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
-            pointer-events: none; z-index: 100; opacity: 0.35;
-        }
+        /* NOISE */
+        body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:100;opacity:.35}
 
-        .cursor { width:8px; height:8px; background:var(--accent); border-radius:50%; position:fixed; top:0; left:0; pointer-events:none; z-index:9999; mix-blend-mode:screen; }
-        .cursor-ring { width:32px; height:32px; border:1px solid rgba(139,92,246,.5); border-radius:50%; position:fixed; top:0; left:0; pointer-events:none; z-index:9998; transition:width .2s,height .2s,border-color .2s; }
-        .cursor-ring.hovering { width:52px; height:52px; border-color:var(--accent); }
+        /* CURSOR */
+        .cursor{width:8px;height:8px;background:var(--accent);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;mix-blend-mode:screen}
+        .cursor-ring{width:32px;height:32px;border:1px solid rgba(139,92,246,.5);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transition:width .2s,height .2s,border-color .2s}
+        .cursor-ring.hovering{width:52px;height:52px;border-color:var(--accent)}
 
         /* NAV */
-        nav { position:fixed; top:0; left:0; right:0; z-index:500; padding:1.5rem 3rem; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid transparent; transition:border-color .4s,background .4s,backdrop-filter .4s; }
-        nav.scrolled { background:rgba(5,5,5,.88); backdrop-filter:blur(20px); border-color:var(--border); }
-        .nav-logo { font-family:var(--font-mono); font-size:.85rem; color:var(--accent); letter-spacing:.1em; text-transform:uppercase; text-decoration:none; }
-        .nav-links { display:flex; gap:2.5rem; list-style:none; }
-        .nav-links a { font-family:var(--font-mono); font-size:.8rem; color:var(--text-secondary); text-decoration:none; letter-spacing:.08em; text-transform:uppercase; transition:color .2s; }
-        .nav-links a:hover { color:var(--text); }
+        nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:1.5rem 3rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid transparent;transition:border-color .4s,background .4s}
+        nav.scrolled{background:rgba(5,5,5,.9);backdrop-filter:blur(20px);border-color:var(--border)}
+        .nav-logo{font-family:var(--font-mono);font-size:.85rem;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;text-decoration:none}
+        .nav-links{display:flex;gap:2.5rem;list-style:none}
+        .nav-links a{font-family:var(--font-mono);font-size:.78rem;color:var(--text-secondary);text-decoration:none;letter-spacing:.08em;text-transform:uppercase;transition:color .2s}
+        .nav-links a:hover{color:var(--text)}
 
         /* HAMBURGER */
-        .hamburger { display:none; flex-direction:column; gap:5px; background:none; border:none; cursor:none; padding:4px; z-index:601; }
-        .hamburger span { display:block; width:24px; height:1.5px; background:var(--text); transition:transform .35s,opacity .35s,background .2s; transform-origin:center; }
-        .hamburger.open span:nth-child(1) { transform:translateY(6.5px) rotate(45deg); background:var(--accent); }
-        .hamburger.open span:nth-child(2) { opacity:0; }
-        .hamburger.open span:nth-child(3) { transform:translateY(-6.5px) rotate(-45deg); background:var(--accent); }
+        .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:none;padding:4px;z-index:601}
+        .hamburger span{display:block;width:24px;height:1.5px;background:var(--text);transition:transform .35s,opacity .35s,background .2s;transform-origin:center}
+        .hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);background:var(--accent)}
+        .hamburger.open span:nth-child(2){opacity:0}
+        .hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);background:var(--accent)}
 
         /* FULLSCREEN MENU */
-        .mobile-menu { position:fixed; inset:0; z-index:600; background:rgba(5,5,5,.97); backdrop-filter:blur(24px); display:flex; flex-direction:column; justify-content:center; align-items:center; gap:2.2rem; opacity:0; pointer-events:none; transition:opacity .35s; }
-        .mobile-menu.open { opacity:1; pointer-events:all; }
-        .mobile-menu a { font-size:clamp(2rem,10vw,3.5rem); font-weight:800; color:var(--text); text-decoration:none; letter-spacing:-.02em; transition:color .2s; }
-        .mobile-menu a:hover { color:var(--accent); }
-        .mobile-menu-footer { position:absolute; bottom:3rem; display:flex; gap:2rem; }
-        .mobile-menu-footer a { font-family:var(--font-mono)!important; font-size:.75rem!important; color:var(--text-secondary)!important; letter-spacing:.1em; text-transform:uppercase; font-weight:400!important; }
+        .mobile-menu{position:fixed;inset:0;z-index:600;background:rgba(5,5,5,.97);backdrop-filter:blur(24px);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2.2rem;opacity:0;pointer-events:none;transition:opacity .35s}
+        .mobile-menu.open{opacity:1;pointer-events:all}
+        .mobile-menu a{font-size:clamp(2rem,10vw,3.5rem);font-weight:800;color:var(--text);text-decoration:none;letter-spacing:-.02em;transition:color .2s}
+        .mobile-menu a:hover{color:var(--accent)}
+        .mobile-menu-footer{position:absolute;bottom:3rem;display:flex;gap:2rem}
+        .mobile-menu-footer a{font-family:var(--font-mono)!important;font-size:.75rem!important;color:var(--text-secondary)!important;letter-spacing:.1em;text-transform:uppercase;font-weight:400!important}
 
-        /* HERO */
-        #hero { min-height:100vh; display:flex; align-items:center; padding:0 6vw; position:relative; overflow:hidden; }
-        .hero-bg-grid { position:absolute; inset:0; background-image:linear-gradient(rgba(139,92,246,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(139,92,246,.04) 1px,transparent 1px); background-size:80px 80px; mask-image:radial-gradient(ellipse 80% 70% at 50% 50%,black,transparent); }
-        .hero-glow { position:absolute; width:600px; height:600px; background:radial-gradient(circle,rgba(139,92,246,.12) 0%,transparent 70%); top:10%; right:-10%; pointer-events:none; }
-        .hero-content { position:relative; z-index:2; max-width:900px; }
+        /* ═══════════ HERO ═══════════ */
+        #hero{min-height:100vh;display:flex;align-items:center;padding:0 6vw;position:relative;overflow:hidden}
+        .hero-bg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(139,92,246,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(139,92,246,.04) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse 80% 70% at 50% 50%,black,transparent)}
+        .hero-glow{position:absolute;width:700px;height:700px;background:radial-gradient(circle,rgba(139,92,246,.1) 0%,transparent 70%);top:5%;right:-15%;pointer-events:none}
+        .hero-content{position:relative;z-index:2;max-width:860px}
 
-        .hero-eyebrow { font-family:var(--font-mono); font-size:.8rem; color:var(--accent); letter-spacing:.2em; text-transform:uppercase; margin-bottom:1.5rem; display:flex; align-items:center; gap:1rem; opacity:0; transform:translateY(20px); animation:fadeUp .6s .2s forwards; }
-        .hero-eyebrow::before { content:''; width:40px; height:1px; background:var(--accent); display:block; }
-        .hero-title { font-size:clamp(3rem,8vw,7.5rem); font-weight:800; line-height:.95; letter-spacing:-.03em; margin-bottom:2rem; opacity:0; transform:translateY(30px); animation:fadeUp .7s .4s forwards; }
-        .hero-title .line-accent { color:transparent; -webkit-text-stroke:1px rgba(139,92,246,.6); display:block; }
-        .hero-title .line-accent span { background:linear-gradient(135deg,#8b5cf6,#c4b5fd); -webkit-background-clip:text; -webkit-text-fill-color:transparent; -webkit-text-stroke:0; }
-        .hero-sub { font-size:1.05rem; color:var(--text-secondary); line-height:1.75; max-width:580px; margin-bottom:3rem; opacity:0; transform:translateY(20px); animation:fadeUp .7s .6s forwards; }
-        .hero-cta { display:flex; gap:1rem; flex-wrap:wrap; opacity:0; transform:translateY(20px); animation:fadeUp .7s .8s forwards; }
+        .hero-eyebrow{font-family:var(--font-mono);font-size:.78rem;color:var(--accent);letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem;opacity:0;transform:translateY(20px);animation:fadeUp .6s .2s forwards}
+        .hero-eyebrow::before{content:'';width:36px;height:1px;background:var(--accent);display:block}
 
-        .btn-primary { padding:.9rem 2.2rem; background:var(--accent); color:#fff; border:none; border-radius:4px; font-family:var(--font-mono); font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; text-decoration:none; cursor:none; transition:background .2s,transform .2s,box-shadow .2s; }
-        .btn-primary:hover { background:#7c3aed; transform:translateY(-2px); box-shadow:0 8px 24px rgba(139,92,246,.35); }
-        .btn-ghost { padding:.9rem 2.2rem; background:transparent; color:var(--text-secondary); border:1px solid var(--border); border-radius:4px; font-family:var(--font-mono); font-size:.78rem; letter-spacing:.1em; text-transform:uppercase; text-decoration:none; cursor:none; transition:color .2s,border-color .2s,transform .2s; }
-        .btn-ghost:hover { color:var(--text); border-color:var(--accent); transform:translateY(-2px); }
+        .hero-title{font-size:clamp(2.6rem,6.5vw,6rem);font-weight:800;line-height:.97;letter-spacing:-.03em;margin-bottom:2rem;opacity:0;transform:translateY(30px);animation:fadeUp .7s .4s forwards}
+        .hero-title .line-accent{color:transparent;-webkit-text-stroke:1px rgba(139,92,246,.55);display:block}
+        .hero-title .line-accent span{background:linear-gradient(135deg,#8b5cf6,#c4b5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;-webkit-text-stroke:0}
 
-        .hero-stats { position:absolute; bottom:4rem; right:6vw; display:flex; flex-direction:column; gap:2rem; opacity:0; animation:fadeUp .7s 1s forwards; }
-        .stat { text-align:right; }
-        .stat-num { font-size:2rem; font-weight:800; background:linear-gradient(135deg,#fff,var(--accent)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; display:block; }
-        .stat-label { font-family:var(--font-mono); font-size:.72rem; color:var(--text-muted); letter-spacing:.1em; text-transform:uppercase; }
+        /* TERMINAL INLINE NO HERO */
+        .hero-terminal{background:rgba(10,10,10,.9);border:1px solid var(--border-accent);border-radius:10px;padding:1.2rem 1.5rem;margin-bottom:2.5rem;max-width:520px;opacity:0;transform:translateY(20px);animation:fadeUp .7s .6s forwards}
+        .term-bar{display:flex;gap:.5rem;margin-bottom:.9rem;align-items:center}
+        .term-dot{width:10px;height:10px;border-radius:50%}
+        .term-dot:nth-child(1){background:#ff5f57}
+        .term-dot:nth-child(2){background:#febc2e}
+        .term-dot:nth-child(3){background:#28c840}
+        .term-body{font-family:var(--font-mono);font-size:.78rem;line-height:1.8;color:var(--text-secondary)}
+        .term-line{display:block}
+        .term-prompt{color:var(--accent)}
+        .term-cmd{color:#c4b5fd}
+        .term-out{color:#86efac}
+        .term-cursor{display:inline-block;width:8px;height:1em;background:var(--accent);vertical-align:text-bottom;animation:blink 1s step-end infinite}
+        @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+
+        .hero-cta{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;transform:translateY(20px);animation:fadeUp .7s .8s forwards}
+
+        .hero-stats{position:absolute;bottom:4rem;right:6vw;display:flex;flex-direction:column;gap:2rem;opacity:0;animation:fadeUp .7s 1s forwards}
+        .stat{text-align:right}
+        .stat-num{font-size:2rem;font-weight:800;background:linear-gradient(135deg,#fff,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block}
+        .stat-label{font-family:var(--font-mono);font-size:.7rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase}
+
+        /* BUTTONS */
+        .btn-primary{padding:.9rem 2.2rem;background:var(--accent);color:#fff;border:none;border-radius:4px;font-family:var(--font-mono);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;cursor:none;transition:background .2s,transform .2s,box-shadow .2s;display:inline-block}
+        .btn-primary:hover{background:#7c3aed;transform:translateY(-2px);box-shadow:0 8px 24px rgba(139,92,246,.35)}
+        .btn-ghost{padding:.9rem 2.2rem;background:transparent;color:var(--text-secondary);border:1px solid var(--border);border-radius:4px;font-family:var(--font-mono);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;cursor:none;transition:color .2s,border-color .2s,transform .2s;display:inline-block}
+        .btn-ghost:hover{color:var(--text);border-color:var(--accent);transform:translateY(-2px)}
 
         /* MARQUEE */
-        .marquee-wrap { border-top:1px solid var(--border); border-bottom:1px solid var(--border); overflow:hidden; padding:1rem 0; background:#080808; }
-        .marquee-track { display:flex; animation:marquee 22s linear infinite; white-space:nowrap; }
-        .marquee-item { font-family:var(--font-mono); font-size:.78rem; color:var(--text-muted); letter-spacing:.12em; text-transform:uppercase; padding:0 3rem; display:flex; align-items:center; gap:3rem; }
-        .marquee-item::after { content:'◆'; color:var(--accent); font-size:.5rem; }
+        .marquee-wrap{border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;padding:1rem 0;background:#080808}
+        .marquee-track{display:flex;animation:marquee 24s linear infinite;white-space:nowrap}
+        .marquee-item{font-family:var(--font-mono);font-size:.75rem;color:var(--text-muted);letter-spacing:.12em;text-transform:uppercase;padding:0 2.5rem;display:flex;align-items:center;gap:2.5rem}
+        .marquee-item::after{content:'◆';color:var(--accent);font-size:.45rem}
 
-        /* ABOUT */
-        #sobre { padding:120px 6vw; display:grid; grid-template-columns:1fr 1fr; gap:6rem; align-items:center; max-width:1300px; margin:0 auto; }
-        .about-label { font-family:var(--font-mono); font-size:.75rem; color:var(--accent); letter-spacing:.2em; text-transform:uppercase; margin-bottom:1.5rem; }
-        .about-heading { font-size:clamp(2rem,4vw,3.5rem); font-weight:700; line-height:1.1; margin-bottom:2rem; letter-spacing:-.02em; }
-        .about-heading em { font-family:var(--font-serif); font-style:italic; color:var(--accent); }
-        .about-text { font-size:.95rem; color:var(--text-secondary); line-height:1.8; margin-bottom:1.2rem; }
-        .about-skills { display:flex; flex-wrap:wrap; gap:.6rem; margin-top:2rem; }
-        .skill-tag { font-family:var(--font-mono); font-size:.72rem; color:var(--accent); background:var(--accent-dim); border:1px solid var(--border-accent); padding:.4rem .9rem; border-radius:2px; letter-spacing:.08em; }
-        .about-card-main { background:var(--bg-card); border:1px solid var(--border); border-radius:12px; padding:2.5rem; position:relative; overflow:hidden; }
-        .about-card-main::before { content:''; position:absolute; top:0; left:0; right:0; height:2px; background:linear-gradient(90deg,var(--accent),transparent); }
-        .code-block { font-family:var(--font-mono); font-size:.82rem; line-height:2; color:var(--text-secondary); }
-        .code-block .keyword { color:#c4b5fd; }
-        .code-block .string { color:#86efac; }
-        .code-block .comment { color:var(--text-muted); }
-        .code-block .fn { color:#93c5fd; }
+        /* ═══════════ METRICS BAR ═══════════ */
+        .metrics-bar{padding:60px 6vw;background:#080808;border-bottom:1px solid var(--border)}
+        .metrics-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
+        .metric-item{text-align:center;padding:2rem 1rem;border:1px solid var(--border);border-radius:10px;background:var(--bg-card);position:relative;overflow:hidden;transition:border-color .3s}
+        .metric-item:hover{border-color:var(--border-accent)}
+        .metric-item::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent)}
+        .metric-num{font-size:2.8rem;font-weight:800;background:linear-gradient(135deg,#fff,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block;line-height:1}
+        .metric-suffix{font-size:1.8rem}
+        .metric-label{font-family:var(--font-mono);font-size:.72rem;color:var(--text-secondary);letter-spacing:.1em;text-transform:uppercase;margin-top:.5rem;display:block}
 
-        /* SERVICES */
-        #servicos { padding:120px 6vw; background:#080808; }
-        .section-header { max-width:1100px; margin:0 auto 5rem; display:flex; justify-content:space-between; align-items:flex-end; }
-        .section-label { font-family:var(--font-mono); font-size:.75rem; color:var(--accent); letter-spacing:.2em; text-transform:uppercase; margin-bottom:.75rem; }
-        .section-heading { font-size:clamp(2rem,4vw,3rem); font-weight:700; letter-spacing:-.02em; line-height:1.1; }
-        .section-count { font-family:var(--font-mono); font-size:5rem; font-weight:800; color:rgba(139,92,246,.08); line-height:1; letter-spacing:-.05em; user-select:none; }
-        .services-list { max-width:1100px; margin:0 auto; }
-        .service-row { display:grid; grid-template-columns:80px 1fr 1fr auto; align-items:center; gap:2rem; padding:2.5rem 1.5rem; border-bottom:1px solid var(--border); margin-inline:-1.5rem; border-radius:8px; transition:background .3s; cursor:default; }
-        .service-row:first-child { border-top:1px solid var(--border); }
-        .service-row:hover { background:var(--bg-card); }
-        .service-row:hover .service-arrow { color:var(--accent); transform:translate(3px,-3px); }
-        .service-num { font-family:var(--font-mono); font-size:.75rem; color:var(--text-muted); letter-spacing:.1em; }
-        .service-name { font-size:1.25rem; font-weight:700; letter-spacing:-.01em; }
-        .service-desc { font-size:.88rem; color:var(--text-secondary); line-height:1.6; }
-        .service-arrow { font-size:1.5rem; color:var(--text-muted); transition:color .2s,transform .2s; }
+        /* ═══════════ ABOUT WITH PHOTO ═══════════ */
+        #sobre{padding:120px 6vw;max-width:1300px;margin:0 auto}
+        .about-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:6rem;align-items:center}
+        .about-label{font-family:var(--font-mono);font-size:.75rem;color:var(--accent);letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.5rem}
+        .about-heading{font-size:clamp(2rem,3.8vw,3.2rem);font-weight:700;line-height:1.1;margin-bottom:2rem;letter-spacing:-.02em}
+        .about-heading em{font-family:var(--font-serif);font-style:italic;color:var(--accent)}
+        .about-text{font-size:.95rem;color:var(--text-secondary);line-height:1.8;margin-bottom:1.2rem}
+        .about-skills{display:flex;flex-wrap:wrap;gap:.55rem;margin-top:2rem}
+        .skill-tag{font-family:var(--font-mono);font-size:.7rem;color:var(--accent);background:var(--accent-dim);border:1px solid var(--border-accent);padding:.35rem .85rem;border-radius:2px;letter-spacing:.07em}
 
-        /* EXPERIENCE */
-        #experiencia { padding:120px 6vw; max-width:1300px; margin:0 auto; }
-        .exp-top-label { font-family:var(--font-mono); font-size:.75rem; color:var(--accent); letter-spacing:.2em; text-transform:uppercase; margin-bottom:3rem; }
-        .exp-container { display:grid; grid-template-columns:1fr 1fr; gap:5rem; }
-        .exp-group-label { font-family:var(--font-mono); font-size:.75rem; color:var(--accent); letter-spacing:.2em; text-transform:uppercase; margin-bottom:2.5rem; display:flex; align-items:center; gap:1rem; }
-        .exp-group-label::after { content:''; flex:1; height:1px; background:var(--border); }
-        .timeline { display:flex; flex-direction:column; gap:2.5rem; }
-        .timeline-item { padding-left:1.5rem; border-left:1px solid var(--border); position:relative; transition:border-color .3s; }
-        .timeline-item:hover { border-color:var(--accent); }
-        .timeline-item::before { content:''; position:absolute; left:-4px; top:6px; width:7px; height:7px; border-radius:50%; background:var(--bg); border:1px solid var(--accent); box-shadow:0 0 8px var(--accent-glow); transition:background .3s; }
-        .timeline-item:hover::before { background:var(--accent); }
-        .timeline-item h4 { font-size:1.05rem; font-weight:700; margin-bottom:.3rem; }
-        .timeline-item .period { font-family:var(--font-mono); font-size:.72rem; color:var(--accent); letter-spacing:.1em; text-transform:uppercase; margin-bottom:.6rem; display:block; }
-        .timeline-item p { font-size:.88rem; color:var(--text-secondary); line-height:1.6; }
+        /* PHOTO BLOCK */
+        .about-photo-wrap{position:relative}
+        .photo-frame{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:3/4;max-height:520px}
+        .photo-frame img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:grayscale(15%)}
+        .photo-frame::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 55%,rgba(5,5,5,.7));pointer-events:none}
+        .photo-border{position:absolute;inset:-1px;border-radius:17px;border:1px solid var(--border-accent);pointer-events:none}
+        .photo-accent-line{position:absolute;top:2rem;right:-1.5rem;width:3px;height:60%;background:linear-gradient(to bottom,var(--accent),transparent);border-radius:2px}
+        .photo-badge{position:absolute;bottom:1.5rem;left:1.5rem;z-index:2;background:rgba(5,5,5,.85);backdrop-filter:blur(12px);border:1px solid var(--border-accent);border-radius:8px;padding:.75rem 1.2rem}
+        .badge-name{font-size:1rem;font-weight:700;display:block}
+        .badge-role{font-family:var(--font-mono);font-size:.7rem;color:var(--accent);letter-spacing:.08em;text-transform:uppercase}
 
-        /* PROJECTS */
-        #projetos { padding:120px 6vw; background:#080808; }
-        .projects-wrap { max-width:1300px; margin:0 auto; }
-        .projects-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.5rem; margin-top:4rem; }
-        .project-card { background:var(--bg-card); border:1px solid var(--border); border-radius:12px; padding:2.5rem; position:relative; overflow:hidden; transition:border-color .3s,transform .3s; display:flex; flex-direction:column; }
-        .project-card:hover { border-color:var(--border-accent); transform:translateY(-4px); }
-        .project-card::after { content:''; position:absolute; inset:0; background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(139,92,246,.07),transparent 60%); pointer-events:none; opacity:0; transition:opacity .3s; }
-        .project-card:hover::after { opacity:1; }
-        .project-tags { display:flex; gap:.5rem; margin-bottom:1rem; flex-wrap:wrap; }
-        .tag { font-family:var(--font-mono); font-size:.68rem; color:var(--accent); background:var(--accent-dim); border:1px solid var(--border-accent); padding:.3rem .7rem; border-radius:2px; letter-spacing:.08em; }
-        .project-status { display:inline-block; font-family:var(--font-mono); font-size:.65rem; color:#86efac; background:rgba(134,239,172,.1); border:1px solid rgba(134,239,172,.25); padding:.25rem .6rem; border-radius:2px; letter-spacing:.08em; margin-bottom:1rem; }
-        .project-card h3 { font-size:1.15rem; font-weight:700; margin-bottom:.75rem; letter-spacing:-.01em; }
-        .project-card p { font-size:.88rem; color:var(--text-secondary); line-height:1.7; flex:1; }
-        .project-link { display:inline-flex; align-items:center; gap:.5rem; font-family:var(--font-mono); font-size:.73rem; color:var(--accent); text-decoration:none; letter-spacing:.08em; text-transform:uppercase; margin-top:1.5rem; transition:gap .2s; }
-        .project-link:hover { gap:.8rem; }
+        /* ═══════════ SERVICES ═══════════ */
+        #servicos{padding:120px 6vw;background:#080808}
+        .section-header{max-width:1100px;margin:0 auto 4rem;display:flex;justify-content:space-between;align-items:flex-end}
+        .section-label{font-family:var(--font-mono);font-size:.75rem;color:var(--accent);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.75rem}
+        .section-heading{font-size:clamp(2rem,4vw,3rem);font-weight:700;letter-spacing:-.02em;line-height:1.1}
+        .section-count{font-family:var(--font-mono);font-size:5rem;font-weight:800;color:rgba(139,92,246,.07);line-height:1;letter-spacing:-.05em;user-select:none}
+        .services-grid-cards{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+        .svc-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:2.2rem;position:relative;overflow:hidden;transition:border-color .3s,transform .3s;cursor:default}
+        .svc-card:hover{border-color:var(--border-accent);transform:translateY(-5px)}
+        .svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:0;transition:opacity .3s}
+        .svc-card:hover::before{opacity:1}
+        .svc-icon{font-size:1.8rem;margin-bottom:1.2rem;display:block}
+        .svc-card h3{font-size:1.05rem;font-weight:700;margin-bottom:.75rem;letter-spacing:-.01em}
+        .svc-card p{font-size:.85rem;color:var(--text-secondary);line-height:1.65}
 
-        /* CONTACT */
-        #contato { padding:120px 6vw; text-align:center; position:relative; overflow:hidden; }
-        .contact-glow { position:absolute; width:800px; height:400px; background:radial-gradient(ellipse,rgba(139,92,246,.08) 0%,transparent 70%); top:50%; left:50%; transform:translate(-50%,-50%); pointer-events:none; }
-        .contact-label { font-family:var(--font-mono); font-size:.75rem; color:var(--accent); letter-spacing:.2em; text-transform:uppercase; margin-bottom:1.5rem; }
-        .contact-heading { font-size:clamp(2.2rem,6vw,5rem); font-weight:800; letter-spacing:-.03em; line-height:1.05; margin-bottom:1.5rem; }
-        .contact-heading em { font-family:var(--font-serif); font-style:italic; color:var(--accent); }
-        .contact-sub { font-size:1rem; color:var(--text-secondary); max-width:480px; margin:0 auto 3rem; line-height:1.7; }
-        .contact-links { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; }
+        /* ═══════════ RPA LIVE LOG ═══════════ */
+        #demo{padding:100px 6vw;max-width:1300px;margin:0 auto}
+        .demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+        .demo-text .section-label{margin-bottom:1.5rem}
+        .demo-text h2{font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:700;line-height:1.15;letter-spacing:-.02em;margin-bottom:1.5rem}
+        .demo-text h2 em{font-family:var(--font-serif);font-style:italic;color:var(--accent)}
+        .demo-text p{font-size:.93rem;color:var(--text-secondary);line-height:1.8;margin-bottom:1.2rem}
+        .demo-steps{display:flex;flex-direction:column;gap:1rem;margin-top:2rem}
+        .demo-step{display:flex;align-items:flex-start;gap:1rem}
+        .step-num{font-family:var(--font-mono);font-size:.72rem;color:var(--accent);background:var(--accent-dim);border:1px solid var(--border-accent);width:28px;height:28px;border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+        .step-text{font-size:.88rem;color:var(--text-secondary);line-height:1.5}
+        .step-text strong{color:var(--text)}
 
-        footer { border-top:1px solid var(--border); padding:2rem 6vw; display:flex; justify-content:space-between; align-items:center; }
-        .footer-copy { font-family:var(--font-mono); font-size:.72rem; color:var(--text-muted); letter-spacing:.08em; }
-        .footer-links { display:flex; gap:2rem; }
-        .footer-links a { font-family:var(--font-mono); font-size:.72rem; color:var(--text-muted); text-decoration:none; letter-spacing:.08em; text-transform:uppercase; transition:color .2s; }
-        .footer-links a:hover { color:var(--accent); }
+        /* LOG WINDOW */
+        .log-window{background:#0a0a0a;border:1px solid var(--border-accent);border-radius:12px;overflow:hidden}
+        .log-header{background:#111;padding:.8rem 1.2rem;display:flex;align-items:center;gap:.75rem;border-bottom:1px solid var(--border)}
+        .log-dots{display:flex;gap:.4rem}
+        .log-dot{width:10px;height:10px;border-radius:50%}
+        .log-title{font-family:var(--font-mono);font-size:.72rem;color:var(--text-muted);margin-left:auto}
+        .log-body{padding:1.2rem 1.5rem;font-family:var(--font-mono);font-size:.78rem;line-height:1.9;min-height:300px;overflow:hidden}
+        .log-entry{display:flex;gap:.75rem;opacity:0;transform:translateX(-8px);transition:opacity .4s,transform .4s}
+        .log-entry.show{opacity:1;transform:translateX(0)}
+        .log-ts{color:var(--text-muted);flex-shrink:0}
+        .log-ok{color:#22c55e}
+        .log-info{color:#93c5fd}
+        .log-warn{color:#fbbf24}
+        .log-err{color:#f87171}
+        .log-prog{color:#c4b5fd}
 
-        @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
-        @keyframes marquee { from { transform:translateX(0); } to { transform:translateX(-50%); } }
-        .reveal { opacity:0; transform:translateY(30px); transition:opacity .7s ease,transform .7s ease; }
-        .reveal.visible { opacity:1; transform:translateY(0); }
-        .reveal-delay-1 { transition-delay:.1s; }
-        .reveal-delay-2 { transition-delay:.2s; }
-        .reveal-delay-3 { transition-delay:.3s; }
-        .reveal-delay-4 { transition-delay:.4s; }
+        /* ═══════════ DASHBOARD VISUAL ═══════════ */
+        #dashboard-section{padding:100px 6vw;background:#080808}
+        .dash-inner{max-width:1300px;margin:0 auto}
+        .dash-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:4rem}
+        .dash-mockup{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:2rem;position:relative;overflow:hidden}
+        .dash-mockup::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),#c4b5fd,transparent)}
+        .dash-top{display:flex;align-items:center;gap:1rem;margin-bottom:2rem;padding-bottom:1.2rem;border-bottom:1px solid var(--border)}
+        .dash-top-dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+        .dash-top-title{font-family:var(--font-mono);font-size:.78rem;color:var(--text-secondary)}
+        .dash-top-badge{margin-left:auto;font-family:var(--font-mono);font-size:.65rem;color:#22c55e;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.25);padding:.25rem .6rem;border-radius:2px}
+        .dash-kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2rem}
+        .kpi-box{background:var(--bg-elevated);border:1px solid var(--border);border-radius:8px;padding:1rem}
+        .kpi-label{font-family:var(--font-mono);font-size:.65rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem}
+        .kpi-val{font-size:1.4rem;font-weight:800;display:block}
+        .kpi-delta{font-family:var(--font-mono);font-size:.65rem;color:#22c55e;margin-top:.25rem}
+        .chart-area{display:grid;grid-template-columns:2fr 1fr;gap:1rem}
+        .chart-box{background:var(--bg-elevated);border:1px solid var(--border);border-radius:8px;padding:1.2rem}
+        .chart-title{font-family:var(--font-mono);font-size:.7rem;color:var(--text-secondary);margin-bottom:1rem}
+        .bar-chart{display:flex;align-items:flex-end;gap:.6rem;height:80px}
+        .bar{flex:1;background:var(--accent-dim);border-radius:3px 3px 0 0;position:relative;border:1px solid var(--border-accent);transition:height 1.5s cubic-bezier(.34,1.56,.64,1)}
+        .bar.animated{background:linear-gradient(to top,var(--accent),rgba(139,92,246,.3))}
+        .donut-wrap{display:flex;align-items:center;justify-content:center;height:80px}
+        svg.donut circle{fill:none;stroke-width:8;transform-origin:center;transform:rotate(-90deg)}
 
-        /* ═══════════════════════════
-           RESPONSIVE — TABLET
-        ═══════════════════════════ */
-        @media (max-width:1024px) {
-            nav { padding:1.2rem 2rem; }
-            .projects-grid { grid-template-columns:1fr 1fr; gap:1rem; }
-            .service-row { grid-template-columns:50px 1fr auto; }
-            .service-desc { display:none; }
-            #sobre { gap:4rem; }
+        /* ═══════════ PROJECTS ═══════════ */
+        #projetos{padding:120px 6vw;max-width:1300px;margin:0 auto}
+        .projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:4rem}
+        .project-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:2.5rem;position:relative;overflow:hidden;transition:border-color .3s,transform .3s;display:flex;flex-direction:column}
+        .project-card:hover{border-color:var(--border-accent);transform:translateY(-4px)}
+        .project-card::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(139,92,246,.07),transparent 60%);pointer-events:none;opacity:0;transition:opacity .3s}
+        .project-card:hover::after{opacity:1}
+        .project-tags{display:flex;gap:.5rem;margin-bottom:1rem;flex-wrap:wrap}
+        .tag{font-family:var(--font-mono);font-size:.67rem;color:var(--accent);background:var(--accent-dim);border:1px solid var(--border-accent);padding:.28rem .65rem;border-radius:2px;letter-spacing:.07em}
+        .project-status{display:inline-block;font-family:var(--font-mono);font-size:.65rem;color:#22c55e;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.25);padding:.25rem .6rem;border-radius:2px;letter-spacing:.07em;margin-bottom:1rem}
+        .status-dev{color:#fbbf24!important;background:rgba(251,191,36,.1)!important;border-color:rgba(251,191,36,.25)!important}
+        .project-card h3{font-size:1.12rem;font-weight:700;margin-bottom:.75rem;letter-spacing:-.01em}
+        .project-card p{font-size:.87rem;color:var(--text-secondary);line-height:1.7;flex:1}
+        .project-link{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-mono);font-size:.72rem;color:var(--accent);text-decoration:none;letter-spacing:.07em;text-transform:uppercase;margin-top:1.5rem;transition:gap .2s}
+        .project-link:hover{gap:.8rem}
+
+        /* ═══════════ EXPERIENCE ═══════════ */
+        #experiencia{padding:120px 6vw;background:#080808}
+        .exp-wrap{max-width:1300px;margin:0 auto}
+        .exp-container{display:grid;grid-template-columns:1fr 1fr;gap:5rem;margin-top:0}
+        .exp-group-label{font-family:var(--font-mono);font-size:.75rem;color:var(--accent);letter-spacing:.2em;text-transform:uppercase;margin-bottom:2.5rem;display:flex;align-items:center;gap:1rem}
+        .exp-group-label::after{content:'';flex:1;height:1px;background:var(--border)}
+        .timeline{display:flex;flex-direction:column;gap:2.5rem}
+        .timeline-item{padding-left:1.5rem;border-left:1px solid var(--border);position:relative;transition:border-color .3s}
+        .timeline-item:hover{border-color:var(--accent)}
+        .timeline-item::before{content:'';position:absolute;left:-4px;top:6px;width:7px;height:7px;border-radius:50%;background:var(--bg);border:1px solid var(--accent);box-shadow:0 0 8px var(--accent-glow);transition:background .3s}
+        .timeline-item:hover::before{background:var(--accent)}
+        .timeline-item h4{font-size:1.02rem;font-weight:700;margin-bottom:.3rem}
+        .timeline-item .period{font-family:var(--font-mono);font-size:.7rem;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.6rem;display:block}
+        .timeline-item p{font-size:.87rem;color:var(--text-secondary);line-height:1.65}
+
+        /* ═══════════ CONTACT ═══════════ */
+        #contato{padding:120px 6vw;text-align:center;position:relative;overflow:hidden}
+        .contact-glow{position:absolute;width:800px;height:400px;background:radial-gradient(ellipse,rgba(139,92,246,.08) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
+        .contact-heading{font-size:clamp(2.2rem,5.5vw,5rem);font-weight:800;letter-spacing:-.03em;line-height:1.05;margin-bottom:1.5rem}
+        .contact-heading em{font-family:var(--font-serif);font-style:italic;color:var(--accent)}
+        .contact-sub{font-size:1rem;color:var(--text-secondary);max-width:460px;margin:0 auto 3rem;line-height:1.7}
+        .contact-links{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+        /* WHATSAPP FLOAT */
+        .float-wa{position:fixed;bottom:2rem;right:2rem;z-index:400;background:#25d366;color:#fff;border-radius:50%;width:52px;height:52px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .2s,box-shadow .2s;cursor:none}
+        .float-wa:hover{transform:translateY(-3px) scale(1.05);box-shadow:0 8px 28px rgba(37,211,102,.5)}
+
+        footer{border-top:1px solid var(--border);padding:2rem 6vw;display:flex;justify-content:space-between;align-items:center}
+        .footer-copy{font-family:var(--font-mono);font-size:.7rem;color:var(--text-muted);letter-spacing:.08em}
+        .footer-links{display:flex;gap:2rem}
+        .footer-links a{font-family:var(--font-mono);font-size:.7rem;color:var(--text-muted);text-decoration:none;letter-spacing:.08em;text-transform:uppercase;transition:color .2s}
+        .footer-links a:hover{color:var(--accent)}
+
+        /* ANIMATIONS */
+        @keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+        @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+        @keyframes countUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+        .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+        .reveal.visible{opacity:1;transform:translateY(0)}
+        .reveal-delay-1{transition-delay:.1s}
+        .reveal-delay-2{transition-delay:.2s}
+        .reveal-delay-3{transition-delay:.3s}
+        .reveal-delay-4{transition-delay:.4s}
+
+        /* ═══════════════════ RESPONSIVE ═══════════════════ */
+        @media(max-width:1024px){
+            .services-grid-cards{grid-template-columns:repeat(2,1fr)}
+            .metrics-inner{grid-template-columns:repeat(2,1fr)}
+            .dash-kpi-row{grid-template-columns:repeat(2,1fr)}
+            .chart-area{grid-template-columns:1fr}
+            .demo-grid{gap:3rem}
         }
-
-        /* ═══════════════════════════
-           RESPONSIVE — MOBILE
-        ═══════════════════════════ */
-        @media (max-width:768px) {
-            body { cursor:auto; }
-            .cursor, .cursor-ring { display:none; }
-
-            /* Nav */
-            nav { padding:1.1rem 1.25rem; }
-            .nav-links { display:none; }
-            .hamburger { display:flex; cursor:auto; }
-
-            /* Hero */
-            #hero { padding:80px 1.25rem 3rem; min-height:100svh; align-items:center; }
-            .hero-bg-grid { background-size:50px 50px; }
-            .hero-glow { width:280px; height:280px; top:0; right:-20%; opacity:.5; }
-            .hero-eyebrow { font-size:.7rem; gap:.7rem; }
-            .hero-eyebrow::before { width:20px; }
-            .hero-sub { font-size:.9rem; margin-bottom:2.5rem; }
-            .hero-cta { gap:.75rem; }
-            .btn-primary, .btn-ghost { padding:.8rem 1.5rem; font-size:.74rem; cursor:auto; }
-            .hero-stats { display:none; }
-
-            /* Marquee */
-            .marquee-item { font-size:.68rem; padding:0 1.25rem; gap:1.25rem; }
-
-            /* About */
-            #sobre { grid-template-columns:1fr; gap:2.5rem; padding:80px 1.25rem; }
-            .about-visual { display:none; }
-            .about-heading { font-size:clamp(1.8rem,6vw,2.4rem); }
-            .about-text { font-size:.9rem; }
-
-            /* Services */
-            #servicos { padding:80px 1.25rem; }
-            .section-header { flex-direction:column; align-items:flex-start; gap:.5rem; margin-bottom:2.5rem; }
-            .section-count { font-size:2.5rem; }
-            .service-row { grid-template-columns:36px 1fr; gap:.75rem; padding:1.5rem .75rem; margin-inline:-.75rem; }
-            .service-arrow { display:none; }
-            .service-name { font-size:1rem; }
-            .service-num { font-size:.7rem; }
-
-            /* Experience */
-            #experiencia { padding:80px 1.25rem; }
-            .exp-container { grid-template-columns:1fr; gap:3rem; }
-            .timeline-item h4 { font-size:.98rem; }
-
-            /* Projects */
-            #projetos { padding:80px 1.25rem; }
-            .projects-grid { grid-template-columns:1fr; gap:1rem; margin-top:2.5rem; }
-            .project-card { padding:1.5rem; }
-            .project-card h3 { font-size:1rem; }
-            .project-card p { font-size:.85rem; }
-
-            /* Contact */
-            #contato { padding:80px 1.25rem; }
-            .contact-heading { font-size:clamp(2rem,7vw,3rem); }
-            .contact-sub { font-size:.9rem; }
-            .contact-links { flex-direction:column; align-items:center; }
-            .contact-links .btn-primary,
-            .contact-links .btn-ghost { width:100%; max-width:300px; text-align:center; cursor:auto; }
-
-            /* Footer */
-            footer { flex-direction:column; gap:1rem; padding:1.5rem 1.25rem; text-align:center; }
-            .footer-links { gap:1.25rem; justify-content:center; }
+        @media(max-width:768px){
+            body{cursor:auto}
+            .cursor,.cursor-ring{display:none}
+            nav{padding:1.1rem 1.25rem}
+            .nav-links{display:none}
+            .hamburger{display:flex;cursor:auto}
+            #hero{padding:80px 1.25rem 3rem;min-height:100svh}
+            .hero-glow{width:260px;height:260px;top:0;right:-20%;opacity:.45}
+            .hero-bg-grid{background-size:50px 50px}
+            .hero-eyebrow{font-size:.68rem}
+            .hero-terminal{display:none}
+            .hero-stats{display:none}
+            .hero-cta{gap:.75rem}
+            .btn-primary,.btn-ghost{padding:.8rem 1.5rem;font-size:.74rem;cursor:auto}
+            .marquee-item{font-size:.68rem;padding:0 1.25rem;gap:1.25rem}
+            .metrics-bar{padding:50px 1.25rem}
+            .metrics-inner{grid-template-columns:repeat(2,1fr);gap:1rem}
+            .metric-num{font-size:2rem}
+            #sobre{padding:80px 1.25rem}
+            .about-grid{grid-template-columns:1fr;gap:3rem}
+            .about-photo-wrap{order:-1}
+            .photo-frame{max-height:380px;aspect-ratio:4/5}
+            .photo-accent-line{display:none}
+            #servicos{padding:80px 1.25rem}
+            .section-header{flex-direction:column;align-items:flex-start;gap:.5rem;margin-bottom:2.5rem}
+            .section-count{font-size:2.5rem}
+            .services-grid-cards{grid-template-columns:1fr;gap:1rem}
+            #demo{padding:80px 1.25rem}
+            .demo-grid{grid-template-columns:1fr;gap:3rem}
+            #dashboard-section{padding:80px 1.25rem}
+            .dash-header{flex-direction:column;align-items:flex-start;gap:.5rem}
+            .dash-kpi-row{grid-template-columns:repeat(2,1fr)}
+            .chart-area{grid-template-columns:1fr}
+            #projetos{padding:80px 1.25rem}
+            .projects-grid{grid-template-columns:1fr;gap:1rem;margin-top:2.5rem}
+            .project-card{padding:1.5rem}
+            #experiencia{padding:80px 1.25rem}
+            .exp-container{grid-template-columns:1fr;gap:3rem}
+            #contato{padding:80px 1.25rem}
+            .contact-heading{font-size:clamp(2rem,7vw,3rem)}
+            .contact-links{flex-direction:column;align-items:center}
+            .contact-links .btn-primary,.contact-links .btn-ghost{width:100%;max-width:300px;text-align:center;cursor:auto}
+            footer{flex-direction:column;gap:1rem;padding:1.5rem 1.25rem;text-align:center}
+            .footer-links{gap:1.25rem;justify-content:center}
+            .float-wa{bottom:1.5rem;right:1.5rem;cursor:auto}
         }
-
-        @media (max-width:380px) {
-            .hero-title { font-size:2.6rem; }
-            .about-heading { font-size:1.65rem; }
-            .contact-heading { font-size:1.8rem; }
+        @media(max-width:380px){
+            .hero-title{font-size:2.5rem}
+            .about-heading{font-size:1.7rem}
+            .contact-heading{font-size:1.8rem}
         }
     </style>
 </head>
@@ -268,11 +332,14 @@
 <div class="cursor" id="cursor"></div>
 <div class="cursor-ring" id="cursorRing"></div>
 
-<!-- FULLSCREEN MOBILE MENU -->
+<!-- FLOAT WHATSAPP -->
+<a href="https://wa.me/5538999643194" target="_blank" class="float-wa" title="WhatsApp">💬</a>
+
+<!-- FULLSCREEN MENU -->
 <div class="mobile-menu" id="mobileMenu">
     <a href="#sobre" class="menu-link">Sobre</a>
     <a href="#servicos" class="menu-link">Serviços</a>
-    <a href="#experiencia" class="menu-link">Trajetória</a>
+    <a href="#demo" class="menu-link">Como funciona</a>
     <a href="#projetos" class="menu-link">Portfolio</a>
     <a href="#contato" class="menu-link">Contato</a>
     <div class="mobile-menu-footer">
@@ -282,13 +349,12 @@
     </div>
 </div>
 
-<!-- NAV -->
 <nav id="navbar">
     <a href="#hero" class="nav-logo">Gustavo.dev</a>
     <ul class="nav-links">
         <li><a href="#sobre">sobre</a></li>
         <li><a href="#servicos">serviços</a></li>
-        <li><a href="#experiencia">trajetória</a></li>
+        <li><a href="#demo">como funciona</a></li>
         <li><a href="#projetos">portfolio</a></li>
         <li><a href="#contato">contato</a></li>
     </ul>
@@ -297,26 +363,38 @@
     </button>
 </nav>
 
-<!-- HERO -->
+<!-- ═══ HERO ═══ -->
 <section id="hero">
     <div class="hero-bg-grid"></div>
     <div class="hero-glow"></div>
     <div class="hero-content">
-        <div class="hero-eyebrow">Engenharia de Dados & Estratégia Digital</div>
+        <div class="hero-eyebrow">Desenvolvimento & Automação · Inside.co</div>
         <h1 class="hero-title">
-            Engenharia<br>
-            <span class="line-accent">que <span>transforma</span></span><br>
-            dados em lucro.
+            Código que<br>
+            <span class="line-accent"><span>resolve</span> de</span><br>
+            verdade.
         </h1>
-        <p class="hero-sub">Unindo a precisão da Ciência da Computação à performance da Inside.co — desenvolvo sistemas de automação que transformam operações complexas em resultados mensuráveis.</p>
+
+        <!-- TERMINAL ANIMADO -->
+        <div class="hero-terminal">
+            <div class="term-bar">
+                <span class="term-dot"></span>
+                <span class="term-dot"></span>
+                <span class="term-dot"></span>
+            </div>
+            <div class="term-body" id="termBody">
+                <span class="term-line"><span class="term-prompt">❯</span> <span class="term-cmd" id="termTyped"></span><span class="term-cursor" id="termCursor"></span></span>
+            </div>
+        </div>
+
         <div class="hero-cta">
             <a href="#projetos" class="btn-primary">Ver Portfolio</a>
             <a href="https://www.linkedin.com/in/gustavo-henriquesp/" target="_blank" class="btn-ghost">LinkedIn ↗</a>
         </div>
     </div>
     <div class="hero-stats">
-        <div class="stat"><span class="stat-num">8+</span><span class="stat-label">Projetos entregues</span></div>
-        <div class="stat"><span class="stat-num">2</span><span class="stat-label">Stacks dominadas</span></div>
+        <div class="stat"><span class="stat-num" data-target="8">0</span><span class="stat-label">Projetos entregues</span></div>
+        <div class="stat"><span class="stat-num" data-target="100">0</span><span class="stat-label">% erros eliminados</span></div>
         <div class="stat"><span class="stat-num">∞</span><span class="stat-label">Linhas de código</span></div>
     </div>
 </section>
@@ -326,224 +404,366 @@
     <div class="marquee-track">
         <div class="marquee-item">Python</div><div class="marquee-item">SQL</div>
         <div class="marquee-item">ETL Pipelines</div><div class="marquee-item">RPA Automation</div>
-        <div class="marquee-item">Business Intelligence</div><div class="marquee-item">Pandas</div>
-        <div class="marquee-item">VBA / Excel</div><div class="marquee-item">Social Media</div>
-        <div class="marquee-item">Inside.co</div><div class="marquee-item">Conciliação Financeira</div>
+        <div class="marquee-item">Sites & Landing Pages</div><div class="marquee-item">E-commerce</div>
+        <div class="marquee-item">Integração de APIs</div><div class="marquee-item">Chatbots</div>
+        <div class="marquee-item">VBA / Excel</div><div class="marquee-item">Inside.co</div>
         <div class="marquee-item">Python</div><div class="marquee-item">SQL</div>
         <div class="marquee-item">ETL Pipelines</div><div class="marquee-item">RPA Automation</div>
-        <div class="marquee-item">Business Intelligence</div><div class="marquee-item">Pandas</div>
-        <div class="marquee-item">VBA / Excel</div><div class="marquee-item">Social Media</div>
-        <div class="marquee-item">Inside.co</div><div class="marquee-item">Conciliação Financeira</div>
+        <div class="marquee-item">Sites & Landing Pages</div><div class="marquee-item">E-commerce</div>
+        <div class="marquee-item">Integração de APIs</div><div class="marquee-item">Chatbots</div>
+        <div class="marquee-item">VBA / Excel</div><div class="marquee-item">Inside.co</div>
     </div>
 </div>
 
-<!-- SOBRE -->
-<section id="sobre">
-    <div class="reveal">
-        <div class="about-label">// Quem sou</div>
-        <h2 class="about-heading">Onde código<br>encontra <em>estratégia</em>.</h2>
-        <p class="about-text">Estudante de Ciência da Computação com foco em estruturas de dados e algoritmos — e ao mesmo tempo, fundador da Inside.co, agência de marketing digital focada em branding e performance.</p>
-        <p class="about-text">Essa dualidade me permite enxergar problemas de negócio com profundidade técnica: construo soluções que outros apenas descrevem em planilhas.</p>
-        <p class="about-text">Especializado na interseção entre automação de processos financeiros, análise de dados e estratégia digital — transformando complexidade operacional em vantagem competitiva real.</p>
-        <div class="about-skills">
-            <span class="skill-tag">Python</span><span class="skill-tag">SQL</span>
-            <span class="skill-tag">Pandas</span><span class="skill-tag">Regex</span>
-            <span class="skill-tag">ETL</span><span class="skill-tag">VBA</span>
-            <span class="skill-tag">RPA</span><span class="skill-tag">Power BI</span>
-            <span class="skill-tag">Algoritmos</span><span class="skill-tag">Git</span>
-            <span class="skill-tag">Marketing Digital</span><span class="skill-tag">Branding</span>
+<!-- ═══ METRICS BAR ═══ -->
+<div class="metrics-bar">
+    <div class="metrics-inner">
+        <div class="metric-item reveal">
+            <span class="metric-num"><span class="count-up" data-target="12847">0</span></span>
+            <span class="metric-label">Registros processados / dia</span>
+        </div>
+        <div class="metric-item reveal reveal-delay-1">
+            <span class="metric-num"><span class="count-up" data-target="100">0</span><span class="metric-suffix">%</span></span>
+            <span class="metric-label">Precisão na auditoria</span>
+        </div>
+        <div class="metric-item reveal reveal-delay-2">
+            <span class="metric-num"><span class="count-up" data-target="8">0</span><span class="metric-suffix">+</span></span>
+            <span class="metric-label">Projetos em produção</span>
+        </div>
+        <div class="metric-item reveal reveal-delay-3">
+            <span class="metric-num"><span class="count-up" data-target="4">0</span><span class="metric-suffix">h→5min</span></span>
+            <span class="metric-label">Redução no tempo de auditoria</span>
         </div>
     </div>
-    <div class="about-visual reveal reveal-delay-2">
-        <div class="about-card-main">
-            <div class="code-block">
-                <div><span class="keyword">def</span> <span class="fn">gustavo</span>():</div>
-                <div>&nbsp;&nbsp;<span class="comment"># stack técnica</span></div>
-                <div>&nbsp;&nbsp;skills = [</div>
-                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"Python"</span>, <span class="string">"SQL"</span>,</div>
-                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"ETL Pipelines"</span>,</div>
-                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"RPA & Automação"</span>,</div>
-                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"VBA / Excel BI"</span>,</div>
-                <div>&nbsp;&nbsp;]</div>
-                <br>
-                <div>&nbsp;&nbsp;<span class="comment"># lado estratégico</span></div>
-                <div>&nbsp;&nbsp;empresa = <span class="string">"Inside.co"</span></div>
-                <div>&nbsp;&nbsp;foco = <span class="string">"ROI mensurável"</span></div>
-                <div>&nbsp;&nbsp;formacao = <span class="string">"Ciência da Computação"</span></div>
-                <br>
-                <div>&nbsp;&nbsp;<span class="keyword">return</span> {</div>
-                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"impacto"</span>: <span class="string">"máximo"</span>,</div>
-                <div>&nbsp;&nbsp;&nbsp;&nbsp;<span class="string">"entrega"</span>: <span class="string">"garantida"</span></div>
-                <div>&nbsp;&nbsp;}</div>
+</div>
+
+<!-- ═══ SOBRE ═══ -->
+<section id="sobre">
+    <div class="about-grid">
+        <div class="reveal">
+            <div class="about-label">// Quem sou</div>
+            <h2 class="about-heading">Dev que entende<br>o <em>negócio</em>.</h2>
+            <p class="about-text">Estudante de Ciência da Computação especializado em desenvolvimento de software e automação de processos — construo ferramentas que realmente resolvem problemas reais.</p>
+            <p class="about-text">Da landing page ao robô que processa 12 mil registros por hora: entrego soluções completas que outros só prometem em apresentação de PowerPoint.</p>
+            <p class="about-text">Também atuo na <strong style="color:var(--text)">Inside.co</strong>, agregando visão estratégica de negócios digital ao lado técnico.</p>
+            <div class="about-skills">
+                <span class="skill-tag">Python</span><span class="skill-tag">SQL</span>
+                <span class="skill-tag">Pandas</span><span class="skill-tag">Regex</span>
+                <span class="skill-tag">ETL</span><span class="skill-tag">VBA</span>
+                <span class="skill-tag">RPA</span><span class="skill-tag">HTML/CSS/JS</span>
+                <span class="skill-tag">Git</span><span class="skill-tag">APIs REST</span>
+                <span class="skill-tag">Shopify</span><span class="skill-tag">Algoritmos</span>
             </div>
+        </div>
+        <div class="about-photo-wrap reveal reveal-delay-2">
+            <div class="photo-frame">
+                <img src="perfilgu.jpeg" alt="Gustavo" id="profilePhoto">
+                <div class="photo-badge">
+                    <span class="badge-name">Gustavo</span>
+                    <span class="badge-role">Dev & Founder · Inside.co</span>
+                </div>
+            </div>
+            <div class="photo-border"></div>
+            <div class="photo-accent-line"></div>
         </div>
     </div>
 </section>
 
-<!-- SERVIÇOS -->
+<!-- ═══ SERVIÇOS ═══ -->
 <section id="servicos">
     <div class="section-header reveal">
         <div>
             <div class="section-label">// O que entrego</div>
-            <h2 class="section-heading">Serviços &<br>Especialidades</h2>
+            <h2 class="section-heading">Soluções<br>Tecnológicas</h2>
         </div>
-        <div class="section-count">03</div>
+        <div class="section-count">06</div>
     </div>
-    <div class="services-list">
-        <div class="service-row reveal">
-            <div class="service-num">01</div>
-            <div class="service-name">Automação RPA</div>
-            <div class="service-desc">Robôs em Python para faturamento, auditoria e workflows que eliminam erros manuais e multiplicam produtividade.</div>
-            <div class="service-arrow">↗</div>
+    <div class="services-grid-cards">
+        <div class="svc-card reveal">
+            <span class="svc-icon">⚡</span>
+            <h3>Automação RPA</h3>
+            <p>Robôs em Python que eliminam processos manuais repetitivos — faturamento, auditoria, extração de dados e geração de relatórios.</p>
         </div>
-        <div class="service-row reveal reveal-delay-1">
-            <div class="service-num">02</div>
-            <div class="service-name">Business Intelligence</div>
-            <div class="service-desc">Dashboards, pipelines ETL e reconciliação financeira que transformam dados brutos em decisões estratégicas em tempo real.</div>
-            <div class="service-arrow">↗</div>
+        <div class="svc-card reveal reveal-delay-1">
+            <span class="svc-icon">🌐</span>
+            <h3>Sites & Landing Pages</h3>
+            <p>Desenvolvimento de sites rápidos, responsivos e focados em conversão — do portfólio pessoal ao site institucional de alto impacto.</p>
         </div>
-        <div class="service-row reveal reveal-delay-2">
-            <div class="service-num">03</div>
-            <div class="service-name">Estratégia Digital</div>
-            <div class="service-desc">Social media management e branding via Inside.co — presença digital que converte audiência em resultado real.</div>
-            <div class="service-arrow">↗</div>
+        <div class="svc-card reveal reveal-delay-2">
+            <span class="svc-icon">🛒</span>
+            <h3>E-commerce</h3>
+            <p>Lojas virtuais completas em Shopify ou custom, com integração de pagamentos, automação de pedidos e experiência de compra otimizada.</p>
         </div>
-    </div>
-</section>
-
-<!-- TRAJETÓRIA -->
-<section id="experiencia">
-    <div class="exp-top-label reveal">// Trajetória</div>
-    <div class="exp-container">
-        <div>
-            <div class="exp-group-label reveal">Experiência Profissional</div>
-            <div class="timeline">
-                <div class="timeline-item reveal">
-                    <h4>Social Media Manager & Founder</h4>
-                    <span class="period">Inside.co · 2026 — Presente</span>
-                    <p>Liderando estratégias de conteúdo, branding e gestão de parcerias para marcas de alto impacto. Desenvolvimento de mídia kit e crescimento orgânico de audiência.</p>
-                </div>
-                <div class="timeline-item reveal reveal-delay-1">
-                    <h4>Data Analyst</h4>
-                    <span class="period">Performance & Operações · 2025</span>
-                    <p>Especialista em reconciliação financeira e tratamento de dados complexos. Desenvolvimento de algoritmos de auditoria, pipelines ETL e automações em Python e SQL.</p>
-                </div>
-                <div class="timeline-item reveal reveal-delay-2">
-                    <h4>Desenvolvedor de Automações</h4>
-                    <span class="period">Projetos Freelance · 2024 — 2025</span>
-                    <p>Criação de soluções RPA para extração de dados de PDFs, geração de relatórios automáticos e tratamento de arquivos posicionais para clientes do setor de saúde.</p>
-                </div>
-            </div>
+        <div class="svc-card reveal reveal-delay-3">
+            <span class="svc-icon">🔌</span>
+            <h3>Integração de APIs</h3>
+            <p>Conexão entre sistemas, webhooks, automação via APIs REST e pipelines de dados que fazem suas ferramentas conversarem entre si.</p>
         </div>
-        <div>
-            <div class="exp-group-label reveal">Formação Acadêmica</div>
-            <div class="timeline">
-                <div class="timeline-item reveal">
-                    <h4>Ciência da Computação</h4>
-                    <span class="period">Graduação · Em curso</span>
-                    <p>Foco em Estrutura de Dados, Análise de Algoritmos e Desenvolvimento de Software. Base teórica sólida aplicada diretamente a problemas reais de produção.</p>
-                </div>
-                <div class="timeline-item reveal reveal-delay-1">
-                    <h4>Marketing & Influência Digital</h4>
-                    <span class="period">Formação Contínua · 2024 — Presente</span>
-                    <p>Desenvolvimento de parcerias estratégicas, crescimento de audiência orgânica e construção de brand equity para negócios digitais de alto impacto.</p>
-                </div>
-                <div class="timeline-item reveal reveal-delay-2">
-                    <h4>Engenharia de Dados & BI</h4>
-                    <span class="period">Especialização · 2024</span>
-                    <p>Python para análise de dados, SQL avançado, Power BI e fundamentos de Engenharia de Dados com foco em ETL, qualidade e governança de dados.</p>
-                </div>
-            </div>
+        <div class="svc-card reveal">
+            <span class="svc-icon">🤖</span>
+            <h3>Chatbots & Atendimento</h3>
+            <p>Bots inteligentes para WhatsApp, Telegram e web — qualificação de leads, suporte automatizado e fluxos de atendimento 24/7.</p>
+        </div>
+        <div class="svc-card reveal reveal-delay-1">
+            <span class="svc-icon">📊</span>
+            <h3>Business Intelligence</h3>
+            <p>Dashboards, pipelines ETL e reconciliação financeira que transformam dados brutos em decisões estratégicas em tempo real.</p>
         </div>
     </div>
 </section>
 
-<!-- PORTFOLIO -->
+<!-- ═══ COMO FUNCIONA (RPA LOG) ═══ -->
+<section id="demo">
+    <div class="demo-grid">
+        <div class="demo-text reveal">
+            <div class="section-label">// Como funciona</div>
+            <h2>Automação que<br>você <em>vê rodando</em>.</h2>
+            <p>Cada automação entregue é um sistema completo — com logs, tratamento de erros e relatório final gerado automaticamente.</p>
+            <p>Nada de scripts frágeis que quebram com qualquer mudança. Código limpo, documentado e pronto para produção.</p>
+            <div class="demo-steps">
+                <div class="demo-step">
+                    <div class="step-num">01</div>
+                    <div class="step-text"><strong>Leitura e validação</strong> dos dados de entrada — arquivos, PDFs, APIs ou planilhas.</div>
+                </div>
+                <div class="demo-step">
+                    <div class="step-num">02</div>
+                    <div class="step-text"><strong>Processamento inteligente</strong> com tratamento de exceções e detecção de anomalias.</div>
+                </div>
+                <div class="demo-step">
+                    <div class="step-num">03</div>
+                    <div class="step-text"><strong>Output estruturado</strong> — relatório Excel, JSON, banco de dados ou disparo de alerta.</div>
+                </div>
+            </div>
+        </div>
+        <div class="reveal reveal-delay-2">
+            <div class="log-window">
+                <div class="log-header">
+                    <div class="log-dots">
+                        <div class="log-dot" style="background:#ff5f57"></div>
+                        <div class="log-dot" style="background:#febc2e"></div>
+                        <div class="log-dot" style="background:#28c840"></div>
+                    </div>
+                    <div class="log-title">rpa_faturamento.py — running</div>
+                </div>
+                <div class="log-body" id="logBody"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ DASHBOARD MOCKUP ═══ -->
+<section id="dashboard-section">
+    <div class="dash-inner">
+        <div class="dash-header reveal">
+            <div>
+                <div class="section-label">// Business Intelligence</div>
+                <h2 class="section-heading">Dados que<br>viram decisão.</h2>
+            </div>
+            <div class="section-count">BI</div>
+        </div>
+        <div class="dash-mockup reveal">
+            <div class="dash-top">
+                <div class="dash-top-dot"></div>
+                <span class="dash-top-title">dashboard_operacional.xlsx — atualizado há 2min</span>
+                <span class="dash-top-badge">● LIVE</span>
+            </div>
+            <div class="dash-kpi-row">
+                <div class="kpi-box">
+                    <div class="kpi-label">Faturamento / Mês</div>
+                    <span class="kpi-val" style="background:linear-gradient(135deg,#fff,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">R$ 284k</span>
+                    <div class="kpi-delta">↑ 12.4% vs mês anterior</div>
+                </div>
+                <div class="kpi-box">
+                    <div class="kpi-label">Registros Processados</div>
+                    <span class="kpi-val" style="background:linear-gradient(135deg,#fff,#93c5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent">12.847</span>
+                    <div class="kpi-delta">↑ 98.6% precisão</div>
+                </div>
+                <div class="kpi-box">
+                    <div class="kpi-label">Tempo de Auditoria</div>
+                    <span class="kpi-val" style="background:linear-gradient(135deg,#fff,#22c55e);-webkit-background-clip:text;-webkit-text-fill-color:transparent">4 min</span>
+                    <div class="kpi-delta">↓ antes: 4 horas</div>
+                </div>
+                <div class="kpi-box">
+                    <div class="kpi-label">Divergências Detectadas</div>
+                    <span class="kpi-val" style="background:linear-gradient(135deg,#fff,#fbbf24);-webkit-background-clip:text;-webkit-text-fill-color:transparent">456</span>
+                    <div class="kpi-delta">→ 3.6% dos registros</div>
+                </div>
+            </div>
+            <div class="chart-area">
+                <div class="chart-box">
+                    <div class="chart-title">Registros processados por semana</div>
+                    <div class="bar-chart" id="barChart">
+                        <div class="bar" style="height:30%" data-h="65%"></div>
+                        <div class="bar" style="height:30%" data-h="45%"></div>
+                        <div class="bar" style="height:30%" data-h="80%"></div>
+                        <div class="bar" style="height:30%" data-h="60%"></div>
+                        <div class="bar" style="height:30%" data-h="95%"></div>
+                        <div class="bar" style="height:30%" data-h="75%"></div>
+                        <div class="bar" style="height:30%" data-h="100%"></div>
+                    </div>
+                </div>
+                <div class="chart-box">
+                    <div class="chart-title">Status dos registros</div>
+                    <div class="donut-wrap">
+                        <svg width="80" height="80" viewBox="0 0 80 80" class="donut">
+                            <circle cx="40" cy="40" r="30" stroke="rgba(139,92,246,.15)" stroke-width="8"/>
+                            <circle cx="40" cy="40" r="30" stroke="#8b5cf6" stroke-width="8"
+                                stroke-dasharray="188.5" stroke-dashoffset="188.5" id="donutCircle"
+                                style="transition:stroke-dashoffset 1.5s ease"/>
+                            <circle cx="40" cy="40" r="30" stroke="#22c55e" stroke-width="8"
+                                stroke-dasharray="188.5" stroke-dashoffset="181.6" id="donutCircle2"
+                                style="transition:stroke-dashoffset 1.8s ease;transform:rotate(-90deg) translate(-80px,0)"/>
+                        </svg>
+                        <div style="margin-left:1rem;display:flex;flex-direction:column;gap:.5rem">
+                            <div style="display:flex;align-items:center;gap:.5rem"><span style="width:10px;height:10px;border-radius:50%;background:#8b5cf6;flex-shrink:0"></span><span style="font-family:var(--font-mono);font-size:.68rem;color:var(--text-secondary)">Conciliados 96.4%</span></div>
+                            <div style="display:flex;align-items:center;gap:.5rem"><span style="width:10px;height:10px;border-radius:50%;background:#22c55e;flex-shrink:0"></span><span style="font-family:var(--font-mono);font-size:.68rem;color:var(--text-secondary)">Divergentes 3.6%</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ PORTFOLIO ═══ -->
 <section id="projetos">
-    <div class="projects-wrap">
+    <div class="section-header reveal">
+        <div>
+            <div class="section-label">// Portfolio</div>
+            <h2 class="section-heading">Projetos<br>entregues.</h2>
+        </div>
+        <div class="section-count">08</div>
+    </div>
+    <div class="projects-grid">
+
+        <div class="project-card reveal">
+            <div class="project-tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Finance</span></div>
+            <span class="project-status">● Concluído</span>
+            <h3>Motor de Auditoria Financeira</h3>
+            <p>Conciliação de faturamentos complexos e detecção de Deltas em arquivos posicionais. Processa 12.847 registros em 4 minutos — antes levava 4 horas de revisão manual.</p>
+            <a href="https://github.com/guhspm" target="_blank" class="project-link">Ver no GitHub ↗</a>
+        </div>
+
+        <div class="project-card reveal reveal-delay-1">
+            <div class="project-tags"><span class="tag">Python</span><span class="tag">Regex</span><span class="tag">PDF</span></div>
+            <span class="project-status">● Concluído</span>
+            <h3>RPA de Faturamento — Planos de Saúde</h3>
+            <p>Extração automática de ISS, IRRF e valores brutos de PDFs não estruturados. Processa centenas de notas fiscais por hora com 100% de rastreabilidade.</p>
+            <a href="https://github.com/guhspm" target="_blank" class="project-link">Ver no GitHub ↗</a>
+        </div>
+
+        <div class="project-card reveal reveal-delay-2">
+            <div class="project-tags"><span class="tag">Python</span><span class="tag">ETL</span><span class="tag">FIFO</span></div>
+            <span class="project-status">● Concluído</span>
+            <h3>Pipeline ETL FIFO — Passivos Financeiros</h3>
+            <p>Abatimento progressivo FIFO de passivos com integridade total. Do dado bruto ao relatório auditável — pipeline robusto pronto para produção.</p>
+            <a href="https://github.com/guhspm" target="_blank" class="project-link">Ver no GitHub ↗</a>
+        </div>
+
+        <div class="project-card reveal reveal-delay-3">
+            <div class="project-tags"><span class="tag">Python</span><span class="tag">OpenPyXL</span><span class="tag">VBA</span></div>
+            <span class="project-status">● Concluído</span>
+            <h3>Automação de Relatórios Corporativos</h3>
+            <p>Processa grandes volumes de dados de inadimplência e pagamentos, cruza com relatórios externos e gera 3 tipos de relatórios gerenciais para múltiplas entidades simultaneamente — com estilização executiva via OpenPyXL.</p>
+            <a href="https://github.com/guhspm" target="_blank" class="project-link">Ver no GitHub ↗</a>
+        </div>
+
+        <div class="project-card reveal">
+            <div class="project-tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">OFX</span></div>
+            <span class="project-status status-dev">◐ Em desenvolvimento</span>
+            <h3>Robô de Conciliação Bancária</h3>
+            <p>Reconciliação automática entre extratos OFX e registros internos em SQL. Detecta duplicatas, divergências e transações não conciliadas com relatório PDF ao final de cada ciclo.</p>
+            <a href="https://github.com/guhspm" target="_blank" class="project-link">Ver no GitHub ↗</a>
+        </div>
+
+        <div class="project-card reveal reveal-delay-1">
+            <div class="project-tags"><span class="tag">Python</span><span class="tag">API</span><span class="tag">Dashboard</span></div>
+            <span class="project-status status-dev">◐ Em desenvolvimento</span>
+            <h3>Dashboard de KPIs — Inside.co</h3>
+            <p>Painel de métricas consolidadas de múltiplas plataformas: alcance, engajamento, ROI de campanhas. Atualizado automaticamente via APIs, zero intervenção manual.</p>
+            <a href="https://github.com/guhspm" target="_blank" class="project-link">Ver no GitHub ↗</a>
+        </div>
+
+        <div class="project-card reveal reveal-delay-2">
+            <div class="project-tags"><span class="tag">Python</span><span class="tag">Regex</span><span class="tag">NLP</span></div>
+            <span class="project-status status-dev">◐ Em desenvolvimento</span>
+            <h3>Parser de Contratos — Extração NLP</h3>
+            <p>Extrai cláusulas, prazos e valores de contratos PDF em menos de 30 segundos. Output estruturado em JSON, reduzindo análise jurídica de 2h para segundos.</p>
+            <a href="https://github.com/guhspm" target="_blank" class="project-link">Ver no GitHub ↗</a>
+        </div>
+
+        <div class="project-card reveal reveal-delay-3">
+            <div class="project-tags"><span class="tag">Python</span><span class="tag">Telegram</span><span class="tag">Scheduler</span></div>
+            <span class="project-status status-dev">◐ Em desenvolvimento</span>
+            <h3>Sistema de Alertas Financeiros</h3>
+            <p>Monitoramento de indicadores com disparo de alertas via Telegram quando métricas saem da faixa segura. Schedule diário, integração bancária — zero intervenção manual.</p>
+            <a href="https://github.com/guhspm" target="_blank" class="project-link">Ver no GitHub ↗</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- ═══ TRAJETÓRIA ═══ -->
+<section id="experiencia">
+    <div class="exp-wrap">
         <div class="section-header reveal">
             <div>
-                <div class="section-label">// Portfolio</div>
-                <h2 class="section-heading">Engenharia<br>de Software</h2>
+                <div class="section-label">// Trajetória</div>
+                <h2 class="section-heading">Experiência &<br>Formação</h2>
             </div>
-            <div class="section-count">08</div>
+            <div class="section-count">↑</div>
         </div>
-        <div class="projects-grid">
-
-            <div class="project-card reveal">
-                <div class="project-tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Finance</span></div>
-                <span class="project-status">● Em produção</span>
-                <h3>Motor de Auditoria Financeira</h3>
-                <p>Algoritmo para conciliação de faturamentos complexos e detecção de divergências ("Deltas") em arquivos posicionais. Processa lotes de milhares de registros com precisão cirúrgica, reduzindo o tempo de auditoria de horas para minutos.</p>
-                <a href="https://github.com/guhspm" target="_blank" class="project-link">Ver no GitHub ↗</a>
+        <div class="exp-container">
+            <div>
+                <div class="exp-group-label reveal">Experiência</div>
+                <div class="timeline">
+                    <div class="timeline-item reveal">
+                        <h4>Founder & Dev — Inside.co</h4>
+                        <span class="period">2026 — Presente</span>
+                        <p>Desenvolvimento de soluções tecnológicas para clientes: sites, automações e integrações. Estratégia digital como serviço complementar.</p>
+                    </div>
+                    <div class="timeline-item reveal reveal-delay-1">
+                        <h4>Data Analyst & Dev de Automações</h4>
+                        <span class="period">2025</span>
+                        <p>Reconciliação financeira, pipelines ETL e RPA em Python e SQL para o setor de saúde e faturamento corporativo.</p>
+                    </div>
+                    <div class="timeline-item reveal reveal-delay-2">
+                        <h4>Desenvolvedor Freelance</h4>
+                        <span class="period">2024 — 2025</span>
+                        <p>Criação de robôs de extração de PDF, relatórios automáticos e scripts de tratamento de arquivos posicionais.</p>
+                    </div>
+                </div>
             </div>
-
-            <div class="project-card reveal reveal-delay-1">
-                <div class="project-tags"><span class="tag">Python</span><span class="tag">Regex</span><span class="tag">PDF</span></div>
-                <span class="project-status">● Em produção</span>
-                <h3>RPA de Faturamento — Planos de Saúde</h3>
-                <p>Automação de extração de ISS, IRRF e valores brutos de PDFs não estruturados. O robô processa centenas de notas fiscais por hora, eliminando 100% do input manual e garantindo rastreabilidade total das operações.</p>
-                <a href="https://github.com/guhspm" target="_blank" class="project-link">Ver no GitHub ↗</a>
+            <div>
+                <div class="exp-group-label reveal">Formação</div>
+                <div class="timeline">
+                    <div class="timeline-item reveal">
+                        <h4>Ciência da Computação</h4>
+                        <span class="period">Graduação · Em curso</span>
+                        <p>Estrutura de Dados, Algoritmos, Desenvolvimento de Software. Base teórica diretamente aplicada a projetos reais.</p>
+                    </div>
+                    <div class="timeline-item reveal reveal-delay-1">
+                        <h4>Engenharia de Dados & BI</h4>
+                        <span class="period">Especialização · 2024</span>
+                        <p>Python avançado, SQL, Power BI e fundamentos de ETL com foco em qualidade e governança de dados.</p>
+                    </div>
+                    <div class="timeline-item reveal reveal-delay-2">
+                        <h4>Desenvolvimento Web & APIs</h4>
+                        <span class="period">Formação Contínua · 2024 — Presente</span>
+                        <p>HTML/CSS/JS, integração de APIs REST, Shopify e desenvolvimento de interfaces modernas e performáticas.</p>
+                    </div>
+                </div>
             </div>
-
-            <div class="project-card reveal reveal-delay-2">
-                <div class="project-tags"><span class="tag">Python</span><span class="tag">ETL</span><span class="tag">FIFO</span></div>
-                <span class="project-status">● Em produção</span>
-                <h3>Pipeline ETL FIFO — Passivos Financeiros</h3>
-                <p>Tratamento de passivos com lógica de abatimento progressivo FIFO. Pipeline robusto com integridade e rastreabilidade completas — do dado bruto ao relatório final pronto para auditoria.</p>
-                <a href="https://github.com/guhspm" target="_blank" class="project-link">Ver no GitHub ↗</a>
-            </div>
-
-            <div class="project-card reveal reveal-delay-3">
-                <div class="project-tags"><span class="tag">VBA</span><span class="tag">Excel</span><span class="tag">BI</span></div>
-                <span class="project-status">● Em produção</span>
-                <h3>Business Intelligence VBA / Excel</h3>
-                <p>Suite de macros avançadas para geração automática de relatórios gerenciais, tabelas dinâmicas e dashboards executivos. Transforma planilhas brutas em visão estratégica em segundos, sem dependência de ferramentas externas.</p>
-                <a href="https://github.com/guhspm" target="_blank" class="project-link">Ver no GitHub ↗</a>
-            </div>
-
-            <div class="project-card reveal">
-                <div class="project-tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">OFX</span></div>
-                <span class="project-status" style="color:#fbbf24;background:rgba(251,191,36,.1);border-color:rgba(251,191,36,.25);">◐ Em desenvolvimento</span>
-                <h3>Robô de Conciliação Bancária</h3>
-                <p>Reconciliação automática entre extratos OFX e registros internos em banco SQL. Identifica lançamentos duplicados, divergências de valor e transações não conciliadas, gerando relatório PDF automatizado ao final de cada ciclo.</p>
-                <a href="https://github.com/guhspm" target="_blank" class="project-link">Ver no GitHub ↗</a>
-            </div>
-
-            <div class="project-card reveal reveal-delay-1">
-                <div class="project-tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Dashboard</span></div>
-                <span class="project-status" style="color:#fbbf24;background:rgba(251,191,36,.1);border-color:rgba(251,191,36,.25);">◐ Em desenvolvimento</span>
-                <h3>Dashboard de KPIs — Inside.co</h3>
-                <p>Painel de métricas em tempo real para a agência: alcance orgânico, engajamento, crescimento de seguidores e ROI de campanhas. Consolida dados de múltiplas plataformas em uma única visão executiva atualizada automaticamente.</p>
-                <a href="https://github.com/guhspm" target="_blank" class="project-link">Ver no GitHub ↗</a>
-            </div>
-
-            <div class="project-card reveal reveal-delay-2">
-                <div class="project-tags"><span class="tag">Python</span><span class="tag">Regex</span><span class="tag">NLP</span></div>
-                <span class="project-status" style="color:#fbbf24;background:rgba(251,191,36,.1);border-color:rgba(251,191,36,.25);">◐ Em desenvolvimento</span>
-                <h3>Parser de Contratos — Extração NLP</h3>
-                <p>Extrator automático de cláusulas, prazos e valores em contratos PDF usando Regex avançado e pré-processamento NLP. Reduz o tempo de análise de 2 horas para menos de 30 segundos por documento, com output estruturado em JSON.</p>
-                <a href="https://github.com/guhspm" target="_blank" class="project-link">Ver no GitHub ↗</a>
-            </div>
-
-            <div class="project-card reveal reveal-delay-3">
-                <div class="project-tags"><span class="tag">Python</span><span class="tag">API</span><span class="tag">Telegram</span></div>
-                <span class="project-status" style="color:#fbbf24;background:rgba(251,191,36,.1);border-color:rgba(251,191,36,.25);">◐ Em desenvolvimento</span>
-                <h3>Sistema de Alertas Financeiros</h3>
-                <p>Monitoramento automatizado de indicadores com disparo de alertas via Telegram quando métricas saem da faixa segura. Roda em schedule diário, integrando APIs bancárias e planilhas de controle — zero intervenção manual.</p>
-                <a href="https://github.com/guhspm" target="_blank" class="project-link">Ver no GitHub ↗</a>
-            </div>
-
         </div>
     </div>
 </section>
 
-<!-- CONTATO -->
+<!-- ═══ CONTATO ═══ -->
 <section id="contato">
     <div class="contact-glow"></div>
-    <div class="contact-label reveal">// Próximo passo</div>
-    <h2 class="contact-heading reveal">Vamos elevar o<br>nível do seu <em>projeto</em>?</h2>
-    <p class="contact-sub reveal">Disponível para projetos de automação, análise de dados e estratégia digital. Vamos construir algo que realmente importa.</p>
+    <div class="section-label reveal" style="margin-bottom:1.5rem">// Próximo passo</div>
+    <h2 class="contact-heading reveal">Vamos construir<br>algo que <em>funciona</em>?</h2>
+    <p class="contact-sub reveal">Disponível para projetos de automação, desenvolvimento web, e-commerce e integrações. Resposta em até 24h.</p>
     <div class="contact-links reveal">
         <a href="mailto:ghspdm@gmail.com" class="btn-primary">ghspdm@gmail.com</a>
         <a href="https://github.com/guhspm" target="_blank" class="btn-ghost">GitHub ↗</a>
@@ -561,50 +781,159 @@
 </footer>
 
 <script>
-    /* ── CURSOR ── */
-    const cursor = document.getElementById('cursor');
-    const ring   = document.getElementById('cursorRing');
-    let mx=0,my=0,rx=0,ry=0;
-    document.addEventListener('mousemove',e=>{ mx=e.clientX; my=e.clientY; cursor.style.transform=`translate(${mx-4}px,${my-4}px)`; });
-    (function tick(){ rx+=(mx-rx)*.12; ry+=(my-ry)*.12; ring.style.transform=`translate(${rx-16}px,${ry-16}px)`; requestAnimationFrame(tick); })();
-    document.querySelectorAll('a,button,.service-row,.project-card').forEach(el=>{
-        el.addEventListener('mouseenter',()=>ring.classList.add('hovering'));
-        el.addEventListener('mouseleave',()=>ring.classList.remove('hovering'));
-    });
+/* ── CURSOR ── */
+const cursor=document.getElementById('cursor'),ring=document.getElementById('cursorRing');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.transform=`translate(${mx-4}px,${my-4}px)`;});
+(function tick(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.transform=`translate(${rx-16}px,${ry-16}px)`;requestAnimationFrame(tick);})();
+document.querySelectorAll('a,button,.svc-card,.project-card,.metric-item').forEach(el=>{
+    el.addEventListener('mouseenter',()=>ring.classList.add('hovering'));
+    el.addEventListener('mouseleave',()=>ring.classList.remove('hovering'));
+});
 
-    /* ── NAV SCROLL ── */
-    const nav=document.getElementById('navbar');
-    window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>50));
+/* ── NAV SCROLL ── */
+window.addEventListener('scroll',()=>document.getElementById('navbar').classList.toggle('scrolled',scrollY>50));
 
-    /* ── HAMBURGER / FULLSCREEN MENU ── */
-    const hamburger  = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-    let menuOpen=false;
+/* ── HAMBURGER ── */
+const hamburger=document.getElementById('hamburger'),mobileMenu=document.getElementById('mobileMenu');
+let menuOpen=false;
+function toggleMenu(f){menuOpen=f!==undefined?f:!menuOpen;hamburger.classList.toggle('open',menuOpen);mobileMenu.classList.toggle('open',menuOpen);document.body.style.overflow=menuOpen?'hidden':'';}
+hamburger.addEventListener('click',()=>toggleMenu());
+mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toggleMenu(false)));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menuOpen)toggleMenu(false);});
 
-    function toggleMenu(force){
-        menuOpen = force!==undefined ? force : !menuOpen;
-        hamburger.classList.toggle('open',menuOpen);
-        mobileMenu.classList.toggle('open',menuOpen);
-        document.body.style.overflow = menuOpen ? 'hidden' : '';
+/* ── TERMINAL TYPING ── */
+const cmds = [
+    'python rpa_faturamento.py',
+    'processar_notas --input ./pdfs/',
+    'auditoria.run(batch="marco_2026")',
+    'python etl_fifo.py --verbose',
+];
+let ci=0,ci2=0,deleting=false;
+const typed=document.getElementById('termTyped');
+function typeLoop(){
+    const cmd=cmds[ci];
+    if(!deleting){
+        if(ci2<cmd.length){typed.textContent=cmd.slice(0,++ci2);setTimeout(typeLoop,60);}
+        else{setTimeout(()=>{deleting=true;typeLoop();},2200);}
+    } else {
+        if(ci2>0){typed.textContent=cmd.slice(0,--ci2);setTimeout(typeLoop,30);}
+        else{deleting=false;ci=(ci+1)%cmds.length;setTimeout(typeLoop,400);}
     }
-    hamburger.addEventListener('click',()=>toggleMenu());
-    mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toggleMenu(false)));
-    document.addEventListener('keydown',e=>{ if(e.key==='Escape' && menuOpen) toggleMenu(false); });
+}
+setTimeout(typeLoop,1400);
 
-    /* ── REVEAL ── */
-    const observer=new IntersectionObserver(entries=>{
-        entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target); } });
-    },{threshold:.1});
-    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-
-    /* ── PROJECT CARD GRADIENT ── */
-    document.querySelectorAll('.project-card').forEach(card=>{
-        card.addEventListener('mousemove',e=>{
-            const r=card.getBoundingClientRect();
-            card.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');
-            card.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');
-        });
+/* ── RPA LOG ANIMATION ── */
+const logs=[
+    {cls:'log-info',ts:'10:32:01',msg:'Iniciando rpa_faturamento.py...'},
+    {cls:'log-ok',ts:'10:32:01',msg:'✓ Pasta ./pdfs/ encontrada — 247 arquivos'},
+    {cls:'log-info',ts:'10:32:02',msg:'Processando nota_001.pdf...'},
+    {cls:'log-ok',ts:'10:32:02',msg:'✓ ISS: R$ 312,40 | IRRF: R$ 156,20 | Bruto: R$ 5.207,00'},
+    {cls:'log-info',ts:'10:32:03',msg:'Processando nota_002.pdf...'},
+    {cls:'log-ok',ts:'10:32:03',msg:'✓ ISS: R$ 198,00 | IRRF: R$ 99,00 | Bruto: R$ 3.300,00'},
+    {cls:'log-warn',ts:'10:32:04',msg:'⚠ nota_003.pdf — layout divergente, reprocessando...'},
+    {cls:'log-ok',ts:'10:32:04',msg:'✓ Recuperado via fallback regex'},
+    {cls:'log-prog',ts:'10:32:08',msg:'Progresso: ████████░░ 247/247 notas'},
+    {cls:'log-ok',ts:'10:32:09',msg:'✓ Relatório gerado: relatorio_20260319.xlsx'},
+    {cls:'log-ok',ts:'10:32:09',msg:'✓ 247 notas processadas em 8.2s — 0 erros'},
+];
+const logBody=document.getElementById('logBody');
+let logStarted=false;
+function startLog(){
+    if(logStarted)return; logStarted=true;
+    logs.forEach((l,i)=>{
+        const el=document.createElement('div');
+        el.className='log-entry';
+        el.innerHTML=`<span class="log-ts">${l.ts}</span><span class="${l.cls}">${l.msg}</span>`;
+        logBody.appendChild(el);
+        setTimeout(()=>el.classList.add('show'), i*420);
     });
+    // restart loop
+    setTimeout(()=>{logBody.innerHTML='';logStarted=false;startLog();}, logs.length*420+4000);
+}
+
+/* ── REVEAL + COUNTERS + CHARTS ── */
+const revealObs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+        if(e.isIntersecting){
+            e.target.classList.add('visible');
+            revealObs.unobserve(e.target);
+            // counters
+            e.target.querySelectorAll('.count-up').forEach(el=>animateCount(el));
+            // bar chart
+            if(e.target.id==='barChart'||e.target.closest('#dashboard-section')){
+                animateBars(); animateDonut();
+            }
+        }
+    });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>revealObs.observe(el));
+
+// log trigger
+const logObs=new IntersectionObserver(entries=>{
+    if(entries[0].isIntersecting) startLog();
+},{threshold:.3});
+const demoSec=document.getElementById('demo');
+if(demoSec)logObs.observe(demoSec);
+
+function animateCount(el){
+    const target=+el.dataset.target;
+    const dur=1800,start=performance.now();
+    function step(now){
+        const p=Math.min((now-start)/dur,1);
+        const ease=1-Math.pow(1-p,4);
+        el.textContent=Math.floor(ease*target).toLocaleString('pt-BR');
+        if(p<1)requestAnimationFrame(step);
+        else el.textContent=target.toLocaleString('pt-BR');
+    }
+    requestAnimationFrame(step);
+}
+// hero stat counters on load
+setTimeout(()=>{
+    document.querySelectorAll('.hero-stats .stat-num[data-target]').forEach(el=>{
+        const target=+el.dataset.target;
+        const dur=1600,start=performance.now();
+        function step(now){const p=Math.min((now-start)/dur,1);const ease=1-Math.pow(1-p,3);el.textContent=Math.floor(ease*target);if(p<1)requestAnimationFrame(step);else el.textContent=target;}
+        requestAnimationFrame(step);
+    });
+},1200);
+
+let barsAnimated=false;
+function animateBars(){
+    if(barsAnimated)return; barsAnimated=true;
+    document.querySelectorAll('#barChart .bar').forEach((b,i)=>{
+        setTimeout(()=>{b.style.height=b.dataset.h;b.classList.add('animated');},i*100);
+    });
+}
+function animateDonut(){
+    const c=document.getElementById('donutCircle');
+    if(c){const circ=2*Math.PI*30;c.style.strokeDashoffset=circ*(1-0.964);}
+}
+
+/* ── DASHBOARD OBSERVER ── */
+const dashObs=new IntersectionObserver(entries=>{
+    if(entries[0].isIntersecting){animateBars();animateDonut();}
+},{threshold:.2});
+const dashSec=document.getElementById('dashboard-section');
+if(dashSec)dashObs.observe(dashSec);
+
+/* ── PROJECT CARD GRADIENT ── */
+document.querySelectorAll('.project-card').forEach(card=>{
+    card.addEventListener('mousemove',e=>{
+        const r=card.getBoundingClientRect();
+        card.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');
+        card.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');
+    });
+});
+
+/* ── PHOTO FALLBACK ── */
+const photo=document.getElementById('profilePhoto');
+if(photo){
+    photo.onerror=()=>{
+        photo.style.display='none';
+        photo.parentElement.style.background='linear-gradient(135deg,#111,#1a0a2e)';
+    };
+}
 </script>
 </body>
 </html>
