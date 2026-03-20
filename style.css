@@ -1,13 +1,13 @@
 /* --- VARIÁVEIS DE COR (DARK MODE PREMIUM) --- */
 :root {
-    --bg-main: #0d1117;        /* Fundo escuro estilo GitHub/Dev */
-    --bg-card: #161b22;        /* Fundo dos cartões um pouco mais claro */
-    --bg-card-hover: #21262d;  /* Fundo do cartão ao passar o mouse */
-    --text-primary: #f0f6fc;   /* Texto principal branco/gelo */
-    --text-secondary: #8b949e; /* Texto de apoio cinza */
-    --accent-color: #58a6ff;   /* Azul tech para botões e links */
-    --accent-hover: #1f6feb;   /* Azul mais forte para hover */
-    --border-color: #30363d;   /* Linhas e bordas sutis */
+    --bg-main: #0d1117;        
+    --bg-card: #161b22;        
+    --bg-card-hover: #21262d;  
+    --text-primary: #f0f6fc;   
+    --text-secondary: #8b949e; 
+    --accent-color: #58a6ff;   
+    --accent-hover: #1f6feb;   
+    --border-color: #30363d;   
 }
 
 /* --- RESET BÁSICO --- */
@@ -169,7 +169,6 @@ header {
     gap: 2rem;
 }
 
-/* O Cartão do Projeto */
 .projeto-card {
     background-color: var(--bg-card);
     border: 1px solid var(--border-color);
@@ -212,7 +211,7 @@ header {
     color: var(--text-secondary);
     font-size: 0.95rem;
     margin-bottom: 1rem;
-    flex-grow: 1; /* Faz o botão descer para o final do card */
+    flex-grow: 1;
 }
 
 .projeto-card strong {
@@ -258,7 +257,7 @@ header {
     }
     
     .nav-links {
-        display: none; /* Esconde o menu no celular para simplificar agora */
+        display: none; 
     }
     
     .hero-section {
@@ -266,19 +265,18 @@ header {
     }
 }
 
-/* --- ANIMAÇÕES FLUIDAS (Acionadas pelo main.js) --- */
+/* --- ANIMAÇÕES FLUIDAS --- */
 .fade-in-hidden {
     opacity: 0;
-    transform: translateY(40px); /* Começa 40px mais para baixo */
+    transform: translateY(40px);
     transition: opacity 0.7s ease-out, transform 0.7s ease-out;
 }
 
 .fade-in-visible {
     opacity: 1;
-    transform: translateY(0); /* Volta para a posição original */
+    transform: translateY(0);
 }
 
-/* Efeito Cascata: Faz os cartões de projeto aparecerem um depois do outro */
 .projects-grid .projeto-card:nth-child(1) { transition-delay: 0.1s; }
 .projects-grid .projeto-card:nth-child(2) { transition-delay: 0.2s; }
 .projects-grid .projeto-card:nth-child(3) { transition-delay: 0.3s; }
