@@ -3,70 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gustavo | Desenvolvimento & Automação</title>
+    <title>Gustavo | Desenvolvimento Web & Automação · Inside.co</title>
+    <meta name="description" content="Desenvolvedor especializado em sites, e-commerce e automação Python. Projetos entregues para marcas reais. BH · MG · Atendimento nacional.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg:#050505; --bg-card:#0c0c0c; --bg-elevated:#111;
-            --accent:#8b5cf6; --accent-dim:rgba(139,92,246,.12);
-            --accent-glow:rgba(139,92,246,.4); --border:rgba(255,255,255,.07);
-            --border-accent:rgba(139,92,246,.3); --text:#f0f0f0;
-            --text-muted:#555; --text-secondary:#888;
-            --font-display:'Syne',sans-serif; --font-mono:'DM Mono',monospace;
-            --font-serif:'Instrument Serif',serif;
-        }
+        :root{--bg:#050505;--bg-card:#0c0c0c;--bg-elevated:#111;--accent:#8b5cf6;--accent-dim:rgba(139,92,246,.12);--accent-glow:rgba(139,92,246,.4);--border:rgba(255,255,255,.07);--border-accent:rgba(139,92,246,.3);--text:#f0f0f0;--text-muted:#555;--text-secondary:#888;--green:#25d366;--font-display:'Syne',sans-serif;--font-mono:'DM Mono',monospace;--font-serif:'Instrument Serif',serif}
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
         html{scroll-behavior:smooth;overflow-x:hidden}
         body{background:var(--bg);color:var(--text);font-family:var(--font-display);overflow-x:hidden;max-width:100vw}
         body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none;z-index:100;opacity:.35}
+
+        /* NAV */
         nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:1.5rem 3rem;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid transparent;transition:border-color .4s,backdrop-filter .4s,background .4s}
-        nav.scrolled{background:rgba(5,5,5,.85);backdrop-filter:blur(20px);border-color:var(--border)}
+        nav.scrolled{background:rgba(5,5,5,.9);backdrop-filter:blur(20px);border-color:var(--border)}
         .nav-logo{font-family:var(--font-mono);font-size:.85rem;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;text-decoration:none}
-        .nav-links{display:flex;gap:2rem;list-style:none}
-        .nav-links a{font-family:var(--font-mono);font-size:.76rem;color:var(--text-secondary);text-decoration:none;letter-spacing:.08em;text-transform:uppercase;transition:color .2s}
+        .nav-links{display:flex;gap:1.8rem;list-style:none}
+        .nav-links a{font-family:var(--font-mono);font-size:.75rem;color:var(--text-secondary);text-decoration:none;letter-spacing:.08em;text-transform:uppercase;transition:color .2s}
         .nav-links a:hover{color:var(--text)}
+
+        /* HAMBURGER */
         .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;z-index:601}
         .hamburger span{display:block;width:24px;height:1.5px;background:var(--text);transition:transform .35s,opacity .35s;transform-origin:center}
         .hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);background:var(--accent)}
         .hamburger.open span:nth-child(2){opacity:0}
         .hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);background:var(--accent)}
+
+        /* MOBILE MENU */
         .mobile-menu{position:fixed;inset:0;z-index:600;background:rgba(5,5,5,.97);backdrop-filter:blur(24px);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:2rem;opacity:0;pointer-events:none;transition:opacity .35s}
         .mobile-menu.open{opacity:1;pointer-events:all}
         .mobile-menu a{font-size:clamp(2rem,10vw,3.5rem);font-weight:800;color:var(--text);text-decoration:none;letter-spacing:-.02em;transition:color .2s}
         .mobile-menu a:hover{color:var(--accent)}
         .mm-footer{position:absolute;bottom:3rem;display:flex;gap:2rem}
         .mm-footer a{font-family:var(--font-mono)!important;font-size:.75rem!important;color:var(--text-secondary)!important;letter-spacing:.1em;text-transform:uppercase;font-weight:400!important}
+
+        /* BUTTONS */
         .btn-primary{padding:.9rem 2.2rem;background:var(--accent);color:#fff;border:none;border-radius:4px;font-family:var(--font-mono);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:background .2s,transform .2s,box-shadow .2s;display:inline-block}
         .btn-primary:hover{background:#7c3aed;transform:translateY(-2px);box-shadow:0 8px 24px rgba(139,92,246,.35)}
         .btn-ghost{padding:.9rem 2.2rem;background:transparent;color:var(--text-secondary);border:1px solid var(--border);border-radius:4px;font-family:var(--font-mono);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:color .2s,border-color .2s,transform .2s;display:inline-block}
         .btn-ghost:hover{color:var(--text);border-color:var(--accent);transform:translateY(-2px)}
+        .btn-wa{padding:.9rem 2.2rem;background:var(--green);color:#fff;border:none;border-radius:4px;font-family:var(--font-mono);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:background .2s,transform .2s,box-shadow .2s;display:inline-flex;align-items:center;gap:.5rem}
+        .btn-wa:hover{background:#1da851;transform:translateY(-2px);box-shadow:0 8px 24px rgba(37,211,102,.3)}
+
+        /* FLOAT WA */
+        .float-wa{position:fixed;bottom:2rem;right:2rem;z-index:400;background:var(--green);color:#fff;border-radius:50%;width:56px;height:56px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,.4);transition:transform .2s,box-shadow .2s}
+        .float-wa:hover{transform:translateY(-3px) scale(1.08);box-shadow:0 8px 28px rgba(37,211,102,.55)}
+
+        /* HERO */
         #hero{min-height:100vh;display:flex;align-items:center;padding:120px 6vw 0;position:relative;overflow:hidden;max-width:100%}
         .hero-bg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(139,92,246,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(139,92,246,.04) 1px,transparent 1px);background-size:80px 80px;mask-image:radial-gradient(ellipse 80% 70% at 50% 50%,black,transparent)}
-        .hero-glow{position:absolute;width:min(700px,80vw);height:min(700px,80vw);background:radial-gradient(circle,rgba(139,92,246,.1) 0%,transparent 70%);top:5%;right:-15%;pointer-events:none;overflow:hidden}
+        .hero-glow{position:absolute;width:min(700px,80vw);height:min(700px,80vw);background:radial-gradient(circle,rgba(139,92,246,.1) 0%,transparent 70%);top:5%;right:-15%;pointer-events:none}
         .hero-content{position:relative;z-index:2;max-width:860px}
         .hero-eyebrow{font-family:var(--font-mono);font-size:.78rem;color:var(--accent);letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem;opacity:0;transform:translateY(20px);animation:fadeUp .6s .2s forwards}
         .hero-eyebrow::before{content:'';width:36px;height:1px;background:var(--accent);display:block}
         .hero-title{font-size:clamp(2.6rem,6vw,5.8rem);font-weight:800;line-height:.97;letter-spacing:-.03em;margin-bottom:1.8rem;opacity:0;transform:translateY(30px);animation:fadeUp .7s .4s forwards}
         .hero-title .line-accent{color:transparent;-webkit-text-stroke:1px rgba(139,92,246,.55);display:block}
         .hero-title .line-accent span{background:linear-gradient(135deg,#8b5cf6,#c4b5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent;-webkit-text-stroke:0}
-        .hero-terminal{background:rgba(10,10,10,.9);border:1px solid var(--border-accent);border-radius:10px;padding:1.1rem 1.4rem;margin-bottom:2.5rem;max-width:500px;opacity:0;transform:translateY(20px);animation:fadeUp .7s .6s forwards}
-        .term-bar{display:flex;gap:.5rem;margin-bottom:.8rem}
-        .term-dot{width:10px;height:10px;border-radius:50%}
-        .term-body{font-family:var(--font-mono);font-size:.76rem;line-height:1.8;color:var(--text-secondary)}
-        .term-prompt{color:var(--accent)}
-        .term-cursor{display:inline-block;width:7px;height:.9em;background:var(--accent);vertical-align:text-bottom;animation:blink 1s step-end infinite}
-        @keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
-        .hero-cta{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;transform:translateY(20px);animation:fadeUp .7s .8s forwards}
+        .hero-sub{font-size:1.05rem;color:var(--text-secondary);line-height:1.75;max-width:560px;margin-bottom:2.5rem;opacity:0;transform:translateY(20px);animation:fadeUp .7s .55s forwards}
+        .hero-cta{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;transform:translateY(20px);animation:fadeUp .7s .7s forwards}
         .hero-stats{position:absolute;bottom:4rem;right:6vw;display:flex;flex-direction:column;gap:2rem;opacity:0;animation:fadeUp .7s 1s forwards}
         .stat{text-align:right}
         .stat-num{font-size:2rem;font-weight:800;background:linear-gradient(135deg,#fff,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block}
         .stat-label{font-family:var(--font-mono);font-size:.7rem;color:var(--text-muted);letter-spacing:.1em;text-transform:uppercase}
+
+        /* MARQUEE */
         .marquee-wrap{border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;padding:.9rem 0;background:#080808}
         .marquee-track{display:flex;animation:marquee 26s linear infinite;white-space:nowrap}
         .marquee-item{font-family:var(--font-mono);font-size:.73rem;color:var(--text-muted);letter-spacing:.12em;text-transform:uppercase;padding:0 2.5rem;display:flex;align-items:center;gap:2.5rem}
         .marquee-item::after{content:'◆';color:var(--accent);font-size:.42rem}
+
+        /* METRICS */
         .metrics-bar{padding:60px 6vw;background:#080808;border-bottom:1px solid var(--border)}
         .metrics-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
         .metric-item{text-align:center;padding:1.8rem 1rem;border:1px solid var(--border);border-radius:10px;background:var(--bg-card);position:relative;overflow:hidden;transition:border-color .3s}
@@ -75,6 +82,8 @@
         .metric-num{font-size:2.6rem;font-weight:800;background:linear-gradient(135deg,#fff,var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block;line-height:1.1}
         .metric-suffix{font-size:1.6rem}
         .metric-label{font-family:var(--font-mono);font-size:.68rem;color:var(--text-secondary);letter-spacing:.1em;text-transform:uppercase;margin-top:.4rem;display:block}
+
+        /* SOBRE */
         #sobre{padding:120px 6vw;max-width:1300px;margin:0 auto}
         .about-grid{display:grid;grid-template-columns:1fr 420px;gap:5rem;align-items:center}
         .about-label{font-family:var(--font-mono);font-size:.75rem;color:var(--accent);letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.5rem}
@@ -92,76 +101,63 @@
         .photo-badge{position:absolute;bottom:1.5rem;left:1.5rem;z-index:2;background:rgba(5,5,5,.85);backdrop-filter:blur(12px);border:1px solid var(--border-accent);border-radius:8px;padding:.75rem 1.2rem}
         .badge-name{font-size:1rem;font-weight:700;display:block}
         .badge-role{font-family:var(--font-mono);font-size:.68rem;color:var(--accent);letter-spacing:.08em;text-transform:uppercase}
+
+        /* SERVIÇOS */
         #servicos{padding:120px 6vw;background:#080808}
         .section-header{max-width:1100px;margin:0 auto 4rem;display:flex;justify-content:space-between;align-items:flex-end}
         .section-label{font-family:var(--font-mono);font-size:.75rem;color:var(--accent);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.75rem}
         .section-heading{font-size:clamp(2rem,4vw,3rem);font-weight:700;letter-spacing:-.02em;line-height:1.1}
         .section-count{font-family:var(--font-mono);font-size:5rem;font-weight:800;color:rgba(139,92,246,.07);line-height:1;letter-spacing:-.05em;user-select:none}
         .services-grid-cards{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-        .svc-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:2.2rem;position:relative;overflow:hidden;transition:border-color .3s,transform .3s;cursor:default}
+        .svc-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:2.2rem;position:relative;overflow:hidden;transition:border-color .3s,transform .3s}
         .svc-card:hover{border-color:var(--border-accent);transform:translateY(-5px)}
         .svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:0;transition:opacity .3s}
         .svc-card:hover::before{opacity:1}
         .svc-icon{font-size:1.8rem;margin-bottom:1.1rem;display:block}
         .svc-card h3{font-size:1.05rem;font-weight:700;margin-bottom:.6rem;letter-spacing:-.01em}
         .svc-card p{font-size:.84rem;color:var(--text-secondary);line-height:1.65;margin-bottom:1.2rem}
-        .svc-steps{border-top:1px solid var(--border);padding-top:1.2rem;display:flex;flex-direction:column;gap:.6rem}
+        .svc-steps{border-top:1px solid var(--border);padding-top:1.2rem;margin-top:.5rem;display:flex;flex-direction:column;gap:.6rem}
         .svc-step{display:flex;align-items:flex-start;gap:.7rem;font-size:.8rem;color:var(--text-secondary)}
         .svc-step-n{font-family:var(--font-mono);font-size:.65rem;color:var(--accent);background:var(--accent-dim);border:1px solid var(--border-accent);width:20px;height:20px;border-radius:3px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
-        #demo{padding:100px 6vw;max-width:1300px;margin:0 auto}
-        .demo-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
-        .demo-text h2{font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:700;line-height:1.15;letter-spacing:-.02em;margin-bottom:1.5rem;margin-top:1.5rem}
-        .demo-text h2 em{font-family:var(--font-serif);font-style:italic;color:var(--accent)}
-        .demo-text p{font-size:.92rem;color:var(--text-secondary);line-height:1.8;margin-bottom:1.1rem}
-        .demo-steps{display:flex;flex-direction:column;gap:.9rem;margin-top:2rem}
-        .demo-step{display:flex;align-items:flex-start;gap:1rem}
-        .step-num{font-family:var(--font-mono);font-size:.7rem;color:var(--accent);background:var(--accent-dim);border:1px solid var(--border-accent);width:26px;height:26px;border-radius:3px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
-        .step-text{font-size:.87rem;color:var(--text-secondary);line-height:1.5}
-        .step-text strong{color:var(--text)}
-        .log-window{background:#0a0a0a;border:1px solid var(--border-accent);border-radius:12px;overflow:hidden;max-width:100%}
-        .log-header{background:#111;padding:.8rem 1.2rem;display:flex;align-items:center;gap:.75rem;border-bottom:1px solid var(--border)}
-        .log-dots{display:flex;gap:.4rem}
-        .log-dot{width:10px;height:10px;border-radius:50%}
-        .log-title{font-family:var(--font-mono);font-size:.7rem;color:var(--text-muted);margin-left:auto}
-        .log-body{padding:1.1rem 1.4rem;font-family:var(--font-mono);font-size:.76rem;line-height:1.9;min-height:290px;overflow-x:hidden}
-        .log-entry{display:flex;gap:.75rem;opacity:0;transform:translateX(-8px);transition:opacity .4s,transform .4s}
-        .log-entry.show{opacity:1;transform:none}
-        .log-ts{color:var(--text-muted);flex-shrink:0}
-        .log-ok{color:#22c55e}.log-info{color:#93c5fd}.log-warn{color:#fbbf24}.log-prog{color:#c4b5fd}
-        #dashboard-section{padding:100px 6vw;background:#080808;overflow:hidden}
-        .dash-inner{max-width:1300px;margin:0 auto;overflow:hidden}
-        .dash-mockup{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;padding:2rem;position:relative;overflow:hidden;margin-top:3rem}
-        .dash-mockup::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),#c4b5fd,transparent)}
-        .dash-top{display:flex;align-items:center;gap:1rem;margin-bottom:2rem;padding-bottom:1.2rem;border-bottom:1px solid var(--border)}
-        .dash-top-dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
-        .dash-top-title{font-family:var(--font-mono);font-size:.75rem;color:var(--text-secondary)}
-        .dash-top-badge{margin-left:auto;font-family:var(--font-mono);font-size:.65rem;color:#22c55e;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.25);padding:.25rem .6rem;border-radius:2px}
-        .dash-kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2rem}
-        .kpi-box{background:var(--bg-elevated);border:1px solid var(--border);border-radius:8px;padding:1rem}
-        .kpi-label{font-family:var(--font-mono);font-size:.63rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem}
-        .kpi-val{font-size:1.4rem;font-weight:800;display:block}
-        .kpi-delta{font-family:var(--font-mono);font-size:.63rem;color:#22c55e;margin-top:.25rem}
-        .chart-area{display:grid;grid-template-columns:2fr 1fr;gap:1rem}
-        .chart-box{background:var(--bg-elevated);border:1px solid var(--border);border-radius:8px;padding:1.2rem}
-        .chart-title{font-family:var(--font-mono);font-size:.68rem;color:var(--text-secondary);margin-bottom:1rem}
-        .bar-chart{display:flex;align-items:flex-end;gap:.5rem;height:80px}
-        .bar{flex:1;background:var(--accent-dim);border-radius:3px 3px 0 0;border:1px solid var(--border-accent);transition:height 1.4s cubic-bezier(.34,1.56,.64,1)}
-        .bar.animated{background:linear-gradient(to top,var(--accent),rgba(139,92,246,.3))}
-        .donut-wrap{display:flex;align-items:center;justify-content:center;height:80px}
+
+        /* PROJETOS */
         #projetos{padding:120px 6vw;max-width:1300px;margin:0 auto}
         .projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:4rem}
-        .project-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:2.5rem;position:relative;overflow:hidden;transition:border-color .3s,transform .3s;display:flex;flex-direction:column}
+
+        /* Site cards — destaque visual */
+        .project-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:0;position:relative;overflow:hidden;transition:border-color .3s,transform .3s;display:flex;flex-direction:column}
         .project-card:hover{border-color:var(--border-accent);transform:translateY(-4px)}
         .project-card::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(139,92,246,.07),transparent 60%);pointer-events:none;opacity:0;transition:opacity .3s}
         .project-card:hover::after{opacity:1}
-        .project-tags{display:flex;gap:.5rem;margin-bottom:.9rem;flex-wrap:wrap}
+
+        /* Site preview thumbnail */
+        .card-thumb{width:100%;height:180px;overflow:hidden;position:relative;flex-shrink:0;background:var(--bg-elevated)}
+        .card-thumb iframe{width:200%;height:400px;border:none;transform:scale(.5);transform-origin:top left;pointer-events:none;filter:grayscale(15%)}
+        .card-thumb-img{width:100%;height:100%;object-fit:cover;object-fit:cover;object-position:top;display:block;filter:grayscale(10%);transition:transform .4s}
+        .project-card:hover .card-thumb-img{transform:scale(1.04)}
+        .card-thumb-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(12,12,12,.9));pointer-events:none}
+        .card-live-badge{position:absolute;top:.75rem;right:.75rem;font-family:var(--font-mono);font-size:.62rem;color:#22c55e;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);padding:.2rem .55rem;border-radius:2px;letter-spacing:.07em;backdrop-filter:blur(8px)}
+
+        .card-body{padding:1.75rem;display:flex;flex-direction:column;flex:1}
+        .project-tags{display:flex;gap:.5rem;margin-bottom:.8rem;flex-wrap:wrap}
         .tag{font-family:var(--font-mono);font-size:.66rem;color:var(--accent);background:var(--accent-dim);border:1px solid var(--border-accent);padding:.28rem .65rem;border-radius:2px;letter-spacing:.07em}
-        .project-status{display:inline-block;font-family:var(--font-mono);font-size:.64rem;color:#22c55e;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.25);padding:.22rem .6rem;border-radius:2px;letter-spacing:.07em;margin-bottom:.9rem}
+        .project-status{display:inline-block;font-family:var(--font-mono);font-size:.64rem;color:#22c55e;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.25);padding:.22rem .6rem;border-radius:2px;letter-spacing:.07em;margin-bottom:.8rem}
         .status-dev{color:#fbbf24!important;background:rgba(251,191,36,.1)!important;border-color:rgba(251,191,36,.25)!important}
-        .project-card h3{font-size:1.1rem;font-weight:700;margin-bottom:.7rem;letter-spacing:-.01em}
+        .project-card h3{font-size:1.1rem;font-weight:700;margin-bottom:.65rem;letter-spacing:-.01em}
         .project-card p{font-size:.86rem;color:var(--text-secondary);line-height:1.7;flex:1}
-        .project-link{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-mono);font-size:.71rem;color:var(--accent);text-decoration:none;letter-spacing:.07em;text-transform:uppercase;margin-top:1.5rem;transition:gap .2s}
+        .card-actions{display:flex;gap:.75rem;margin-top:1.25rem;flex-wrap:wrap}
+        .project-link{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-mono);font-size:.71rem;color:var(--accent);text-decoration:none;letter-spacing:.07em;text-transform:uppercase;transition:gap .2s}
         .project-link:hover{gap:.8rem}
+        .project-link-wa{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--font-mono);font-size:.71rem;color:var(--green);text-decoration:none;letter-spacing:.07em;text-transform:uppercase;transition:gap .2s}
+        .project-link-wa:hover{gap:.8rem}
+
+        /* CTA BANNER BETWEEN PROJECTS */
+        .cta-banner{grid-column:1/-1;background:linear-gradient(135deg,rgba(139,92,246,.15),rgba(139,92,246,.05));border:1px solid var(--border-accent);border-radius:12px;padding:2rem 2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem}
+        .cta-banner h3{font-size:1.3rem;font-weight:700;margin-bottom:.4rem}
+        .cta-banner p{font-size:.88rem;color:var(--text-secondary)}
+        .cta-banner-actions{display:flex;gap:.75rem;flex-shrink:0}
+
+        /* EXPERIENCIA */
         #experiencia{padding:120px 6vw;background:#080808}
         .exp-wrap{max-width:1300px;margin:0 auto}
         .exp-container{display:grid;grid-template-columns:1fr 1fr;gap:5rem}
@@ -175,163 +171,209 @@
         .timeline-item h4{font-size:1rem;font-weight:700;margin-bottom:.3rem}
         .timeline-item .period{font-family:var(--font-mono);font-size:.7rem;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.55rem;display:block}
         .timeline-item p{font-size:.86rem;color:var(--text-secondary);line-height:1.65}
+
+        /* DEPOIMENTOS */
         #depoimentos{padding:120px 6vw;max-width:1300px;margin:0 auto}
         .testimonials-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:4rem}
         .testimonial-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:2rem;position:relative;overflow:hidden;transition:border-color .3s,transform .3s}
         .testimonial-card:hover{border-color:var(--border-accent);transform:translateY(-4px)}
         .testimonial-card::before{content:'"';position:absolute;top:1rem;right:1.5rem;font-family:var(--font-serif);font-size:5rem;line-height:1;color:rgba(139,92,246,.08);font-style:italic}
-        .stars{color:var(--accent);font-size:.85rem;margin-bottom:1rem;letter-spacing:.1em}
         .testimonial-text{font-size:.9rem;color:var(--text-secondary);line-height:1.75;margin-bottom:1.5rem;font-style:italic}
         .testimonial-author{display:flex;align-items:center;gap:.9rem}
         .author-avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#c4b5fd);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;flex-shrink:0}
         .author-name{font-weight:700;font-size:.9rem;display:block}
         .author-role{font-family:var(--font-mono);font-size:.68rem;color:var(--text-secondary);letter-spacing:.06em}
-        #mediakit{padding:100px 6vw;background:#080808}
-        .mk-inner{max-width:1100px;margin:0 auto;background:var(--bg-card);border:1px solid var(--border-accent);border-radius:20px;padding:4rem;display:grid;grid-template-columns:1fr auto;gap:4rem;align-items:center;position:relative;overflow:hidden;box-sizing:border-box;width:100%}
-        .mk-inner::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),#c4b5fd,transparent)}
-        .mk-inner::after{content:'';position:absolute;bottom:-80px;right:-80px;width:300px;height:300px;background:radial-gradient(circle,rgba(139,92,246,.1),transparent 70%);pointer-events:none;overflow:hidden}
-        .mk-label{font-family:var(--font-mono);font-size:.75rem;color:var(--accent);letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.2rem}
-        .mk-title{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-.02em;line-height:1.1;margin-bottom:1.2rem}
-        .mk-title em{font-family:var(--font-serif);font-style:italic;color:var(--accent)}
-        .mk-desc{font-size:.93rem;color:var(--text-secondary);line-height:1.75;max-width:520px}
-        .mk-pills{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.5rem}
-        .mk-pill{font-family:var(--font-mono);font-size:.68rem;color:var(--text-secondary);background:rgba(255,255,255,.04);border:1px solid var(--border);padding:.35rem .8rem;border-radius:20px;letter-spacing:.06em}
-        .mk-cta{display:flex;flex-direction:column;gap:1rem;align-items:center;flex-shrink:0}
-        .mk-price{font-family:var(--font-mono);font-size:.72rem;color:var(--text-secondary);letter-spacing:.08em;text-align:center}
+        .stars{color:var(--accent);font-size:.85rem;margin-bottom:1rem;letter-spacing:.1em}
+
+        /* CONTATO */
         #contato{padding:120px 6vw;text-align:center;position:relative;overflow:hidden;max-width:100%}
         .contact-glow{position:absolute;width:min(800px,100vw);height:min(400px,50vw);background:radial-gradient(ellipse,rgba(139,92,246,.08) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none}
         .contact-heading{font-size:clamp(2.2rem,5.5vw,5rem);font-weight:800;letter-spacing:-.03em;line-height:1.05;margin-bottom:1.5rem}
         .contact-heading em{font-family:var(--font-serif);font-style:italic;color:var(--accent)}
-        .contact-sub{font-size:1rem;color:var(--text-secondary);max-width:460px;margin:0 auto 3rem;line-height:1.7}
+        .contact-sub{font-size:1rem;color:var(--text-secondary);max-width:480px;margin:0 auto 2rem;line-height:1.7}
+        .contact-urgency{font-family:var(--font-mono);font-size:.75rem;color:#22c55e;background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.2);padding:.5rem 1.2rem;border-radius:20px;display:inline-block;margin-bottom:2.5rem;letter-spacing:.08em}
         .contact-links{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
         footer{border-top:1px solid var(--border);padding:2rem 6vw;display:flex;justify-content:space-between;align-items:center}
         .footer-copy{font-family:var(--font-mono);font-size:.7rem;color:var(--text-muted);letter-spacing:.08em}
         .footer-links{display:flex;gap:2rem}
         .footer-links a{font-family:var(--font-mono);font-size:.7rem;color:var(--text-muted);text-decoration:none;letter-spacing:.08em;text-transform:uppercase;transition:color .2s}
         .footer-links a:hover{color:var(--accent)}
+
         @keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
         @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
         .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
         .reveal.visible{opacity:1;transform:translateY(0)}
         .reveal-delay-1{transition-delay:.1s}.reveal-delay-2{transition-delay:.2s}
         .reveal-delay-3{transition-delay:.3s}.reveal-delay-4{transition-delay:.4s}
-        @media(max-width:1100px){.about-grid{grid-template-columns:1fr 360px}.about-photo-wrap{width:360px}.photo-frame{height:460px}}
-        @media(max-width:1024px){.services-grid-cards{grid-template-columns:repeat(2,1fr)}.testimonials-grid{grid-template-columns:1fr 1fr}.dash-kpi-row{grid-template-columns:repeat(2,1fr)}.chart-area{grid-template-columns:1fr}.mk-inner{grid-template-columns:1fr;gap:2.5rem}.mk-cta{flex-direction:row;align-items:center}}
-        @media(max-width:768px){
-            nav{padding:1.1rem 1.25rem}.nav-links{display:none}.hamburger{display:flex}
-            #hero{padding:100px 1.25rem 3rem;min-height:100svh;overflow:hidden}
-            .hero-glow{width:260px;height:260px;top:0;right:-20%;opacity:.4}.hero-bg-grid{background-size:50px 50px}.hero-terminal{display:none}.hero-stats{display:none}
-            .hero-cta{gap:.75rem}.btn-primary,.btn-ghost{padding:.8rem 1.5rem;font-size:.74rem}
-            .marquee-item{font-size:.67rem;padding:0 1.2rem;gap:1.2rem}
-            .metrics-bar{padding:50px 1.25rem}.metrics-inner{grid-template-columns:repeat(2,1fr);gap:.9rem}.metric-num{font-size:2rem}
-            #sobre{padding:80px 1.25rem}.about-grid{grid-template-columns:1fr;gap:3rem}.about-photo-wrap{width:100%;order:-1}
-            .photo-frame{height:0;padding-bottom:100%;position:relative}.photo-frame img{position:absolute;inset:0;width:100%;height:100%}.photo-accent-line{display:none}
-            #servicos{padding:80px 1.25rem}.section-header{flex-direction:column;align-items:flex-start;gap:.5rem;margin-bottom:2.5rem}.section-count{font-size:2.5rem}.services-grid-cards{grid-template-columns:1fr;gap:1rem}
-            #demo{padding:80px 1.25rem}.demo-grid{grid-template-columns:1fr;gap:3rem}
-            #dashboard-section{padding:80px 1.25rem}.dash-kpi-row{grid-template-columns:repeat(2,1fr)}.chart-area{grid-template-columns:1fr}
-            #projetos{padding:80px 1.25rem}.projects-grid{grid-template-columns:1fr;gap:1rem;margin-top:2.5rem}.project-card{padding:1.5rem}
-            #experiencia{padding:80px 1.25rem}.exp-container{grid-template-columns:1fr;gap:3rem}
-            #depoimentos{padding:80px 1.25rem}.testimonials-grid{grid-template-columns:1fr;gap:1rem}
-            #mediakit{padding:80px 1.25rem}.mk-inner{padding:2rem;grid-template-columns:1fr}.mk-cta{flex-direction:column;align-items:stretch}
-            #contato{padding:80px 1.25rem}.contact-heading{font-size:clamp(2rem,7vw,3rem)}.contact-links{flex-direction:column;align-items:center}
-            .contact-links .btn-primary,.contact-links .btn-ghost{width:100%;max-width:300px;text-align:center}
-            footer{flex-direction:column;gap:1rem;padding:1.5rem 1.25rem;text-align:center}.footer-links{gap:1.25rem;justify-content:center}
+
+        /* RESPONSIVE */
+        @media(max-width:1100px){
+            .about-grid{grid-template-columns:1fr 360px}
+            .about-photo-wrap{width:360px}
+            .photo-frame{height:460px}
         }
-        @media(max-width:380px){.hero-title{font-size:2.4rem}.about-heading{font-size:1.7rem}}
+        @media(max-width:1024px){
+            .services-grid-cards{grid-template-columns:repeat(2,1fr)}
+            .testimonials-grid{grid-template-columns:1fr 1fr}
+            .cta-banner{flex-direction:column;text-align:center}
+            .cta-banner-actions{justify-content:center}
+        }
+        @media(max-width:768px){
+            nav{padding:1.1rem 1.25rem}
+            .nav-links{display:none}
+            .hamburger{display:flex}
+            #hero{padding:100px 1.25rem 3rem;min-height:100svh;overflow:hidden}
+            .hero-glow{width:260px;height:260px;top:0;right:-20%;opacity:.4}
+            .hero-bg-grid{background-size:50px 50px}
+            .hero-sub{display:none}
+            .hero-stats{display:none}
+            .hero-cta{gap:.75rem}
+            .btn-primary,.btn-ghost,.btn-wa{padding:.8rem 1.5rem;font-size:.74rem}
+            .marquee-item{font-size:.67rem;padding:0 1.2rem;gap:1.2rem}
+            .metrics-bar{padding:50px 1.25rem}
+            .metrics-inner{grid-template-columns:repeat(2,1fr);gap:.9rem}
+            .metric-num{font-size:2rem}
+            #sobre{padding:80px 1.25rem}
+            .about-grid{grid-template-columns:1fr;gap:3rem}
+            .about-photo-wrap{width:100%;order:-1}
+            .photo-frame{height:0;padding-bottom:100%;position:relative}
+            .photo-frame img{position:absolute;inset:0;width:100%;height:100%}
+            .photo-accent-line{display:none}
+            #servicos{padding:80px 1.25rem}
+            .section-header{flex-direction:column;align-items:flex-start;gap:.5rem;margin-bottom:2.5rem}
+            .section-count{font-size:2.5rem}
+            .services-grid-cards{grid-template-columns:1fr;gap:1rem}
+            #projetos{padding:80px 1.25rem}
+            .projects-grid{grid-template-columns:1fr;gap:1rem;margin-top:2.5rem}
+            .card-thumb{height:140px}
+            .cta-banner{padding:1.5rem}
+            #experiencia{padding:80px 1.25rem}
+            .exp-container{grid-template-columns:1fr;gap:3rem}
+            #depoimentos{padding:80px 1.25rem}
+            .testimonials-grid{grid-template-columns:1fr;gap:1rem}
+            #contato{padding:80px 1.25rem}
+            .contact-heading{font-size:clamp(2rem,7vw,3rem)}
+            .contact-links{flex-direction:column;align-items:center}
+            .contact-links .btn-primary,.contact-links .btn-ghost,.contact-links .btn-wa{width:100%;max-width:300px;text-align:center;justify-content:center}
+            footer{flex-direction:column;gap:1rem;padding:1.5rem 1.25rem;text-align:center}
+            .footer-links{gap:1.25rem;justify-content:center}
+            .float-wa{bottom:1.5rem;right:1.5rem;width:50px;height:50px;font-size:1.3rem}
+        }
+        @media(max-width:380px){
+            .hero-title{font-size:2.4rem}
+            .about-heading{font-size:1.7rem}
+        }
     </style>
 </head>
 <body>
+
+<!-- FLOAT WA -->
+<a href="https://wa.me/5531984783473?text=Oi%20Gustavo!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" class="float-wa" title="Chamar no WhatsApp">💬</a>
+
+<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
     <a href="#sobre">Sobre</a>
-    <a href="#servicos">Servicos</a>
-    <a href="#demo">Como funciona</a>
+    <a href="#servicos">Serviços</a>
     <a href="#projetos">Portfolio</a>
-    <a href="#depoimentos">Depoimentos</a>
+    <a href="#depoimentos">Clientes</a>
     <a href="#contato">Contato</a>
     <div class="mm-footer">
         <a href="https://github.com/guhspm" target="_blank">GitHub</a>
         <a href="https://www.linkedin.com/in/gustavo-henriquesp/" target="_blank">LinkedIn</a>
     </div>
 </div>
+
 <nav id="navbar">
     <a href="#hero" class="nav-logo">Gustavo.dev</a>
     <ul class="nav-links">
         <li><a href="#sobre">sobre</a></li>
-        <li><a href="#servicos">servicos</a></li>
-        <li><a href="#demo">como funciona</a></li>
+        <li><a href="#servicos">serviços</a></li>
         <li><a href="#projetos">portfolio</a></li>
-        <li><a href="#depoimentos">depoimentos</a></li>
+        <li><a href="#depoimentos">clientes</a></li>
         <li><a href="#contato">contato</a></li>
     </ul>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-        <span></span><span></span><span></span>
-    </button>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
+
+<!-- HERO -->
 <section id="hero">
     <div class="hero-bg-grid"></div>
     <div class="hero-glow"></div>
     <div class="hero-content">
-        <div class="hero-eyebrow">Desenvolvimento &amp; Automacao · Inside.co</div>
+        <div class="hero-eyebrow">Sites · E-commerce · Automação · Inside.co</div>
         <h1 class="hero-title">
-            Codigo que<br>
-            <span class="line-accent"><span>resolve</span> de</span><br>
+            Código que<br>
+            <span class="line-accent"><span>converte</span> de</span><br>
             verdade.
         </h1>
-        <div class="hero-terminal">
-            <div class="term-bar">
-                <span class="term-dot" style="background:#ff5f57"></span>
-                <span class="term-dot" style="background:#febc2e"></span>
-                <span class="term-dot" style="background:#28c840"></span>
-            </div>
-            <div class="term-body">
-                <span><span class="term-prompt">&#10095; </span><span id="termTyped"></span><span class="term-cursor"></span></span>
-            </div>
-        </div>
+        <p class="hero-sub">Sites profissionais, lojas virtuais e automações que funcionam em produção — não só em apresentação. Projetos entregues para marcas reais em todo o Brasil.</p>
         <div class="hero-cta">
-            <a href="#projetos" class="btn-primary">Ver Portfolio</a>
-            <a href="https://www.linkedin.com/in/gustavo-henriquesp/" target="_blank" class="btn-ghost">LinkedIn</a>
+            <a href="https://wa.me/5531984783473?text=Oi%20Gustavo!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" class="btn-wa">💬 Falar no WhatsApp</a>
+            <a href="#projetos" class="btn-ghost">Ver Portfolio</a>
         </div>
     </div>
     <div class="hero-stats">
-        <div class="stat"><span class="stat-num" data-target="10">0</span><span class="stat-label">Projetos entregues</span></div>
-        <div class="stat"><span class="stat-num" data-target="100">0</span><span class="stat-label">% erros eliminados</span></div>
-        <div class="stat"><span class="stat-num">inf</span><span class="stat-label">Linhas de codigo</span></div>
+        <div class="stat"><span class="stat-num" data-target="12">0</span><span class="stat-label">Projetos entregues</span></div>
+        <div class="stat"><span class="stat-num" data-target="100">0</span><span class="stat-label">% em produção</span></div>
+        <div class="stat"><span class="stat-num">BH</span><span class="stat-label">+ todo o Brasil</span></div>
     </div>
 </section>
+
+<!-- MARQUEE -->
 <div class="marquee-wrap">
     <div class="marquee-track">
-        <div class="marquee-item">Python</div><div class="marquee-item">SQL</div>
-        <div class="marquee-item">ETL Pipelines</div><div class="marquee-item">RPA Automation</div>
-        <div class="marquee-item">Sites Landing Pages</div><div class="marquee-item">E-commerce</div>
-        <div class="marquee-item">APIs REST</div><div class="marquee-item">Chatbots</div>
-        <div class="marquee-item">VBA Excel</div><div class="marquee-item">Inside.co</div>
-        <div class="marquee-item">Python</div><div class="marquee-item">SQL</div>
-        <div class="marquee-item">ETL Pipelines</div><div class="marquee-item">RPA Automation</div>
-        <div class="marquee-item">Sites Landing Pages</div><div class="marquee-item">E-commerce</div>
-        <div class="marquee-item">APIs REST</div><div class="marquee-item">Chatbots</div>
-        <div class="marquee-item">VBA Excel</div><div class="marquee-item">Inside.co</div>
+        <div class="marquee-item">Sites</div><div class="marquee-item">E-commerce</div>
+        <div class="marquee-item">WordPress</div><div class="marquee-item">Shopify</div>
+        <div class="marquee-item">Landing Pages</div><div class="marquee-item">Automação RPA</div>
+        <div class="marquee-item">Python</div><div class="marquee-item">Identidade Visual</div>
+        <div class="marquee-item">Inside.co</div><div class="marquee-item">BH · MG</div>
+        <div class="marquee-item">Sites</div><div class="marquee-item">E-commerce</div>
+        <div class="marquee-item">WordPress</div><div class="marquee-item">Shopify</div>
+        <div class="marquee-item">Landing Pages</div><div class="marquee-item">Automação RPA</div>
+        <div class="marquee-item">Python</div><div class="marquee-item">Identidade Visual</div>
+        <div class="marquee-item">Inside.co</div><div class="marquee-item">BH · MG</div>
     </div>
 </div>
+
+<!-- METRICS -->
 <div class="metrics-bar">
     <div class="metrics-inner">
-        <div class="metric-item reveal"><span class="metric-num"><span class="count-up" data-target="12847">0</span></span><span class="metric-label">Registros processados / dia</span></div>
-        <div class="metric-item reveal reveal-delay-1"><span class="metric-num"><span class="count-up" data-target="100">0</span><span class="metric-suffix">%</span></span><span class="metric-label">Precisao na auditoria</span></div>
-        <div class="metric-item reveal reveal-delay-2"><span class="metric-num"><span class="count-up" data-target="10">0</span><span class="metric-suffix">+</span></span><span class="metric-label">Projetos em producao</span></div>
-        <div class="metric-item reveal reveal-delay-3"><span class="metric-num">4h<span class="metric-suffix" style="font-size:1.2rem">-5min</span></span><span class="metric-label">Reducao no tempo de auditoria</span></div>
+        <div class="metric-item reveal">
+            <span class="metric-num"><span class="count-up" data-target="12">0</span><span class="metric-suffix">+</span></span>
+            <span class="metric-label">Projetos entregues</span>
+        </div>
+        <div class="metric-item reveal reveal-delay-1">
+            <span class="metric-num"><span class="count-up" data-target="100">0</span><span class="metric-suffix">%</span></span>
+            <span class="metric-label">Em produção real</span>
+        </div>
+        <div class="metric-item reveal reveal-delay-2">
+            <span class="metric-num">24h<span class="metric-suffix" style="font-size:1.2rem"></span></span>
+            <span class="metric-label">Resposta garantida</span>
+        </div>
+        <div class="metric-item reveal reveal-delay-3">
+            <span class="metric-num">4h<span class="metric-suffix" style="font-size:1.2rem">→5min</span></span>
+            <span class="metric-label">Ganho em automação</span>
+        </div>
     </div>
 </div>
+
+<!-- SOBRE -->
 <section id="sobre">
     <div class="about-grid">
         <div class="reveal">
             <div class="about-label">// Quem sou</div>
-            <h2 class="about-heading">Dev que entende<br>o <em>negocio</em>.</h2>
-            <p class="about-text">Estudante de Ciencia da Computacao especializado em desenvolvimento de software e automacao de processos — construo ferramentas que realmente resolvem problemas reais.</p>
-            <p class="about-text">Da landing page ao robo que processa 12 mil registros por hora: entrego solucoes completas que outros so prometem em apresentacao de PowerPoint.</p>
-            <p class="about-text">Tambem atuo na <strong style="color:var(--text)">Inside.co</strong>, agregando visao estrategica de negocios digital ao lado tecnico.</p>
+            <h2 class="about-heading">Dev que entende<br>o <em>negócio</em>.</h2>
+            <p class="about-text">Desenvolvedor especializado em sites de alto impacto, e-commerce e automação de processos — construo soluções que realmente funcionam em produção.</p>
+            <p class="about-text">Da landing page que vende ao robô que processa 12 mil registros por hora: entrego projetos completos para marcas reais em todo o Brasil.</p>
+            <p class="about-text">Fundador da <strong style="color:var(--text)">Inside.co</strong> — agência de soluções digitais com foco em resultado.</p>
             <div class="about-skills">
-                <span class="skill-tag">Python</span><span class="skill-tag">SQL</span><span class="skill-tag">Pandas</span><span class="skill-tag">Regex</span>
-                <span class="skill-tag">ETL</span><span class="skill-tag">VBA</span><span class="skill-tag">RPA</span><span class="skill-tag">HTML/CSS/JS</span>
-                <span class="skill-tag">Git</span><span class="skill-tag">APIs REST</span><span class="skill-tag">Shopify</span><span class="skill-tag">Algoritmos</span>
+                <span class="skill-tag">WordPress</span><span class="skill-tag">Elementor</span>
+                <span class="skill-tag">Shopify</span><span class="skill-tag">WooCommerce</span>
+                <span class="skill-tag">Python</span><span class="skill-tag">Automação</span>
+                <span class="skill-tag">HTML/CSS/JS</span><span class="skill-tag">APIs REST</span>
+                <span class="skill-tag">SEO Técnico</span><span class="skill-tag">GTM</span>
+                <span class="skill-tag">Design</span><span class="skill-tag">Identidade Visual</span>
             </div>
         </div>
         <div class="about-photo-wrap reveal reveal-delay-2">
@@ -347,198 +389,473 @@
         </div>
     </div>
 </section>
+
+<!-- SERVIÇOS -->
 <section id="servicos">
-    <div class="section-header reveal"><div><div class="section-label">// O que entrego</div><h2 class="section-heading">Solucoes<br>Tecnologicas</h2></div><div class="section-count">06</div></div>
+    <div class="section-header reveal">
+        <div>
+            <div class="section-label">// O que entrego</div>
+            <h2 class="section-heading">Soluções<br>Digitais</h2>
+        </div>
+        <div class="section-count">06</div>
+    </div>
     <div class="services-grid-cards">
-        <div class="svc-card reveal"><span class="svc-icon">&#9889;</span><h3>Automacao RPA</h3><p>Robos em Python que eliminam processos manuais — faturamento, auditoria, extracao de PDF e geracao de relatorios.</p><div class="svc-steps"><div class="svc-step"><div class="svc-step-n">1</div><span>Mapeamento do processo manual</span></div><div class="svc-step"><div class="svc-step-n">2</div><span>Desenvolvimento do robo com logs</span></div><div class="svc-step"><div class="svc-step-n">3</div><span>Entrega testada em producao</span></div></div></div>
-        <div class="svc-card reveal reveal-delay-1"><span class="svc-icon">&#127760;</span><h3>Sites Landing Pages</h3><p>Sites rapidos, responsivos e focados em conversao — do portfolio pessoal ao site institucional de alto impacto.</p><div class="svc-steps"><div class="svc-step"><div class="svc-step-n">1</div><span>Briefing de identidade e objetivo</span></div><div class="svc-step"><div class="svc-step-n">2</div><span>Desenvolvimento responsivo</span></div><div class="svc-step"><div class="svc-step-n">3</div><span>Deploy + dominio configurado</span></div></div></div>
-        <div class="svc-card reveal reveal-delay-2"><span class="svc-icon">&#128722;</span><h3>E-commerce</h3><p>Lojas virtuais completas com integracao de pagamentos, automacao de pedidos e experiencia de compra otimizada.</p><div class="svc-steps"><div class="svc-step"><div class="svc-step-n">1</div><span>Setup da loja e catalogo</span></div><div class="svc-step"><div class="svc-step-n">2</div><span>Integracoes de pagamento e frete</span></div><div class="svc-step"><div class="svc-step-n">3</div><span>Automacao de pedidos e alertas</span></div></div></div>
-        <div class="svc-card reveal reveal-delay-3"><span class="svc-icon">&#128268;</span><h3>Integracao de APIs</h3><p>Conexao entre sistemas, webhooks e pipelines que fazem suas ferramentas conversarem entre si automaticamente.</p><div class="svc-steps"><div class="svc-step"><div class="svc-step-n">1</div><span>Mapeamento dos sistemas</span></div><div class="svc-step"><div class="svc-step-n">2</div><span>Desenvolvimento da integracao</span></div><div class="svc-step"><div class="svc-step-n">3</div><span>Monitoramento e manutencao</span></div></div></div>
-        <div class="svc-card reveal"><span class="svc-icon">&#129302;</span><h3>Chatbots Atendimento</h3><p>Bots inteligentes para WhatsApp, Telegram e web — qualificacao de leads e suporte automatizado 24/7.</p><div class="svc-steps"><div class="svc-step"><div class="svc-step-n">1</div><span>Definicao do fluxo de conversa</span></div><div class="svc-step"><div class="svc-step-n">2</div><span>Desenvolvimento e integracao</span></div><div class="svc-step"><div class="svc-step-n">3</div><span>Testes e ajustes finos</span></div></div></div>
-        <div class="svc-card reveal reveal-delay-1"><span class="svc-icon">&#128202;</span><h3>Business Intelligence</h3><p>Dashboards, pipelines ETL e reconciliacao financeira que transformam dados brutos em decisoes estrategicas.</p><div class="svc-steps"><div class="svc-step"><div class="svc-step-n">1</div><span>Levantamento das fontes de dados</span></div><div class="svc-step"><div class="svc-step-n">2</div><span>Construcao do pipeline ETL</span></div><div class="svc-step"><div class="svc-step-n">3</div><span>Dashboard e relatorios automaticos</span></div></div></div>
-    </div>
-</section>
-<section id="demo">
-    <div class="demo-grid">
-        <div class="demo-text reveal">
-            <div class="section-label">// Automacao ao vivo</div>
-            <h2>Robo processando<br><em>em tempo real</em>.</h2>
-            <p>Cada automacao entregue e um sistema completo com logs detalhados, tratamento de erros e relatorio final gerado automaticamente.</p>
-            <p>Codigo limpo, documentado e pronto para producao.</p>
-            <div class="demo-steps">
-                <div class="demo-step"><div class="step-num">01</div><div class="step-text"><strong>Leitura e validacao</strong> dos dados — arquivos, PDFs, APIs ou planilhas.</div></div>
-                <div class="demo-step"><div class="step-num">02</div><div class="step-text"><strong>Processamento inteligente</strong> com tratamento de excecoes e deteccao de anomalias.</div></div>
-                <div class="demo-step"><div class="step-num">03</div><div class="step-text"><strong>Output estruturado</strong> — Excel, JSON, banco de dados ou alerta automatico.</div></div>
+        <div class="svc-card reveal">
+            <span class="svc-icon">🌐</span>
+            <h3>Sites &amp; Landing Pages</h3>
+            <p>Sites rápidos, responsivos e focados em conversão — do portfólio pessoal ao institucional de alto impacto.</p>
+            <div class="svc-steps">
+                <div class="svc-step"><div class="svc-step-n">1</div><span>Briefing de identidade e objetivo</span></div>
+                <div class="svc-step"><div class="svc-step-n">2</div><span>Desenvolvimento responsivo</span></div>
+                <div class="svc-step"><div class="svc-step-n">3</div><span>Deploy + domínio configurado</span></div>
             </div>
         </div>
-        <div class="reveal reveal-delay-2">
-            <div class="log-window">
-                <div class="log-header">
-                    <div class="log-dots"><div class="log-dot" style="background:#ff5f57"></div><div class="log-dot" style="background:#febc2e"></div><div class="log-dot" style="background:#28c840"></div></div>
-                    <div class="log-title">rpa_faturamento.py — running</div>
-                </div>
-                <div class="log-body" id="logBody"></div>
+        <div class="svc-card reveal reveal-delay-1">
+            <span class="svc-icon">🛒</span>
+            <h3>E-commerce</h3>
+            <p>Lojas completas no Shopify, WooCommerce ou Shopee com integração de pagamentos e automação de pedidos.</p>
+            <div class="svc-steps">
+                <div class="svc-step"><div class="svc-step-n">1</div><span>Setup da loja e catálogo</span></div>
+                <div class="svc-step"><div class="svc-step-n">2</div><span>Integrações de pagamento e frete</span></div>
+                <div class="svc-step"><div class="svc-step-n">3</div><span>Automação de pedidos e alertas</span></div>
+            </div>
+        </div>
+        <div class="svc-card reveal reveal-delay-2">
+            <span class="svc-icon">⚡</span>
+            <h3>Automação RPA</h3>
+            <p>Robôs em Python que eliminam processos manuais — faturamento, auditoria, extração de PDF e relatórios.</p>
+            <div class="svc-steps">
+                <div class="svc-step"><div class="svc-step-n">1</div><span>Mapeamento do processo manual</span></div>
+                <div class="svc-step"><div class="svc-step-n">2</div><span>Desenvolvimento do robô com logs</span></div>
+                <div class="svc-step"><div class="svc-step-n">3</div><span>Entrega testada em produção</span></div>
+            </div>
+        </div>
+        <div class="svc-card reveal reveal-delay-3">
+            <span class="svc-icon">🎨</span>
+            <h3>Identidade Visual &amp; Design</h3>
+            <p>Logo, paleta, tipografia e materiais comerciais — marca consistente que transmite profissionalismo.</p>
+            <div class="svc-steps">
+                <div class="svc-step"><div class="svc-step-n">1</div><span>Briefing de posicionamento</span></div>
+                <div class="svc-step"><div class="svc-step-n">2</div><span>Criação de identidade visual</span></div>
+                <div class="svc-step"><div class="svc-step-n">3</div><span>Entrega de materiais prontos</span></div>
+            </div>
+        </div>
+        <div class="svc-card reveal">
+            <span class="svc-icon">🔌</span>
+            <h3>Integração de APIs</h3>
+            <p>Conexão entre sistemas, webhooks e pipelines que fazem suas ferramentas conversarem automaticamente.</p>
+            <div class="svc-steps">
+                <div class="svc-step"><div class="svc-step-n">1</div><span>Mapeamento dos sistemas</span></div>
+                <div class="svc-step"><div class="svc-step-n">2</div><span>Desenvolvimento da integração</span></div>
+                <div class="svc-step"><div class="svc-step-n">3</div><span>Monitoramento e manutenção</span></div>
+            </div>
+        </div>
+        <div class="svc-card reveal reveal-delay-1">
+            <span class="svc-icon">📊</span>
+            <h3>Business Intelligence</h3>
+            <p>Dashboards e pipelines ETL que transformam dados brutos em decisões estratégicas em tempo real.</p>
+            <div class="svc-steps">
+                <div class="svc-step"><div class="svc-step-n">1</div><span>Levantamento das fontes de dados</span></div>
+                <div class="svc-step"><div class="svc-step-n">2</div><span>Construção do pipeline ETL</span></div>
+                <div class="svc-step"><div class="svc-step-n">3</div><span>Dashboard e relatórios automáticos</span></div>
             </div>
         </div>
     </div>
 </section>
-<section id="dashboard-section">
-    <div class="dash-inner">
-        <div class="section-header reveal"><div><div class="section-label">// Business Intelligence</div><h2 class="section-heading">Dados que<br>viram decisao.</h2></div><div class="section-count">BI</div></div>
-        <div class="dash-mockup reveal">
-            <div class="dash-top"><div class="dash-top-dot"></div><span class="dash-top-title">dashboard_operacional — atualizado ha 2min</span><span class="dash-top-badge">&#9679; LIVE</span></div>
-            <div class="dash-kpi-row">
-                <div class="kpi-box"><div class="kpi-label">Faturamento / Mes</div><span class="kpi-val" style="background:linear-gradient(135deg,#fff,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">R$ 284k</span><div class="kpi-delta">12.4% vs mes anterior</div></div>
-                <div class="kpi-box"><div class="kpi-label">Registros Processados</div><span class="kpi-val" style="background:linear-gradient(135deg,#fff,#93c5fd);-webkit-background-clip:text;-webkit-text-fill-color:transparent">12.847</span><div class="kpi-delta">98.6% precisao</div></div>
-                <div class="kpi-box"><div class="kpi-label">Tempo de Auditoria</div><span class="kpi-val" style="background:linear-gradient(135deg,#fff,#22c55e);-webkit-background-clip:text;-webkit-text-fill-color:transparent">4 min</span><div class="kpi-delta">antes: 4 horas</div></div>
-                <div class="kpi-box"><div class="kpi-label">Divergencias Detectadas</div><span class="kpi-val" style="background:linear-gradient(135deg,#fff,#fbbf24);-webkit-background-clip:text;-webkit-text-fill-color:transparent">456</span><div class="kpi-delta">3.6% dos registros</div></div>
-            </div>
-            <div class="chart-area">
-                <div class="chart-box"><div class="chart-title">Registros processados por semana</div><div class="bar-chart" id="barChart"><div class="bar" style="height:30%" data-h="65%"></div><div class="bar" style="height:30%" data-h="45%"></div><div class="bar" style="height:30%" data-h="80%"></div><div class="bar" style="height:30%" data-h="60%"></div><div class="bar" style="height:30%" data-h="95%"></div><div class="bar" style="height:30%" data-h="75%"></div><div class="bar" style="height:30%" data-h="100%"></div></div></div>
-                <div class="chart-box"><div class="chart-title">Status dos registros</div><div class="donut-wrap"><svg width="80" height="80" viewBox="0 0 80 80"><circle cx="40" cy="40" r="30" fill="none" stroke="rgba(139,92,246,.15)" stroke-width="8"/><circle cx="40" cy="40" r="30" fill="none" stroke="#8b5cf6" stroke-width="8" stroke-dasharray="188.5" stroke-dashoffset="188.5" id="donutCircle" style="transform:rotate(-90deg);transform-origin:center;transition:stroke-dashoffset 1.5s ease"/></svg><div style="margin-left:1rem;display:flex;flex-direction:column;gap:.5rem"><div style="display:flex;align-items:center;gap:.5rem"><span style="width:10px;height:10px;border-radius:50%;background:#8b5cf6;flex-shrink:0"></span><span style="font-family:var(--font-mono);font-size:.67rem;color:var(--text-secondary)">Conciliados 96.4%</span></div><div style="display:flex;align-items:center;gap:.5rem"><span style="width:10px;height:10px;border-radius:50%;background:#22c55e;flex-shrink:0"></span><span style="font-family:var(--font-mono);font-size:.67rem;color:var(--text-secondary)">Divergentes 3.6%</span></div></div></div></div>
-            </div>
-        </div>
-    </div>
-</section>
+
+<!-- PORTFOLIO -->
 <section id="projetos">
-    <div class="section-header reveal"><div><div class="section-label">// Portfolio</div><h2 class="section-heading">Projetos<br>entregues.</h2></div><div class="section-count">10</div></div>
+    <div class="section-header reveal">
+        <div>
+            <div class="section-label">// Portfolio</div>
+            <h2 class="section-heading">Projetos<br>entregues.</h2>
+        </div>
+        <div class="section-count">12</div>
+    </div>
     <div class="projects-grid">
-        <div class="project-card reveal"><div class="project-tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Finance</span></div><span class="project-status">&#9679; Concluido</span><h3>Motor de Auditoria Financeira</h3><p>Conciliacao de faturamentos e deteccao de Deltas em arquivos posicionais. Processa 12.847 registros em 4 minutos — antes levava 4 horas de revisao manual.</p><a href="https://github.com/guhspm" target="_blank" class="project-link">Ver no GitHub</a></div>
-        <div class="project-card reveal reveal-delay-1"><div class="project-tags"><span class="tag">Python</span><span class="tag">Regex</span><span class="tag">PDF</span></div><span class="project-status">&#9679; Concluido</span><h3>RPA de Faturamento — Planos de Saude</h3><p>Extracao automatica de ISS, IRRF e valores brutos de PDFs nao estruturados. Centenas de notas por hora com 100% de rastreabilidade.</p><a href="https://github.com/guhspm" target="_blank" class="project-link">Ver no GitHub</a></div>
-        <div class="project-card reveal reveal-delay-2"><div class="project-tags"><span class="tag">Python</span><span class="tag">ETL</span><span class="tag">FIFO</span></div><span class="project-status">&#9679; Concluido</span><h3>Pipeline ETL FIFO — Passivos Financeiros</h3><p>Abatimento progressivo FIFO de passivos com integridade total. Do dado bruto ao relatorio auditavel em producao.</p><a href="https://github.com/guhspm" target="_blank" class="project-link">Ver no GitHub</a></div>
-        <div class="project-card reveal reveal-delay-3"><div class="project-tags"><span class="tag">Python</span><span class="tag">OpenPyXL</span><span class="tag">VBA</span></div><span class="project-status">&#9679; Concluido</span><h3>Automacao de Relatorios Corporativos</h3><p>Processa dados de inadimplencia e pagamentos, cruza com relatorios externos e gera 3 tipos de relatorios gerenciais com estilizacao executiva automatica.</p><a href="https://github.com/guhspm" target="_blank" class="project-link">Ver no GitHub</a></div>
-        <div class="project-card reveal"><div class="project-tags"><span class="tag">WordPress</span><span class="tag">Elementor</span><span class="tag">HTML/CSS/JS</span></div><span class="project-status">&#9679; Concluido</span><h3>Site de Afiliados Fitness — Exercite-se em Casa</h3><p>Vitrine de afiliados com 51 produtos do Mercado Livre, carrossel animado, filtro por categoria, ticker, hero responsivo e rodape completo. Desenvolvido em HTML/CSS/JS puro e integrado ao WordPress via Elementor com zero dependencias externas.</p><a href="https://exerciteseemcasa2026.com" target="_blank" class="project-link">Ver site ao vivo →</a></div>
-        <div class="project-card reveal reveal-delay-1"><div class="project-tags"><span class="tag">HTML/CSS/JS</span><span class="tag">Landing Page</span><span class="tag">Hotmart</span></div><span class="project-status">&#9679; Concluido</span><h3>Landing Page — Algoritmo da Personalidade</h3><p>Landing page de alta conversao para o infoproduto do Psicologo Ruan Indrigo. Dark mode com acento dourado, animacoes de scroll, depoimentos em video, carrossel de avaliacoes, tabela de preco ancorada e Google Tag Manager para rastreamento de trafego pago.</p><a href="https://algoritmodapersonalidade.com.br" target="_blank" class="project-link">Ver site ao vivo →</a></div>
-        <div class="project-card reveal reveal-delay-2"><div class="project-tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">OFX</span></div><span class="project-status status-dev">Em desenvolvimento</span><h3>Robo de Conciliacao Bancaria</h3><p>Reconciliacao automatica entre extratos OFX e registros internos em SQL. Detecta duplicatas, divergencias e transacoes nao conciliadas com relatorio PDF ao final de cada ciclo.</p><a href="https://github.com/guhspm" target="_blank" class="project-link">Ver no GitHub</a></div>
-        <div class="project-card reveal reveal-delay-3"><div class="project-tags"><span class="tag">Python</span><span class="tag">API</span><span class="tag">Dashboard</span></div><span class="project-status status-dev">Em desenvolvimento</span><h3>Dashboard de KPIs — Inside.co</h3><p>Metricas consolidadas de multiplas plataformas: alcance, engajamento e ROI. Atualizado automaticamente via APIs, zero intervencao manual.</p><a href="https://github.com/guhspm" target="_blank" class="project-link">Ver no GitHub</a></div>
-        <div class="project-card reveal"><div class="project-tags"><span class="tag">Python</span><span class="tag">Regex</span><span class="tag">NLP</span></div><span class="project-status status-dev">Em desenvolvimento</span><h3>Parser de Contratos — Extracao NLP</h3><p>Extrai clausulas, prazos e valores de contratos PDF em menos de 30 segundos. Output em JSON, reduzindo analise de 2h para segundos.</p><a href="https://github.com/guhspm" target="_blank" class="project-link">Ver no GitHub</a></div>
-        <div class="project-card reveal reveal-delay-1"><div class="project-tags"><span class="tag">Python</span><span class="tag">Telegram</span><span class="tag">Scheduler</span></div><span class="project-status status-dev">Em desenvolvimento</span><h3>Sistema de Alertas Financeiros</h3><p>Monitoramento de indicadores com disparo de alertas via Telegram quando metricas saem da faixa segura. Schedule diario, zero intervencao manual.</p><a href="https://github.com/guhspm" target="_blank" class="project-link">Ver no GitHub</a></div>
+
+        <!-- SITES PRIMEIRO -->
+        <div class="project-card reveal">
+            <div class="card-thumb">
+                <img class="card-thumb-img" src="https://kendak.com.br/wp-content/uploads/2026/08/kdk-icon-navbar-v3.png" alt="Kendak" style="object-fit:contain;background:#0a0a0a;padding:3rem">
+                <div class="card-thumb-overlay"></div>
+                <span class="card-live-badge">● Ao vivo</span>
+            </div>
+            <div class="card-body">
+                <div class="project-tags"><span class="tag">WordPress</span><span class="tag">WooCommerce</span><span class="tag">E-commerce</span></div>
+                <span class="project-status">● Concluído</span>
+                <h3>Kendak — E-commerce de Moda Lifestyle</h3>
+                <p>Loja completa para marca de roupas e acessórios com identidade voltada para o universo do surf, skate e rua. WordPress + WooCommerce com vitrine de coleções, vídeos em destaque e integração com Mercado Pago.</p>
+                <div class="card-actions">
+                    <a href="https://kendak.com.br" target="_blank" class="project-link">Ver site ↗</a>
+                    <a href="https://wa.me/5531984783473?text=Quero%20um%20projeto%20como%20a%20Kendak" target="_blank" class="project-link-wa">Quero igual 💬</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-1">
+            <div class="card-thumb" style="background:#f0f4ff;display:flex;align-items:center;justify-content:center">
+                <img class="card-thumb-img" src="https://webeseg.com.br/favicon.ico" alt="WEB & SEG" style="object-fit:contain;padding:3rem;background:#eef2ff">
+                <div class="card-thumb-overlay"></div>
+                <span class="card-live-badge">● Ao vivo</span>
+            </div>
+            <div class="card-body">
+                <div class="project-tags"><span class="tag">HTML/CSS/JS</span><span class="tag">Landing Page</span><span class="tag">Conversão</span></div>
+                <span class="project-status">● Concluído</span>
+                <h3>WEB &amp; SEG — Saúde e Segurança do Trabalho</h3>
+                <p>Site institucional focado em conversão para consultoria de SST em Salvador/BA. Countdown de oferta, formulário integrado com WhatsApp, seção de serviços com accordion e identidade visual profissional.</p>
+                <div class="card-actions">
+                    <a href="https://webeseg.com.br" target="_blank" class="project-link">Ver site ↗</a>
+                    <a href="https://wa.me/5531984783473?text=Quero%20um%20site%20como%20a%20WEB%20%26%20SEG" target="_blank" class="project-link-wa">Quero igual 💬</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card reveal">
+            <div class="card-thumb" style="background:#0d0d0d;display:flex;align-items:center;justify-content:center">
+                <img class="card-thumb-img" src="https://www.facilitaenergia.com.br/assets/logo-facilita-energia.png?v=4" alt="Facilita Energia" style="object-fit:contain;padding:2.5rem">
+                <div class="card-thumb-overlay"></div>
+                <span class="card-live-badge">● Ao vivo</span>
+            </div>
+            <div class="card-body">
+                <div class="project-tags"><span class="tag">HTML/CSS/JS</span><span class="tag">Identidade Visual</span><span class="tag">Landing Page</span></div>
+                <span class="project-status">● Concluído</span>
+                <h3>Facilita Energia — Consultoria em Distribuidoras</h3>
+                <p>Identidade visual e site one-page para startup de assessoria elétrica. Mascote personalizado, paleta verde/escuro, CTA por WhatsApp em cada seção e fluxo claro de jornada do cliente.</p>
+                <div class="card-actions">
+                    <a href="https://www.facilitaenergia.com.br" target="_blank" class="project-link">Ver site ↗</a>
+                    <a href="https://wa.me/5531984783473?text=Quero%20um%20projeto%20de%20identidade%20visual" target="_blank" class="project-link-wa">Quero igual 💬</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-1">
+            <div class="card-thumb">
+                <img class="card-thumb-img" src="https://algoritmodapersonalidade.com.br/wp-content/uploads/2024/09/algoritmo-og.jpg" alt="Algoritmo da Personalidade" style="object-fit:cover">
+                <div class="card-thumb-overlay"></div>
+                <span class="card-live-badge">● Ao vivo</span>
+            </div>
+            <div class="card-body">
+                <div class="project-tags"><span class="tag">HTML/CSS/JS</span><span class="tag">Landing Page</span><span class="tag">GTM</span></div>
+                <span class="project-status">● Concluído</span>
+                <h3>Landing Page — Algoritmo da Personalidade</h3>
+                <p>Landing page de alta conversão para infoproduto de psicologia. Dark mode com acento dourado, animações de scroll, carrossel de avaliações, tabela de preços ancorada e Google Tag Manager para rastreamento de tráfego pago.</p>
+                <div class="card-actions">
+                    <a href="https://algoritmodapersonalidade.com.br" target="_blank" class="project-link">Ver site ↗</a>
+                    <a href="https://wa.me/5531984783473?text=Quero%20uma%20landing%20page" target="_blank" class="project-link-wa">Quero igual 💬</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card reveal">
+            <div class="card-thumb">
+                <img class="card-thumb-img" src="https://exerciteseemcasa2026.com/wp-content/uploads/2024/08/og-exercite.jpg" alt="Exercite-se em Casa" style="object-fit:cover" onerror="this.style.background='#111';this.style.display='flex'">
+                <div class="card-thumb-overlay"></div>
+                <span class="card-live-badge">● Ao vivo</span>
+            </div>
+            <div class="card-body">
+                <div class="project-tags"><span class="tag">WordPress</span><span class="tag">Elementor</span><span class="tag">Afiliados</span></div>
+                <span class="project-status">● Concluído</span>
+                <h3>Site de Afiliados Fitness — Exercite-se em Casa</h3>
+                <p>Vitrine de afiliados com 51 produtos do Mercado Livre, carrossel animado, filtro por categoria e ticker de ofertas. HTML/CSS/JS puro integrado ao WordPress via Elementor — zero dependências externas.</p>
+                <div class="card-actions">
+                    <a href="https://exerciteseemcasa2026.com" target="_blank" class="project-link">Ver site ↗</a>
+                    <a href="https://wa.me/5531984783473?text=Quero%20um%20site%20de%20afiliados" target="_blank" class="project-link-wa">Quero igual 💬</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-1">
+            <div class="card-thumb" style="background:#030b1a;display:flex;align-items:center;justify-content:center">
+                <img class="card-thumb-img" src="https://agenciaparalelo.netlify.app/og.jpg" alt="Paralelo Agência" style="object-fit:cover" onerror="this.style.opacity='0'">
+                <div class="card-thumb-overlay"></div>
+                <span class="card-live-badge">● Ao vivo</span>
+            </div>
+            <div class="card-body">
+                <div class="project-tags"><span class="tag">HTML/CSS/JS</span><span class="tag">Design</span><span class="tag">Branding</span></div>
+                <span class="project-status">● Concluído</span>
+                <h3>Site Institucional — Paralelo Agência</h3>
+                <p>Site dark premium para agência criativa de creators. Toggle "Sou Creator / Sou Marca" com conteúdo dinâmico por audiência, animações de scroll e formulário de parcerias integrado.</p>
+                <div class="card-actions">
+                    <a href="https://agenciaparalelo.netlify.app" target="_blank" class="project-link">Ver site ↗</a>
+                    <a href="https://wa.me/5531984783473?text=Quero%20um%20site%20institucional" target="_blank" class="project-link-wa">Quero igual 💬</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA BANNER -->
+        <div class="cta-banner reveal">
+            <div>
+                <h3>Precisa de um site ou loja virtual?</h3>
+                <p>Entrego em prazo, com código limpo e resultado real. Respondo em até 24h.</p>
+            </div>
+            <div class="cta-banner-actions">
+                <a href="https://wa.me/5531984783473?text=Oi!%20Quero%20um%20site" target="_blank" class="btn-wa">💬 Chamar agora</a>
+            </div>
+        </div>
+
+        <!-- DESIGN / IDENTIDADE -->
+        <div class="project-card reveal">
+            <div class="card-thumb" style="background:linear-gradient(135deg,#0a1628,#1a2d5a);display:flex;align-items:center;justify-content:center">
+                <div style="text-align:center;padding:1rem">
+                    <div style="font-size:2.5rem;font-weight:800;color:#fff;font-family:var(--font-display)">JC</div>
+                    <div style="font-family:var(--font-mono);font-size:.65rem;color:#93c5fd;letter-spacing:.15em;text-transform:uppercase;margin-top:.3rem">Manutenção</div>
+                </div>
+                <div class="card-thumb-overlay"></div>
+            </div>
+            <div class="card-body">
+                <div class="project-tags"><span class="tag">Design</span><span class="tag">PDF</span><span class="tag">Identidade Visual</span></div>
+                <span class="project-status">● Concluído</span>
+                <h3>Portfólio Comercial — JC Manutenção</h3>
+                <p>Material comercial completo (17 páginas) para empresa de manutenção predial em SP. Identidade visual corporativa azul-marinho, fotos de campo com antes/depois, segmentos de atuação e CTA para inspeção gratuita.</p>
+                <div class="card-actions">
+                    <a href="https://wa.me/5531984783473?text=Quero%20um%20portf%C3%B3lio%20comercial" target="_blank" class="project-link-wa">Quero igual 💬</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-1">
+            <div class="card-thumb" style="background:linear-gradient(135deg,#f5f0eb,#e8e0d5);display:flex;align-items:center;justify-content:center">
+                <div style="text-align:center;padding:1rem">
+                    <div style="font-size:2rem;font-weight:700;color:#4a3728;font-family:var(--font-serif);font-style:italic;letter-spacing:.05em">SÓLIA</div>
+                    <div style="font-family:'DM Mono',monospace;font-size:.6rem;color:#7a6a5a;letter-spacing:.18em;text-transform:uppercase;margin-top:.4rem">Arquitetura</div>
+                </div>
+                <div class="card-thumb-overlay" style="background:linear-gradient(to bottom,transparent 40%,rgba(245,240,235,.9))"></div>
+            </div>
+            <div class="card-body">
+                <div class="project-tags"><span class="tag">Design</span><span class="tag">PDF</span><span class="tag">Branding</span></div>
+                <span class="project-status">● Concluído</span>
+                <h3>Portfólio Comercial — Sólia Company</h3>
+                <p>Material comercial elegante (16 páginas) para escritório de arquitetura em BH. Identidade editorial com tipografia serifada, fotos de projetos reais (Sala 401, Ap Chelsea, Casa Reis Magos) e proposta de valor clara.</p>
+                <div class="card-actions">
+                    <a href="https://soliacompany.com" target="_blank" class="project-link">Ver site ↗</a>
+                    <a href="https://wa.me/5531984783473?text=Quero%20um%20material%20comercial" target="_blank" class="project-link-wa">Quero igual 💬</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- AUTOMAÇÃO -->
+        <div class="project-card reveal">
+            <div class="card-body" style="padding:2.5rem">
+                <div class="project-tags"><span class="tag">Shopee</span><span class="tag">Python</span><span class="tag">Automação</span></div>
+                <span class="project-status">● Concluído</span>
+                <h3>Sistema de Dropshipping Automatizado</h3>
+                <p>Pipeline completo de dropshipping na Shopee: importação automática de produtos, sincronização de estoque em tempo real, atualização de preços e vitrine otimizada. Opera 24/7 sem intervenção manual.</p>
+                <div class="card-actions">
+                    <a href="https://github.com/guhspm" target="_blank" class="project-link">Ver código ↗</a>
+                    <a href="https://wa.me/5531984783473?text=Quero%20um%20sistema%20de%20dropshipping" target="_blank" class="project-link-wa">Quero igual 💬</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-1">
+            <div class="card-body" style="padding:2.5rem">
+                <div class="project-tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Finance</span></div>
+                <span class="project-status">● Concluído</span>
+                <h3>Motor de Auditoria Financeira</h3>
+                <p>Conciliação automática de faturamentos e detecção de divergências em arquivos posicionais. Processa 12.847 registros em 4 minutos — antes levava 4 horas de revisão manual.</p>
+                <div class="card-actions">
+                    <a href="https://github.com/guhspm" target="_blank" class="project-link">Ver código ↗</a>
+                    <a href="https://wa.me/5531984783473?text=Quero%20uma%20automacao" target="_blank" class="project-link-wa">Automatizar 💬</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-2">
+            <div class="card-body" style="padding:2.5rem">
+                <div class="project-tags"><span class="tag">Python</span><span class="tag">Regex</span><span class="tag">PDF</span></div>
+                <span class="project-status">● Concluído</span>
+                <h3>RPA de Faturamento — Planos de Saúde</h3>
+                <p>Robô que extrai automaticamente ISS, IRRF e valores brutos de PDFs não estruturados. Processa centenas de notas por hora com 100% de rastreabilidade e log completo.</p>
+                <div class="card-actions">
+                    <a href="https://github.com/guhspm" target="_blank" class="project-link">Ver código ↗</a>
+                    <a href="https://wa.me/5531984783473?text=Quero%20uma%20automacao%20de%20PDF" target="_blank" class="project-link-wa">Automatizar 💬</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-3">
+            <div class="card-body" style="padding:2.5rem">
+                <div class="project-tags"><span class="tag">Python</span><span class="tag">ETL</span><span class="tag">OpenPyXL</span></div>
+                <span class="project-status">● Concluído</span>
+                <h3>Automação de Relatórios Corporativos</h3>
+                <p>Pipeline que processa dados de inadimplência, cruza com relatórios externos e gera 3 tipos de relatório gerencial para múltiplas entidades com formatação executiva automática.</p>
+                <div class="card-actions">
+                    <a href="https://github.com/guhspm" target="_blank" class="project-link">Ver código ↗</a>
+                    <a href="https://wa.me/5531984783473?text=Quero%20automatizar%20relat%C3%B3rios" target="_blank" class="project-link-wa">Automatizar 💬</a>
+                </div>
+            </div>
+        </div>
+
     </div>
 </section>
+
+<!-- TRAJETÓRIA -->
 <section id="experiencia">
     <div class="exp-wrap">
-        <div class="section-header reveal"><div><div class="section-label">// Trajetoria</div><h2 class="section-heading">Experiencia<br>e Formacao</h2></div><div class="section-count">&#8593;</div></div>
+        <div class="section-header reveal">
+            <div>
+                <div class="section-label">// Trajetória</div>
+                <h2 class="section-heading">Experiência &amp;<br>Formação</h2>
+            </div>
+            <div class="section-count">↑</div>
+        </div>
         <div class="exp-container">
             <div>
-                <div class="exp-group-label reveal">Experiencia</div>
+                <div class="exp-group-label reveal">Experiência</div>
                 <div class="timeline">
-                    <div class="timeline-item reveal"><h4>Founder e Dev — Inside.co</h4><span class="period">2026 — Presente</span><p>Desenvolvimento de solucoes tecnologicas: sites, automacoes e integracoes. Estrategia digital como servico complementar.</p></div>
-                    <div class="timeline-item reveal reveal-delay-1"><h4>Data Analyst e Dev de Automacoes</h4><span class="period">2025</span><p>Reconciliacao financeira, pipelines ETL e RPA em Python e SQL para faturamento corporativo e setor de saude.</p></div>
-                    <div class="timeline-item reveal reveal-delay-2"><h4>Desenvolvedor Freelance</h4><span class="period">2024 — 2025</span><p>Robos de extracao PDF, relatorios automaticos e scripts para arquivos posicionais.</p></div>
+                    <div class="timeline-item reveal">
+                        <h4>Founder &amp; Dev — Inside.co</h4>
+                        <span class="period">2026 — Presente</span>
+                        <p>Sites, e-commerce, automações e identidade visual para clientes em todo o Brasil. Projetos como Kendak, WEB&amp;SEG, Facilita Energia e Paralelo.</p>
+                    </div>
+                    <div class="timeline-item reveal reveal-delay-1">
+                        <h4>Data Analyst &amp; Dev de Automações</h4>
+                        <span class="period">2025</span>
+                        <p>Reconciliação financeira, pipelines ETL e RPA em Python para faturamento corporativo e setor de saúde.</p>
+                    </div>
+                    <div class="timeline-item reveal reveal-delay-2">
+                        <h4>Desenvolvedor Freelance</h4>
+                        <span class="period">2024 — 2025</span>
+                        <p>Robôs de extração PDF, relatórios automáticos e scripts para arquivos posicionais.</p>
+                    </div>
                 </div>
             </div>
             <div>
-                <div class="exp-group-label reveal">Formacao</div>
+                <div class="exp-group-label reveal">Formação</div>
                 <div class="timeline">
-                    <div class="timeline-item reveal"><h4>Ciencia da Computacao</h4><span class="period">Graduacao · Em curso</span><p>Estrutura de Dados, Algoritmos e Desenvolvimento de Software.</p></div>
-                    <div class="timeline-item reveal reveal-delay-1"><h4>Engenharia de Dados e BI</h4><span class="period">Especializacao · 2024</span><p>Python avancado, SQL, Power BI e ETL com foco em qualidade de dados.</p></div>
-                    <div class="timeline-item reveal reveal-delay-2"><h4>Desenvolvimento Web e APIs</h4><span class="period">Formacao Continua · 2024 — Presente</span><p>HTML/CSS/JS, APIs REST, Shopify e interfaces modernas e performaticas.</p></div>
+                    <div class="timeline-item reveal">
+                        <h4>Ciência da Computação</h4>
+                        <span class="period">Graduação · Em curso</span>
+                        <p>Estrutura de Dados, Algoritmos e Desenvolvimento de Software. Base técnica aplicada a projetos reais.</p>
+                    </div>
+                    <div class="timeline-item reveal reveal-delay-1">
+                        <h4>Engenharia de Dados &amp; BI</h4>
+                        <span class="period">Especialização · 2024</span>
+                        <p>Python avançado, SQL, Power BI e ETL com foco em qualidade de dados.</p>
+                    </div>
+                    <div class="timeline-item reveal reveal-delay-2">
+                        <h4>Desenvolvimento Web &amp; E-commerce</h4>
+                        <span class="period">Formação Contínua · 2024 — Presente</span>
+                        <p>WordPress, Shopify, WooCommerce, Elementor, SEO técnico e boas práticas de conversão.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+<!-- DEPOIMENTOS -->
 <section id="depoimentos">
-    <div class="section-header reveal"><div><div class="section-label">// Social proof</div><h2 class="section-heading">O que dizem<br>os clientes.</h2></div><div class="section-count">&#9733;</div></div>
-    <div class="testimonials-grid">
-        <div class="testimonial-card reveal"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-text">O robo que o Gustavo desenvolveu eliminou completamente o nosso processo manual de conferencia. O que levava uma tarde inteira agora roda em 4 minutos, sem nenhum erro.</p><div class="testimonial-author"><div class="author-avatar">CM</div><div><span class="author-name">Carlos M.</span><span class="author-role">Gerente Financeiro · Setor de Saude</span></div></div></div>
-        <div class="testimonial-card reveal reveal-delay-1"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-text">Precisavamos de um site que convertesse de verdade. Ele entendeu exatamente o que precisavamos, entregou antes do prazo e o resultado superou as expectativas.</p><div class="testimonial-author"><div class="author-avatar">RF</div><div><span class="author-name">Rafaela F.</span><span class="author-role">CEO · E-commerce de Moda</span></div></div></div>
-        <div class="testimonial-card reveal reveal-delay-2"><div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="testimonial-text">A integracao entre os nossos sistemas era um pesadelo. O Gustavo resolveu em dias algo que estava travado ha meses. Profissional raro que une tecnica e comunicacao.</p><div class="testimonial-author"><div class="author-avatar">LP</div><div><span class="author-name">Lucas P.</span><span class="author-role">CTO · Startup Fintech</span></div></div></div>
-    </div>
-</section>
-<section id="mediakit">
-    <div class="mk-inner reveal">
+    <div class="section-header reveal">
         <div>
-            <div class="mk-label">// Inside.co · Parcerias</div>
-            <h2 class="mk-title">Midia Kit e<br><em>Parcerias</em> Digitais</h2>
-            <p class="mk-desc">Criador de conteudo e fundador da Inside.co. Se voce representa uma marca e quer explorar colaboracoes com audiencia qualificada em tecnologia, programacao e negocios — vamos conversar.</p>
-            <div class="mk-pills"><span class="mk-pill">Audiencia tech</span><span class="mk-pill">Conteudo original</span><span class="mk-pill">Branding autentico</span><span class="mk-pill">Metricas transparentes</span></div>
+            <div class="section-label">// Clientes</div>
+            <h2 class="section-heading">O que dizem<br>os clientes.</h2>
         </div>
-        <div class="mk-cta">
-            <a href="https://wa.me/5538999643194" target="_blank" class="btn-primary">Solicitar Midia Kit</a>
-            <span class="mk-price">Resposta em ate 48h</span>
+        <div class="section-count">★</div>
+    </div>
+    <div class="testimonials-grid">
+        <div class="testimonial-card reveal">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">"O site ficou exatamente como eu imaginava — rápido, bonito e funcionando no celular. Entregou antes do prazo e o resultado superou o que eu esperava."</p>
+            <div class="testimonial-author">
+                <div class="author-avatar">KS</div>
+                <div>
+                    <span class="author-name">Katherine S.</span>
+                    <span class="author-role">Empreendedora · E-commerce / Dropshipping</span>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-1">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">"O robô que o Gustavo desenvolveu eliminou completamente o nosso processo manual de conferência. O que levava uma tarde inteira agora roda em 4 minutos, sem nenhum erro."</p>
+            <div class="testimonial-author">
+                <div class="author-avatar">CM</div>
+                <div>
+                    <span class="author-name">Carlos M.</span>
+                    <span class="author-role">Gerente Financeiro · Setor de Saúde</span>
+                </div>
+            </div>
+        </div>
+        <div class="testimonial-card reveal reveal-delay-2">
+            <div class="stars">★★★★★</div>
+            <p class="testimonial-text">"Material comercial profissional, entregue com atenção a cada detalhe. Ele entendeu o posicionamento da marca e traduziu isso perfeitamente no design."</p>
+            <div class="testimonial-author">
+                <div class="author-avatar">YD</div>
+                <div>
+                    <span class="author-name">Yanê D.</span>
+                    <span class="author-role">Fundadora · Sólia Arquitetura</span>
+                </div>
+            </div>
         </div>
     </div>
 </section>
+
+<!-- CONTATO -->
 <section id="contato">
     <div class="contact-glow"></div>
-    <div class="section-label reveal" style="margin-bottom:1.5rem">// Proximo passo</div>
+    <div class="section-label reveal" style="margin-bottom:1.5rem">// Próximo passo</div>
     <h2 class="contact-heading reveal">Vamos construir<br>algo que <em>funciona</em>?</h2>
-    <p class="contact-sub reveal">Disponivel para automacao, desenvolvimento web, e-commerce e integracoes. Resposta em ate 24h.</p>
+    <p class="contact-sub reveal">Site, loja virtual, automação ou identidade visual — respondo em até 24h e entrego com qualidade real.</p>
+    <div class="contact-urgency reveal">● Disponível para novos projetos</div>
     <div class="contact-links reveal">
-        <a href="https://wa.me/5538999643194" target="_blank" class="btn-primary">WhatsApp</a>
-        <a href="https://github.com/guhspm" target="_blank" class="btn-ghost">GitHub</a>
-        <a href="https://www.linkedin.com/in/gustavo-henriquesp/" target="_blank" class="btn-ghost">LinkedIn</a>
+        <a href="https://wa.me/5531984783473?text=Oi%20Gustavo!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" class="btn-wa">💬 (31) 9 8478-3473</a>
+        <a href="https://github.com/guhspm" target="_blank" class="btn-ghost">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/gustavo-henriquesp/" target="_blank" class="btn-ghost">LinkedIn ↗</a>
     </div>
 </section>
+
 <footer>
-    <div class="footer-copy">2026 Gustavo · Inside.co</div>
+    <div class="footer-copy">© 2026 Gustavo · Inside.co · Belo Horizonte, MG</div>
     <div class="footer-links">
         <a href="https://github.com/guhspm" target="_blank">GitHub</a>
         <a href="https://www.linkedin.com/in/gustavo-henriquesp/" target="_blank">LinkedIn</a>
-        <a href="https://wa.me/5538999643194" target="_blank">WhatsApp</a>
+        <a href="https://wa.me/5531984783473" target="_blank">WhatsApp</a>
     </div>
 </footer>
+
 <script>
-window.addEventListener('scroll',function(){document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>50);});
-var hb=document.getElementById('hamburger'),mm=document.getElementById('mobileMenu'),mOpen=false;
+/* NAV */
+window.addEventListener('scroll',()=>document.getElementById('navbar').classList.toggle('scrolled',scrollY>50));
+
+/* HAMBURGER */
+const hb=document.getElementById('hamburger'),mm=document.getElementById('mobileMenu');
+let mOpen=false;
 function toggleMenu(f){mOpen=f!==undefined?f:!mOpen;hb.classList.toggle('open',mOpen);mm.classList.toggle('open',mOpen);document.body.style.overflow=mOpen?'hidden':'';}
-hb.addEventListener('click',function(){toggleMenu();});
-mm.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){toggleMenu(false);});});
-document.addEventListener('keydown',function(e){if(e.key==='Escape'&&mOpen)toggleMenu(false);});
-var cmds=['python rpa_faturamento.py','auditoria.run(batch=marco_2026)','python etl_fifo.py --verbose','processar_notas --input ./pdfs/'];
-var ci=0,ci2=0,del=false,typed=document.getElementById('termTyped');
-function typeLoop(){var cmd=cmds[ci];if(!del){if(ci2<cmd.length){typed.textContent=cmd.slice(0,++ci2);setTimeout(typeLoop,60);}else{setTimeout(function(){del=true;typeLoop();},2200);}}else{if(ci2>0){typed.textContent=cmd.slice(0,--ci2);setTimeout(typeLoop,28);}else{del=false;ci=(ci+1)%cmds.length;setTimeout(typeLoop,400);}}}
-setTimeout(typeLoop,1400);
-setTimeout(function(){
-    document.querySelectorAll('.hero-stats .stat-num[data-target]').forEach(function(el){
-        var t=+el.dataset.target,s=performance.now();
-        (function step(n){var p=Math.min((n-s)/1600,1),e=1-Math.pow(1-p,3);el.textContent=Math.floor(e*t);if(p<1)requestAnimationFrame(step);else el.textContent=t;})(performance.now());
+hb.addEventListener('click',()=>toggleMenu());
+mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toggleMenu(false)));
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&mOpen)toggleMenu(false);});
+
+/* HERO COUNTERS */
+setTimeout(()=>{
+    document.querySelectorAll('.hero-stats .stat-num[data-target]').forEach(el=>{
+        const t=+el.dataset.target,s=performance.now();
+        (function step(n){const p=Math.min((n-s)/1600,1),e=1-Math.pow(1-p,3);el.textContent=Math.floor(e*t);if(p<1)requestAnimationFrame(step);else el.textContent=t;})(performance.now());
     });
-},1200);
-var logs=[
-    {cls:'log-info',ts:'10:32:01',msg:'Iniciando rpa_faturamento.py...'},
-    {cls:'log-ok',ts:'10:32:01',msg:'Pasta ./pdfs/ — 247 arquivos encontrados'},
-    {cls:'log-info',ts:'10:32:02',msg:'Processando nota_001.pdf...'},
-    {cls:'log-ok',ts:'10:32:02',msg:'ISS: R$ 312,40 | IRRF: R$ 156,20 | Bruto: R$ 5.207,00'},
-    {cls:'log-info',ts:'10:32:03',msg:'Processando nota_002.pdf...'},
-    {cls:'log-ok',ts:'10:32:03',msg:'ISS: R$ 198,00 | IRRF: R$ 99,00 | Bruto: R$ 3.300,00'},
-    {cls:'log-warn',ts:'10:32:04',msg:'nota_003.pdf — layout divergente, reprocessando...'},
-    {cls:'log-ok',ts:'10:32:04',msg:'Recuperado via fallback regex'},
-    {cls:'log-prog',ts:'10:32:08',msg:'Progresso: 247/247 notas processadas'},
-    {cls:'log-ok',ts:'10:32:09',msg:'relatorio_20260319.xlsx gerado com sucesso'},
-    {cls:'log-ok',ts:'10:32:09',msg:'247 notas em 8.2s — 0 erros criticos'}
-];
-var logBody=document.getElementById('logBody'),logStarted=false;
-function startLog(){
-    if(logStarted)return;logStarted=true;
-    logs.forEach(function(l,i){
-        var el=document.createElement('div');el.className='log-entry';
-        el.innerHTML='<span class="log-ts">'+l.ts+'</span><span class="'+l.cls+'">'+l.msg+'</span>';
-        logBody.appendChild(el);setTimeout(function(){el.classList.add('show');},i*420);
+},1000);
+
+/* REVEAL ON SCROLL */
+const revObs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{
+        if(e.isIntersecting){
+            e.target.classList.add('visible');
+            revObs.unobserve(e.target);
+            e.target.querySelectorAll('.count-up').forEach(el=>animCount(el));
+        }
     });
-    setTimeout(function(){logBody.innerHTML='';logStarted=false;startLog();},logs.length*420+4000);
+},{threshold:0,rootMargin:'0px 0px -20px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
+// force-reveal elements already in viewport
+setTimeout(()=>{document.querySelectorAll('.reveal:not(.visible)').forEach(el=>{const r=el.getBoundingClientRect();if(r.top<window.innerHeight&&r.bottom>0)el.classList.add('visible');});},150);
+
+function animCount(el){
+    const t=+el.dataset.target,s=performance.now(),d=1800;
+    (function step(n){const p=Math.min((n-s)/d,1),ease=1-Math.pow(1-p,4);el.textContent=Math.floor(ease*t).toLocaleString('pt-BR');if(p<1)requestAnimationFrame(step);else el.textContent=t.toLocaleString('pt-BR');})(performance.now());
 }
-var logObs=new IntersectionObserver(function(e){if(e[0].isIntersecting)startLog();},{threshold:.3});
-var demoSec=document.getElementById('demo');if(demoSec)logObs.observe(demoSec);
-var revObs=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-        if(e.isIntersecting){e.target.classList.add('visible');revObs.unobserve(e.target);e.target.querySelectorAll('.count-up').forEach(function(el){animCount(el);});}
-    });
-},{threshold:0,rootMargin:'0px 0px -30px 0px'});
-document.querySelectorAll('.reveal').forEach(function(el){revObs.observe(el);});
-setTimeout(function(){document.querySelectorAll('.reveal:not(.visible)').forEach(function(el){var r=el.getBoundingClientRect();if(r.top<window.innerHeight)el.classList.add('visible');});},200);
-function animCount(el){var t=+el.dataset.target,s=performance.now(),dur=1800;(function step(n){var p=Math.min((n-s)/dur,1),ease=1-Math.pow(1-p,4);el.textContent=Math.floor(ease*t).toLocaleString('pt-BR');if(p<1)requestAnimationFrame(step);else el.textContent=t.toLocaleString('pt-BR');})(performance.now());}
-var barsOk=false;
-function animBars(){if(barsOk)return;barsOk=true;document.querySelectorAll('#barChart .bar').forEach(function(b,i){setTimeout(function(){b.style.height=b.dataset.h;b.classList.add('animated');},i*100);});}
-function animDonut(){var c=document.getElementById('donutCircle');if(c){c.style.strokeDashoffset=2*Math.PI*30*(1-0.964);}}
-var dashObs=new IntersectionObserver(function(e){if(e[0].isIntersecting){animBars();animDonut();}},{threshold:.2});
-var dashSec=document.getElementById('dashboard-section');if(dashSec)dashObs.observe(dashSec);
-document.querySelectorAll('.project-card').forEach(function(card){
-    card.addEventListener('mousemove',function(e){var r=card.getBoundingClientRect();card.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');card.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');});
-});
-var photo=document.getElementById('profilePhoto');
-if(photo)photo.onerror=function(){photo.style.display='none';photo.parentElement.style.background='linear-gradient(135deg,#111,#1a0a2e)';};
+
+/* PHOTO FALLBACK */
+const photo=document.getElementById('profilePhoto');
+if(photo)photo.onerror=()=>{photo.style.display='none';photo.parentElement.style.background='linear-gradient(135deg,#111,#1a0a2e)';};
 </script>
 </body>
 </html>
