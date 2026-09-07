@@ -180,6 +180,12 @@
         .cta-banner p{font-size:.88rem;color:var(--text-secondary)}
         .cta-banner-actions{display:flex;gap:.75rem;flex-shrink:0}
 
+        /* STUDIO CROSS-LINK */
+        #studio{padding:0 6vw 120px;max-width:1300px;margin:0 auto}
+        .cross-link-box{background:linear-gradient(135deg,rgba(139,92,246,.15),rgba(139,92,246,.05));border:1px solid var(--border-accent);border-radius:16px;padding:3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem}
+        .cross-link-box h3{font-size:1.6rem;font-weight:800;margin:.6rem 0 .8rem}
+        .cross-link-box p{font-size:.95rem;color:var(--text-secondary);max-width:520px;line-height:1.6}
+
         /* EXPERIENCIA */
         #experiencia{padding:120px 6vw;background:#080808}
         .exp-wrap{max-width:1300px;margin:0 auto}
@@ -240,6 +246,7 @@
             .services-grid-cards{grid-template-columns:repeat(2,1fr)}
             .testimonials-grid{grid-template-columns:1fr 1fr}
             .cta-banner{flex-direction:column;text-align:center}
+            .cross-link-box{flex-direction:column;text-align:center;padding:2rem}
             .cta-banner-actions{justify-content:center}
         }
         @media(max-width:768px){
@@ -300,6 +307,7 @@
     <a href="#servicos">Serviços</a>
     <a href="#projetos">Portfolio</a>
     <a href="#depoimentos">Clientes</a>
+    <a href="#studio">Estúdio</a>
     <a href="#contato">Contato</a>
     <div class="mm-footer">
         <a href="https://github.com/guhspm" target="_blank">GitHub</a>
@@ -314,6 +322,7 @@
         <li><a href="#servicos">serviços</a></li>
         <li><a href="#projetos">portfolio</a></li>
         <li><a href="#depoimentos">clientes</a></li>
+        <li><a href="#studio">estúdio</a></li>
         <li><a href="#contato">contato</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -420,7 +429,7 @@
             <div class="section-label">// O que entrego</div>
             <h2 class="section-heading">Soluções<br>Digitais</h2>
         </div>
-        <div class="section-count">06</div>
+        <div class="section-count">07</div>
     </div>
     <div class="services-grid-cards">
         <div class="svc-card reveal">
@@ -483,6 +492,16 @@
                 <div class="svc-step"><div class="svc-step-n">3</div><span>Dashboard e relatórios automáticos</span></div>
             </div>
         </div>
+        <div class="svc-card reveal reveal-delay-2">
+            <span class="svc-icon">🎬</span>
+            <h3>Marketing, Social Media &amp; Videomaker</h3>
+            <p>Gestão de redes, criação de conteúdo e edição de vídeo — do planejamento ao corte final, pra marca ter presença digital de verdade.</p>
+            <div class="svc-steps">
+                <div class="svc-step"><div class="svc-step-n">1</div><span>Planejamento de conteúdo e pauta</span></div>
+                <div class="svc-step"><div class="svc-step-n">2</div><span>Captação e edição de vídeo</span></div>
+                <div class="svc-step"><div class="svc-step-n">3</div><span>Gestão de redes e publicação</span></div>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -493,7 +512,7 @@
             <div class="section-label">// Portfolio</div>
             <h2 class="section-heading">Projetos<br>entregues.</h2>
         </div>
-        <div class="section-count">12</div>
+        <div class="section-count">14</div>
     </div>
     <div class="projects-grid">
 
@@ -576,6 +595,27 @@
                 <div class="card-actions">
                     <a href="https://algoritmodapersonalidade.com.br" target="_blank" class="project-link">Ver site ↗</a>
                     <a href="https://wa.me/5531984783473?text=Quero%20uma%20landing%20page" target="_blank" class="project-link-wa">Quero igual <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-2">
+            <div class="card-thumb" style="background:linear-gradient(135deg,#1a1210,#2b1620);display:flex;align-items:center;justify-content:center">
+                <div style="text-align:center">
+                    <div style="font-size:1.6rem;font-weight:800;color:#fff;letter-spacing:.1em;font-family:var(--font-display)">CLUBE MV</div>
+                    <div style="font-family:var(--font-mono);font-size:.6rem;color:#e0a8ac;letter-spacing:.18em;text-transform:uppercase;margin-top:.4rem">Espírito · Alma · Corpo</div>
+                </div>
+                <div class="card-thumb-overlay"></div>
+                <span class="card-live-badge">● Ao vivo</span>
+            </div>
+            <div class="card-body">
+                <div class="project-tags"><span class="tag">WordPress</span><span class="tag">Elementor</span><span class="tag">Landing Page</span></div>
+                <span class="project-status">● Concluído</span>
+                <h3>Clube MV — Formação para Mulheres</h3>
+                <p>Landing page de vendas para clube de assinatura mensal conduzido pela médica Helena Albuquerque, com formação em três pilares (espírito, alma e corpo). WordPress + Elementor, checkout integrado via Hotmart e página construída pra converter.</p>
+                <div class="card-actions">
+                    <a href="https://clubemv.com.br/clube-mv/" target="_blank" class="project-link">Ver site ↗</a>
+                    <a href="https://wa.me/5531984783473?text=Quero%20uma%20landing%20page%20de%20vendas" target="_blank" class="project-link-wa">Quero igual <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
                 </div>
             </div>
         </div>
@@ -726,6 +766,32 @@
             </div>
         </div>
 
+        <!-- MANUTENÇÃO / PERFORMANCE -->
+        <div class="project-card reveal">
+            <div class="card-body" style="padding:2.5rem">
+                <div class="project-tags"><span class="tag">WordPress</span><span class="tag">DevOps</span><span class="tag">Performance</span></div>
+                <span class="project-status">● Concluído</span>
+                <h3>Auditoria Técnica e Performance — MAIS Planos de Saúde Recife</h3>
+                <p>Site no ar há mais de 10 anos e Top 3 do Google para "plano de saúde Recife" parou de salvar a home (Erro 500) após migração pra servidor dedicado. Causa raiz encontrada com acesso root: 2.284 revisões do Elementor nunca limpas estourando o limite de memória. Plugin corrompido removido, revisões limpas com limite configurado no wp-config.php, e 24 blocos de HTML/CSS auditados — zero conflitos encontrados.</p>
+                <div class="card-actions">
+                    <a href="https://mplanosdesaude.com.br" target="_blank" class="project-link">Ver site ↗</a>
+                    <a href="https://wa.me/5531984783473?text=Meu%20site%20est%C3%A1%20lento%2C%20preciso%20de%20ajuda" target="_blank" class="project-link-wa">Quero igual <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- STUDIO -->
+<section id="studio">
+    <div class="cross-link-box reveal">
+        <div>
+            <div class="section-label">// Próximo capítulo</div>
+            <h3>Esse é só um lado da história.</h3>
+            <p>Marketing, social media e vídeo pra marca ter presença digital completa — filmagem, edição e conteúdo pra redes. Do outro lado da Inside.co: a Inside Studio.</p>
+        </div>
+        <a href="https://inside-studio-videomaker.netlify.app/" target="_blank" class="btn-ghost">Ver portfólio de vídeo →</a>
     </div>
 </section>
 
