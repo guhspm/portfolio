@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gustavo | Desenvolvimento Web & Automação · Inside.co</title>
-    <meta name="description" content="Desenvolvedor especializado em sites, e-commerce e automação Python. Projetos entregues para marcas reais. BH · MG · Atendimento nacional.">
+    <title>Gustavo | Desenvolvimento, Marketing & Vídeo · Inside.co</title>
+    <meta name="description" content="Sites, e-commerce e automação Python, gestão de mídias sociais e produção de vídeo. Projetos entregues para marcas reais. BH · MG · Atendimento nacional.">
     <link rel="canonical" href="https://guhspm.github.io/portfolio/">
 
     <!-- FAVICON -->
@@ -15,8 +15,8 @@
     <!-- OPEN GRAPH -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://guhspm.github.io/portfolio/">
-    <meta property="og:title" content="Gustavo | Desenvolvimento Web & Automação · Inside.co">
-    <meta property="og:description" content="Sites, lojas virtuais e automações Python que funcionam em produção real. Projetos entregues para marcas reais em todo o Brasil.">
+    <meta property="og:title" content="Gustavo | Desenvolvimento, Marketing & Vídeo · Inside.co">
+    <meta property="og:description" content="Sites, automações, gestão de mídias sociais e produção de vídeo que funcionam de verdade. Projetos entregues para marcas reais em todo o Brasil.">
     <meta property="og:image" content="https://guhspm.github.io/portfolio/og-image.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -24,8 +24,8 @@
 
     <!-- TWITTER CARD -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Gustavo | Desenvolvimento Web & Automação · Inside.co">
-    <meta name="twitter:description" content="Sites, lojas virtuais e automações Python que funcionam em produção real. Projetos entregues para marcas reais em todo o Brasil.">
+    <meta name="twitter:title" content="Gustavo | Desenvolvimento, Marketing & Vídeo · Inside.co">
+    <meta name="twitter:description" content="Sites, automações, gestão de mídias sociais e produção de vídeo que funcionam de verdade. Projetos entregues para marcas reais em todo o Brasil.">
     <meta name="twitter:image" content="https://guhspm.github.io/portfolio/og-image.jpg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -146,6 +146,10 @@
         /* PROJETOS */
         #projetos{padding:120px 6vw;max-width:1300px;margin:0 auto}
         .projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:4rem}
+        .subsection-heading{grid-column:1/-1;display:flex;align-items:center;gap:1.25rem;margin:1.5rem 0 .25rem}
+        .subsection-heading:first-child{margin-top:0}
+        .subsection-label{font-family:var(--font-mono);font-size:.74rem;color:var(--accent);letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
+        .subsection-line{flex:1;height:1px;background:var(--border)}
 
         /* Site cards — destaque visual */
         .project-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:0;position:relative;overflow:hidden;transition:border-color .3s,transform .3s;display:flex;flex-direction:column}
@@ -181,10 +185,6 @@
         .cta-banner-actions{display:flex;gap:.75rem;flex-shrink:0}
 
         /* STUDIO CROSS-LINK */
-        #studio{padding:0 6vw 120px;max-width:1300px;margin:0 auto}
-        .cross-link-box{background:linear-gradient(135deg,rgba(139,92,246,.15),rgba(139,92,246,.05));border:1px solid var(--border-accent);border-radius:16px;padding:3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem}
-        .cross-link-box h3{font-size:1.6rem;font-weight:800;margin:.6rem 0 .8rem}
-        .cross-link-box p{font-size:.95rem;color:var(--text-secondary);max-width:520px;line-height:1.6}
 
         /* EXPERIENCIA */
         #experiencia{padding:120px 6vw;background:#080808}
@@ -246,7 +246,6 @@
             .services-grid-cards{grid-template-columns:repeat(2,1fr)}
             .testimonials-grid{grid-template-columns:1fr 1fr}
             .cta-banner{flex-direction:column;text-align:center}
-            .cross-link-box{flex-direction:column;text-align:center;padding:2rem}
             .cta-banner-actions{justify-content:center}
         }
         @media(max-width:768px){
@@ -307,7 +306,6 @@
     <a href="#servicos">Serviços</a>
     <a href="#projetos">Portfolio</a>
     <a href="#depoimentos">Clientes</a>
-    <a href="#studio">Estúdio</a>
     <a href="#contato">Contato</a>
     <div class="mm-footer">
         <a href="https://github.com/guhspm" target="_blank">GitHub</a>
@@ -322,7 +320,6 @@
         <li><a href="#servicos">serviços</a></li>
         <li><a href="#projetos">portfolio</a></li>
         <li><a href="#depoimentos">clientes</a></li>
-        <li><a href="#studio">estúdio</a></li>
         <li><a href="#contato">contato</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -333,20 +330,20 @@
     <div class="hero-bg-grid"></div>
     <div class="hero-glow"></div>
     <div class="hero-content">
-        <div class="hero-eyebrow">Sites · E-commerce · Automação · Inside.co</div>
+        <div class="hero-eyebrow">Sites · Marketing · Vídeo · Automação · Inside.co</div>
         <h1 class="hero-title">
-            Código que<br>
+            Resultado que<br>
             <span class="line-accent"><span>converte</span> de</span><br>
             verdade.
         </h1>
-        <p class="hero-sub">Sites profissionais, lojas virtuais e automações que funcionam em produção — não só em apresentação. Projetos entregues para marcas reais em todo o Brasil.</p>
+        <p class="hero-sub">Sites, automações, gestão de mídias sociais e produção de vídeo que funcionam de verdade — não só em apresentação. Projetos entregues para marcas reais em todo o Brasil.</p>
         <div class="hero-cta">
             <a href="https://wa.me/5531984783473?text=Oi%20Gustavo!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" class="btn-wa"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Falar no WhatsApp</a>
             <a href="#projetos" class="btn-ghost">Ver Portfolio</a>
         </div>
     </div>
     <div class="hero-stats">
-        <div class="stat"><span class="stat-num" data-target="14">0</span><span class="stat-label">Projetos entregues</span></div>
+        <div class="stat"><span class="stat-num" data-target="19">0</span><span class="stat-label">Projetos entregues</span></div>
         <div class="stat"><span class="stat-num" data-target="100">0</span><span class="stat-label">% em produção</span></div>
         <div class="stat"><span class="stat-num">BH</span><span class="stat-label">+ todo o Brasil</span></div>
     </div>
@@ -356,14 +353,14 @@
 <div class="marquee-wrap">
     <div class="marquee-track">
         <div class="marquee-item">Sites</div><div class="marquee-item">E-commerce</div>
-        <div class="marquee-item">WordPress</div><div class="marquee-item">Shopify</div>
+        <div class="marquee-item">Gestão de Redes Sociais</div><div class="marquee-item">Produção de Vídeo</div>
         <div class="marquee-item">Landing Pages</div><div class="marquee-item">Automação RPA</div>
-        <div class="marquee-item">Python</div><div class="marquee-item">Identidade Visual</div>
+        <div class="marquee-item">Identidade Visual</div><div class="marquee-item">Reels &amp; Stories</div>
         <div class="marquee-item">Inside.co</div><div class="marquee-item">BH · MG</div>
         <div class="marquee-item">Sites</div><div class="marquee-item">E-commerce</div>
-        <div class="marquee-item">WordPress</div><div class="marquee-item">Shopify</div>
+        <div class="marquee-item">Gestão de Redes Sociais</div><div class="marquee-item">Produção de Vídeo</div>
         <div class="marquee-item">Landing Pages</div><div class="marquee-item">Automação RPA</div>
-        <div class="marquee-item">Python</div><div class="marquee-item">Identidade Visual</div>
+        <div class="marquee-item">Identidade Visual</div><div class="marquee-item">Reels &amp; Stories</div>
         <div class="marquee-item">Inside.co</div><div class="marquee-item">BH · MG</div>
     </div>
 </div>
@@ -372,7 +369,7 @@
 <div class="metrics-bar">
     <div class="metrics-inner">
         <div class="metric-item reveal">
-            <span class="metric-num"><span class="count-up" data-target="14">0</span><span class="metric-suffix">+</span></span>
+            <span class="metric-num"><span class="count-up" data-target="19">0</span><span class="metric-suffix">+</span></span>
             <span class="metric-label">Projetos entregues</span>
         </div>
         <div class="metric-item reveal reveal-delay-1">
@@ -395,15 +392,15 @@
     <div class="about-grid">
         <div class="reveal">
             <div class="about-label">// Quem sou</div>
-            <h2 class="about-heading">Dev que entende<br>o <em>negócio</em>.</h2>
-            <p class="about-text">Desenvolvedor especializado em sites de alto impacto, e-commerce e automação de processos — construo soluções que realmente funcionam em produção.</p>
-            <p class="about-text">Da landing page que vende ao robô que processa 12 mil registros por hora: entrego projetos completos para marcas reais em todo o Brasil.</p>
-            <p class="about-text">Fundador da <strong style="color:var(--text)">Inside.co</strong> — agência de soluções digitais com foco em resultado.</p>
+            <h2 class="about-heading">Quem entende<br>o <em>negócio</em>.</h2>
+            <p class="about-text">Fundador da <strong style="color:var(--text)">Inside.co</strong>, atuo em três frentes: desenvolvimento de sites e automação, gestão de mídias sociais e produção de vídeo — tudo pensado pra funcionar de verdade, não só pra parecer bonito.</p>
+            <p class="about-text">Da landing page que vende ao Reels que viraliza, passando pelo robô que processa 12 mil registros por hora: entrego projetos completos para marcas reais em todo o Brasil.</p>
+            <p class="about-text">De código a conteúdo: uma casa só pra cuidar da presença digital completa da sua marca.</p>
             <div class="about-skills">
                 <span class="skill-tag">WordPress</span><span class="skill-tag">Elementor</span>
                 <span class="skill-tag">Shopify</span><span class="skill-tag">WooCommerce</span>
                 <span class="skill-tag">Python</span><span class="skill-tag">Automação</span>
-                <span class="skill-tag">HTML/CSS/JS</span><span class="skill-tag">APIs REST</span>
+                <span class="skill-tag">Gestão de Redes Sociais</span><span class="skill-tag">Produção de Vídeo</span>
                 <span class="skill-tag">SEO Técnico</span><span class="skill-tag">GTM</span>
                 <span class="skill-tag">Design</span><span class="skill-tag">Identidade Visual</span>
             </div>
@@ -413,7 +410,7 @@
                 <img src="perfilgu.jpeg" alt="Gustavo" id="profilePhoto">
                 <div class="photo-badge">
                     <span class="badge-name">Gustavo</span>
-                    <span class="badge-role">Dev &amp; Founder · Inside.co</span>
+                    <span class="badge-role">Fundador · Inside.co</span>
                 </div>
             </div>
             <div class="photo-border"></div>
@@ -512,11 +509,37 @@
             <div class="section-label">// Portfolio</div>
             <h2 class="section-heading">Projetos<br>entregues.</h2>
         </div>
-        <div class="section-count">14</div>
+        <div class="section-count">19</div>
     </div>
     <div class="projects-grid">
+        
+        <div class="subsection-heading reveal">
+            <span class="subsection-label">Desenvolvimento de Sites</span>
+            <span class="subsection-line"></span>
+        </div>
 
-        <!-- SITES PRIMEIRO -->
+        <div class="project-card reveal reveal-delay-1">
+            <div class="card-thumb" style="background:linear-gradient(135deg,#1a1210,#2b1620);display:flex;align-items:center;justify-content:center">
+                <div style="text-align:center">
+                    <div style="font-size:1.6rem;font-weight:800;color:#fff;letter-spacing:.1em;font-family:var(--font-display)">CLUBE MV</div>
+                    <div style="font-family:var(--font-mono);font-size:.6rem;color:#e0a8ac;letter-spacing:.18em;text-transform:uppercase;margin-top:.4rem">Espírito · Alma · Corpo</div>
+                </div>
+                <div class="card-thumb-overlay"></div>
+                <span class="card-live-badge">● Ao vivo</span>
+            </div>
+            <div class="card-body">
+                <div class="project-tags"><span class="tag">WordPress</span><span class="tag">Elementor</span><span class="tag">Landing Page</span></div>
+                <span class="project-status">● Concluído</span>
+                <h3>Clube MV — Formação para Mulheres</h3>
+                <p>Landing page de vendas para clube de assinatura mensal conduzido pela médica Helena Albuquerque, com formação em três pilares (espírito, alma e corpo). WordPress + Elementor, checkout integrado via Hotmart e página construída pra converter. Hoje também cuido da gestão de mídias sociais do perfil no Instagram.</p>
+                <div class="card-actions">
+                    <a href="https://clubemv.com.br/clube-mv/" target="_blank" class="project-link">Ver site ↗</a>
+                    <a href="https://www.instagram.com/clubemv.oficial/" target="_blank" class="project-link">Ver Instagram ↗</a>
+                    <a href="https://wa.me/5531984783473?text=Quero%20uma%20landing%20page%20de%20vendas" target="_blank" class="project-link-wa">Quero igual <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+                </div>
+            </div>
+        </div>
+        
         <div class="project-card reveal">
             <div class="card-thumb" style="background:linear-gradient(135deg,#0a0a0a,#1a1a1a);display:flex;align-items:center;justify-content:center">
                 <div style="text-align:center">
@@ -537,7 +560,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div class="project-card reveal reveal-delay-1">
             <div class="card-thumb" style="background:linear-gradient(135deg,#1a2540,#243560);display:flex;align-items:center;justify-content:center">
                 <div style="text-align:center">
@@ -558,7 +581,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div class="project-card reveal">
             <div class="card-thumb" style="background:#0d0d0d;display:flex;align-items:center;justify-content:center">
                 <img class="card-thumb-img" src="https://www.facilitaenergia.com.br/assets/logo-facilita-energia.png?v=4" alt="Facilita Energia" style="object-fit:contain;padding:2.5rem" onerror="this.parentElement.innerHTML='<div style=&quot;text-align:center;padding:1rem&quot;><div style=&quot;font-size:1.4rem;font-weight:800;color:#22c55e;font-family:sans-serif&quot;>Facilita</div><div style=&quot;font-size:1.4rem;font-weight:800;color:#fff;font-family:sans-serif&quot;>Energia</div></div>'">
@@ -576,7 +599,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div class="project-card reveal reveal-delay-1">
             <div class="card-thumb" style="background:linear-gradient(135deg,#0d0d0d,#1a1208);display:flex;align-items:center;justify-content:center">
                 <div style="text-align:center">
@@ -598,28 +621,28 @@
                 </div>
             </div>
         </div>
-
-        <div class="project-card reveal reveal-delay-2">
-            <div class="card-thumb" style="background:linear-gradient(135deg,#1a1210,#2b1620);display:flex;align-items:center;justify-content:center">
+        
+        <div class="project-card reveal reveal-delay-1">
+            <div class="card-thumb" style="background:linear-gradient(135deg,#030b1a,#0d1f3c);display:flex;align-items:center;justify-content:center">
                 <div style="text-align:center">
-                    <div style="font-size:1.6rem;font-weight:800;color:#fff;letter-spacing:.1em;font-family:var(--font-display)">CLUBE MV</div>
-                    <div style="font-family:var(--font-mono);font-size:.6rem;color:#e0a8ac;letter-spacing:.18em;text-transform:uppercase;margin-top:.4rem">Espírito · Alma · Corpo</div>
+                    <div style="font-size:1.8rem;font-weight:800;color:#fff;letter-spacing:.2em;font-family:var(--font-display)">PARALELO</div>
+                    <div style="font-family:var(--font-mono);font-size:.6rem;color:#818cf8;letter-spacing:.18em;text-transform:uppercase;margin-top:.4rem">Agência · Creators &amp; Marcas</div>
                 </div>
                 <div class="card-thumb-overlay"></div>
                 <span class="card-live-badge">● Ao vivo</span>
             </div>
             <div class="card-body">
-                <div class="project-tags"><span class="tag">WordPress</span><span class="tag">Elementor</span><span class="tag">Landing Page</span></div>
+                <div class="project-tags"><span class="tag">HTML/CSS/JS</span><span class="tag">Design</span><span class="tag">Branding</span></div>
                 <span class="project-status">● Concluído</span>
-                <h3>Clube MV — Formação para Mulheres</h3>
-                <p>Landing page de vendas para clube de assinatura mensal conduzido pela médica Helena Albuquerque, com formação em três pilares (espírito, alma e corpo). WordPress + Elementor, checkout integrado via Hotmart e página construída pra converter.</p>
+                <h3>Site Institucional — Paralelo Agência</h3>
+                <p>Site dark premium para agência criativa de creators. Toggle "Sou Creator / Sou Marca" com conteúdo dinâmico por audiência, animações de scroll e formulário de parcerias integrado.</p>
                 <div class="card-actions">
-                    <a href="https://clubemv.com.br/clube-mv/" target="_blank" class="project-link">Ver site ↗</a>
-                    <a href="https://wa.me/5531984783473?text=Quero%20uma%20landing%20page%20de%20vendas" target="_blank" class="project-link-wa">Quero igual <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+                    <a href="https://agenciaparalelo.netlify.app" target="_blank" class="project-link">Ver site ↗</a>
+                    <a href="https://wa.me/5531984783473?text=Quero%20um%20site%20institucional" target="_blank" class="project-link-wa">Quero igual <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
                 </div>
             </div>
         </div>
-
+        
         <div class="project-card reveal">
             <div class="card-thumb" style="background:linear-gradient(135deg,#0d2010,#1a3a1a);display:flex;align-items:center;justify-content:center">
                 <div style="text-align:center">
@@ -641,29 +664,49 @@
                 </div>
             </div>
         </div>
-
+        
         <div class="project-card reveal reveal-delay-1">
-            <div class="card-thumb" style="background:linear-gradient(135deg,#030b1a,#0d1f3c);display:flex;align-items:center;justify-content:center">
+            <div class="card-thumb" style="background:linear-gradient(135deg,#0f1a1c,#163436);display:flex;align-items:center;justify-content:center">
                 <div style="text-align:center">
-                    <div style="font-size:1.8rem;font-weight:800;color:#fff;letter-spacing:.2em;font-family:var(--font-display)">PARALELO</div>
-                    <div style="font-family:var(--font-mono);font-size:.6rem;color:#818cf8;letter-spacing:.18em;text-transform:uppercase;margin-top:.4rem">Agência · Creators &amp; Marcas</div>
+                    <div style="font-size:1.7rem;font-weight:800;color:#fff;letter-spacing:.12em;font-family:var(--font-display)">MEMORIEIO</div>
+                    <div style="font-family:var(--font-mono);font-size:.6rem;color:#5eead4;letter-spacing:.18em;text-transform:uppercase;margin-top:.4rem">Loja Virtual</div>
+                </div>
+                <div class="card-thumb-overlay"></div>
+                <span class="card-live-badge status-dev">● Em desenvolvimento</span>
+            </div>
+            <div class="card-body">
+                <div class="project-tags"><span class="tag">Loja Virtual</span><span class="tag">E-commerce</span></div>
+                <span class="project-status status-dev">● Em desenvolvimento</span>
+                <h3>Loja Virtual — Memorieio</h3>
+                <p>Desenvolvimento de loja virtual, atualmente em construção.</p>
+                <div class="card-actions">
+                    <a href="https://memorieioficial.com.br/" target="_blank" class="project-link">Ver site ↗</a>
+                    <a href="https://wa.me/5531984783473?text=Quero%20uma%20loja%20virtual" target="_blank" class="project-link-wa">Quero igual <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card reveal">
+            <div class="card-thumb" style="background:linear-gradient(135deg,#1a0e0e,#2a1414);display:flex;align-items:center;justify-content:center">
+                <div style="text-align:center">
+                    <div style="font-size:1.5rem;font-weight:800;color:#fff;letter-spacing:.08em;font-family:var(--font-display)">PRIMEIRA PÁGINA</div>
+                    <div style="font-family:var(--font-mono);font-size:.6rem;color:#f87171;letter-spacing:.18em;text-transform:uppercase;margin-top:.4rem">Portal de Notícias · SC</div>
                 </div>
                 <div class="card-thumb-overlay"></div>
                 <span class="card-live-badge">● Ao vivo</span>
             </div>
             <div class="card-body">
-                <div class="project-tags"><span class="tag">HTML/CSS/JS</span><span class="tag">Design</span><span class="tag">Branding</span></div>
+                <div class="project-tags"><span class="tag">WordPress</span><span class="tag">Portal de Notícias</span></div>
                 <span class="project-status">● Concluído</span>
-                <h3>Site Institucional — Paralelo Agência</h3>
-                <p>Site dark premium para agência criativa de creators. Toggle "Sou Creator / Sou Marca" com conteúdo dinâmico por audiência, animações de scroll e formulário de parcerias integrado.</p>
+                <h3>Primeira Página SC — Portal de Notícias</h3>
+                <p>Portal de notícias regional cobrindo o Planalto Norte e o Alto Vale Catarinense (SC): editorias por cidade, política, polícia, esporte, enquetes, cobertura de eleições e edição digital em formato flipbook. WordPress completo, do zero.</p>
                 <div class="card-actions">
-                    <a href="https://agenciaparalelo.netlify.app" target="_blank" class="project-link">Ver site ↗</a>
-                    <a href="https://wa.me/5531984783473?text=Quero%20um%20site%20institucional" target="_blank" class="project-link-wa">Quero igual <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+                    <a href="https://www.primeirapaginasc.com/" target="_blank" class="project-link">Ver site ↗</a>
+                    <a href="https://wa.me/5531984783473?text=Quero%20um%20portal%20de%20not%C3%ADcias" target="_blank" class="project-link-wa">Quero igual <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
                 </div>
             </div>
         </div>
 
-        <!-- CTA BANNER -->
         <div class="cta-banner reveal">
             <div>
                 <h3>Precisa de um site ou loja virtual?</h3>
@@ -673,8 +716,69 @@
                 <a href="https://wa.me/5531984783473?text=Oi!%20Quero%20um%20site" target="_blank" class="btn-wa"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Chamar agora</a>
             </div>
         </div>
+        
+        
+        <div class="subsection-heading reveal">
+            <span class="subsection-label">Marketing &amp; Identidade Visual</span>
+            <span class="subsection-line"></span>
+        </div>
 
-        <!-- DESIGN / IDENTIDADE -->
+        <div class="project-card reveal">
+            <div class="card-thumb" style="background:linear-gradient(135deg,#11080c,#2a0f14);display:flex;align-items:center;justify-content:center">
+                <div style="text-align:center">
+                    <div style="font-size:1.6rem;font-weight:800;color:#fff;letter-spacing:.08em;font-family:var(--font-display)">BARBEARIA LP</div>
+                    <div style="font-family:var(--font-mono);font-size:.6rem;color:#f0b9a8;letter-spacing:.18em;text-transform:uppercase;margin-top:.4rem">Gestão de Redes Sociais</div>
+                </div>
+                <div class="card-thumb-overlay"></div>
+                <span class="card-live-badge status-dev">● Em andamento</span>
+            </div>
+            <div class="card-body">
+                <div class="project-tags"><span class="tag">Social Media</span><span class="tag">Vídeo</span><span class="tag">Stories</span></div>
+                <span class="project-status status-dev">● Em andamento</span>
+                <h3>Gestão de Redes Sociais — Barbearia LP</h3>
+                <p>Gestão completa de mídias sociais da barbearia: planejamento e produção de conteúdo, vídeos e stories para o Instagram. Site novo em desenvolvimento como próximo passo do projeto.</p>
+                <div class="card-actions">
+                    <a href="https://www.instagram.com/barbearialpbh/" target="_blank" class="project-link">Ver Instagram ↗</a>
+                    <a href="https://wa.me/5531984783473?text=Quero%20gest%C3%A3o%20de%20redes%20sociais" target="_blank" class="project-link-wa">Quero igual <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card reveal reveal-delay-1">
+            <div class="card-thumb" style="background:linear-gradient(135deg,#1a0f22,#3A1440);display:flex;align-items:center;justify-content:center;padding:1.5rem">
+                <img src="aevum-logo.png" alt="Aevum Incensaria" style="width:100%;max-width:280px;height:auto;object-fit:contain;position:relative;z-index:1">
+                <div class="card-thumb-overlay"></div>
+            </div>
+            <div class="card-body">
+                <div class="project-tags"><span class="tag">Branding</span><span class="tag">Identidade Visual</span><span class="tag">Design</span></div>
+                <span class="project-status">● Concluído</span>
+                <h3>Identidade Visual Completa — Aevum Incensaria</h3>
+                <p>Marca completa para incensaria artesanal: logo em 6 variações de cor e 3 formatos (PNG, SVG, PDF), rótulo de produto pronto pra gráfica, capas de destaque pro Instagram e manual da marca com todas as diretrizes de uso.</p>
+                <div class="card-actions">
+                    <a href="Aevum_Manual_da_Marca.pdf" target="_blank" class="project-link">Ver manual da marca ↗</a>
+                    <a href="https://wa.me/5531984783473?text=Quero%20uma%20identidade%20visual" target="_blank" class="project-link-wa">Quero igual <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="project-card reveal reveal-delay-1">
+            <div class="card-thumb">
+                <img class="card-thumb-img" src="solia-logo.jpg" alt="Sólia Company" style="object-position:center">
+                <div class="card-thumb-overlay"></div>
+            </div>
+            <div class="card-body">
+                <div class="project-tags"><span class="tag">Design</span><span class="tag">PDF</span><span class="tag">Branding</span></div>
+                <span class="project-status">● Concluído</span>
+                <h3>Portfólio Comercial — Sólia Company</h3>
+                <p>Material comercial elegante (16 páginas) para escritório de arquitetura em BH. Identidade editorial com tipografia serifada, fotos de projetos reais (Sala 401, Ap Chelsea, Casa Reis Magos) e proposta de valor clara.</p>
+                <div class="card-actions">
+                    <a href="https://soliacompany.com" target="_blank" class="project-link">Ver site ↗</a>
+                    <a href="https://guhspm.github.io/portfolio/soliacompany_portfolio.pdf" target="_blank" class="project-link">Ver PDF ↗</a>
+                    <a href="https://wa.me/5531984783473?text=Quero%20um%20material%20comercial" target="_blank" class="project-link-wa">Quero igual <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+                </div>
+            </div>
+        </div>
+        
         <div class="project-card reveal">
             <div class="card-thumb" style="background:linear-gradient(135deg,#0a1628,#1a2d5a);display:flex;align-items:center;justify-content:center">
                 <div style="text-align:center;padding:1rem">
@@ -695,36 +799,56 @@
             </div>
         </div>
 
-        <div class="project-card reveal reveal-delay-1">
-            <div class="card-thumb">
-                <img class="card-thumb-img" src="solia-logo.jpg" alt="Sólia Company" style="object-position:center">
+        <div class="subsection-heading reveal">
+            <span class="subsection-label">Vídeo &amp; Produção Audiovisual</span>
+            <span class="subsection-line"></span>
+        </div>
+
+        <div class="project-card reveal">
+            <div class="card-thumb" style="background:linear-gradient(135deg,#1a1006,#331c08);display:flex;align-items:center;justify-content:center">
+                <div style="text-align:center">
+                    <div style="font-size:1.6rem;font-weight:800;color:#fff;letter-spacing:.06em;font-family:var(--font-display)">BUDEGA</div>
+                    <div style="font-family:var(--font-mono);font-size:.6rem;color:#fbbf24;letter-spacing:.18em;text-transform:uppercase;margin-top:.4rem">Cachaçaria · Mercado Central BH</div>
+                </div>
                 <div class="card-thumb-overlay"></div>
+                <span class="card-live-badge">● Concluído</span>
             </div>
             <div class="card-body">
-                <div class="project-tags"><span class="tag">Design</span><span class="tag">PDF</span><span class="tag">Branding</span></div>
+                <div class="project-tags"><span class="tag">Captação Mobile</span><span class="tag">Edição</span><span class="tag">Reels</span></div>
                 <span class="project-status">● Concluído</span>
-                <h3>Portfólio Comercial — Sólia Company</h3>
-                <p>Material comercial elegante (16 páginas) para escritório de arquitetura em BH. Identidade editorial com tipografia serifada, fotos de projetos reais (Sala 401, Ap Chelsea, Casa Reis Magos) e proposta de valor clara.</p>
+                <h3>Captação e Edição de Vídeo — Budega Cachaçaria</h3>
+                <p>Captação e edição de vídeo pra cachaçaria no Mercado Central, em BH — do balcão ao clima do lugar. Filmado e editado 100% com celular e gimbal, 3 vídeos entregues prontos pro feed.</p>
                 <div class="card-actions">
-                    <a href="https://soliacompany.com" target="_blank" class="project-link">Ver site ↗</a>
-                    <a href="https://guhspm.github.io/portfolio/soliacompany_portfolio.pdf" target="_blank" class="project-link">Ver PDF ↗</a>
-                    <a href="https://wa.me/5531984783473?text=Quero%20um%20material%20comercial" target="_blank" class="project-link-wa">Quero igual <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+                    <a href="https://www.instagram.com/reel/Dc1wOKEKdzR/" target="_blank" class="project-link">Ver no Instagram ↗</a>
+                    <a href="https://wa.me/5531984783473?text=Quero%20um%20v%C3%ADdeo%20como%20o%20da%20Budega" target="_blank" class="project-link-wa">Quero igual <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
                 </div>
             </div>
         </div>
 
-        <!-- AUTOMAÇÃO -->
-        <div class="project-card reveal">
-            <div class="card-body" style="padding:2.5rem">
-                <div class="project-tags"><span class="tag">Shopee</span><span class="tag">Python</span><span class="tag">Automação</span></div>
+        <div class="project-card reveal reveal-delay-1">
+            <div class="card-thumb" style="background:linear-gradient(135deg,#0d0a1a,#1c1333);display:flex;align-items:center;justify-content:center">
+                <div style="text-align:center">
+                    <div style="font-size:1.8rem;font-weight:800;color:#fff;letter-spacing:.1em;font-family:var(--font-display)">LOST IN</div>
+                    <div style="font-family:var(--font-mono);font-size:.6rem;color:#c4b5fd;letter-spacing:.18em;text-transform:uppercase;margin-top:.4rem">Evento · Música Eletrônica</div>
+                </div>
+                <div class="card-thumb-overlay"></div>
+                <span class="card-live-badge">● Concluído</span>
+            </div>
+            <div class="card-body">
+                <div class="project-tags"><span class="tag">Cobertura de Evento</span><span class="tag">Captação Mobile</span><span class="tag">Edição</span></div>
                 <span class="project-status">● Concluído</span>
-                <h3>Sistema de Dropshipping Automatizado</h3>
-                <p>Pipeline completo de dropshipping na Shopee: importação automática de produtos, sincronização de estoque em tempo real, atualização de preços e vitrine otimizada. Opera 24/7 sem intervenção manual.</p>
+                <h3>Cobertura de Vídeo — Evento Lost In</h3>
+                <p>Vídeos de divulgação e bastidor pro evento de música eletrônica Lost In — captação e edição pra Instagram, em três clipes prontos pro feed.</p>
                 <div class="card-actions">
-                    <a href="https://github.com/guhspm" target="_blank" class="project-link">Ver código ↗</a>
-                    <a href="https://wa.me/5531984783473?text=Quero%20um%20sistema%20de%20dropshipping" target="_blank" class="project-link-wa">Quero igual <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+                    <a href="https://www.instagram.com/reel/DczJ3DQOvqn/" target="_blank" class="project-link">Ver no Instagram ↗</a>
+                    <a href="https://wa.me/5531984783473?text=Quero%20cobertura%20de%20v%C3%ADdeo%20pro%20meu%20evento" target="_blank" class="project-link-wa">Quero igual <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
                 </div>
             </div>
+        </div>
+
+        <div class="subsection-heading reveal">
+            <span class="subsection-label">Automação &amp; Performance</span>
+            <span class="subsection-line"></span>
         </div>
 
         <div class="project-card reveal reveal-delay-1">
@@ -739,7 +863,20 @@
                 </div>
             </div>
         </div>
-
+        
+        <div class="project-card reveal">
+            <div class="card-body" style="padding:2.5rem">
+                <div class="project-tags"><span class="tag">Shopee</span><span class="tag">Python</span><span class="tag">Automação</span></div>
+                <span class="project-status">● Concluído</span>
+                <h3>Sistema de Dropshipping Automatizado</h3>
+                <p>Pipeline completo de dropshipping na Shopee: importação automática de produtos, sincronização de estoque em tempo real, atualização de preços e vitrine otimizada. Opera 24/7 sem intervenção manual.</p>
+                <div class="card-actions">
+                    <a href="https://github.com/guhspm" target="_blank" class="project-link">Ver código ↗</a>
+                    <a href="https://wa.me/5531984783473?text=Quero%20um%20sistema%20de%20dropshipping" target="_blank" class="project-link-wa">Quero igual <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+                </div>
+            </div>
+        </div>
+        
         <div class="project-card reveal reveal-delay-2">
             <div class="card-body" style="padding:2.5rem">
                 <div class="project-tags"><span class="tag">Python</span><span class="tag">Regex</span><span class="tag">PDF</span></div>
@@ -752,7 +889,7 @@
                 </div>
             </div>
         </div>
-
+        
         <div class="project-card reveal reveal-delay-3">
             <div class="card-body" style="padding:2.5rem">
                 <div class="project-tags"><span class="tag">Python</span><span class="tag">ETL</span><span class="tag">OpenPyXL</span></div>
@@ -765,8 +902,7 @@
                 </div>
             </div>
         </div>
-
-        <!-- MANUTENÇÃO / PERFORMANCE -->
+        
         <div class="project-card reveal">
             <div class="card-body" style="padding:2.5rem">
                 <div class="project-tags"><span class="tag">WordPress</span><span class="tag">DevOps</span><span class="tag">Performance</span></div>
@@ -779,19 +915,7 @@
                 </div>
             </div>
         </div>
-
-    </div>
-</section>
-
-<!-- STUDIO -->
-<section id="studio">
-    <div class="cross-link-box reveal">
-        <div>
-            <div class="section-label">// Próximo capítulo</div>
-            <h3>Esse é só um lado da história.</h3>
-            <p>Marketing, social media e vídeo pra marca ter presença digital completa — filmagem, edição e conteúdo pra redes. Do outro lado da Inside.co: a Inside Studio.</p>
-        </div>
-        <a href="https://inside-studio-videomaker.netlify.app/" target="_blank" class="btn-ghost">Ver portfólio de vídeo →</a>
+        
     </div>
 </section>
 
