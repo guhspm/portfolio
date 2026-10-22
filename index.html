@@ -108,6 +108,7 @@
 
         /* SOBRE */
         #sobre{padding:120px 6vw;max-width:1300px;margin:0 auto}
+        #processo{padding:0 6vw 120px;max-width:1300px;margin:0 auto}
         .about-grid{display:grid;grid-template-columns:1fr 420px;gap:5rem;align-items:center}
         .about-label{font-family:var(--font-mono);font-size:.75rem;color:var(--accent);letter-spacing:.2em;text-transform:uppercase;margin-bottom:1.5rem}
         .about-heading{font-size:clamp(2rem,3.8vw,3.2rem);font-weight:700;line-height:1.1;margin-bottom:2rem;letter-spacing:-.02em}
@@ -150,6 +151,38 @@
         .subsection-heading:first-child{margin-top:0}
         .subsection-label{font-family:var(--font-mono);font-size:.74rem;color:var(--accent);letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
         .subsection-line{flex:1;height:1px;background:var(--border)}
+
+        /* FILTERS */
+        .filters{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:2.5rem}
+        .filter-btn{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;color:var(--text-secondary);background:var(--bg-card);border:1px solid var(--border);border-radius:999px;padding:.55rem 1.1rem;cursor:pointer;transition:border-color .2s,color .2s,background .2s}
+        .filter-btn:hover{color:var(--text);border-color:var(--border-accent)}
+        .filter-btn.active{color:#000;background:var(--accent);border-color:var(--accent);font-weight:500}
+
+        /* FEATURE ROTATOR */
+        .feature-rotator{position:relative;border:1px solid var(--border-accent);border-radius:14px;overflow:hidden;margin-top:2rem;background:var(--bg-elevated)}
+        .feature-slide{display:none;grid-template-columns:1.1fr 1fr;min-height:300px}
+        .feature-slide.active{display:grid}
+        .feature-visual{position:relative;padding:2rem;display:flex;flex-direction:column;justify-content:flex-start;background:linear-gradient(160deg,var(--f-c1,#111),var(--f-c2,#1a1a1a));overflow:hidden;min-height:220px}
+        .feature-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+        .feature-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.7),transparent 45%);z-index:0}
+        .feature-tag{position:relative;z-index:1;font-family:var(--font-mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;opacity:.85;margin-bottom:.35rem}
+        .feature-brand{position:relative;z-index:1;font-family:var(--font-display);font-weight:800;font-size:1.7rem;color:#fff;letter-spacing:-.01em;display:block}
+        .feature-copy{padding:2.2rem 2.4rem;display:flex;flex-direction:column;justify-content:center}
+        .feature-copy h3{font-size:1.25rem;font-weight:700;margin:.6rem 0 .8rem;letter-spacing:-.01em}
+        .feature-copy p{color:var(--text-secondary);font-size:.88rem;line-height:1.65;margin-bottom:1.2rem}
+        .feature-links{display:flex;gap:.6rem;flex-wrap:wrap}
+        .feature-links a{font-family:var(--font-mono);font-size:.7rem;color:var(--text);border:1px solid var(--border);border-radius:6px;padding:.5rem .8rem;text-decoration:none;transition:border-color .2s,color .2s}
+        .feature-links a:hover{border-color:var(--accent);color:var(--accent)}
+        .rotator-dots{display:flex;gap:.4rem;justify-content:center;margin-top:1rem}
+        .rotator-dots button{width:22px;height:3px;border:none;background:var(--border);cursor:pointer;padding:0;border-radius:2px;transition:background .2s}
+        .rotator-dots button.active{background:var(--accent)}
+
+        /* PROCESS */
+        .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem;margin-top:2rem}
+        .process-step{border-top:1px solid var(--border-accent);padding-top:1.1rem}
+        .process-num{font-family:var(--font-mono);font-size:.78rem;color:var(--accent);display:block;margin-bottom:.6rem}
+        .process-step h3{font-size:1.02rem;font-weight:700;margin-bottom:.5rem;letter-spacing:-.005em}
+        .process-step p{font-size:.85rem;color:var(--text-secondary);line-height:1.55}
 
         /* Site cards — destaque visual */
         .project-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:0;position:relative;overflow:hidden;transition:border-color .3s,transform .3s;display:flex;flex-direction:column}
@@ -264,6 +297,7 @@
             .metrics-inner{grid-template-columns:repeat(2,1fr);gap:.9rem}
             .metric-num{font-size:2rem}
             #sobre{padding:80px 1.25rem}
+            #processo{padding:0 1.25rem 80px}
             .about-grid{grid-template-columns:1fr;gap:3rem}
             .about-photo-wrap{width:100%;order:-1}
             .photo-frame{height:0;padding-bottom:100%;position:relative}
@@ -275,6 +309,9 @@
             .services-grid-cards{grid-template-columns:1fr;gap:1rem}
             #projetos{padding:80px 1.25rem}
             .projects-grid{grid-template-columns:1fr;gap:1rem;margin-top:2.5rem}
+            .feature-slide{grid-template-columns:1fr}
+            .feature-visual{min-height:180px}
+            .process-grid{grid-template-columns:repeat(2,1fr)}
             .card-thumb{height:140px}
             .cta-banner{padding:1.5rem}
             #experiencia{padding:80px 1.25rem}
@@ -419,6 +456,38 @@
     </div>
 </section>
 
+<!-- PROCESSO -->
+<section id="processo">
+    <div class="section-header reveal">
+        <div>
+            <div class="section-label">// Processo</div>
+            <h2 class="section-heading">Como eu<br>trabalho.</h2>
+        </div>
+    </div>
+    <div class="process-grid">
+        <div class="process-step reveal">
+            <span class="process-num">01</span>
+            <h3>Diagnóstico</h3>
+            <p>Entendo o negócio e onde ele tá perdendo oportunidade — site, redes ou os dois.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-1">
+            <span class="process-num">02</span>
+            <h3>Proposta</h3>
+            <p>Escopo, prazo e preço fechados antes de começar. Sem letra miúda.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-2">
+            <span class="process-num">03</span>
+            <h3>Produção</h3>
+            <p>Site, pauta de redes ou vídeo — tocado por mim do início ao fim.</p>
+        </div>
+        <div class="process-step reveal reveal-delay-3">
+            <span class="process-num">04</span>
+            <h3>Entrega &amp; suporte</h3>
+            <p>Acompanho os primeiros resultados e ajusto o que precisar.</p>
+        </div>
+    </div>
+</section>
+
 <!-- SERVIÇOS -->
 <section id="servicos">
     <div class="section-header reveal">
@@ -511,14 +580,60 @@
         </div>
         <div class="section-count">19</div>
     </div>
+
+    <div class="filters reveal" role="tablist" aria-label="Filtrar projetos por área">
+        <button class="filter-btn active" data-filter="todos">Todos</button>
+        <button class="filter-btn" data-filter="sites">Sites</button>
+        <button class="filter-btn" data-filter="marketing">Marketing</button>
+        <button class="filter-btn" data-filter="video">Vídeo</button>
+        <button class="filter-btn" data-filter="automacao">Automação</button>
+    </div>
+
+    <div class="feature-rotator reveal" id="projectRotator">
+        <div class="feature-slide active" data-cat="marketing,sites">
+            <div class="feature-visual" style="--f-c1:#0A0E49;--f-c2:#1a1040">
+                <img src="lp-barbearia-site.jpg" alt="Site novo da LP Barbearia" loading="lazy">
+                <span class="feature-tag">Case em destaque</span>
+                <span class="feature-brand" style="font-size:0">LP Barbearia</span>
+            </div>
+            <div class="feature-copy">
+                <span class="project-status">● Concluído</span>
+                <h3>Barbearia LP — Redes sociais, vídeo, site e linktree</h3>
+                <p>Gestão das redes sociais da barbearia, com pauta semanal, vídeos e stories. Fizemos a reforma completa do site (Clube LP, prótese capilar com antes e depois, avaliações reais do Google e as duas unidades), um linktree próprio que reconhece o celular e abre o app ou a loja certa, e uma página de primeiro acesso que ensina o cliente a baixar o app, criar a conta e agendar.</p>
+                <div class="feature-links">
+                    <a href="https://barbearialp.com.br/" target="_blank">Ver site ↗</a>
+                    <a href="https://barbearialp.com.br/links/" target="_blank">Ver linktree ↗</a>
+                    <a href="https://barbearialp.com.br/app/" target="_blank">Ver primeiro acesso no app ↗</a>
+                    <a href="https://www.instagram.com/barbearialpbh/" target="_blank">Ver Instagram ↗</a>
+                </div>
+            </div>
+        </div>
+        <div class="feature-slide" data-cat="marketing">
+            <div class="feature-visual" style="--f-c1:#1a0f22;--f-c2:#3A1440;padding:1.5rem">
+                <img src="aevum-logo.png" alt="Aevum Incensaria" style="object-fit:contain;max-width:280px;width:100%;height:auto" loading="lazy">
+                <span class="feature-tag">Case em destaque</span>
+                <span class="feature-brand" style="font-size:0">Aevum Incensaria</span>
+            </div>
+            <div class="feature-copy">
+                <span class="project-status">● Concluído</span>
+                <h3>Identidade Visual Completa — Aevum Incensaria</h3>
+                <p>Marca completa para incensaria artesanal: logo em 6 variações de cor e 3 formatos (PNG, SVG, PDF), rótulo de produto pronto pra gráfica, capas de destaque pro Instagram e manual da marca com todas as diretrizes de uso.</p>
+                <div class="feature-links">
+                    <a href="Aevum_Manual_da_Marca.pdf" target="_blank">Ver manual da marca ↗</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="rotator-dots" id="rotatorDots"></div>
+
     <div class="projects-grid">
-        
-        <div class="subsection-heading reveal">
+
+        <div class="subsection-heading reveal" data-cat="sites">
             <span class="subsection-label">Desenvolvimento de Sites</span>
             <span class="subsection-line"></span>
         </div>
 
-        <div class="project-card reveal reveal-delay-1">
+        <div class="project-card reveal reveal-delay-1" data-cat="sites">
             <div class="card-thumb" style="background:linear-gradient(135deg,#1a1210,#2b1620);display:flex;align-items:center;justify-content:center">
                 <div style="text-align:center">
                     <div style="font-size:1.6rem;font-weight:800;color:#fff;letter-spacing:.1em;font-family:var(--font-display)">CLUBE MV</div>
@@ -540,7 +655,7 @@
             </div>
         </div>
         
-        <div class="project-card reveal">
+        <div class="project-card reveal" data-cat="sites">
             <div class="card-thumb" style="background:linear-gradient(135deg,#0a0a0a,#1a1a1a);display:flex;align-items:center;justify-content:center">
                 <div style="text-align:center">
                     <div style="font-size:1.8rem;font-weight:800;color:#fff;letter-spacing:.15em;font-family:var(--font-display)">KENDAK</div>
@@ -561,7 +676,7 @@
             </div>
         </div>
         
-        <div class="project-card reveal reveal-delay-1">
+        <div class="project-card reveal reveal-delay-1" data-cat="sites">
             <div class="card-thumb" style="background:linear-gradient(135deg,#1a2540,#243560);display:flex;align-items:center;justify-content:center">
                 <div style="text-align:center">
                     <div style="font-size:1.5rem;font-weight:800;color:#fff;letter-spacing:.08em;font-family:var(--font-display)">WEB &amp; SEG</div>
@@ -582,7 +697,7 @@
             </div>
         </div>
         
-        <div class="project-card reveal">
+        <div class="project-card reveal" data-cat="sites">
             <div class="card-thumb" style="background:#0d0d0d;display:flex;align-items:center;justify-content:center">
                 <img class="card-thumb-img" src="https://www.facilitaenergia.com.br/assets/logo-facilita-energia.png?v=4" alt="Facilita Energia" style="object-fit:contain;padding:2.5rem" onerror="this.parentElement.innerHTML='<div style=&quot;text-align:center;padding:1rem&quot;><div style=&quot;font-size:1.4rem;font-weight:800;color:#22c55e;font-family:sans-serif&quot;>Facilita</div><div style=&quot;font-size:1.4rem;font-weight:800;color:#fff;font-family:sans-serif&quot;>Energia</div></div>'">
                 <div class="card-thumb-overlay"></div>
@@ -600,7 +715,7 @@
             </div>
         </div>
         
-        <div class="project-card reveal reveal-delay-1">
+        <div class="project-card reveal reveal-delay-1" data-cat="sites">
             <div class="card-thumb" style="background:linear-gradient(135deg,#0d0d0d,#1a1208);display:flex;align-items:center;justify-content:center">
                 <div style="text-align:center">
                     <div style="font-size:1.1rem;font-weight:800;color:#d4a843;letter-spacing:.08em;font-family:var(--font-display)">ALGORITMO DA</div>
@@ -622,7 +737,7 @@
             </div>
         </div>
         
-        <div class="project-card reveal reveal-delay-1">
+        <div class="project-card reveal reveal-delay-1" data-cat="sites">
             <div class="card-thumb" style="background:linear-gradient(135deg,#030b1a,#0d1f3c);display:flex;align-items:center;justify-content:center">
                 <div style="text-align:center">
                     <div style="font-size:1.8rem;font-weight:800;color:#fff;letter-spacing:.2em;font-family:var(--font-display)">PARALELO</div>
@@ -643,7 +758,7 @@
             </div>
         </div>
         
-        <div class="project-card reveal">
+        <div class="project-card reveal" data-cat="sites">
             <div class="card-thumb" style="background:linear-gradient(135deg,#0d2010,#1a3a1a);display:flex;align-items:center;justify-content:center">
                 <div style="text-align:center">
                     <div style="font-size:1.4rem;font-weight:800;color:#86efac;letter-spacing:.05em;font-family:var(--font-display)">Exercite-se</div>
@@ -665,7 +780,7 @@
             </div>
         </div>
         
-        <div class="project-card reveal reveal-delay-1">
+        <div class="project-card reveal reveal-delay-1" data-cat="sites">
             <div class="card-thumb" style="background:linear-gradient(135deg,#0f1a1c,#163436);display:flex;align-items:center;justify-content:center">
                 <div style="text-align:center">
                     <div style="font-size:1.7rem;font-weight:800;color:#fff;letter-spacing:.12em;font-family:var(--font-display)">MEMORIEI</div>
@@ -686,7 +801,7 @@
             </div>
         </div>
 
-        <div class="project-card reveal">
+        <div class="project-card reveal" data-cat="sites">
             <div class="card-thumb" style="background:linear-gradient(135deg,#1a0e0e,#2a1414);display:flex;align-items:center;justify-content:center">
                 <div style="text-align:center">
                     <div style="font-size:1.5rem;font-weight:800;color:#fff;letter-spacing:.08em;font-family:var(--font-display)">PRIMEIRA PÁGINA</div>
@@ -707,7 +822,7 @@
             </div>
         </div>
 
-        <div class="cta-banner reveal">
+        <div class="cta-banner reveal" data-cat="sites">
             <div>
                 <h3>Precisa de um site ou loja virtual?</h3>
                 <p>Entrego em prazo, com código limpo e resultado real. Respondo em até 24h.</p>
@@ -718,12 +833,12 @@
         </div>
         
         
-        <div class="subsection-heading reveal">
+        <div class="subsection-heading reveal" data-cat="marketing">
             <span class="subsection-label">Marketing &amp; Identidade Visual</span>
             <span class="subsection-line"></span>
         </div>
 
-        <div class="project-card reveal">
+        <div class="project-card reveal" data-cat="marketing">
             <div class="card-thumb" style="background:#0A0E49;display:flex;align-items:center;justify-content:center">
                 <img src="lp-barbearia-site.jpg" alt="Site novo da LP Barbearia" loading="lazy" style="width:100%;height:100%;object-fit:cover;position:relative;z-index:0">
                 <div class="card-thumb-overlay"></div>
@@ -744,7 +859,7 @@
             </div>
         </div>
 
-        <div class="project-card reveal reveal-delay-1">
+        <div class="project-card reveal reveal-delay-1" data-cat="marketing">
             <div class="card-thumb" style="background:linear-gradient(135deg,#1a0f22,#3A1440);display:flex;align-items:center;justify-content:center;padding:1.5rem">
                 <img src="aevum-logo.png" alt="Aevum Incensaria" style="width:100%;max-width:280px;height:auto;object-fit:contain;position:relative;z-index:1">
                 <div class="card-thumb-overlay"></div>
@@ -761,7 +876,7 @@
             </div>
         </div>
         
-        <div class="project-card reveal reveal-delay-1">
+        <div class="project-card reveal reveal-delay-1" data-cat="marketing">
             <div class="card-thumb">
                 <img class="card-thumb-img" src="solia-logo.jpg" alt="Sólia Company" style="object-position:center">
                 <div class="card-thumb-overlay"></div>
@@ -779,7 +894,7 @@
             </div>
         </div>
         
-        <div class="project-card reveal">
+        <div class="project-card reveal" data-cat="marketing">
             <div class="card-thumb" style="background:linear-gradient(135deg,#0a1628,#1a2d5a);display:flex;align-items:center;justify-content:center">
                 <div style="text-align:center;padding:1rem">
                     <div style="font-size:2.5rem;font-weight:800;color:#fff;font-family:var(--font-display)">JC</div>
@@ -799,12 +914,12 @@
             </div>
         </div>
 
-        <div class="subsection-heading reveal">
+        <div class="subsection-heading reveal" data-cat="video">
             <span class="subsection-label">Vídeo &amp; Produção Audiovisual</span>
             <span class="subsection-line"></span>
         </div>
 
-        <div class="project-card reveal">
+        <div class="project-card reveal" data-cat="video">
             <div class="card-thumb" style="background:linear-gradient(135deg,#1a1006,#331c08);display:flex;align-items:center;justify-content:center">
                 <div style="text-align:center">
                     <div style="font-size:1.6rem;font-weight:800;color:#fff;letter-spacing:.06em;font-family:var(--font-display)">BUDEGA</div>
@@ -825,7 +940,7 @@
             </div>
         </div>
 
-        <div class="project-card reveal reveal-delay-1">
+        <div class="project-card reveal reveal-delay-1" data-cat="video">
             <div class="card-thumb" style="background:linear-gradient(135deg,#0d0a1a,#1c1333);display:flex;align-items:center;justify-content:center">
                 <div style="text-align:center">
                     <div style="font-size:1.8rem;font-weight:800;color:#fff;letter-spacing:.1em;font-family:var(--font-display)">LOST IN</div>
@@ -846,12 +961,12 @@
             </div>
         </div>
 
-        <div class="subsection-heading reveal">
+        <div class="subsection-heading reveal" data-cat="automacao">
             <span class="subsection-label">Automação &amp; Performance</span>
             <span class="subsection-line"></span>
         </div>
 
-        <div class="project-card reveal reveal-delay-1">
+        <div class="project-card reveal reveal-delay-1" data-cat="automacao">
             <div class="card-body" style="padding:2.5rem">
                 <div class="project-tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Finance</span></div>
                 <span class="project-status">● Concluído</span>
@@ -864,7 +979,7 @@
             </div>
         </div>
         
-        <div class="project-card reveal">
+        <div class="project-card reveal" data-cat="automacao">
             <div class="card-body" style="padding:2.5rem">
                 <div class="project-tags"><span class="tag">Shopee</span><span class="tag">Python</span><span class="tag">Automação</span></div>
                 <span class="project-status">● Concluído</span>
@@ -877,7 +992,7 @@
             </div>
         </div>
         
-        <div class="project-card reveal reveal-delay-2">
+        <div class="project-card reveal reveal-delay-2" data-cat="automacao">
             <div class="card-body" style="padding:2.5rem">
                 <div class="project-tags"><span class="tag">Python</span><span class="tag">Regex</span><span class="tag">PDF</span></div>
                 <span class="project-status">● Concluído</span>
@@ -890,7 +1005,7 @@
             </div>
         </div>
         
-        <div class="project-card reveal reveal-delay-3">
+        <div class="project-card reveal reveal-delay-3" data-cat="automacao">
             <div class="card-body" style="padding:2.5rem">
                 <div class="project-tags"><span class="tag">Python</span><span class="tag">ETL</span><span class="tag">OpenPyXL</span></div>
                 <span class="project-status">● Concluído</span>
@@ -903,7 +1018,7 @@
             </div>
         </div>
         
-        <div class="project-card reveal">
+        <div class="project-card reveal" data-cat="automacao">
             <div class="card-body" style="padding:2.5rem">
                 <div class="project-tags"><span class="tag">WordPress</span><span class="tag">DevOps</span><span class="tag">Performance</span></div>
                 <span class="project-status">● Concluído</span>
@@ -1107,6 +1222,71 @@ function animCount(el){
 /* PHOTO FALLBACK */
 const photo=document.getElementById('profilePhoto');
 if(photo)photo.onerror=()=>{photo.style.display='none';photo.parentElement.style.background='linear-gradient(135deg,#111,#1a0a2e)';};
+
+/* PROJECT FILTERS */
+(function(){
+    const filterBtns=document.querySelectorAll('.filter-btn');
+    const catCards=document.querySelectorAll('.projects-grid [data-cat]');
+    const slides=document.querySelectorAll('#projectRotator .feature-slide');
+    if(!filterBtns.length)return;
+
+    filterBtns.forEach(btn=>{
+        btn.addEventListener('click',()=>{
+            filterBtns.forEach(b=>b.classList.remove('active'));
+            btn.classList.add('active');
+            const f=btn.dataset.filter;
+            catCards.forEach(c=>{
+                const cats=c.dataset.cat.split(',');
+                const show=(f==='todos'||cats.includes(f));
+                c.style.display=show?'':'none';
+                if(show)c.classList.add('visible');
+            });
+            slides.forEach(s=>{
+                const cats=s.dataset.cat.split(',');
+                s.dataset.hiddenByFilter=(f==='todos'||cats.includes(f))?'':'1';
+            });
+            const current=document.querySelector('#projectRotator .feature-slide.active');
+            if(current&&current.dataset.hiddenByFilter==='1'){
+                for(let i=0;i<slides.length;i++){
+                    if(slides[i].dataset.hiddenByFilter!=='1'){goToSlide(i);break;}
+                }
+            }
+        });
+    });
+
+    const dotsWrap=document.getElementById('rotatorDots');
+    let idx=0;
+    slides.forEach((_,i)=>{
+        const d=document.createElement('button');
+        if(i===0)d.classList.add('active');
+        d.setAttribute('aria-label','Ver case '+(i+1));
+        d.addEventListener('click',()=>{goToSlide(i);resetRotatorTimer();});
+        dotsWrap.appendChild(d);
+    });
+    const dots=dotsWrap.querySelectorAll('button');
+    function goToSlide(i){
+        slides[idx].classList.remove('active');
+        dots[idx].classList.remove('active');
+        idx=i;
+        slides[idx].classList.add('active');
+        dots[idx].classList.add('active');
+    }
+    const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let rotatorTimer;
+    function resetRotatorTimer(){
+        if(reduceMotion)return;
+        clearInterval(rotatorTimer);
+        rotatorTimer=setInterval(()=>{
+            let next=(idx+1)%slides.length,tries=0;
+            while(slides[next].dataset.hiddenByFilter==='1'&&tries<slides.length){next=(next+1)%slides.length;tries++;}
+            goToSlide(next);
+        },6000);
+    }
+    resetRotatorTimer();
+    const rotatorEl=document.getElementById('projectRotator');
+    rotatorEl.addEventListener('mouseenter',()=>clearInterval(rotatorTimer));
+    rotatorEl.addEventListener('mouseleave',resetRotatorTimer);
+})();
 </script>
 </body>
 </html>
