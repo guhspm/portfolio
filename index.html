@@ -132,17 +132,17 @@
         .section-label{font-family:var(--font-mono);font-size:.75rem;color:var(--accent);letter-spacing:.2em;text-transform:uppercase;margin-bottom:.75rem}
         .section-heading{font-size:clamp(2rem,4vw,3rem);font-weight:700;letter-spacing:-.02em;line-height:1.1}
         .section-count{font-family:var(--font-mono);font-size:5rem;font-weight:800;color:rgba(139,92,246,.07);line-height:1;letter-spacing:-.05em;user-select:none}
-        .services-grid-cards{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-        .svc-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:2.2rem;position:relative;overflow:hidden;transition:border-color .3s,transform .3s}
+        .services-grid-cards{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+        .svc-card{background:var(--bg-card);border:1px solid var(--border);border-radius:12px;padding:1.4rem;position:relative;overflow:hidden;transition:border-color .3s,transform .3s}
         .svc-card:hover{border-color:var(--border-accent);transform:translateY(-5px)}
         .svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),transparent);opacity:0;transition:opacity .3s}
         .svc-card:hover::before{opacity:1}
-        .svc-icon{font-size:1.8rem;margin-bottom:1.1rem;display:block}
-        .svc-card h3{font-size:1.05rem;font-weight:700;margin-bottom:.6rem;letter-spacing:-.01em}
-        .svc-card p{font-size:.84rem;color:var(--text-secondary);line-height:1.65;margin-bottom:1.2rem}
-        .svc-steps{border-top:1px solid var(--border);padding-top:1.2rem;margin-top:.5rem;display:flex;flex-direction:column;gap:.6rem}
-        .svc-step{display:flex;align-items:flex-start;gap:.7rem;font-size:.8rem;color:var(--text-secondary)}
-        .svc-step-n{font-family:var(--font-mono);font-size:.65rem;color:var(--accent);background:var(--accent-dim);border:1px solid var(--border-accent);width:20px;height:20px;border-radius:3px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+        .svc-icon{font-size:1.4rem;margin-bottom:.6rem;display:block}
+        .svc-card h3{font-size:.92rem;font-weight:700;margin-bottom:.4rem;letter-spacing:-.01em}
+        .svc-card p{font-size:.78rem;color:var(--text-secondary);line-height:1.5;margin-bottom:.8rem}
+        .svc-steps{border-top:1px solid var(--border);padding-top:.8rem;margin-top:.3rem;display:flex;flex-direction:column;gap:.4rem}
+        .svc-step{display:flex;align-items:flex-start;gap:.55rem;font-size:.73rem;color:var(--text-secondary)}
+        .svc-step-n{font-family:var(--font-mono);font-size:.58rem;color:var(--accent);background:var(--accent-dim);border:1px solid var(--border-accent);width:16px;height:16px;border-radius:3px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
 
         /* PROJETOS */
         #projetos{padding:120px 6vw;max-width:1300px;margin:0 auto}
@@ -165,6 +165,10 @@
         .feature-visual{position:relative;padding:2rem;display:flex;flex-direction:column;justify-content:flex-start;background:linear-gradient(160deg,var(--f-c1,#111),var(--f-c2,#1a1a1a));overflow:hidden;min-height:220px}
         .feature-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
         .feature-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.7),transparent 45%);z-index:0}
+        .feature-visual.is-logo{align-items:center;justify-content:center;gap:1rem;background:var(--f-bg,#1a1a1a)}
+        .feature-visual.is-logo img{position:static;inset:auto;width:auto;height:auto;max-width:62%;max-height:60%;object-fit:contain;z-index:1}
+        .feature-visual.is-logo::after{display:none}
+        .feature-visual.is-light .feature-tag{color:#3a2816;opacity:.75}
         .feature-tag{position:relative;z-index:1;font-family:var(--font-mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;opacity:.85;margin-bottom:.35rem}
         .feature-brand{position:relative;z-index:1;font-family:var(--font-display);font-weight:800;font-size:1.7rem;color:#fff;letter-spacing:-.01em;display:block}
         .feature-copy{padding:2.2rem 2.4rem;display:flex;flex-direction:column;justify-content:center}
@@ -311,6 +315,7 @@
             .projects-grid{grid-template-columns:1fr;gap:1rem;margin-top:2.5rem}
             .feature-slide{grid-template-columns:1fr}
             .feature-visual{min-height:180px}
+            .feature-visual.is-logo img{max-height:100px}
             .process-grid{grid-template-columns:repeat(2,1fr)}
             .card-thumb{height:140px}
             .cta-banner{padding:1.5rem}
@@ -591,8 +596,8 @@
 
     <div class="feature-rotator reveal" id="projectRotator">
         <div class="feature-slide active" data-cat="marketing,sites">
-            <div class="feature-visual" style="--f-c1:#0A0E49;--f-c2:#1a1040">
-                <img src="lp-barbearia-site.jpg" alt="Site novo da LP Barbearia" loading="lazy">
+            <div class="feature-visual is-logo" style="--f-bg:#1E2A8A">
+                <img src="lp-logo.png" alt="Logo da LP Barbearia" loading="lazy">
                 <span class="feature-tag">Case em destaque</span>
                 <span class="feature-brand" style="font-size:0">LP Barbearia</span>
             </div>
@@ -609,8 +614,8 @@
             </div>
         </div>
         <div class="feature-slide" data-cat="marketing">
-            <div class="feature-visual" style="--f-c1:#1a0f22;--f-c2:#3A1440;padding:1.5rem">
-                <img src="aevum-logo.png" alt="Aevum Incensaria" style="object-fit:contain;max-width:280px;width:100%;height:auto" loading="lazy">
+            <div class="feature-visual is-logo" style="--f-bg:#3A1440">
+                <img src="aevum-logo.png" alt="Aevum Incensaria" loading="lazy">
                 <span class="feature-tag">Case em destaque</span>
                 <span class="feature-brand" style="font-size:0">Aevum Incensaria</span>
             </div>
@@ -620,6 +625,37 @@
                 <p>Marca completa para incensaria artesanal: logo em 6 variações de cor e 3 formatos (PNG, SVG, PDF), rótulo de produto pronto pra gráfica, capas de destaque pro Instagram e manual da marca com todas as diretrizes de uso.</p>
                 <div class="feature-links">
                     <a href="Aevum_Manual_da_Marca.pdf" target="_blank">Ver manual da marca ↗</a>
+                </div>
+            </div>
+        </div>
+        <div class="feature-slide" data-cat="sites">
+            <div class="feature-visual is-logo is-light" style="--f-bg:#F8EEDC">
+                <img src="clubemv-logo-cutout.png" alt="Clube MV — Mulher Virtuosa" loading="lazy">
+                <span class="feature-tag">Case em destaque</span>
+                <span class="feature-brand" style="font-size:0">Clube MV</span>
+            </div>
+            <div class="feature-copy">
+                <span class="project-status">● Concluído</span>
+                <h3>Clube MV — Formação para Mulheres</h3>
+                <p>Landing page de vendas para clube de assinatura mensal conduzido pela médica Helena Albuquerque, com formação em três pilares (espírito, alma e corpo). WordPress + Elementor, checkout integrado via Hotmart e página construída pra converter. Hoje também cuido da gestão de mídias sociais do perfil no Instagram.</p>
+                <div class="feature-links">
+                    <a href="https://clubemv.com.br/clube-mv/" target="_blank">Ver site ↗</a>
+                    <a href="https://www.instagram.com/clubemv.oficial/" target="_blank">Ver Instagram ↗</a>
+                </div>
+            </div>
+        </div>
+        <div class="feature-slide" data-cat="sites">
+            <div class="feature-visual" style="--f-c1:#f7c6d6;--f-c2:#f29bb8">
+                <img src="memoriei-hero.jpg" alt="Site da Memoriei: ímãs de foto personalizados" loading="lazy">
+                <span class="feature-tag">Case em destaque</span>
+                <span class="feature-brand" style="font-size:0">Memoriei</span>
+            </div>
+            <div class="feature-copy">
+                <span class="project-status status-dev">● Em desenvolvimento</span>
+                <h3>Loja Virtual — Memoriei</h3>
+                <p>Loja virtual de ímãs de foto e bottons personalizados: vitrine dos kits com preço, passo a passo de como funciona, pagamento por Pix e cartão, envio pro Brasil todo e um visual delicado, com o carinho que a marca pede.</p>
+                <div class="feature-links">
+                    <a href="https://memorieioficial.com.br/" target="_blank">Ver site ↗</a>
                 </div>
             </div>
         </div>
