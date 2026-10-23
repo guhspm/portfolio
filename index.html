@@ -38,8 +38,8 @@
             --font-display:'Manrope',system-ui,sans-serif;--font-serif:'Instrument Serif',Georgia,serif;--font-mono:'JetBrains Mono',ui-monospace,monospace;
             --b:1.5px solid var(--ink);--shadow:6px 6px 0 var(--lav);--radius:14px}
         *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-        html{scroll-behavior:smooth;overflow-x:hidden}
-        body{background-color:var(--paper);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:28px 28px;color:var(--ink);font-family:var(--font-display);font-weight:500;overflow-x:hidden;max-width:100vw;-webkit-font-smoothing:antialiased}
+        html{scroll-behavior:smooth;overflow-x:clip}
+        body{background-color:var(--paper);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:28px 28px;color:var(--ink);font-family:var(--font-display);font-weight:500;max-width:100vw;-webkit-font-smoothing:antialiased;overflow-x:clip}
         h1 em,h2 em,h3 em{font-family:var(--font-serif);font-style:italic;font-weight:400;color:var(--purple);letter-spacing:0}
         .label,.section-label,.about-label{font-family:var(--font-mono);font-size:.74rem;font-weight:500;color:var(--purple);letter-spacing:.14em;text-transform:uppercase}
 
@@ -62,13 +62,6 @@
         .hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
         .hamburger.open span:nth-child(2){opacity:0}
         .hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
-        .mobile-menu{position:fixed;inset:0;z-index:600;background:var(--paper);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:1.6rem;opacity:0;pointer-events:none;transition:opacity .3s}
-        .mobile-menu.open{opacity:1;pointer-events:all}
-        .mobile-menu a{font-size:clamp(2rem,10vw,3rem);font-weight:800;color:var(--ink);text-decoration:none;letter-spacing:-.03em}
-        .mobile-menu a:hover{color:var(--purple)}
-        .mm-close{position:absolute;top:1.1rem;right:1.25rem;width:42px;height:42px;border:var(--b);border-radius:10px;background:var(--white);font-size:1.4rem;line-height:1;color:var(--ink);cursor:pointer}
-        .mm-footer{position:absolute;bottom:3rem;display:flex;gap:2rem}
-        .mm-footer a{font-family:var(--font-mono)!important;font-size:.75rem!important;color:var(--gray)!important;letter-spacing:.1em;text-transform:uppercase;font-weight:400!important}
 
         /* BOTÕES */
         .btn,.btn-primary,.btn-ghost,.btn-wa{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;padding:.95rem 1.6rem;border:var(--b);border-radius:12px;font-family:var(--font-mono);font-size:.76rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;box-shadow:4px 4px 0 var(--lav);transition:transform .15s,box-shadow .15s;cursor:pointer}
@@ -313,6 +306,75 @@
         .ig-cta{display:block;text-align:center;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--purple);padding:.75rem 0 .35rem}
         @media(max-width:1024px){.ig-wrap{grid-template-columns:1fr}}
         @media(max-width:900px){#instagram{padding:4rem 1.25rem}.ig-reels{grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;justify-content:stretch}.ig-cta{font-size:.6rem;letter-spacing:0}}
+
+        /* CASES COMPACTOS */
+        .projects-grid{grid-template-columns:repeat(3,1fr);gap:1.3rem}
+        .card-thumb{height:140px}
+        .card-body{padding:1.1rem 1.2rem 1.2rem}
+        .project-tags{margin-bottom:.55rem;gap:.35rem}
+        .tag{font-size:.6rem;padding:.2rem .55rem}
+        .project-status{margin-bottom:.55rem}
+        .project-card h3{font-size:1rem;line-height:1.3;margin-bottom:.45rem}
+        .project-card p{flex:none;font-size:.82rem;line-height:1.55;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+        .card-actions{margin-top:auto;padding-top:.9rem;gap:.55rem .8rem}
+        @media(max-width:1100px){.projects-grid{grid-template-columns:repeat(2,1fr)}}
+        @media(max-width:900px){
+            .projects-grid{grid-template-columns:1fr;gap:.9rem}
+            .project-card{display:grid;grid-template-columns:96px 1fr}
+            .card-thumb{height:auto;border-bottom:none;border-right:var(--b)}
+            .card-thumb>*:not(.card-thumb-img):not(.card-live-badge){zoom:.42}
+            .card-thumb-img[style*="padding"]{padding:.7rem!important}
+            .card-live-badge{display:none}
+            .card-body{padding:.85rem .9rem .9rem}
+            .project-tags{display:none}
+            .project-status{font-size:.58rem;padding:.15rem .5rem;margin-bottom:.4rem}
+            .project-card h3{font-size:.92rem;margin-bottom:.3rem}
+            .project-card p{font-size:.78rem;-webkit-line-clamp:3}
+            .card-actions{padding-top:.65rem;gap:.45rem .7rem}
+            .project-link{font-size:.62rem}
+            .project-link-wa{font-size:.6rem;padding:.3rem .6rem}
+            .project-link-wa svg{width:11px;height:11px}
+        }
+
+        /* MENU MOBILE */
+        .mobile-menu{position:fixed;inset:0;z-index:600;background-color:var(--paper);background-image:linear-gradient(rgba(91,42,158,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(91,42,158,.06) 1px,transparent 1px);background-size:28px 28px;display:flex;flex-direction:column;padding:1rem 1.25rem 1.6rem;opacity:0;pointer-events:none;transform:translateY(-12px);transition:opacity .3s,transform .3s;overflow-y:auto}
+        .mobile-menu.open{opacity:1;pointer-events:all;transform:none}
+        .mm-top{display:flex;justify-content:space-between;align-items:center;padding-bottom:1rem;border-bottom:1px solid var(--line)}
+        .mm-logo{height:30px;width:auto}
+        .mm-close{width:44px;height:44px;border:var(--b);border-radius:12px;background:var(--white);box-shadow:3px 3px 0 var(--lav);font-size:1.5rem;line-height:1;color:var(--ink);cursor:pointer}
+        .mm-label{margin:1.6rem 0 .8rem}
+        .mm-list{display:flex;flex-direction:column;gap:.7rem}
+        .mm-link{display:grid;grid-template-columns:2.6rem 1fr;align-items:center;column-gap:.4rem;background:var(--white);border:var(--b);border-radius:14px;box-shadow:4px 4px 0 var(--lav);padding:.8rem 1rem;text-decoration:none;color:var(--ink);opacity:0;transform:translateX(-14px);transition:opacity .35s,transform .35s,background .15s}
+        .mobile-menu.open .mm-link{opacity:1;transform:none;transition-delay:calc(.05s + var(--i)*.05s)}
+        .mm-n{grid-row:span 2;font-family:var(--font-mono);font-size:.78rem;color:var(--purple);width:2.1rem;height:2.1rem;border:1.5px solid var(--purple);border-radius:50%;display:flex;align-items:center;justify-content:center}
+        .mm-t{font-size:1.45rem;font-weight:800;letter-spacing:-.03em;line-height:1.1}
+        .mm-d{font-family:var(--font-serif);font-style:italic;font-size:1rem;color:var(--purple);line-height:1.1}
+        .mm-link:active,.mm-link:hover{background:var(--lav-soft)}
+        .mm-link.is-active{background:var(--lav)}
+        .mm-footer{display:flex;gap:.8rem;margin-top:auto;padding-top:1.6rem}
+        .mm-footer .btn{flex:1}
+
+        /* PÍLULAS DE SEÇÃO */
+        .sec-pills{display:flex;gap:.45rem;justify-content:center;padding:0 1rem;max-height:0;opacity:0;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;background:rgba(251,250,247,.94);backdrop-filter:blur(10px);transition:max-height .3s,opacity .3s,padding .3s;border-bottom:1px solid transparent}
+        .sec-pills::-webkit-scrollbar{display:none}
+        .sec-pills.show{max-height:60px;opacity:1;padding:.55rem 1rem;border-bottom-color:var(--line)}
+        .sec-pills a{flex-shrink:0;font-family:var(--font-mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);background:var(--white);border:1.5px solid var(--ink);border-radius:999px;padding:.38rem .85rem;text-decoration:none;transition:background .15s,color .15s,box-shadow .15s}
+        .sec-pills a.is-active{background:var(--purple);color:var(--white);box-shadow:2px 2px 0 var(--lav)}
+        section[id]{scroll-margin-top:150px}
+
+        /* VOLTAR AO TOPO */
+        .float-wa{transition:transform .15s,box-shadow .15s,bottom .3s}
+        .to-top{position:fixed;right:calc(1.6rem + 7px);bottom:1.6rem;z-index:401;width:44px;height:44px;border-radius:50%;background:var(--white);border:var(--b);box-shadow:3px 3px 0 var(--lav);display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:800;color:var(--ink);text-decoration:none;opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity .25s,transform .25s}
+        body.near-bottom .to-top{opacity:1;pointer-events:all;transform:none}
+        body.near-bottom .float-wa{bottom:calc(1.6rem + 56px)}
+        @media(max-width:900px){
+            .sec-pills{justify-content:flex-start}
+            .to-top{right:calc(1.2rem + 5px);bottom:1.2rem}
+            body.near-bottom .float-wa{bottom:calc(1.2rem + 54px)}
+            section[id]{scroll-margin-top:130px}
+        }
+        @media(min-width:901px){.mobile-menu{display:none}footer{padding-right:6.5rem}}
+        @media(max-width:900px){footer{padding-bottom:4.8rem}}
     </style>
 </head>
 <body>
@@ -321,18 +383,27 @@
 <!-- WHATSAPP FLUTUANTE -->
 <a href="https://wa.me/5531984783473?text=Oi%20Gustavo!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" class="float-wa" title="Chamar no WhatsApp" aria-label="Chamar no WhatsApp"><svg width="27" height="27"><use href="#wa"/></svg></a>
 
+<!-- VOLTAR AO TOPO -->
+<a href="#hero" class="to-top" id="toTop" aria-label="Voltar ao topo">↑</a>
+
 <!-- MENU MOBILE -->
-<div class="mobile-menu" id="mobileMenu">
-    <button class="mm-close" type="button" aria-label="Fechar menu" onclick="toggleMenu(false)">×</button>
-    <a href="#sobre">Sobre</a>
-    <a href="#servicos">Serviços</a>
-    <a href="#projetos">Portfolio</a>
-    <a href="#depoimentos">Clientes</a>
-    <a href="#contato">Contato</a>
-    <a href="https://www.instagram.com/studioinside.co/" target="_blank">Instagram</a>
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mm-top">
+        <img src="logo-inside.png" alt="Inside.co" class="mm-logo">
+        <button class="mm-close" type="button" aria-label="Fechar menu" onclick="toggleMenu(false)">×</button>
+    </div>
+    <span class="label mm-label">// menu</span>
+    <div class="mm-list">
+        <a href="#sobre" class="mm-link" style="--i:0"><span class="mm-n">01</span><span class="mm-t">Sobre</span><span class="mm-d">quem sou</span></a>
+        <a href="#servicos" class="mm-link" style="--i:1"><span class="mm-n">02</span><span class="mm-t">Serviços</span><span class="mm-d">o que entrego</span></a>
+        <a href="#projetos" class="mm-link" style="--i:2"><span class="mm-n">03</span><span class="mm-t">Cases</span><span class="mm-d">projetos</span></a>
+        <a href="#instagram" class="mm-link" style="--i:3"><span class="mm-n">04</span><span class="mm-t">Instagram</span><span class="mm-d">bastidores</span></a>
+        <a href="#depoimentos" class="mm-link" style="--i:4"><span class="mm-n">05</span><span class="mm-t">Clientes</span><span class="mm-d">depoimentos</span></a>
+        <a href="#contato" class="mm-link" style="--i:5"><span class="mm-n">06</span><span class="mm-t">Contato</span><span class="mm-d">vamos conversar</span></a>
+    </div>
     <div class="mm-footer">
-        <a href="https://github.com/guhspm" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/gustavo-henriquesp/" target="_blank">LinkedIn</a>
+        <a href="https://wa.me/5531984783473?text=Oi%20Gustavo!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" class="btn btn-primary"><svg width="15" height="15"><use href="#wa"/></svg> WhatsApp</a>
+        <a href="https://www.instagram.com/studioinside.co/" target="_blank" class="btn btn-ghost">Instagram ↗</a>
     </div>
 </div>
 
@@ -355,6 +426,7 @@
         <a class="nav-cta" href="https://wa.me/5531984783473?text=Oi%20Gustavo!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank">Fale comigo</a>
         <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     </nav>
+    <div class="sec-pills" id="secPills" aria-label="Ir para a seção"><a href="#sobre" data-sec="sobre">Sobre</a><a href="#servicos" data-sec="servicos">Serviços</a><a href="#projetos" data-sec="projetos">Cases</a><a href="#instagram" data-sec="instagram">Instagram</a><a href="#depoimentos" data-sec="depoimentos">Clientes</a><a href="#contato" data-sec="contato">Contato</a></div>
 </header>
 
 <!-- HERO -->
@@ -1288,6 +1360,27 @@ if(photo)photo.onerror=()=>{photo.style.display='none';photo.parentElement.style
     const rotatorEl=document.getElementById('projectRotator');
     rotatorEl.addEventListener('mouseenter',()=>clearInterval(rotatorTimer));
     rotatorEl.addEventListener('mouseleave',resetRotatorTimer);
+})();
+
+/* PÍLULAS, MENU ATIVO E VOLTAR AO TOPO */
+(function(){
+    const pills=document.getElementById('secPills'),hero=document.getElementById('hero');
+    const ids=['sobre','servicos','projetos','instagram','depoimentos','contato'];
+    const secs=ids.map(id=>document.getElementById(id)).filter(Boolean);
+    function onScroll(){
+        const y=scrollY,h=innerHeight;
+        pills.classList.toggle('show',y>hero.offsetTop+hero.offsetHeight-120);
+        document.body.classList.toggle('near-bottom',y+h>document.documentElement.scrollHeight-h*1.2);
+        let cur=null;
+        secs.forEach(sc=>{if(sc.getBoundingClientRect().top<h*.35)cur=sc.id;});
+        pills.querySelectorAll('a').forEach(a=>{
+            const on=a.dataset.sec===cur;
+            if(on&&!a.classList.contains('is-active')){a.classList.add('is-active');pills.scrollTo({left:a.offsetLeft-pills.clientWidth/2+a.clientWidth/2,behavior:'smooth'});}
+            else if(!on)a.classList.remove('is-active');
+        });
+        document.querySelectorAll('.mm-link').forEach(a=>a.classList.toggle('is-active',a.getAttribute('href')==='#'+cur));
+    }
+    addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);onScroll();
 })();
 </script>
 </body>
