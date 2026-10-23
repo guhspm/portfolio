@@ -335,6 +335,14 @@
             .hero-title{font-size:2.4rem}
             .about-heading{font-size:1.7rem}
         }
+        /* DIAGNÓSTICO */
+        .diag{position:fixed;top:0;left:0;right:0;z-index:510;height:44px;display:flex;align-items:center;justify-content:center;gap:1rem;padding:0 1rem;background:#C4B5FD;color:#15121F;text-decoration:none;font-weight:700;font-size:.9rem;border-bottom:1px solid rgba(0,0,0,.25)}
+        .diag-pill{display:inline-flex;align-items:center;gap:.45rem;font-family:var(--font-mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:#5B2A9E;background:#fff;border-radius:999px;padding:.28rem .7rem}
+        .diag-pill::before{content:'';width:7px;height:7px;border-radius:50%;background:#5B2A9E}
+        .diag-go{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;background:#5B2A9E;color:#fff;border-radius:999px;padding:.35rem .85rem}
+        nav{top:44px!important}
+        #hero{padding-top:164px!important}
+        @media(max-width:768px){.diag{justify-content:space-between;font-size:.8rem}.diag-txt{display:none}.diag-pill{font-size:.62rem;letter-spacing:.1em}#hero{padding-top:144px!important}}
     </style>
 </head>
 <body>
@@ -354,6 +362,13 @@
         <a href="https://www.linkedin.com/in/gustavo-henriquesp/" target="_blank">LinkedIn</a>
     </div>
 </div>
+
+<!-- DIAGNÓSTICO -->
+<a class="diag" href="https://wa.me/5531984783473?text=Oi%2C%20quero%20o%20diagn%C3%B3stico%20do%20meu%20perfil%21" target="_blank">
+    <span class="diag-pill">Diagnóstico grátis</span>
+    <span class="diag-txt">Eu analiso o seu perfil e te mando o que mudar.</span>
+    <span class="diag-go">Quero o meu →</span>
+</a>
 
 <nav id="navbar">
     <a href="#hero" class="nav-logo">Gustavo.dev</a>
