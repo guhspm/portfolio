@@ -306,12 +306,13 @@
         .ig-wrap{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:minmax(260px,.8fr) 1.6fr;gap:3.5rem;align-items:center}
         .ig-copy .section-heading{margin-bottom:1.2rem}
         .ig-copy p{color:var(--gray);line-height:1.7;margin-bottom:1.8rem;max-width:380px}
-        .ig-reels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.4rem;align-items:start}
-        .ig-card{background:var(--white);border:var(--b);border-radius:var(--radius);box-shadow:var(--shadow);padding:8px;overflow:hidden;min-height:200px}
-        .ig-card .instagram-media{margin:0!important;min-width:0!important;width:100%!important;max-width:100%!important;border:0!important;box-shadow:none!important}
-        .ig-card blockquote a{display:block;padding:2rem 1rem;text-align:center;font-family:var(--font-mono);font-size:.74rem;color:var(--purple)}
+        .ig-reels{display:grid;grid-template-columns:repeat(2,minmax(0,280px));gap:1.6rem;align-items:start;justify-content:center}
+        .ig-card{display:block;background:var(--white);border:var(--b);border-radius:var(--radius);box-shadow:var(--shadow);padding:8px;text-decoration:none;transition:transform .15s,box-shadow .15s}
+        .ig-card:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--lav)}
+        .ig-card img{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;border-radius:8px;border:1px solid rgba(21,18,31,.15)}
+        .ig-cta{display:block;text-align:center;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--purple);padding:.75rem 0 .35rem}
         @media(max-width:1024px){.ig-wrap{grid-template-columns:1fr}}
-        @media(max-width:900px){#instagram{padding:4rem 1.25rem}.ig-reels{grid-template-columns:1fr;max-width:400px}}
+        @media(max-width:900px){#instagram{padding:4rem 1.25rem}.ig-reels{grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;justify-content:stretch}.ig-cta{font-size:.6rem;letter-spacing:0}}
     </style>
 </head>
 <body>
@@ -1027,8 +1028,8 @@
             <a href="https://www.instagram.com/studioinside.co/" target="_blank" class="btn btn-primary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg> Seguir @studioinside.co</a>
         </div>
         <div class="ig-reels reveal reveal-delay-1">
-            <div class="ig-card"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/De0JxqlunyH/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/De0JxqlunyH/" target="_blank">Ver este Reel no Instagram ↗</a></blockquote></div>
-            <div class="ig-card"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/Det98iUvk49/" data-instgrm-version="14"><a href="https://www.instagram.com/reel/Det98iUvk49/" target="_blank">Ver este Reel no Instagram ↗</a></blockquote></div>
+            <a class="ig-card" href="https://www.instagram.com/reel/De0JxqlunyH/" target="_blank" aria-label="Reel: Você é criador de conteúdo?"><img src="reel-1.jpg" alt="Reel: Você é criador de conteúdo?" loading="lazy" width="450" height="797"><span class="ig-cta">Assistir no Instagram ↗</span></a>
+            <a class="ig-card" href="https://www.instagram.com/reel/Det98iUvk49/" target="_blank" aria-label="Reel: 1 mês de posts em uma noite"><img src="reel-2.jpg" alt="Reel: 1 mês de posts em uma noite" loading="lazy" width="450" height="797"><span class="ig-cta">Assistir no Instagram ↗</span></a>
         </div>
     </div>
 </section>
@@ -1289,6 +1290,5 @@ if(photo)photo.onerror=()=>{photo.style.display='none';photo.parentElement.style
     rotatorEl.addEventListener('mouseleave',resetRotatorTimer);
 })();
 </script>
-<script async src="https://www.instagram.com/embed.js"></script>
 </body>
 </html>
