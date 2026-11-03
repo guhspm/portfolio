@@ -379,6 +379,15 @@
         .nav-links a.is-active{color:var(--white);background:var(--purple);border-color:var(--ink);box-shadow:2px 2px 0 var(--lav)}
         .nav-links{gap:.6rem}
         @media(max-width:900px){footer{padding-bottom:4.8rem}}
+
+        /* NAVEGAÇÃO DOS CASES EM DESTAQUE */
+        .rotator-nav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1.3rem}
+        .rotator-nav .rotator-dots{margin-top:0;gap:.7rem}
+        .rotator-dots button{width:12px;height:12px;position:relative}
+        .rotator-dots button::after{content:'';position:absolute;inset:-9px}
+        .rot-arrow{width:42px;height:42px;border-radius:50%;border:1.5px solid var(--ink);background:var(--white);box-shadow:2px 2px 0 var(--lav);font-size:1.05rem;font-weight:800;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .15s,background .15s}
+        .rot-arrow:hover{background:var(--lav-soft);transform:translate(-1px,-1px)}
+        .feature-rotator{touch-action:pan-y}
     </style>
 </head>
 <body>
@@ -480,7 +489,7 @@
     </div>
     <figure class="polaroid reveal reveal-delay-2">
         <span class="tape"></span>
-        <img src="perfilgu.jpeg" alt="Gustavo" id="profilePhoto">
+        <img src="perfil-gustavo.jpg" alt="Gustavo" id="profilePhoto">
         <figcaption>Gustavo<span>Fundador · Inside.co</span></figcaption>
     </figure>
 </section>
@@ -633,6 +642,7 @@
                     <a href="https://memorieioficial.com.br/" target="_blank">Ver site ↗</a>
                 </div>
             </div>
+        </div>
         <div class="feature-slide" data-cat="marketing,sites">
             <div class="feature-visual is-logo" style="--f-bg:#1E2A8A">
                 <img src="lp-logo.png" alt="Logo da LP Barbearia" loading="lazy">
@@ -682,9 +692,8 @@
                 </div>
             </div>
         </div>
-        </div>
     </div>
-    <div class="rotator-dots" id="rotatorDots"></div>
+    <div class="rotator-nav"><button class="rot-arrow" id="rotPrev" type="button" aria-label="Case anterior">←</button><div class="rotator-dots" id="rotatorDots"></div><button class="rot-arrow" id="rotNext" type="button" aria-label="Próximo case">→</button></div>
 
     <div class="projects-grid">
 
@@ -1378,8 +1387,23 @@ if(photo)photo.onerror=()=>{photo.style.display='none';photo.parentElement.style
     }
     resetRotatorTimer();
     const rotatorEl=document.getElementById('projectRotator');
-    rotatorEl.addEventListener('mouseenter',()=>clearInterval(rotatorTimer));
-    rotatorEl.addEventListener('mouseleave',resetRotatorTimer);
+    function step(dir){
+        let n=idx,tries=0;
+        do{n=(n+dir+slides.length)%slides.length;tries++;}while(slides[n].dataset.hiddenByFilter==='1'&&tries<slides.length);
+        goToSlide(n);resetRotatorTimer();
+    }
+    document.getElementById('rotPrev').addEventListener('click',()=>step(-1));
+    document.getElementById('rotNext').addEventListener('click',()=>step(1));
+    rotatorEl.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse')clearInterval(rotatorTimer);});
+    rotatorEl.addEventListener('pointerleave',e=>{if(e.pointerType==='mouse')resetRotatorTimer();});
+    let tx=null,ty=null;
+    rotatorEl.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;ty=e.touches[0].clientY;},{passive:true});
+    rotatorEl.addEventListener('touchend',e=>{
+        if(tx===null)return;
+        const dx=e.changedTouches[0].clientX-tx,dy=e.changedTouches[0].clientY-ty;
+        if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy))step(dx<0?1:-1);
+        tx=null;
+    },{passive:true});
 })();
 
 /* PÍLULAS, MENU ATIVO E VOLTAR AO TOPO */
