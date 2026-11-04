@@ -1,1431 +1,530 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gustavo | Desenvolvimento, Marketing & Vídeo · Inside.co</title>
-    <meta name="description" content="Sites, e-commerce e automação Python, gestão de mídias sociais e produção de vídeo. Projetos entregues para marcas reais. BH · MG · Atendimento nacional.">
-    <link rel="canonical" href="https://guhspm.github.io/portfolio/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gustavo · Inside.co | Instagram, site e automação</title>
+<meta name="description" content="Instagram, site e automação pra negócio local vender mais. Gestão de Instagram, sites e lojas, automação, identidade visual e vídeo. Atendimento em todo o Brasil.">
+<link rel="canonical" href="https://guhspm.github.io/portfolio/">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#FFFFFF">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://guhspm.github.io/portfolio/">
+<meta property="og:title" content="Gustavo · Inside.co | Instagram, site e automação">
+<meta property="og:description" content="Instagram, site e automação pra negócio local vender mais. Gestão de Instagram, sites e lojas, automação, identidade visual e vídeo. Atendimento em todo o Brasil.">
+<meta property="og:image" content="https://guhspm.github.io/portfolio/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gustavo · Inside.co | Instagram, site e automação">
+<meta name="twitter:description" content="Instagram, site e automação pra negócio local vender mais. Gestão de Instagram, sites e lojas, automação, identidade visual e vídeo. Atendimento em todo o Brasil.">
+<meta name="twitter:image" content="https://guhspm.github.io/portfolio/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#17121B;--purple:#5B2A9E;--lav:#C4B5FD;--soft:#F4F1FA;--gray:#5E5868;--line:#E7E3EC;--white:#fff;
+  --display:'Bricolage Grotesque',system-ui,sans-serif;--serif:'Instrument Serif',Georgia,serif;--body:'Inter',system-ui,sans-serif;
+  --pad:20px}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{background:#fff;color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding:0 var(--pad)}
+em.s{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--purple);letter-spacing:-.01em}
+.micro{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--gray)}
+.corners{display:flex;justify-content:space-between;gap:16px;padding-bottom:18px;border-bottom:1px solid var(--line);margin-bottom:40px}
+.h2{font-family:var(--display);font-weight:800;font-size:clamp(44px,9vw,104px);line-height:.9;letter-spacing:-.045em}
+.h2 em.s{font-size:1.06em}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--body);font-weight:600;font-size:15px;text-decoration:none;border-radius:999px;padding:15px 22px;transition:transform .15s,background .15s}
+.btn-p{background:var(--purple);color:#fff}
+.btn-p:hover{background:#4a2182;transform:translateY(-2px)}
+.btn-g{color:var(--ink);padding-left:4px;padding-right:4px;border-radius:0;border-bottom:1.5px solid var(--ink)}
+.arrow{font-family:var(--body);font-weight:500}
 
-    <!-- FAVICON -->
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <meta name="theme-color" content="#FBFAF7">
+/* TOPO */
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(10px)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+.logo{height:28px;width:auto}
+.top-cta{font-size:13px;font-weight:600;text-decoration:none;color:#fff;background:var(--ink);border-radius:999px;padding:9px 14px}
 
-    <!-- OPEN GRAPH -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://guhspm.github.io/portfolio/">
-    <meta property="og:title" content="Gustavo | Desenvolvimento, Marketing & Vídeo · Inside.co">
-    <meta property="og:description" content="Sites, automações, gestão de mídias sociais e produção de vídeo que funcionam de verdade. Projetos entregues para marcas reais em todo o Brasil.">
-    <meta property="og:image" content="https://guhspm.github.io/portfolio/og-image.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:locale" content="pt_BR">
+/* CAPA */
+.capa{padding:28px 0 72px}
+.capa .corners{margin-bottom:28px}
+.capa-grid{position:relative}
+.capa h1{font-family:var(--display);font-weight:800;font-size:clamp(46px,11.5vw,132px);line-height:.88;letter-spacing:-.05em;position:relative;z-index:1}
+.capa h1 em.s{font-size:1.08em;line-height:.8}
+.capa-foto{position:relative;width:58%;max-width:280px;margin:22px 0 0 auto;z-index:2}
+.capa-foto img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 20%;border-radius:200px 200px 24px 24px}
+.capa-foto .tag{position:absolute;left:-14px;bottom:22px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:7px 12px;font-size:12px;font-weight:600;white-space:nowrap}
+.capa-foto .tag b{color:var(--purple)}
+.capa-sub{font-size:17px;color:var(--gray);max-width:520px;margin:26px 0 28px}
+.capa-ctas{display:flex;flex-wrap:wrap;gap:18px;align-items:center}
 
-    <!-- TWITTER CARD -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Gustavo | Desenvolvimento, Marketing & Vídeo · Inside.co">
-    <meta name="twitter:description" content="Sites, automações, gestão de mídias sociais e produção de vídeo que funcionam de verdade. Projetos entregues para marcas reais em todo o Brasil.">
-    <meta name="twitter:image" content="https://guhspm.github.io/portfolio/og-image.jpg">
+/* NÚMEROS */
+.numeros{padding:72px 0;background:var(--soft)}
+.num-grid{display:grid;gap:36px}
+.num{border-top:1.5px solid var(--ink);padding-top:16px}
+.num .big{font-family:var(--display);font-weight:800;font-size:clamp(56px,13vw,112px);line-height:.9;letter-spacing:-.05em;display:block}
+.num .big small{font-size:.5em;letter-spacing:-.03em}
+.num .big .s{font-size:1.02em}
+.num .big.nowrap{white-space:nowrap;font-size:clamp(48px,9.5vw,78px)}
+.num p{margin-top:12px;color:var(--gray);font-size:15px;max-width:300px}
+.num p strong{color:var(--ink);font-weight:600}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        :root{--paper:#FBFAF7;--ink:#15121F;--purple:#5B2A9E;--lav:#C4B5FD;--lav-soft:#EFEAFE;--gray:#5B5570;--white:#fff;--grid:rgba(91,42,158,.06);--line:rgba(21,18,31,.14);
-            --accent:var(--purple);--text:var(--ink);--text-secondary:var(--gray);--text-muted:#8a849c;
-            --font-display:'Manrope',system-ui,sans-serif;--font-serif:'Instrument Serif',Georgia,serif;--font-mono:'JetBrains Mono',ui-monospace,monospace;
-            --b:1.5px solid var(--ink);--shadow:6px 6px 0 var(--lav);--radius:14px}
-        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-        html{scroll-behavior:smooth;overflow-x:clip}
-        body{background-color:var(--paper);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:28px 28px;color:var(--ink);font-family:var(--font-display);font-weight:500;max-width:100vw;-webkit-font-smoothing:antialiased;overflow-x:clip}
-        h1 em,h2 em,h3 em{font-family:var(--font-serif);font-style:italic;font-weight:400;color:var(--purple);letter-spacing:0}
-        .label,.section-label,.about-label{font-family:var(--font-mono);font-size:.74rem;font-weight:500;color:var(--purple);letter-spacing:.14em;text-transform:uppercase}
+/* CASES */
+.cases{padding:96px 0 40px}
+.cases-intro{display:grid;gap:18px;margin-bottom:56px}
+.cases-intro p{color:var(--gray);max-width:440px}
+.case{display:grid;gap:22px;padding:44px 0;border-top:1px solid var(--line)}
+.case>*{min-width:0}
+.panel{overflow:hidden}
+.panel .giant.mid{overflow-wrap:anywhere}
+.case-top{display:flex;justify-content:space-between;align-items:baseline;gap:6px 16px;flex-wrap:wrap}
+.case-n{font-family:var(--serif);font-style:italic;font-size:28px;color:var(--purple);line-height:1}
+.case h3{font-family:var(--display);font-weight:800;font-size:clamp(38px,8vw,72px);line-height:.92;letter-spacing:-.045em;margin:6px 0 14px}
+.case h3 em.s{font-size:1.05em}
+.case-desc{color:var(--gray);font-size:15.5px;max-width:520px}
+.case-res{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:18px}
+.case-res span{font-family:var(--display);font-weight:800;font-size:28px;letter-spacing:-.03em;line-height:1}
+.case-res span small{display:block;font-family:var(--body);font-weight:500;font-size:12px;letter-spacing:.02em;color:var(--gray);margin-top:6px}
+.links{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:20px}
+.links a{font-weight:600;font-size:14px;display:inline-block;padding-top:8px;text-decoration:none;border-bottom:1.5px solid var(--lav);padding-bottom:2px}
+.links a:hover{border-color:var(--purple);color:var(--purple)}
+/* mídias */
+.browser{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#fff;box-shadow:0 30px 60px -30px rgba(23,18,27,.35)}
+.browser .bar{height:28px;display:flex;align-items:center;gap:6px;padding:0 12px;background:#F3F1F5;border-bottom:1px solid var(--line)}
+.browser .bar i{width:9px;height:9px;border-radius:50%;background:#D6D1DC}
+.browser .bar span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:70%;margin-left:10px;font-size:11px;color:var(--gray);background:#fff;border-radius:6px;padding:2px 10px}
+.browser img{width:100%;height:auto}
+.paper{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:end}
+.paper img{border-radius:6px;box-shadow:0 24px 40px -24px rgba(23,18,27,.4)}
+.paper img:first-child{transform:rotate(-2deg)}
+.paper img:last-child{transform:rotate(2deg)}
+.strip{border-radius:12px;overflow:hidden}
+.panel{border-radius:18px;padding:34px 28px;min-height:240px;display:flex;flex-direction:column;justify-content:space-between;gap:24px}
+.panel.dark{background:var(--ink);color:#fff}
+.panel.dark .micro{color:var(--lav)}
+.panel .giant{font-family:var(--display);font-weight:800;font-size:clamp(64px,14vw,132px);line-height:.85;letter-spacing:-.06em}
+.panel .giant em.s{color:var(--lav)}
+.panel .giant.nowrap{white-space:nowrap;font-size:clamp(46px,7.4vw,100px)}
+.panel .giant.mid{font-size:clamp(40px,7vw,88px)}
+.panel.soft{background:var(--soft)}
+.panel.soft .giant{color:var(--ink);font-size:clamp(48px,10vw,92px)}
+.mais{padding:48px 0 96px}
+.mais ul{list-style:none;border-top:1px solid var(--line)}
+.mais li{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.mais li b{font-family:var(--display);font-weight:800;font-size:20px;letter-spacing:-.02em}
+.mais li span{color:var(--gray);font-size:14px;flex:1;min-width:0}
+.mais li{flex-wrap:wrap}
+.mais li b{flex-basis:100%}
+@media(min-width:760px){.mais li{flex-wrap:nowrap}.mais li b{flex-basis:auto;min-width:220px}}
+.mais li a{font-weight:600;font-size:14px;text-decoration:none;white-space:nowrap;padding:12px 0 12px 12px;margin:-12px 0}
 
-        /* TOPO: diagnóstico + nav */
-        header.top{position:sticky;top:0;z-index:500}
-        .diag{display:flex;align-items:center;justify-content:center;gap:1rem;padding:.6rem 1.25rem;background:var(--lav);border-bottom:var(--b);color:var(--ink);text-decoration:none;font-weight:800;font-size:.92rem}
-        .diag-pill{display:inline-flex;align-items:center;gap:.45rem;font-family:var(--font-mono);font-weight:500;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--purple);background:var(--white);border:1px solid var(--ink);border-radius:999px;padding:.3rem .75rem}
-        .diag-pill::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--purple)}
-        .diag-go{font-family:var(--font-mono);font-weight:500;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;background:var(--purple);color:var(--white);border:1.5px solid var(--ink);border-radius:999px;padding:.4rem .9rem;box-shadow:3px 3px 0 var(--ink);transition:transform .15s}
-        .diag:hover .diag-go{transform:translate(-1px,-1px)}
-        nav{display:flex;justify-content:space-between;align-items:center;padding:1rem 6vw;background:rgba(251,250,247,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-        .brand{font-family:var(--font-serif);font-size:1.75rem;color:var(--ink);text-decoration:none;line-height:1;letter-spacing:-.01em}
-        .brand em{font-style:italic;color:var(--purple)}
-        .nav-links{display:flex;gap:1.8rem;list-style:none}
-        .nav-links a{font-family:var(--font-mono);font-size:.74rem;color:var(--gray);text-decoration:none;letter-spacing:.08em}
-        .nav-links a:hover{color:var(--purple)}
-        .nav-cta{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--ink);background:var(--white);border:var(--b);border-radius:999px;padding:.55rem 1rem;box-shadow:3px 3px 0 var(--lav)}
-        .hamburger{display:none;background:var(--white);border:var(--b);border-radius:10px;width:42px;height:42px;align-items:center;justify-content:center;flex-direction:column;gap:5px;cursor:pointer;position:relative;z-index:601}
-        .hamburger span{display:block;width:18px;height:1.5px;background:var(--ink);transition:transform .3s,opacity .3s}
-        .hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
-        .hamburger.open span:nth-child(2){opacity:0}
-        .hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+/* DEPOIMENTOS */
+.depo{padding:96px 0;background:var(--ink);color:#fff}
+.depo .corners{border-color:rgba(255,255,255,.15)}
+.depo .micro{color:var(--lav)}
+.depo .h2 em.s{color:var(--lav)}
+.depo-list{display:grid;gap:0;margin-top:48px}
+.q{padding:30px 0;border-top:1px solid rgba(255,255,255,.15)}
+.q blockquote{font-family:var(--serif);font-size:clamp(24px,4.6vw,38px);line-height:1.15;letter-spacing:-.01em}
+.q blockquote::before{content:'“';color:var(--lav)}
+.q blockquote::after{content:'”';color:var(--lav)}
+.q cite{display:block;margin-top:14px;font-style:normal;font-size:13px;color:rgba(255,255,255,.65)}
+.q cite b{color:#fff;font-weight:600}
 
-        /* BOTÕES */
-        .btn,.btn-primary,.btn-ghost,.btn-wa{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;padding:.95rem 1.6rem;border:var(--b);border-radius:12px;font-family:var(--font-mono);font-size:.76rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;box-shadow:4px 4px 0 var(--lav);transition:transform .15s,box-shadow .15s;cursor:pointer}
-        .btn:hover,.btn-primary:hover,.btn-ghost:hover,.btn-wa:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--lav)}
-        .btn-primary,.btn-wa{background:var(--purple);color:var(--white)}
-        .btn-ghost{background:var(--white);color:var(--ink)}
+/* RODAPÉ provisório */
+footer{padding:48px 0 110px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
+footer a{font-weight:600;text-decoration:none}
+.float-wa{position:fixed;right:16px;bottom:16px;z-index:60;background:var(--purple);color:#fff;border-radius:999px;padding:14px 18px;font-weight:600;font-size:14px;text-decoration:none;box-shadow:0 16px 30px -12px rgba(91,42,158,.6)}
 
-        /* WHATSAPP FLUTUANTE */
-        .float-wa{position:fixed;bottom:1.6rem;right:1.6rem;z-index:400;display:flex;align-items:center;justify-content:center;width:58px;height:58px;border-radius:50%;background:var(--purple);color:var(--white);border:var(--b);box-shadow:4px 4px 0 var(--lav);text-decoration:none;transition:transform .15s,box-shadow .15s}
-        .float-wa:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--lav)}
-
-        /* HERO */
-        #hero{max-width:1240px;margin:0 auto;padding:6rem 6vw 5rem;display:grid;grid-template-columns:1fr 300px;gap:4rem;align-items:center}
-        .hero-eyebrow{display:flex;align-items:center;gap:.8rem;margin-bottom:1.6rem}
-        .hero-eyebrow::before{content:'';width:28px;height:1.5px;background:var(--purple)}
-        .hero-title{font-size:clamp(2.7rem,6.2vw,5.6rem);font-weight:800;line-height:1;letter-spacing:-.04em;margin-bottom:1.6rem}
-        .hero-title em{font-size:1.1em;line-height:.8}
-        .hero-sub{font-size:1.02rem;line-height:1.7;color:var(--gray);max-width:560px;margin-bottom:2.2rem}
-        .hero-cta{display:flex;gap:1rem;flex-wrap:wrap}
-        .stats-card{background:var(--white);border:var(--b);border-radius:var(--radius);box-shadow:8px 8px 0 var(--lav);padding:1.5rem 1.6rem;transform:rotate(1.2deg)}
-        .stats-card .label{display:block;margin-bottom:.6rem}
-        .stat{padding:.95rem 0;border-top:1.5px dashed var(--line)}
-        .stat:first-of-type{border-top:none}
-        .stat-num{display:block;font-size:2.3rem;font-weight:800;letter-spacing:-.03em;line-height:1}
-        .stat-num small{font-size:.6em;color:var(--purple)}
-        .stat-label{font-family:var(--font-mono);font-size:.7rem;color:var(--gray);letter-spacing:.08em;text-transform:uppercase}
-
-        /* MARQUEE */
-        .marquee-wrap{border-top:var(--b);border-bottom:var(--b);background:var(--white);overflow:hidden;padding:.9rem 0}
-        .marquee-track{display:flex;width:max-content;animation:marquee 30s linear infinite}
-        .marquee-item{font-family:var(--font-mono);font-size:.76rem;font-weight:500;color:var(--ink);letter-spacing:.1em;text-transform:uppercase;padding:0 1rem;display:flex;align-items:center;gap:2rem;white-space:nowrap}
-        .marquee-item::after{content:'✦';color:var(--purple);font-size:.8rem}
-
-        /* MÉTRICAS */
-        .metrics{max-width:1100px;margin:0 auto;padding:4.5rem 6vw;display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem}
-        .metric{background:var(--white);border:var(--b);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.6rem 1.2rem;text-align:center}
-        .metric-num{display:block;font-size:2.6rem;font-weight:800;letter-spacing:-.04em;line-height:1.05}
-        .metric-num small{font-size:.55em;color:var(--purple);letter-spacing:-.02em}
-        .metric-label{display:block;margin-top:.45rem;font-family:var(--font-mono);font-size:.68rem;color:var(--gray);letter-spacing:.08em;text-transform:uppercase}
-
-        /* SOBRE */
-        #sobre{max-width:1140px;margin:0 auto;padding:4rem 6vw 6rem;display:grid;grid-template-columns:1fr 290px;gap:4.5rem;align-items:center}
-        #sobre .label{display:block;margin-bottom:1rem}
-        .about-heading{font-size:clamp(2.1rem,4vw,3.3rem);font-weight:800;line-height:1.05;letter-spacing:-.035em;margin-bottom:1.6rem}
-        .about-text{font-size:.98rem;line-height:1.8;color:var(--gray);margin-bottom:1.1rem;max-width:620px}
-        .about-text strong{color:var(--ink);font-weight:800}
-        .skills{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.8rem}
-        .skill{font-family:var(--font-mono);font-size:.7rem;color:var(--ink);background:var(--white);border:1px solid var(--ink);border-radius:999px;padding:.38rem .8rem;letter-spacing:.03em}
-        .polaroid{position:relative;justify-self:center;width:250px;background:var(--white);border:var(--b);box-shadow:var(--shadow);padding:12px 12px 0;transform:rotate(-3deg)}
-        .polaroid img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 15%;border:1px solid rgba(21,18,31,.15)}
-        .polaroid figcaption{font-family:var(--font-serif);font-style:italic;font-size:1.3rem;text-align:center;padding:.7rem 0 .9rem;line-height:1.1}
-        .polaroid figcaption span{display:block;font-family:var(--font-mono);font-style:normal;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--purple);margin-top:.3rem}
-        .tape{position:absolute;top:-14px;left:50%;width:96px;height:28px;margin-left:-48px;background:rgba(196,181,253,.8);transform:rotate(4deg)}
-
-        /* SEÇÕES */
-        #processo{padding:0 6vw 6rem;max-width:1300px;margin:0 auto}
-        #servicos,#projetos,#experiencia,#depoimentos{padding:6rem 6vw}
-        #projetos,#depoimentos{max-width:1300px;margin:0 auto}
-        #servicos,#experiencia{border-top:var(--b);border-bottom:var(--b);background:rgba(255,255,255,.55)}
-        .section-header{max-width:1100px;margin:0 auto 3.2rem;display:flex;justify-content:space-between;align-items:flex-end}
-        #projetos .section-header,#depoimentos .section-header,#processo .section-header{max-width:none}
-        .section-label{margin-bottom:.75rem}
-        .section-heading{font-size:clamp(2.1rem,4vw,3.2rem);font-weight:800;letter-spacing:-.035em;line-height:1.05}
-        .section-count{font-family:var(--font-mono);font-size:4.5rem;font-weight:500;color:transparent;-webkit-text-stroke:1.5px var(--lav);line-height:1;letter-spacing:-.05em;user-select:none}
-
-        /* PROCESSO */
-        .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;margin-top:2rem}
-        .process-step{background:var(--white);border:var(--b);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.3rem}
-        .process-num{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border:1.5px solid var(--purple);border-radius:50%;font-family:var(--font-mono);font-size:.8rem;color:var(--purple);margin-bottom:.8rem}
-        .process-step h3{font-size:1.02rem;font-weight:800;margin-bottom:.45rem;letter-spacing:-.01em}
-        .process-step p{font-size:.85rem;color:var(--gray);line-height:1.55}
-
-        /* SERVIÇOS */
-        .services-grid-cards{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
-        .svc-card{background:var(--white);border:var(--b);border-radius:var(--radius);box-shadow:var(--shadow);padding:1.4rem;transition:transform .15s,box-shadow .15s}
-        .svc-card:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--lav)}
-        .svc-icon{font-size:1.4rem;margin-bottom:.6rem;display:block}
-        .svc-card h3{font-size:.98rem;font-weight:800;margin-bottom:.4rem;letter-spacing:-.01em}
-        .svc-card p{font-size:.8rem;color:var(--gray);line-height:1.5;margin-bottom:.8rem}
-        .svc-steps{border-top:1.5px dashed var(--line);padding-top:.8rem;margin-top:.3rem;display:flex;flex-direction:column;gap:.4rem}
-        .svc-step{display:flex;align-items:flex-start;gap:.55rem;font-size:.75rem;color:var(--gray)}
-        .svc-step-n{font-family:var(--font-mono);font-size:.58rem;color:var(--purple);background:var(--lav-soft);border:1px solid var(--purple);width:17px;height:17px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
-
-        /* PROJETOS */
-        .projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.6rem;margin-top:3rem}
-        .subsection-heading{grid-column:1/-1;display:flex;align-items:center;gap:1.25rem;margin:1.5rem 0 .25rem}
-        .subsection-heading:first-child{margin-top:0}
-        .subsection-label{font-family:var(--font-mono);font-size:.74rem;color:var(--ink);background:var(--lav);border:1px solid var(--ink);border-radius:999px;padding:.35rem .85rem;letter-spacing:.12em;text-transform:uppercase;white-space:nowrap}
-        .subsection-line{flex:1;height:1.5px;background:var(--ink);opacity:.15}
-        .filters{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:2.2rem}
-        .filter-btn{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);background:var(--white);border:var(--b);border-radius:999px;padding:.55rem 1.1rem;cursor:pointer;transition:background .15s,color .15s}
-        .filter-btn:hover{background:var(--lav-soft)}
-        .filter-btn.active{color:var(--white);background:var(--purple);box-shadow:3px 3px 0 var(--lav)}
-        .feature-rotator{position:relative;border:var(--b);border-radius:var(--radius);overflow:hidden;margin-top:2rem;background:var(--white);box-shadow:8px 8px 0 var(--lav)}
-        .feature-slide{display:none;grid-template-columns:1.1fr 1fr;min-height:300px}
-        .feature-slide.active{display:grid}
-        .feature-visual{position:relative;padding:2rem;display:flex;flex-direction:column;justify-content:flex-start;background:linear-gradient(160deg,var(--f-c1,#ddd),var(--f-c2,#eee));overflow:hidden;min-height:220px;border-right:var(--b)}
-        .feature-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
-        .feature-visual::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.55),transparent 40%);z-index:0}
-        .feature-visual.is-logo{align-items:center;justify-content:center;gap:1rem;background:var(--f-bg,#ddd)}
-        .feature-visual.is-logo img{position:static;inset:auto;width:auto;height:auto;max-width:62%;max-height:60%;object-fit:contain;z-index:1}
-        .feature-visual.is-logo::after{display:none}
-        .feature-visual.is-light .feature-tag{color:#3a2816;opacity:.75}
-        .feature-tag{position:relative;z-index:1;font-family:var(--font-mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;opacity:.9;margin-bottom:.35rem}
-        .feature-brand{position:relative;z-index:1;font-weight:800;font-size:1.7rem;color:#fff;display:block}
-        .feature-copy{padding:2.2rem 2.4rem;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
-        .feature-copy h3{font-size:1.3rem;font-weight:800;margin:.6rem 0 .8rem;letter-spacing:-.02em}
-        .feature-copy p{color:var(--gray);font-size:.9rem;line-height:1.65;margin-bottom:1.2rem}
-        .feature-links{display:flex;gap:.6rem;flex-wrap:wrap}
-        .feature-links a{font-family:var(--font-mono);font-size:.7rem;color:var(--ink);background:var(--white);border:1px solid var(--ink);border-radius:999px;padding:.45rem .85rem;text-decoration:none;transition:background .15s}
-        .feature-links a:hover{background:var(--lav-soft);color:var(--purple)}
-        .rotator-dots{display:flex;gap:.45rem;justify-content:center;margin-top:1.4rem}
-        .rotator-dots button{width:10px;height:10px;border:1.5px solid var(--ink);background:var(--white);cursor:pointer;padding:0;border-radius:50%}
-        .rotator-dots button.active{background:var(--purple)}
-        .project-card{background:var(--white);border:var(--b);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;transition:transform .15s,box-shadow .15s}
-        .project-card:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--lav)}
-        .card-thumb{width:100%;height:180px;overflow:hidden;position:relative;flex-shrink:0;background:#eee;border-bottom:var(--b)}
-        .card-thumb iframe{width:200%;height:400px;border:none;transform:scale(.5);transform-origin:top left;pointer-events:none}
-        .card-thumb-img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform .4s}
-        .project-card:hover .card-thumb-img{transform:scale(1.04)}
-        .card-thumb-overlay{display:none}
-        .card-live-badge{position:absolute;top:.75rem;right:.75rem;font-family:var(--font-mono);font-size:.62rem;color:var(--ink);background:var(--white);border:1px solid var(--ink);padding:.22rem .6rem;border-radius:999px;letter-spacing:.06em}
-        .card-body{padding:1.6rem;display:flex;flex-direction:column;flex:1}
-        .project-tags{display:flex;gap:.45rem;margin-bottom:.8rem;flex-wrap:wrap}
-        .tag{font-family:var(--font-mono);font-size:.64rem;color:var(--purple);background:var(--lav-soft);border:1px solid rgba(91,42,158,.35);padding:.26rem .65rem;border-radius:999px;letter-spacing:.04em}
-        .project-status{display:inline-block;font-family:var(--font-mono);font-size:.64rem;color:#1d6b3a;background:#E7F6EC;border:1px solid #1d6b3a;padding:.22rem .65rem;border-radius:999px;letter-spacing:.05em;margin-bottom:.8rem;align-self:flex-start}
-        .status-dev{color:#8a5a00!important;background:#FFF3D6!important;border-color:#8a5a00!important}
-        .project-card h3{font-size:1.12rem;font-weight:800;margin-bottom:.6rem;letter-spacing:-.015em}
-        .project-card p{font-size:.88rem;color:var(--gray);line-height:1.7;flex:1}
-        .card-actions{display:flex;gap:.9rem;margin-top:1.25rem;flex-wrap:wrap;align-items:center}
-        .project-link{display:inline-flex;align-items:center;gap:.45rem;font-family:var(--font-mono);font-size:.7rem;color:var(--purple);text-decoration:none;letter-spacing:.06em;text-transform:uppercase;border-bottom:1.5px solid var(--lav);padding-bottom:2px}
-        .project-link:hover{border-color:var(--purple)}
-        .project-link-wa{display:inline-flex;align-items:center;gap:.45rem;font-family:var(--font-mono);font-size:.7rem;color:var(--white);background:var(--purple);border:1px solid var(--ink);border-radius:999px;padding:.4rem .8rem;text-decoration:none;letter-spacing:.06em;text-transform:uppercase}
-        .project-link-wa:hover{box-shadow:3px 3px 0 var(--lav)}
-        .cta-banner{grid-column:1/-1;background:var(--lav);border:var(--b);border-radius:var(--radius);box-shadow:6px 6px 0 var(--ink);padding:2rem 2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem}
-        .cta-banner h3{font-size:1.35rem;font-weight:800;margin-bottom:.4rem;letter-spacing:-.02em}
-        .cta-banner p{font-size:.9rem;color:var(--ink)}
-        .cta-banner-actions{display:flex;gap:.75rem;flex-shrink:0}
-        .cta-banner .btn-primary,.cta-banner .btn-wa{box-shadow:4px 4px 0 var(--white)}
-
-        /* TRAJETÓRIA */
-        .exp-wrap{max-width:1300px;margin:0 auto}
-        .exp-container{display:grid;grid-template-columns:1fr 1fr;gap:5rem}
-        .exp-group-label{font-family:var(--font-mono);font-size:.73rem;color:var(--purple);letter-spacing:.16em;text-transform:uppercase;margin-bottom:2.2rem;display:flex;align-items:center;gap:1rem}
-        .exp-group-label::after{content:'';flex:1;height:1.5px;background:var(--ink);opacity:.15}
-        .timeline{display:flex;flex-direction:column;gap:2.2rem}
-        .timeline-item{padding-left:1.5rem;border-left:1.5px solid var(--ink);position:relative}
-        .timeline-item::before{content:'';position:absolute;left:-6px;top:5px;width:10px;height:10px;border-radius:50%;background:var(--lav);border:1.5px solid var(--ink)}
-        .timeline-item:hover::before{background:var(--purple)}
-        .timeline-item h4{font-size:1.02rem;font-weight:800;margin-bottom:.3rem}
-        .timeline-item .period{font-family:var(--font-mono);font-size:.7rem;color:var(--purple);letter-spacing:.1em;text-transform:uppercase;margin-bottom:.5rem;display:block}
-        .timeline-item p{font-size:.88rem;color:var(--gray);line-height:1.65}
-
-        /* DEPOIMENTOS */
-        .testimonials-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.6rem;margin-top:3rem}
-        .testimonial-card{background:var(--white);border:var(--b);border-radius:var(--radius);box-shadow:var(--shadow);padding:2rem;position:relative;overflow:hidden}
-        .testimonial-card::before{content:'“';position:absolute;top:.4rem;right:1.2rem;font-family:var(--font-serif);font-size:5.5rem;line-height:1;color:var(--lav)}
-        .testimonial-text{font-size:.94rem;color:var(--ink);line-height:1.75;margin-bottom:1.5rem}
-        .testimonial-author{display:flex;align-items:center;gap:.9rem}
-        .author-avatar{width:40px;height:40px;border-radius:50%;background:var(--lav);border:1.5px solid var(--ink);color:var(--ink);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;flex-shrink:0}
-        .author-name{font-weight:800;font-size:.92rem;display:block}
-        .author-role{font-family:var(--font-mono);font-size:.66rem;color:var(--gray);letter-spacing:.04em}
-        .stars{color:var(--purple);font-size:.9rem;margin-bottom:1rem;letter-spacing:.1em}
-
-        /* CONTATO */
-        #contato{padding:6rem 6vw;text-align:center;position:relative;max-width:100%}
-        .contact-glow{display:none}
-        .contact-heading{font-size:clamp(2.3rem,5.5vw,4.8rem);font-weight:800;letter-spacing:-.04em;line-height:1.02;margin-bottom:1.4rem}
-        .contact-sub{font-size:1rem;color:var(--gray);max-width:480px;margin:0 auto 1.8rem;line-height:1.7}
-        .contact-urgency{font-family:var(--font-mono);font-size:.74rem;color:#1d6b3a;background:#E7F6EC;border:1px solid #1d6b3a;padding:.45rem 1.1rem;border-radius:999px;display:inline-block;margin-bottom:2.3rem;letter-spacing:.06em}
-        .contact-links{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-
-        footer{border-top:var(--b);background:var(--white);padding:1.8rem 6vw;display:flex;justify-content:space-between;align-items:center}
-        .footer-copy{font-family:var(--font-mono);font-size:.7rem;color:var(--gray);letter-spacing:.06em}
-        .footer-links{display:flex;gap:2rem}
-        .footer-links a{font-family:var(--font-mono);font-size:.7rem;color:var(--gray);text-decoration:none;letter-spacing:.08em;text-transform:uppercase}
-        .footer-links a:hover{color:var(--purple)}
-
-        @keyframes marquee{to{transform:translateX(-50%)}}
-        .reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
-        .reveal.visible{opacity:1;transform:translateY(0)}
-        .reveal-delay-1{transition-delay:.1s}.reveal-delay-2{transition-delay:.2s}
-        .reveal-delay-3{transition-delay:.3s}.reveal-delay-4{transition-delay:.4s}
-
-        @media(max-width:1024px){
-            .services-grid-cards{grid-template-columns:repeat(2,1fr)}
-            .cta-banner{flex-direction:column;text-align:center}
-            .cta-banner-actions{justify-content:center;flex-wrap:wrap}
-        }
-        @media(max-width:900px){
-            .diag{justify-content:space-between;gap:.6rem;padding:.55rem 1rem;font-size:.8rem}
-            .diag-txt{display:none}
-            .diag-pill{font-size:.62rem;letter-spacing:.1em}
-            nav{padding:.85rem 1.25rem}
-            .nav-links,.nav-cta{display:none}
-            .hamburger{display:flex}
-            #hero{grid-template-columns:1fr;gap:2.6rem;padding:3.2rem 1.25rem 3.5rem}
-            .stats-card{transform:none;display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem;padding:1.1rem 1rem}
-            .stats-card .label{grid-column:1/-1}
-            .stat{border-top:none;padding:.2rem 0}
-            .stat-num{font-size:1.7rem}
-            .stat-label{font-size:.58rem}
-            .metrics{grid-template-columns:repeat(2,1fr);padding:3rem 1.25rem;gap:1rem}
-            .metric-num{font-size:2rem}
-            #sobre{grid-template-columns:1fr;gap:3rem;padding:2.5rem 1.25rem 4rem}
-            .polaroid{order:-1;width:210px}
-            #processo{padding:0 1.25rem 4rem}
-            #servicos,#projetos,#experiencia,#depoimentos,#contato{padding:4rem 1.25rem}
-            .section-header{flex-direction:column;align-items:flex-start;gap:.4rem;margin-bottom:2.2rem}
-            .section-count{display:none}
-            .process-grid{grid-template-columns:1fr 1fr;gap:.9rem}
-            .services-grid-cards{grid-template-columns:1fr;gap:1rem}
-            .projects-grid{grid-template-columns:1fr;gap:1.2rem;margin-top:2.2rem}
-            .feature-slide{grid-template-columns:1fr}
-            .feature-visual{min-height:180px;border-right:none;border-bottom:var(--b)}
-            .feature-visual.is-logo img{max-height:100px}
-            .feature-copy{padding:1.6rem 1.4rem}
-            .card-thumb{height:150px}
-            .cta-banner{padding:1.5rem}
-            .exp-container{grid-template-columns:1fr;gap:3rem}
-            .testimonials-grid{grid-template-columns:1fr;gap:1.2rem}
-            .contact-links{flex-direction:column;align-items:center}
-            .contact-links a{width:100%;max-width:300px}
-            footer{flex-direction:column;gap:1rem;padding:1.5rem 1.25rem;text-align:center}
-            .footer-links{gap:1.25rem;justify-content:center}
-            .float-wa{bottom:1.2rem;right:1.2rem;width:54px;height:54px}
-        }
-        @media(max-width:380px){
-            .hero-title{font-size:2.4rem}
-            .about-heading{font-size:1.8rem}
-        }
-
-        /* INSTAGRAM */
-        #instagram{padding:6rem 6vw;border-top:var(--b);border-bottom:var(--b);background:rgba(255,255,255,.55)}
-        .ig-wrap{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:minmax(260px,.8fr) 1.6fr;gap:3.5rem;align-items:center}
-        .ig-copy .section-heading{margin-bottom:1.2rem}
-        .ig-copy p{color:var(--gray);line-height:1.7;margin-bottom:1.8rem;max-width:380px}
-        .ig-reels{display:grid;grid-template-columns:repeat(2,minmax(0,280px));gap:1.6rem;align-items:start;justify-content:center}
-        .ig-card{display:block;background:var(--white);border:var(--b);border-radius:var(--radius);box-shadow:var(--shadow);padding:8px;text-decoration:none;transition:transform .15s,box-shadow .15s}
-        .ig-card:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--lav)}
-        .ig-card img{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;border-radius:8px;border:1px solid rgba(21,18,31,.15)}
-        .ig-cta{display:block;text-align:center;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--purple);padding:.75rem 0 .35rem}
-        @media(max-width:1024px){.ig-wrap{grid-template-columns:1fr}}
-        @media(max-width:900px){#instagram{padding:4rem 1.25rem}.ig-reels{grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem;justify-content:stretch}.ig-cta{font-size:.6rem;letter-spacing:0}}
-
-        /* CASES COMPACTOS */
-        .projects-grid{grid-template-columns:repeat(3,1fr);gap:1.3rem}
-        .card-thumb{height:140px}
-        .card-body{padding:1.1rem 1.2rem 1.2rem}
-        .project-tags{margin-bottom:.55rem;gap:.35rem}
-        .tag{font-size:.6rem;padding:.2rem .55rem}
-        .project-status{margin-bottom:.55rem}
-        .project-card h3{font-size:1rem;line-height:1.3;margin-bottom:.45rem}
-        .project-card p{flex:none;font-size:.82rem;line-height:1.55;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
-        .card-actions{margin-top:auto;padding-top:.9rem;gap:.55rem .8rem}
-        @media(max-width:1100px){.projects-grid{grid-template-columns:repeat(2,1fr)}}
-        @media(max-width:900px){
-            .projects-grid{grid-template-columns:1fr;gap:.9rem}
-            .project-card:has(> .card-thumb){display:grid;grid-template-columns:96px 1fr}
-            .card-thumb{height:auto;border-bottom:none;border-right:var(--b)}
-            .card-thumb>*:not(.card-thumb-img):not(.card-live-badge):not(picture){zoom:.42}
-            .card-thumb picture{display:block;height:100%}
-            .card-thumb-img[style*="padding"]{padding:.6rem!important}
-            .card-live-badge{display:none}
-            .card-body{padding:.85rem .9rem .9rem}
-            .project-tags{display:none}
-            .project-status{font-size:.58rem;padding:.15rem .5rem;margin-bottom:.4rem}
-            .project-card h3{font-size:.92rem;margin-bottom:.3rem}
-            .project-card p{font-size:.78rem;-webkit-line-clamp:3}
-            .card-actions{padding-top:.65rem;gap:.45rem .7rem}
-            .project-link{font-size:.62rem}
-            .project-link-wa{font-size:.6rem;padding:.3rem .6rem}
-            .project-link-wa svg{width:11px;height:11px}
-        }
-
-        /* MENU MOBILE */
-        .mobile-menu{position:fixed;inset:0;z-index:600;background-color:var(--paper);background-image:linear-gradient(rgba(91,42,158,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(91,42,158,.06) 1px,transparent 1px);background-size:28px 28px;display:flex;flex-direction:column;padding:1rem 1.25rem 1.6rem;opacity:0;pointer-events:none;transform:translateY(-12px);transition:opacity .3s,transform .3s;overflow-y:auto}
-        .mobile-menu.open{opacity:1;pointer-events:all;transform:none}
-        .mm-top{display:flex;justify-content:space-between;align-items:center;padding-bottom:1rem;border-bottom:1px solid var(--line)}
-        .mm-logo{height:30px;width:auto}
-        .mm-close{width:44px;height:44px;border:var(--b);border-radius:12px;background:var(--white);box-shadow:3px 3px 0 var(--lav);font-size:1.5rem;line-height:1;color:var(--ink);cursor:pointer}
-        .mm-label{margin:1.6rem 0 .8rem}
-        .mm-list{display:flex;flex-direction:column;gap:.7rem}
-        .mm-link{display:grid;grid-template-columns:2.6rem 1fr;align-items:center;column-gap:.4rem;background:var(--white);border:var(--b);border-radius:14px;box-shadow:4px 4px 0 var(--lav);padding:.8rem 1rem;text-decoration:none;color:var(--ink);opacity:0;transform:translateX(-14px);transition:opacity .35s,transform .35s,background .15s}
-        .mobile-menu.open .mm-link{opacity:1;transform:none;transition-delay:calc(.05s + var(--i)*.05s)}
-        .mm-n{grid-row:span 2;font-family:var(--font-mono);font-size:.78rem;color:var(--purple);width:2.1rem;height:2.1rem;border:1.5px solid var(--purple);border-radius:50%;display:flex;align-items:center;justify-content:center}
-        .mm-t{font-size:1.45rem;font-weight:800;letter-spacing:-.03em;line-height:1.1}
-        .mm-d{font-family:var(--font-serif);font-style:italic;font-size:1rem;color:var(--purple);line-height:1.1}
-        .mm-link:active,.mm-link:hover{background:var(--lav-soft)}
-        .mm-link.is-active{background:var(--lav)}
-        .mm-footer{display:flex;gap:.8rem;margin-top:auto;padding-top:1.6rem}
-        .mm-footer .btn{flex:1}
-
-        /* PÍLULAS DE SEÇÃO */
-        .sec-pills{display:flex;gap:.45rem;justify-content:center;padding:0 1rem;max-height:0;opacity:0;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;background:rgba(251,250,247,.94);backdrop-filter:blur(10px);transition:max-height .3s,opacity .3s,padding .3s;border-bottom:1px solid transparent}
-        .sec-pills::-webkit-scrollbar{display:none}
-        .sec-pills.show{max-height:60px;opacity:1;padding:.55rem 1rem;border-bottom-color:var(--line)}
-        .sec-pills a{flex-shrink:0;font-family:var(--font-mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);background:var(--white);border:1.5px solid var(--ink);border-radius:999px;padding:.38rem .85rem;text-decoration:none;transition:background .15s,color .15s,box-shadow .15s}
-        .sec-pills a.is-active{background:var(--purple);color:var(--white);box-shadow:2px 2px 0 var(--lav)}
-        section[id]{scroll-margin-top:150px}
-
-        /* VOLTAR AO TOPO */
-        .float-wa{transition:transform .15s,box-shadow .15s,bottom .3s}
-        .to-top{position:fixed;right:calc(1.6rem + 7px);bottom:1.6rem;z-index:401;width:44px;height:44px;border-radius:50%;background:var(--white);border:var(--b);box-shadow:3px 3px 0 var(--lav);display:flex;align-items:center;justify-content:center;font-size:1.2rem;font-weight:800;color:var(--ink);text-decoration:none;opacity:0;pointer-events:none;transform:translateY(10px);transition:opacity .25s,transform .25s}
-        body.near-bottom .to-top{opacity:1;pointer-events:all;transform:none}
-        body.near-bottom .float-wa{bottom:calc(1.6rem + 56px)}
-        @media(max-width:900px){
-            .sec-pills{justify-content:flex-start}
-            .to-top{right:calc(1.2rem + 5px);bottom:1.2rem}
-            body.near-bottom .float-wa{bottom:calc(1.2rem + 54px)}
-            section[id]{scroll-margin-top:130px}
-        }
-        @media(min-width:901px){.mobile-menu{display:none}footer{padding-right:6.5rem}.sec-pills{display:none}}
-        .nav-links a{padding:.35rem .7rem;border-radius:999px;border:1.5px solid transparent;transition:background .15s,color .15s,border-color .15s}
-        .nav-links a.is-active{color:var(--white);background:var(--purple);border-color:var(--ink);box-shadow:2px 2px 0 var(--lav)}
-        .nav-links{gap:.6rem}
-        @media(max-width:900px){footer{padding-bottom:4.8rem}}
-
-        /* NAVEGAÇÃO DOS CASES EM DESTAQUE */
-        .rotator-nav{display:flex;align-items:center;justify-content:center;gap:1rem;margin-top:1.3rem}
-        .rotator-nav .rotator-dots{margin-top:0;gap:.7rem}
-        .rotator-dots button{width:12px;height:12px;position:relative}
-        .rotator-dots button::after{content:'';position:absolute;inset:-9px}
-        .rot-arrow{width:42px;height:42px;border-radius:50%;border:1.5px solid var(--ink);background:var(--white);box-shadow:2px 2px 0 var(--lav);font-size:1.05rem;font-weight:800;color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .15s,background .15s}
-        .rot-arrow:hover{background:var(--lav-soft);transform:translate(-1px,-1px)}
-        .feature-rotator{touch-action:pan-y}
-    </style>
-</head>
-<body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></symbol></svg>
-
-<!-- WHATSAPP FLUTUANTE -->
-<a href="https://wa.me/5531984783473?text=Oi%20Gustavo!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" class="float-wa" title="Chamar no WhatsApp" aria-label="Chamar no WhatsApp"><svg width="27" height="27"><use href="#wa"/></svg></a>
-
-<!-- VOLTAR AO TOPO -->
-<a href="#hero" class="to-top" id="toTop" aria-label="Voltar ao topo">↑</a>
-
-<!-- MENU MOBILE -->
-<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-    <div class="mm-top">
-        <img src="logo-inside.png" alt="Inside.co" class="mm-logo">
-        <button class="mm-close" type="button" aria-label="Fechar menu" onclick="toggleMenu(false)">×</button>
-    </div>
-    <span class="label mm-label">// menu</span>
-    <div class="mm-list">
-        <a href="#sobre" class="mm-link" style="--i:0"><span class="mm-n">01</span><span class="mm-t">Sobre</span><span class="mm-d">quem sou</span></a>
-        <a href="#servicos" class="mm-link" style="--i:1"><span class="mm-n">02</span><span class="mm-t">Serviços</span><span class="mm-d">o que entrego</span></a>
-        <a href="#projetos" class="mm-link" style="--i:2"><span class="mm-n">03</span><span class="mm-t">Cases</span><span class="mm-d">projetos</span></a>
-        <a href="#instagram" class="mm-link" style="--i:3"><span class="mm-n">04</span><span class="mm-t">Instagram</span><span class="mm-d">bastidores</span></a>
-        <a href="#depoimentos" class="mm-link" style="--i:4"><span class="mm-n">05</span><span class="mm-t">Clientes</span><span class="mm-d">depoimentos</span></a>
-        <a href="#contato" class="mm-link" style="--i:5"><span class="mm-n">06</span><span class="mm-t">Contato</span><span class="mm-d">vamos conversar</span></a>
-    </div>
-    <div class="mm-footer">
-        <a href="https://wa.me/5531984783473?text=Oi%20Gustavo!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" class="btn btn-primary"><svg width="15" height="15"><use href="#wa"/></svg> WhatsApp</a>
-        <a href="https://www.instagram.com/studioinside.co/" target="_blank" class="btn btn-ghost">Instagram ↗</a>
-    </div>
-</div>
-
-<header class="top">
-    <a class="diag" href="https://wa.me/5531984783473?text=Oi%2C%20quero%20o%20diagn%C3%B3stico%20do%20meu%20perfil%21" target="_blank">
-        <span class="diag-pill">Diagnóstico grátis</span>
-        <span class="diag-txt">Eu analiso o seu perfil e te mando o que mudar.</span>
-        <span class="diag-go">Quero o meu →</span>
-    </a>
-    <nav id="navbar">
-        <a href="#hero" class="brand" aria-label="Inside.co"><img src="logo-inside.png" alt="Inside.co" width="148" height="33" style="display:block;height:33px;width:auto"></a>
-        <ul class="nav-links">
-            <li><a href="#sobre">sobre</a></li>
-            <li><a href="#servicos">serviços</a></li>
-            <li><a href="#projetos">portfolio</a></li>
-            <li><a href="#depoimentos">clientes</a></li>
-            <li><a href="#contato">contato</a></li>
-            <li><a href="https://www.instagram.com/studioinside.co/" target="_blank">instagram ↗</a></li>
-        </ul>
-        <a class="nav-cta" href="https://wa.me/5531984783473?text=Oi%20Gustavo!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank">Fale comigo</a>
-        <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
-    </nav>
-    <div class="sec-pills" id="secPills" aria-label="Ir para a seção"><a href="#sobre" data-sec="sobre">Sobre</a><a href="#servicos" data-sec="servicos">Serviços</a><a href="#projetos" data-sec="projetos">Cases</a><a href="#instagram" data-sec="instagram">Instagram</a><a href="#depoimentos" data-sec="depoimentos">Clientes</a><a href="#contato" data-sec="contato">Contato</a></div>
-</header>
-
-<!-- HERO -->
-<section id="hero">
-    <div>
-        <div class="hero-eyebrow label">Sites · Marketing · Vídeo · Automação</div>
-        <h1 class="hero-title">Resultado que <em>converte</em> de verdade.</h1>
-        <p class="hero-sub">Sites, automações, gestão de mídias sociais e produção de vídeo que funcionam de verdade — não só em apresentação. Projetos entregues para marcas reais em todo o Brasil.</p>
-        <div class="hero-cta">
-            <a href="https://wa.me/5531984783473?text=Oi%20Gustavo!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" class="btn btn-primary"><svg width="15" height="15"><use href="#wa"/></svg> Falar no WhatsApp</a>
-            <a href="#projetos" class="btn btn-ghost">Ver portfolio</a>
-        </div>
-    </div>
-    <aside class="stats-card">
-        <span class="label">// em números</span>
-        <div class="stat"><span class="stat-num">21</span><span class="stat-label">Projetos entregues</span></div>
-        <div class="stat"><span class="stat-num">100<small>%</small></span><span class="stat-label">Em produção</span></div>
-        <div class="stat"><span class="stat-num">BH</span><span class="stat-label">+ todo o Brasil</span></div>
-    </aside>
-</section>
-
-<!-- MARQUEE -->
-<div class="marquee-wrap"><div class="marquee-track">
-    <div class="marquee-item">Sites</div><div class="marquee-item">E-commerce</div><div class="marquee-item">Gestão de Redes Sociais</div><div class="marquee-item">Produção de Vídeo</div><div class="marquee-item">Landing Pages</div><div class="marquee-item">Automação RPA</div><div class="marquee-item">Identidade Visual</div><div class="marquee-item">Reels &amp; Stories</div><div class="marquee-item">Inside.co</div><div class="marquee-item">BH · MG</div>
-    <div class="marquee-item">Sites</div><div class="marquee-item">E-commerce</div><div class="marquee-item">Gestão de Redes Sociais</div><div class="marquee-item">Produção de Vídeo</div><div class="marquee-item">Landing Pages</div><div class="marquee-item">Automação RPA</div><div class="marquee-item">Identidade Visual</div><div class="marquee-item">Reels &amp; Stories</div><div class="marquee-item">Inside.co</div><div class="marquee-item">BH · MG</div>
-</div></div>
-
-<!-- MÉTRICAS -->
-<div class="metrics">
-    <div class="metric reveal"><span class="metric-num"><span class="count-up" data-target="21">21</span><small>+</small></span><span class="metric-label">Projetos entregues</span></div>
-    <div class="metric reveal reveal-delay-1"><span class="metric-num"><span class="count-up" data-target="100">100</span><small>%</small></span><span class="metric-label">Em produção real</span></div>
-    <div class="metric reveal reveal-delay-2"><span class="metric-num">24h</span><span class="metric-label">Resposta garantida</span></div>
-    <div class="metric reveal reveal-delay-3"><span class="metric-num">4h<small>→5min</small></span><span class="metric-label">Ganho em automação</span></div>
-</div>
-
-<!-- SOBRE -->
-<section id="sobre">
-    <div class="reveal">
-        <span class="label">// Quem sou</span>
-        <h2 class="about-heading">Quem entende<br>o <em>negócio</em>.</h2>
-        <p class="about-text">Fundador da <strong>Inside.co</strong>, atuo em três frentes: desenvolvimento de sites e automação, gestão de mídias sociais e produção de vídeo — tudo pensado pra funcionar de verdade, não só pra parecer bonito.</p>
-        <p class="about-text">Da landing page que vende ao Reels que viraliza, passando pelo robô que processa 12 mil registros por hora: entrego projetos completos para marcas reais em todo o Brasil.</p>
-        <p class="about-text">De código a conteúdo: uma casa só pra cuidar da presença digital completa da sua marca.</p>
-        <div class="skills">
-            <span class="skill">WordPress</span><span class="skill">Elementor</span><span class="skill">Shopify</span><span class="skill">WooCommerce</span><span class="skill">Python</span><span class="skill">Automação</span><span class="skill">Gestão de Redes Sociais</span><span class="skill">Produção de Vídeo</span><span class="skill">SEO Técnico</span><span class="skill">GTM</span><span class="skill">Design</span><span class="skill">Identidade Visual</span>
-        </div>
-    </div>
-    <figure class="polaroid reveal reveal-delay-2">
-        <span class="tape"></span>
-        <img src="perfil-gustavo.jpg" alt="Gustavo" id="profilePhoto">
-        <figcaption>Gustavo<span>Fundador · Inside.co</span></figcaption>
-    </figure>
-</section>
-
-<!-- PROCESSO -->
-<section id="processo">
-    <div class="section-header reveal">
-        <div>
-            <div class="section-label">// Processo</div>
-            <h2 class="section-heading">Como eu<br><em>trabalho</em>.</h2>
-        </div>
-    </div>
-    <div class="process-grid">
-        <div class="process-step reveal">
-            <span class="process-num">01</span>
-            <h3>Diagnóstico</h3>
-            <p>Entendo o negócio e onde ele tá perdendo oportunidade — site, redes ou os dois.</p>
-        </div>
-        <div class="process-step reveal reveal-delay-1">
-            <span class="process-num">02</span>
-            <h3>Proposta</h3>
-            <p>Escopo, prazo e preço fechados antes de começar. Sem letra miúda.</p>
-        </div>
-        <div class="process-step reveal reveal-delay-2">
-            <span class="process-num">03</span>
-            <h3>Produção</h3>
-            <p>Site, pauta de redes ou vídeo — tocado por mim do início ao fim.</p>
-        </div>
-        <div class="process-step reveal reveal-delay-3">
-            <span class="process-num">04</span>
-            <h3>Entrega &amp; suporte</h3>
-            <p>Acompanho os primeiros resultados e ajusto o que precisar.</p>
-        </div>
-    </div>
-</section>
-
-<!-- SERVIÇOS -->
-<section id="servicos">
-    <div class="section-header reveal">
-        <div>
-            <div class="section-label">// O que entrego</div>
-            <h2 class="section-heading">Soluções<br><em>digitais</em>.</h2>
-        </div>
-        <div class="section-count">07</div>
-    </div>
-    <div class="services-grid-cards">
-        <div class="svc-card reveal">
-            <span class="svc-icon">🌐</span>
-            <h3>Sites &amp; Landing Pages</h3>
-            <p>Sites rápidos, responsivos e focados em conversão — do portfólio pessoal ao institucional de alto impacto.</p>
-            <div class="svc-steps">
-                <div class="svc-step"><div class="svc-step-n">1</div><span>Briefing de identidade e objetivo</span></div>
-                <div class="svc-step"><div class="svc-step-n">2</div><span>Desenvolvimento responsivo</span></div>
-                <div class="svc-step"><div class="svc-step-n">3</div><span>Deploy + domínio configurado</span></div>
-            </div>
-        </div>
-        <div class="svc-card reveal reveal-delay-1">
-            <span class="svc-icon">🛒</span>
-            <h3>E-commerce</h3>
-            <p>Lojas completas no Shopify, WooCommerce ou Shopee com integração de pagamentos e automação de pedidos.</p>
-            <div class="svc-steps">
-                <div class="svc-step"><div class="svc-step-n">1</div><span>Setup da loja e catálogo</span></div>
-                <div class="svc-step"><div class="svc-step-n">2</div><span>Integrações de pagamento e frete</span></div>
-                <div class="svc-step"><div class="svc-step-n">3</div><span>Automação de pedidos e alertas</span></div>
-            </div>
-        </div>
-        <div class="svc-card reveal reveal-delay-2">
-            <span class="svc-icon">⚡</span>
-            <h3>Automação RPA</h3>
-            <p>Robôs em Python que eliminam processos manuais — faturamento, auditoria, extração de PDF e relatórios.</p>
-            <div class="svc-steps">
-                <div class="svc-step"><div class="svc-step-n">1</div><span>Mapeamento do processo manual</span></div>
-                <div class="svc-step"><div class="svc-step-n">2</div><span>Desenvolvimento do robô com logs</span></div>
-                <div class="svc-step"><div class="svc-step-n">3</div><span>Entrega testada em produção</span></div>
-            </div>
-        </div>
-        <div class="svc-card reveal reveal-delay-3">
-            <span class="svc-icon">🎨</span>
-            <h3>Identidade Visual &amp; Design</h3>
-            <p>Logo, paleta, tipografia e materiais comerciais — marca consistente que transmite profissionalismo.</p>
-            <div class="svc-steps">
-                <div class="svc-step"><div class="svc-step-n">1</div><span>Briefing de posicionamento</span></div>
-                <div class="svc-step"><div class="svc-step-n">2</div><span>Criação de identidade visual</span></div>
-                <div class="svc-step"><div class="svc-step-n">3</div><span>Entrega de materiais prontos</span></div>
-            </div>
-        </div>
-        <div class="svc-card reveal">
-            <span class="svc-icon">🔌</span>
-            <h3>Integração de APIs</h3>
-            <p>Conexão entre sistemas, webhooks e pipelines que fazem suas ferramentas conversarem automaticamente.</p>
-            <div class="svc-steps">
-                <div class="svc-step"><div class="svc-step-n">1</div><span>Mapeamento dos sistemas</span></div>
-                <div class="svc-step"><div class="svc-step-n">2</div><span>Desenvolvimento da integração</span></div>
-                <div class="svc-step"><div class="svc-step-n">3</div><span>Monitoramento e manutenção</span></div>
-            </div>
-        </div>
-        <div class="svc-card reveal reveal-delay-1">
-            <span class="svc-icon">📊</span>
-            <h3>Business Intelligence</h3>
-            <p>Dashboards e pipelines ETL que transformam dados brutos em decisões estratégicas em tempo real.</p>
-            <div class="svc-steps">
-                <div class="svc-step"><div class="svc-step-n">1</div><span>Levantamento das fontes de dados</span></div>
-                <div class="svc-step"><div class="svc-step-n">2</div><span>Construção do pipeline ETL</span></div>
-                <div class="svc-step"><div class="svc-step-n">3</div><span>Dashboard e relatórios automáticos</span></div>
-            </div>
-        </div>
-        <div class="svc-card reveal reveal-delay-2">
-            <span class="svc-icon">🎬</span>
-            <h3>Marketing, Social Media &amp; Videomaker</h3>
-            <p>Gestão de redes, criação de conteúdo e edição de vídeo — do planejamento ao corte final, pra marca ter presença digital de verdade.</p>
-            <div class="svc-steps">
-                <div class="svc-step"><div class="svc-step-n">1</div><span>Planejamento de conteúdo e pauta</span></div>
-                <div class="svc-step"><div class="svc-step-n">2</div><span>Captação e edição de vídeo</span></div>
-                <div class="svc-step"><div class="svc-step-n">3</div><span>Gestão de redes e publicação</span></div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- PORTFOLIO -->
-<section id="projetos">
-    <div class="section-header reveal">
-        <div>
-            <div class="section-label">// Portfolio</div>
-            <h2 class="section-heading">Projetos<br><em>entregues</em>.</h2>
-        </div>
-        <div class="section-count">21</div>
-    </div>
-
-    <div class="filters reveal" role="tablist" aria-label="Filtrar projetos por área">
-        <button class="filter-btn active" data-filter="todos">Todos</button>
-        <button class="filter-btn" data-filter="sites">Sites</button>
-        <button class="filter-btn" data-filter="marketing">Marketing</button>
-        <button class="filter-btn" data-filter="video">Vídeo</button>
-        <button class="filter-btn" data-filter="automacao">Automação</button>
-    </div>
-
-    <div class="feature-rotator reveal" id="projectRotator">
-        <div class="feature-slide active" data-cat="sites">
-            <div class="feature-visual" style="--f-c1:#f7c6d6;--f-c2:#f29bb8">
-                <img src="memoriei-hero.jpg" alt="Site da Memoriei: ímãs de foto personalizados" loading="lazy">
-                <span class="feature-tag">Case em destaque</span>
-                <span class="feature-brand" style="font-size:0">Memoriei</span>
-            </div>
-            <div class="feature-copy">
-                <span class="project-status">● Concluído</span>
-                <h3>Loja Virtual — Memoriei</h3>
-                <p>Loja virtual completa de ímãs de foto e bottons personalizados, em WordPress + WooCommerce: vitrine dos kits com preço, passo a passo de como funciona, pagamento por Pix e cartão, envio pro Brasil todo ou retirada local e um visual delicado, com o carinho que a marca pede.</p>
-                <div class="feature-links">
-                    <a href="https://memorieioficial.com.br/" target="_blank">Ver site ↗</a>
-                </div>
-            </div>
-        </div>
-        <div class="feature-slide" data-cat="marketing,sites">
-            <div class="feature-visual is-logo" style="--f-bg:#1E2A8A">
-                <img src="lp-logo.png" alt="Logo da LP Barbearia" loading="lazy">
-                <span class="feature-tag">Case em destaque</span>
-                <span class="feature-brand" style="font-size:0">LP Barbearia</span>
-            </div>
-            <div class="feature-copy">
-                <span class="project-status">● Concluído</span>
-                <h3>Barbearia LP — Redes sociais, vídeo, site e linktree</h3>
-                <p>Gestão das redes sociais da barbearia, com pauta semanal, vídeos e stories. Fizemos a reforma completa do site (Clube LP, prótese capilar com antes e depois, avaliações reais do Google e as duas unidades), um linktree próprio que reconhece o celular e abre o app ou a loja certa, e uma página de primeiro acesso que ensina o cliente a baixar o app, criar a conta e agendar.</p>
-                <div class="feature-links">
-                    <a href="https://barbearialp.com.br/" target="_blank">Ver site ↗</a>
-                    <a href="https://barbearialp.com.br/links/" target="_blank">Ver linktree ↗</a>
-                    <a href="https://barbearialp.com.br/app/" target="_blank">Ver primeiro acesso no app ↗</a>
-                    <a href="https://www.instagram.com/barbearialpbh/" target="_blank">Ver Instagram ↗</a>
-                </div>
-            </div>
-        </div>
-        <div class="feature-slide" data-cat="marketing">
-            <div class="feature-visual is-logo" style="--f-bg:#3A1440">
-                <img src="aevum-logo.png" alt="Aevum Incensaria" loading="lazy">
-                <span class="feature-tag">Case em destaque</span>
-                <span class="feature-brand" style="font-size:0">Aevum Incensaria</span>
-            </div>
-            <div class="feature-copy">
-                <span class="project-status">● Concluído</span>
-                <h3>Identidade Visual Completa — Aevum Incensaria</h3>
-                <p>Marca completa para incensaria artesanal: logo em 6 variações de cor e 3 formatos (PNG, SVG, PDF), rótulo de produto pronto pra gráfica, capas de destaque pro Instagram e manual da marca com todas as diretrizes de uso.</p>
-                <div class="feature-links">
-                    <a href="Aevum_Manual_da_Marca.pdf" target="_blank">Ver manual da marca ↗</a>
-                </div>
-            </div>
-        </div>
-        <div class="feature-slide" data-cat="sites">
-            <div class="feature-visual is-logo is-light" style="--f-bg:#F8EEDC">
-                <img src="clubemv-logo-cutout.png" alt="Clube MV — Mulher Virtuosa" loading="lazy">
-                <span class="feature-tag">Case em destaque</span>
-                <span class="feature-brand" style="font-size:0">Clube MV</span>
-            </div>
-            <div class="feature-copy">
-                <span class="project-status">● Concluído</span>
-                <h3>Clube MV — Formação para Mulheres</h3>
-                <p>Landing page de vendas para clube de assinatura mensal conduzido pela médica Helena Albuquerque, com formação em três pilares (espírito, alma e corpo). WordPress + Elementor, checkout integrado via Hotmart e página construída pra converter. Hoje também cuido da gestão de mídias sociais do perfil no Instagram.</p>
-                <div class="feature-links">
-                    <a href="https://clubemv.com.br/clube-mv/" target="_blank">Ver site ↗</a>
-                    <a href="https://www.instagram.com/clubemv.oficial/" target="_blank">Ver Instagram ↗</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="rotator-nav"><button class="rot-arrow" id="rotPrev" type="button" aria-label="Case anterior">←</button><div class="rotator-dots" id="rotatorDots"></div><button class="rot-arrow" id="rotNext" type="button" aria-label="Próximo case">→</button></div>
-
-    <div class="projects-grid">
-
-        <div class="subsection-heading reveal" data-cat="sites">
-            <span class="subsection-label">Desenvolvimento de Sites</span>
-            <span class="subsection-line"></span>
-        </div>
-
-        <div class="project-card reveal reveal-delay-1" data-cat="sites">
-            <div class="card-thumb" style="background:linear-gradient(135deg,#1a1210,#2b1620);display:flex;align-items:center;justify-content:center">
-                <div style="text-align:center">
-                    <div style="font-size:1.6rem;font-weight:800;color:#fff;letter-spacing:.1em;font-family:var(--font-display)">CLUBE MV</div>
-                    <div style="font-family:var(--font-mono);font-size:.6rem;color:#e0a8ac;letter-spacing:.18em;text-transform:uppercase;margin-top:.4rem">Espírito · Alma · Corpo</div>
-                </div>
-                <div class="card-thumb-overlay"></div>
-                <span class="card-live-badge">● Ao vivo</span>
-            </div>
-            <div class="card-body">
-                <div class="project-tags"><span class="tag">WordPress</span><span class="tag">Elementor</span><span class="tag">Landing Page</span></div>
-                <span class="project-status">● Concluído</span>
-                <h3>Clube MV — Formação para Mulheres</h3>
-                <p>Landing page de vendas para clube de assinatura mensal conduzido pela médica Helena Albuquerque, com formação em três pilares (espírito, alma e corpo). WordPress + Elementor, checkout integrado via Hotmart e página construída pra converter. Hoje também cuido da gestão de mídias sociais do perfil no Instagram.</p>
-                <div class="card-actions">
-                    <a href="https://clubemv.com.br/clube-mv/" target="_blank" class="project-link">Ver site ↗</a>
-                    <a href="https://www.instagram.com/clubemv.oficial/" target="_blank" class="project-link">Ver Instagram ↗</a>
-                    <a href="https://wa.me/5531984783473?text=Quero%20uma%20landing%20page%20de%20vendas" target="_blank" class="project-link-wa">Quero igual <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="project-card reveal" data-cat="sites">
-            <div class="card-thumb" style="background:linear-gradient(135deg,#0a0a0a,#1a1a1a);display:flex;align-items:center;justify-content:center">
-                <div style="text-align:center">
-                    <div style="font-size:1.8rem;font-weight:800;color:#fff;letter-spacing:.15em;font-family:var(--font-display)">KENDAK</div>
-                    <div style="font-family:var(--font-mono);font-size:.6rem;color:#888;letter-spacing:.18em;text-transform:uppercase;margin-top:.4rem">E-commerce · Moda Lifestyle</div>
-                </div>
-                <div class="card-thumb-overlay"></div>
-                <span class="card-live-badge">● Ao vivo</span>
-            </div>
-            <div class="card-body">
-                <div class="project-tags"><span class="tag">WordPress</span><span class="tag">WooCommerce</span><span class="tag">E-commerce</span></div>
-                <span class="project-status">● Concluído</span>
-                <h3>Kendak — E-commerce de Moda Lifestyle</h3>
-                <p>Loja completa para marca de roupas e acessórios com identidade voltada para o universo do surf, skate e rua. WordPress + WooCommerce com vitrine de coleções, vídeos em destaque e integração com Mercado Pago.</p>
-                <div class="card-actions">
-                    <a href="https://kendak.com.br" target="_blank" class="project-link">Ver site ↗</a>
-                    <a href="https://wa.me/5531984783473?text=Quero%20um%20projeto%20como%20a%20Kendak" target="_blank" class="project-link-wa">Quero igual <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="project-card reveal reveal-delay-1" data-cat="sites">
-            <div class="card-thumb" style="background:linear-gradient(135deg,#1a2540,#243560);display:flex;align-items:center;justify-content:center">
-                <div style="text-align:center">
-                    <div style="font-size:1.5rem;font-weight:800;color:#fff;letter-spacing:.08em;font-family:var(--font-display)">WEB &amp; SEG</div>
-                    <div style="font-family:var(--font-mono);font-size:.6rem;color:#93c5fd;letter-spacing:.14em;text-transform:uppercase;margin-top:.4rem">Saúde e Segurança do Trabalho</div>
-                </div>
-                <div class="card-thumb-overlay"></div>
-                <span class="card-live-badge">● Ao vivo</span>
-            </div>
-            <div class="card-body">
-                <div class="project-tags"><span class="tag">HTML/CSS/JS</span><span class="tag">Landing Page</span><span class="tag">Conversão</span></div>
-                <span class="project-status">● Concluído</span>
-                <h3>WEB &amp; SEG — Saúde e Segurança do Trabalho</h3>
-                <p>Site institucional focado em conversão para consultoria de SST em Salvador/BA. Countdown de oferta, formulário integrado com WhatsApp, seção de serviços com accordion e identidade visual profissional.</p>
-                <div class="card-actions">
-                    <a href="https://webeseg.com.br" target="_blank" class="project-link">Ver site ↗</a>
-                    <a href="https://wa.me/5531984783473?text=Quero%20um%20site%20como%20a%20WEB%20%26%20SEG" target="_blank" class="project-link-wa">Quero igual <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="project-card reveal" data-cat="sites">
-            <div class="card-thumb" style="background:#0d0d0d;display:flex;align-items:center;justify-content:center">
-                <img class="card-thumb-img" src="https://www.facilitaenergia.com.br/assets/logo-facilita-energia.png?v=4" alt="Facilita Energia" style="object-fit:contain;padding:2.5rem" onerror="this.parentElement.innerHTML='<div style=&quot;text-align:center;padding:1rem&quot;><div style=&quot;font-size:1.4rem;font-weight:800;color:#22c55e;font-family:sans-serif&quot;>Facilita</div><div style=&quot;font-size:1.4rem;font-weight:800;color:#fff;font-family:sans-serif&quot;>Energia</div></div>'">
-                <div class="card-thumb-overlay"></div>
-                <span class="card-live-badge">● Ao vivo</span>
-            </div>
-            <div class="card-body">
-                <div class="project-tags"><span class="tag">HTML/CSS/JS</span><span class="tag">Identidade Visual</span><span class="tag">Landing Page</span></div>
-                <span class="project-status">● Concluído</span>
-                <h3>Facilita Energia — Consultoria em Distribuidoras</h3>
-                <p>Identidade visual e site one-page para startup de assessoria elétrica. Mascote personalizado, paleta verde/escuro, CTA por WhatsApp em cada seção e fluxo claro de jornada do cliente.</p>
-                <div class="card-actions">
-                    <a href="https://www.facilitaenergia.com.br" target="_blank" class="project-link">Ver site ↗</a>
-                    <a href="https://wa.me/5531984783473?text=Quero%20um%20projeto%20de%20identidade%20visual" target="_blank" class="project-link-wa">Quero igual <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="project-card reveal reveal-delay-1" data-cat="sites">
-            <div class="card-thumb" style="background:linear-gradient(135deg,#0d0d0d,#1a1208);display:flex;align-items:center;justify-content:center">
-                <div style="text-align:center">
-                    <div style="font-size:1.1rem;font-weight:800;color:#d4a843;letter-spacing:.08em;font-family:var(--font-display)">ALGORITMO DA</div>
-                    <div style="font-size:1.1rem;font-weight:800;color:#fff;letter-spacing:.08em;font-family:var(--font-display)">PERSONALIDADE</div>
-                    <div style="font-family:var(--font-mono);font-size:.6rem;color:#d4a843;letter-spacing:.14em;text-transform:uppercase;margin-top:.4rem">Landing Page · Infoproduto</div>
-                </div>
-                <div class="card-thumb-overlay"></div>
-                <span class="card-live-badge">● Ao vivo</span>
-            </div>
-            <div class="card-body">
-                <div class="project-tags"><span class="tag">HTML/CSS/JS</span><span class="tag">Landing Page</span><span class="tag">GTM</span></div>
-                <span class="project-status">● Concluído</span>
-                <h3>Landing Page — Algoritmo da Personalidade</h3>
-                <p>Landing page de alta conversão para infoproduto de psicologia. Dark mode com acento dourado, animações de scroll, carrossel de avaliações, tabela de preços ancorada e Google Tag Manager para rastreamento de tráfego pago.</p>
-                <div class="card-actions">
-                    <a href="https://algoritmodapersonalidade.com.br" target="_blank" class="project-link">Ver site ↗</a>
-                    <a href="https://wa.me/5531984783473?text=Quero%20uma%20landing%20page" target="_blank" class="project-link-wa">Quero igual <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="project-card reveal reveal-delay-1" data-cat="sites">
-            <div class="card-thumb" style="background:linear-gradient(135deg,#030b1a,#0d1f3c);display:flex;align-items:center;justify-content:center">
-                <div style="text-align:center">
-                    <div style="font-size:1.8rem;font-weight:800;color:#fff;letter-spacing:.2em;font-family:var(--font-display)">PARALELO</div>
-                    <div style="font-family:var(--font-mono);font-size:.6rem;color:#818cf8;letter-spacing:.18em;text-transform:uppercase;margin-top:.4rem">Agência · Creators &amp; Marcas</div>
-                </div>
-                <div class="card-thumb-overlay"></div>
-                <span class="card-live-badge">● Ao vivo</span>
-            </div>
-            <div class="card-body">
-                <div class="project-tags"><span class="tag">HTML/CSS/JS</span><span class="tag">Design</span><span class="tag">Branding</span></div>
-                <span class="project-status">● Concluído</span>
-                <h3>Site Institucional — Paralelo Agência</h3>
-                <p>Site dark premium para agência criativa de creators. Toggle "Sou Creator / Sou Marca" com conteúdo dinâmico por audiência, animações de scroll e formulário de parcerias integrado.</p>
-                <div class="card-actions">
-                    <a href="https://agenciaparalelo.netlify.app" target="_blank" class="project-link">Ver site ↗</a>
-                    <a href="https://wa.me/5531984783473?text=Quero%20um%20site%20institucional" target="_blank" class="project-link-wa">Quero igual <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="project-card reveal" data-cat="sites">
-            <div class="card-thumb" style="background:linear-gradient(135deg,#0d2010,#1a3a1a);display:flex;align-items:center;justify-content:center">
-                <div style="text-align:center">
-                    <div style="font-size:1.4rem;font-weight:800;color:#86efac;letter-spacing:.05em;font-family:var(--font-display)">Exercite-se</div>
-                    <div style="font-size:1.4rem;font-weight:800;color:#fff;letter-spacing:.05em;font-family:var(--font-display)">em Casa</div>
-                    <div style="font-family:var(--font-mono);font-size:.6rem;color:#4ade80;letter-spacing:.14em;text-transform:uppercase;margin-top:.4rem">Afiliados · Fitness</div>
-                </div>
-                <div class="card-thumb-overlay"></div>
-                <span class="card-live-badge">● Ao vivo</span>
-            </div>
-            <div class="card-body">
-                <div class="project-tags"><span class="tag">WordPress</span><span class="tag">Elementor</span><span class="tag">Afiliados</span></div>
-                <span class="project-status">● Concluído</span>
-                <h3>Site de Afiliados Fitness — Exercite-se em Casa</h3>
-                <p>Vitrine de afiliados com 51 produtos do Mercado Livre, carrossel animado, filtro por categoria e ticker de ofertas. HTML/CSS/JS puro integrado ao WordPress via Elementor — zero dependências externas.</p>
-                <div class="card-actions">
-                    <a href="https://exerciteseemcasa2026.com" target="_blank" class="project-link">Ver site ↗</a>
-                    <a href="https://wa.me/5531984783473?text=Quero%20um%20site%20de%20afiliados" target="_blank" class="project-link-wa">Quero igual <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="project-card reveal reveal-delay-1" data-cat="sites">
-            <div class="card-thumb" style="background:#f7c6d6">
-                <img class="card-thumb-img" src="memoriei-hero.jpg" alt="Site da Memoriei" loading="lazy" style="object-position:center">
-                <span class="card-live-badge">● Ao vivo</span>
-            </div>
-            <div class="card-body">
-                <div class="project-tags"><span class="tag">WordPress</span><span class="tag">WooCommerce</span><span class="tag">E-commerce</span></div>
-                <span class="project-status">● Concluído</span>
-                <h3>Loja Virtual — Memoriei</h3>
-                <p>Loja virtual completa de ímãs de foto e bottons personalizados, em WordPress + WooCommerce: vitrine dos kits com preço, passo a passo de como funciona, pagamento por Pix e cartão, envio pro Brasil todo ou retirada local e um visual delicado, com o carinho que a marca pede.</p>
-                <div class="card-actions">
-                    <a href="https://memorieioficial.com.br/" target="_blank" class="project-link">Ver site ↗</a>
-                    <a href="https://wa.me/5531984783473?text=Quero%20uma%20loja%20virtual" target="_blank" class="project-link-wa">Quero igual <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-card reveal" data-cat="sites">
-            <div class="card-thumb" style="background:linear-gradient(135deg,#1a0e0e,#2a1414);display:flex;align-items:center;justify-content:center">
-                <div style="text-align:center">
-                    <div style="font-size:1.5rem;font-weight:800;color:#fff;letter-spacing:.08em;font-family:var(--font-display)">PRIMEIRA PÁGINA</div>
-                    <div style="font-family:var(--font-mono);font-size:.6rem;color:#f87171;letter-spacing:.18em;text-transform:uppercase;margin-top:.4rem">Portal de Notícias · SC</div>
-                </div>
-                <div class="card-thumb-overlay"></div>
-                <span class="card-live-badge">● Ao vivo</span>
-            </div>
-            <div class="card-body">
-                <div class="project-tags"><span class="tag">WordPress</span><span class="tag">Portal de Notícias</span></div>
-                <span class="project-status">● Concluído</span>
-                <h3>Primeira Página SC — Portal de Notícias</h3>
-                <p>Portal de notícias regional cobrindo o Planalto Norte e o Alto Vale Catarinense (SC): editorias por cidade, política, polícia, esporte, enquetes, cobertura de eleições e edição digital em formato flipbook. WordPress completo, do zero.</p>
-                <div class="card-actions">
-                    <a href="https://www.primeirapaginasc.com/" target="_blank" class="project-link">Ver site ↗</a>
-                    <a href="https://wa.me/5531984783473?text=Quero%20um%20portal%20de%20not%C3%ADcias" target="_blank" class="project-link-wa">Quero igual <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="cta-banner reveal" data-cat="sites">
-            <div>
-                <h3>Precisa de um site ou loja virtual?</h3>
-                <p>Entrego em prazo, com código limpo e resultado real. Respondo em até 24h.</p>
-            </div>
-            <div class="cta-banner-actions">
-                <a href="https://wa.me/5531984783473?text=Oi!%20Quero%20um%20site" target="_blank" class="btn-wa"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> Chamar agora</a>
-            </div>
-        </div>
-        
-        
-        <div class="subsection-heading reveal" data-cat="marketing">
-            <span class="subsection-label">Marketing &amp; Identidade Visual</span>
-            <span class="subsection-line"></span>
-        </div>
-
-        <div class="project-card reveal" data-cat="marketing">
-            <div class="card-thumb" style="background:#1E2A8A">
-                <img class="card-thumb-img" src="lp-logo.png" alt="Logo da LP Barbearia" loading="lazy" style="object-fit:contain;object-position:center;padding:1.4rem">
-                <div class="card-thumb-overlay"></div>
-                <span class="card-live-badge">● Ao vivo</span>
-            </div>
-            <div class="card-body">
-                <div class="project-tags"><span class="tag">Social Media</span><span class="tag">Vídeo</span><span class="tag">Site</span><span class="tag">WordPress</span><span class="tag">Linktree</span></div>
-                <span class="project-status">● Concluído</span>
-                <h3>Barbearia LP — Redes sociais, vídeo, site e linktree</h3>
-                <p>Gestão das redes sociais da barbearia, com pauta semanal, vídeos e stories. Fizemos a reforma completa do site (Clube LP, prótese capilar com antes e depois, avaliações reais do Google e as duas unidades), um linktree próprio que reconhece o celular e abre o app ou a loja certa, e uma página de primeiro acesso que ensina o cliente a baixar o app, criar a conta e agendar.</p>
-                <div class="card-actions">
-                    <a href="https://barbearialp.com.br/" target="_blank" class="project-link">Ver site ↗</a>
-                    <a href="https://barbearialp.com.br/links/" target="_blank" class="project-link">Ver linktree ↗</a>
-                    <a href="https://barbearialp.com.br/app/" target="_blank" class="project-link">Ver primeiro acesso no app ↗</a>
-                    <a href="https://www.instagram.com/barbearialpbh/" target="_blank" class="project-link">Ver Instagram ↗</a>
-                    <a href="https://wa.me/5531984783473?text=Quero%20gest%C3%A3o%20de%20redes%20sociais" target="_blank" class="project-link-wa">Quero igual <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-card reveal reveal-delay-1" data-cat="marketing">
-            <div class="card-thumb" style="background:#3A1440">
-                <img class="card-thumb-img" src="aevum-logo.png" alt="Aevum Incensaria" loading="lazy" style="object-fit:contain;object-position:center;padding:1.6rem">
-                <div class="card-thumb-overlay"></div>
-            </div>
-            <div class="card-body">
-                <div class="project-tags"><span class="tag">Branding</span><span class="tag">Identidade Visual</span><span class="tag">Design</span></div>
-                <span class="project-status">● Concluído</span>
-                <h3>Identidade Visual Completa — Aevum Incensaria</h3>
-                <p>Marca completa para incensaria artesanal: logo em 6 variações de cor e 3 formatos (PNG, SVG, PDF), rótulo de produto pronto pra gráfica, capas de destaque pro Instagram e manual da marca com todas as diretrizes de uso.</p>
-                <div class="card-actions">
-                    <a href="Aevum_Manual_da_Marca.pdf" target="_blank" class="project-link">Ver manual da marca ↗</a>
-                    <a href="https://wa.me/5531984783473?text=Quero%20uma%20identidade%20visual" target="_blank" class="project-link-wa">Quero igual <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="project-card reveal" data-cat="marketing">
-            <div class="card-thumb" style="background:#CADCF7">
-                <picture>
-                    <source media="(max-width:900px)" srcset="hohanna-simbolo.png">
-                    <img class="card-thumb-img" src="hohanna-logo.png" alt="Logo Hohanna Rodrigues, psicóloga" loading="lazy" style="object-fit:contain;object-position:center;padding:1.8rem">
-                </picture>
-            </div>
-            <div class="card-body">
-                <div class="project-tags"><span class="tag">Branding</span><span class="tag">Identidade Visual</span><span class="tag">Instagram</span></div>
-                <span class="project-status">● Concluído</span>
-                <h3>Identidade Visual — Hohanna Rodrigues, Psicóloga</h3>
-                <p>Marca para psicóloga que atende crianças, adolescentes e adultos: símbolo feito à mão (um balão de conversa que abraça o cérebro), logo em versões horizontal, vertical e símbolo, paleta azul e sálvia, templates de feed e capas de destaque pro Instagram e manual da marca.</p>
-                <div class="card-actions">
-                    <a href="hohanna-previa.jpg" target="_blank" class="project-link">Ver prévia do Instagram ↗</a>
-                    <a href="Hohanna_Manual_da_Marca.pdf" target="_blank" class="project-link">Ver manual da marca ↗</a>
-                    <a href="https://wa.me/5531984783473?text=Quero%20uma%20identidade%20visual" target="_blank" class="project-link-wa">Quero igual <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-card reveal reveal-delay-1" data-cat="marketing">
-            <div class="card-thumb" style="background:#62537A">
-                <img class="card-thumb-img" src="solia-logo.jpg" alt="Sólia Company" style="object-fit:contain;object-position:center">
-                <div class="card-thumb-overlay"></div>
-            </div>
-            <div class="card-body">
-                <div class="project-tags"><span class="tag">Design</span><span class="tag">PDF</span><span class="tag">Branding</span></div>
-                <span class="project-status">● Concluído</span>
-                <h3>Portfólio Comercial — Sólia Company</h3>
-                <p>Material comercial elegante (16 páginas) para escritório de arquitetura em BH. Identidade editorial com tipografia serifada, fotos de projetos reais (Sala 401, Ap Chelsea, Casa Reis Magos) e proposta de valor clara.</p>
-                <div class="card-actions">
-                    <a href="https://soliacompany.com" target="_blank" class="project-link">Ver site ↗</a>
-                    <a href="https://guhspm.github.io/portfolio/soliacompany_portfolio.pdf" target="_blank" class="project-link">Ver PDF ↗</a>
-                    <a href="https://wa.me/5531984783473?text=Quero%20um%20material%20comercial" target="_blank" class="project-link-wa">Quero igual <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="project-card reveal" data-cat="marketing">
-            <div class="card-thumb" style="background:linear-gradient(135deg,#0a1628,#1a2d5a);display:flex;align-items:center;justify-content:center">
-                <div style="text-align:center;padding:1rem">
-                    <div style="font-size:2.5rem;font-weight:800;color:#fff;font-family:var(--font-display)">JC</div>
-                    <div style="font-family:var(--font-mono);font-size:.65rem;color:#93c5fd;letter-spacing:.15em;text-transform:uppercase;margin-top:.3rem">Manutenção</div>
-                </div>
-                <div class="card-thumb-overlay"></div>
-            </div>
-            <div class="card-body">
-                <div class="project-tags"><span class="tag">Design</span><span class="tag">PDF</span><span class="tag">Identidade Visual</span></div>
-                <span class="project-status">● Concluído</span>
-                <h3>Portfólio Comercial — JC Manutenção</h3>
-                <p>Material comercial completo (17 páginas) para empresa de manutenção predial em SP. Identidade visual corporativa azul-marinho, fotos de campo com antes/depois, segmentos de atuação e CTA para inspeção gratuita.</p>
-                <div class="card-actions">
-                    <a href="https://guhspm.github.io/portfolio/JC_Manutencao_Portfolio.pdf" target="_blank" class="project-link">Ver PDF ↗</a>
-                    <a href="https://wa.me/5531984783473?text=Quero%20um%20portf%C3%B3lio%20comercial" target="_blank" class="project-link-wa">Quero igual <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="subsection-heading reveal" data-cat="video">
-            <span class="subsection-label">Vídeo &amp; Produção Audiovisual</span>
-            <span class="subsection-line"></span>
-        </div>
-
-        <div class="project-card reveal" data-cat="video">
-            <div class="card-thumb" style="background:linear-gradient(135deg,#1a1006,#331c08);display:flex;align-items:center;justify-content:center">
-                <div style="text-align:center">
-                    <div style="font-size:1.6rem;font-weight:800;color:#fff;letter-spacing:.06em;font-family:var(--font-display)">BUDEGA</div>
-                    <div style="font-family:var(--font-mono);font-size:.6rem;color:#fbbf24;letter-spacing:.18em;text-transform:uppercase;margin-top:.4rem">Cachaçaria · Mercado Central BH</div>
-                </div>
-                <div class="card-thumb-overlay"></div>
-                <span class="card-live-badge">● Concluído</span>
-            </div>
-            <div class="card-body">
-                <div class="project-tags"><span class="tag">Captação Mobile</span><span class="tag">Edição</span><span class="tag">Reels</span></div>
-                <span class="project-status">● Concluído</span>
-                <h3>Captação e Edição de Vídeo — Budega Cachaçaria</h3>
-                <p>Captação e edição de vídeo pra cachaçaria no Mercado Central, em BH — do balcão ao clima do lugar. Filmado e editado 100% com celular e gimbal, 3 vídeos entregues prontos pro feed.</p>
-                <div class="card-actions">
-                    <a href="https://www.instagram.com/reel/Dc1wOKEKdzR/" target="_blank" class="project-link">Ver no Instagram ↗</a>
-                    <a href="https://wa.me/5531984783473?text=Quero%20um%20v%C3%ADdeo%20como%20o%20da%20Budega" target="_blank" class="project-link-wa">Quero igual <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-card reveal reveal-delay-1" data-cat="video">
-            <div class="card-thumb" style="background:linear-gradient(135deg,#0d0a1a,#1c1333);display:flex;align-items:center;justify-content:center">
-                <div style="text-align:center">
-                    <div style="font-size:1.8rem;font-weight:800;color:#fff;letter-spacing:.1em;font-family:var(--font-display)">LOST IN</div>
-                    <div style="font-family:var(--font-mono);font-size:.6rem;color:#c4b5fd;letter-spacing:.18em;text-transform:uppercase;margin-top:.4rem">Evento · Música Eletrônica</div>
-                </div>
-                <div class="card-thumb-overlay"></div>
-                <span class="card-live-badge">● Concluído</span>
-            </div>
-            <div class="card-body">
-                <div class="project-tags"><span class="tag">Cobertura de Evento</span><span class="tag">Captação Mobile</span><span class="tag">Edição</span></div>
-                <span class="project-status">● Concluído</span>
-                <h3>Cobertura de Vídeo — Evento Lost In</h3>
-                <p>Vídeos de divulgação e bastidor pro evento de música eletrônica Lost In — captação e edição pra Instagram, em três clipes prontos pro feed.</p>
-                <div class="card-actions">
-                    <a href="https://www.instagram.com/reel/DczJ3DQOvqn/" target="_blank" class="project-link">Ver no Instagram ↗</a>
-                    <a href="https://wa.me/5531984783473?text=Quero%20cobertura%20de%20v%C3%ADdeo%20pro%20meu%20evento" target="_blank" class="project-link-wa">Quero igual <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-                </div>
-            </div>
-        </div>
-
-        <div class="subsection-heading reveal" data-cat="automacao">
-            <span class="subsection-label">Automação &amp; Performance</span>
-            <span class="subsection-line"></span>
-        </div>
-
-        <div class="project-card reveal reveal-delay-1" data-cat="automacao">
-            <div class="card-body" style="padding:2.5rem">
-                <div class="project-tags"><span class="tag">Python</span><span class="tag">Pandas</span><span class="tag">Finance</span></div>
-                <span class="project-status">● Concluído</span>
-                <h3>Motor de Auditoria Financeira</h3>
-                <p>Conciliação automática de faturamentos e detecção de divergências em arquivos posicionais. Processa 12.847 registros em 4 minutos — antes levava 4 horas de revisão manual.</p>
-                <div class="card-actions">
-                    <a href="https://github.com/guhspm/auditoria-financeira-automatizada" target="_blank" class="project-link">Ver código ↗</a>
-                    <a href="https://wa.me/5531984783473?text=Quero%20uma%20automacao" target="_blank" class="project-link-wa">Automatizar <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="project-card reveal" data-cat="automacao">
-            <div class="card-body" style="padding:2.5rem">
-                <div class="project-tags"><span class="tag">Shopee</span><span class="tag">Python</span><span class="tag">Automação</span></div>
-                <span class="project-status">● Concluído</span>
-                <h3>Sistema de Dropshipping Automatizado</h3>
-                <p>Pipeline completo de dropshipping na Shopee: importação automática de produtos, sincronização de estoque em tempo real, atualização de preços e vitrine otimizada. Opera 24/7 sem intervenção manual.</p>
-                <div class="card-actions">
-                    <a href="https://github.com/guhspm" target="_blank" class="project-link">Ver código ↗</a>
-                    <a href="https://wa.me/5531984783473?text=Quero%20um%20sistema%20de%20dropshipping" target="_blank" class="project-link-wa">Quero igual <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="project-card reveal reveal-delay-2" data-cat="automacao">
-            <div class="card-body" style="padding:2.5rem">
-                <div class="project-tags"><span class="tag">Python</span><span class="tag">Regex</span><span class="tag">PDF</span></div>
-                <span class="project-status">● Concluído</span>
-                <h3>RPA de Faturamento — Planos de Saúde</h3>
-                <p>Robô que extrai automaticamente ISS, IRRF e valores brutos de PDFs não estruturados. Processa centenas de notas por hora com 100% de rastreabilidade e log completo.</p>
-                <div class="card-actions">
-                    <a href="https://github.com/guhspm/robo-faturamento-unimed" target="_blank" class="project-link">Ver código ↗</a>
-                    <a href="https://wa.me/5531984783473?text=Quero%20uma%20automacao%20de%20PDF" target="_blank" class="project-link-wa">Automatizar <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="project-card reveal reveal-delay-3" data-cat="automacao">
-            <div class="card-body" style="padding:2.5rem">
-                <div class="project-tags"><span class="tag">Python</span><span class="tag">ETL</span><span class="tag">OpenPyXL</span></div>
-                <span class="project-status">● Concluído</span>
-                <h3>Automação de Relatórios Corporativos</h3>
-                <p>Pipeline que processa dados de inadimplência, cruza com relatórios externos e gera 3 tipos de relatório gerencial para múltiplas entidades com formatação executiva automática.</p>
-                <div class="card-actions">
-                    <a href="https://github.com/guhspm/automacao-relatorios-excel" target="_blank" class="project-link">Ver código ↗</a>
-                    <a href="https://wa.me/5531984783473?text=Quero%20automatizar%20relat%C3%B3rios" target="_blank" class="project-link-wa">Automatizar <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-                </div>
-            </div>
-        </div>
-        
-        <div class="project-card reveal" data-cat="automacao">
-            <div class="card-body" style="padding:2.5rem">
-                <div class="project-tags"><span class="tag">WordPress</span><span class="tag">DevOps</span><span class="tag">Performance</span></div>
-                <span class="project-status">● Concluído</span>
-                <h3>Auditoria Técnica e Performance — MAIS Planos de Saúde Recife</h3>
-                <p>Site no ar há mais de 10 anos e Top 3 do Google para "plano de saúde Recife" parou de salvar a home (Erro 500) após migração pra servidor dedicado. Causa raiz encontrada com acesso root: 2.284 revisões do Elementor nunca limpas estourando o limite de memória. Plugin corrompido removido, revisões limpas com limite configurado no wp-config.php, e 24 blocos de HTML/CSS auditados — zero conflitos encontrados.</p>
-                <div class="card-actions">
-                    <a href="https://mplanosdesaude.com.br" target="_blank" class="project-link">Ver site ↗</a>
-                    <a href="https://wa.me/5531984783473?text=Meu%20site%20est%C3%A1%20lento%2C%20preciso%20de%20ajuda" target="_blank" class="project-link-wa">Quero igual <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
-                </div>
-            </div>
-        </div>
-        
-    </div>
-</section>
-
-<!-- INSTAGRAM -->
-<section id="instagram">
-    <div class="ig-wrap">
-        <div class="ig-copy reveal">
-            <div class="section-label">// No Instagram</div>
-            <h2 class="section-heading">Bastidores<br>de <em>verdade</em>.</h2>
-            <p>O dia a dia da Inside: gravações, edições e o que acontece por trás de cada projeto. Posto toda semana.</p>
-            <a href="https://www.instagram.com/studioinside.co/" target="_blank" class="btn btn-primary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg> Seguir @studioinside.co</a>
-        </div>
-        <div class="ig-reels reveal reveal-delay-1">
-            <a class="ig-card" href="https://www.instagram.com/reel/De0JxqlunyH/" target="_blank" aria-label="Reel: Você é criador de conteúdo?"><img src="reel-1.jpg" alt="Reel: Você é criador de conteúdo?" loading="lazy" width="450" height="797"><span class="ig-cta">Assistir no Instagram ↗</span></a>
-            <a class="ig-card" href="https://www.instagram.com/reel/Det98iUvk49/" target="_blank" aria-label="Reel: 1 mês de posts em uma noite"><img src="reel-2.jpg" alt="Reel: 1 mês de posts em uma noite" loading="lazy" width="450" height="797"><span class="ig-cta">Assistir no Instagram ↗</span></a>
-        </div>
-    </div>
-</section>
-
-<!-- TRAJETÓRIA -->
-<section id="experiencia">
-    <div class="exp-wrap">
-        <div class="section-header reveal">
-            <div>
-                <div class="section-label">// Trajetória</div>
-                <h2 class="section-heading">Experiência &amp;<br><em>formação</em>.</h2>
-            </div>
-            <div class="section-count">↑</div>
-        </div>
-        <div class="exp-container">
-            <div>
-                <div class="exp-group-label reveal">Experiência</div>
-                <div class="timeline">
-                    <div class="timeline-item reveal">
-                        <h4>Founder &amp; Dev — Inside.co</h4>
-                        <span class="period">2026 — Presente</span>
-                        <p>Sites, e-commerce, automações e identidade visual para clientes em todo o Brasil. Projetos como Kendak, WEB&amp;SEG, Facilita Energia e Paralelo.</p>
-                    </div>
-                    <div class="timeline-item reveal reveal-delay-1">
-                        <h4>Data Analyst &amp; Dev de Automações</h4>
-                        <span class="period">2025</span>
-                        <p>Reconciliação financeira, pipelines ETL e RPA em Python para faturamento corporativo e setor de saúde.</p>
-                    </div>
-                    <div class="timeline-item reveal reveal-delay-2">
-                        <h4>Desenvolvedor Freelance</h4>
-                        <span class="period">2024 — 2025</span>
-                        <p>Robôs de extração PDF, relatórios automáticos e scripts para arquivos posicionais.</p>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="exp-group-label reveal">Formação</div>
-                <div class="timeline">
-                    <div class="timeline-item reveal">
-                        <h4>Ciência da Computação</h4>
-                        <span class="period">Graduação · Em curso</span>
-                        <p>Estrutura de Dados, Algoritmos e Desenvolvimento de Software. Base técnica aplicada a projetos reais.</p>
-                    </div>
-                    <div class="timeline-item reveal reveal-delay-1">
-                        <h4>Engenharia de Dados &amp; BI</h4>
-                        <span class="period">Especialização · 2024</span>
-                        <p>Python avançado, SQL, Power BI e ETL com foco em qualidade de dados.</p>
-                    </div>
-                    <div class="timeline-item reveal reveal-delay-2">
-                        <h4>Desenvolvimento Web &amp; E-commerce</h4>
-                        <span class="period">Formação Contínua · 2024 — Presente</span>
-                        <p>WordPress, Shopify, WooCommerce, Elementor, SEO técnico e boas práticas de conversão.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- DEPOIMENTOS -->
-<section id="depoimentos">
-    <div class="section-header reveal">
-        <div>
-            <div class="section-label">// Clientes</div>
-            <h2 class="section-heading">O que dizem<br>os <em>clientes</em>.</h2>
-        </div>
-        <div class="section-count">★</div>
-    </div>
-    <div class="testimonials-grid">
-        <div class="testimonial-card reveal">
-            <div class="stars">★★★★★</div>
-            <p class="testimonial-text">"Profissional, atencioso, didático. Experiência incrível, superou minhas expectativas. 100/10. Construímos um projeto sólido e de longo prazo, ele esteve comigo desde o dia 1 até HOJE, explicando cada processo. O serviço tem um PÓS-VENDA, com o qual até agora mantemos contato. Mais que recomendado!!"</p>
-            <div class="testimonial-author">
-                <div class="author-avatar">★</div>
-                <div>
-                    <span class="author-name">Katherine · 99Freelas</span>
-                    <span class="author-role">Loja automatizada na Shopee · abr–ago 2026</span>
-                </div>
-            </div>
-        </div>
-        <div class="testimonial-card reveal reveal-delay-1">
-            <div class="stars">★★★★★</div>
-            <p class="testimonial-text">"O Gustavo realizou um projeto para mim e superou minhas expectativas. Foi extremamente profissional em todas as etapas do trabalho. Sempre atencioso, respondeu rápido e se mostrou acessível para futuras dúvidas. Recomendo sem dúvidas pela qualidade e agilidade do serviço."</p>
-            <div class="testimonial-author">
-                <div class="author-avatar">★</div>
-                <div>
-                    <span class="author-name">Ruan Indrigo · 99Freelas</span>
-                    <span class="author-role">Blog de produtos na Hostinger · mar 2026</span>
-                </div>
-            </div>
-        </div>
-        <div class="testimonial-card reveal reveal-delay-2">
-            <div class="stars">★★★★★</div>
-            <p class="testimonial-text">"Rápido e Eficaz."</p>
-            <div class="testimonial-author">
-                <div class="author-avatar">★</div>
-                <div>
-                    <span class="author-name">Cliente verificado · 99Freelas</span>
-                    <span class="author-role">Organizar landing page existente · mar–abr 2026</span>
-                </div>
-            </div>
-        </div>
-        <div class="testimonial-card reveal reveal-delay-3">
-            <div class="stars">★★★★★</div>
-            <p class="testimonial-text">"O Gustavo foi um profissional extremamente dinâmico e parceiro do nosso time! Ele atendeu com excelência a elaboração do perfil da marca Facilita, trazendo ideias incríveis e muita agilidade em todo o processo. Recomendamos demais o trabalho dele!"</p>
-            <div class="testimonial-author">
-                <div class="author-avatar">★</div>
-                <div>
-                    <span class="author-name">Michel e Isaac · Facilita Energia</span>
-                    <span class="author-role">Identidade visual e landing page · 2026</span>
-                </div>
-            </div>
-        </div>
-        <div class="testimonial-card reveal reveal-delay-4">
-            <div class="stars">★★★★★</div>
-            <p class="testimonial-text">"Que portfólio mais lindo! Eu amei! Ficou perfeito! Muito obrigada por toda a atenção e cuidado que você teve com a minha empresa! Você entendeu exatamente o que eu precisava e conseguiu expressar a essência da Sólia! Ainda vamos fazer muitos trabalhos juntos!"</p>
-            <div class="testimonial-author">
-                <div class="author-avatar">★</div>
-                <div>
-                    <span class="author-name">Yanê · Sólia Company</span>
-                    <span class="author-role">Material editorial e portfólio comercial · 2026</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- CONTATO -->
-<section id="contato">
-    <div class="contact-glow"></div>
-    <div class="section-label reveal" style="margin-bottom:1.5rem">// Próximo passo</div>
-    <h2 class="contact-heading reveal">Vamos construir<br>algo que <em>funciona</em>?</h2>
-    <p class="contact-sub reveal">Site, loja virtual, automação ou identidade visual — respondo em até 24h e entrego com qualidade real.</p>
-    <div class="contact-urgency reveal">● Disponível para novos projetos</div>
-    <div class="contact-links reveal">
-        <a href="https://wa.me/5531984783473?text=Oi%20Gustavo!%20Vi%20seu%20portf%C3%B3lio%20e%20quero%20conversar%20sobre%20um%20projeto." target="_blank" class="btn-wa"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> (31) 9 8478-3473</a>
-        <a href="https://github.com/guhspm" target="_blank" class="btn-ghost">GitHub ↗</a>
-        <a href="https://www.instagram.com/studioinside.co/" target="_blank" class="btn-ghost">Instagram ↗</a>
-        <a href="https://www.linkedin.com/in/gustavo-henriquesp/" target="_blank" class="btn-ghost">LinkedIn ↗</a>
-    </div>
-</section>
-
-<footer>
-    <div class="footer-copy">© 2026 Gustavo · Inside.co · Belo Horizonte, MG</div>
-    <div class="footer-links">
-        <a href="https://www.instagram.com/studioinside.co/" target="_blank">Instagram</a>
-        <a href="https://github.com/guhspm" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/gustavo-henriquesp/" target="_blank">LinkedIn</a>
-        <a href="https://wa.me/5531984783473" target="_blank">WhatsApp</a>
-    </div>
-</footer>
-
-<script>
-/* NAV */
-window.addEventListener('scroll',()=>document.getElementById('navbar').classList.toggle('scrolled',scrollY>50));
-
-/* HAMBURGER */
-const hb=document.getElementById('hamburger'),mm=document.getElementById('mobileMenu');
-let mOpen=false;
-function toggleMenu(f){mOpen=f!==undefined?f:!mOpen;hb.classList.toggle('open',mOpen);mm.classList.toggle('open',mOpen);document.body.style.overflow=mOpen?'hidden':'';}
-hb.addEventListener('click',()=>toggleMenu());
-mm.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>toggleMenu(false)));
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&mOpen)toggleMenu(false);});
-
-/* HERO COUNTERS */
-setTimeout(()=>{
-    document.querySelectorAll('.hero-stats .stat-num[data-target]').forEach(el=>{
-        const t=+el.dataset.target,s=performance.now();
-        (function step(n){const p=Math.min((n-s)/1600,1),e=1-Math.pow(1-p,3);el.textContent=Math.floor(e*t);if(p<1)requestAnimationFrame(step);else el.textContent=t;})(performance.now());
-    });
-},1000);
-
-/* REVEAL ON SCROLL */
-const revObs=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{
-        if(e.isIntersecting){
-            e.target.classList.add('visible');
-            revObs.unobserve(e.target);
-            e.target.querySelectorAll('.count-up').forEach(el=>animCount(el));
-        }
-    });
-},{threshold:0,rootMargin:'0px 0px -20px 0px'});
-document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
-// force-reveal elements already in viewport
-setTimeout(()=>{document.querySelectorAll('.reveal:not(.visible)').forEach(el=>{const r=el.getBoundingClientRect();if(r.top<window.innerHeight&&r.bottom>0)el.classList.add('visible');});},150);
-
-function animCount(el){
-    const t=+el.dataset.target,s=performance.now(),d=1800;
-    (function step(n){const p=Math.min((n-s)/d,1),ease=1-Math.pow(1-p,4);el.textContent=Math.floor(ease*t).toLocaleString('pt-BR');if(p<1)requestAnimationFrame(step);else el.textContent=t.toLocaleString('pt-BR');})(performance.now());
+@media(min-width:760px){
+  :root{--pad:6vw}
+  .num-grid{grid-template-columns:repeat(2,1fr);gap:40px}
+  .cases-intro{grid-template-columns:1.4fr 1fr;align-items:end}
+  .case{grid-template-columns:1fr 1.15fr;gap:56px;align-items:center;padding:72px 0}
+  .case.flip .case-media{order:-1}
+  .depo-list{grid-template-columns:1fr 1fr;column-gap:56px}
+}
+@media(min-width:1000px){
+  .num-grid{grid-template-columns:repeat(3,1fr)}
+  .capa{padding:40px 0 110px}
+  .capa-grid{position:relative}
+  .capa h1{font-size:clamp(90px,9.6vw,138px);max-width:1000px}
+  .capa-foto{position:absolute;right:0;bottom:-30px;margin:0;width:270px;max-width:none}
+  .capa-sub{font-size:19px;max-width:560px}
 }
 
-/* PHOTO FALLBACK */
-const photo=document.getElementById('profilePhoto');
-if(photo)photo.onerror=()=>{photo.style.display='none';photo.parentElement.style.background='#EFEAFE';};
+/* ANIMAÇÕES */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.capa h1 .ln{display:inline-block;opacity:0;transform:translateY(40px);animation:up .9s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes up{to{opacity:1;transform:none}}
+.capa-foto{animation:pop 1s .35s cubic-bezier(.2,.7,.2,1) both}
+@keyframes pop{from{opacity:0;transform:translateY(30px) scale(.96)}}
+.browser,.paper img,.strip,.panel{transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s}
+.case:hover .browser,.case:hover .strip,.case:hover .panel{transform:translateY(-6px)}
+.case:hover .paper img:first-child{transform:rotate(-4deg) translateY(-6px)}
+.case:hover .paper img:last-child{transform:rotate(4deg) translateY(-6px)}
+.browser img{transition:transform 6s ease}
+.case:hover .browser img{transform:scale(1.04)}
+.btn-p .arrow{transition:transform .2s}.btn-p:hover .arrow{transform:translateX(4px)}
+@media(prefers-reduced-motion:reduce){.rv,.capa h1 .ln,.capa-foto{opacity:1!important;transform:none!important;animation:none!important;transition:none!important}}
 
-/* PROJECT FILTERS */
+/* Algoritmo: peça montada no estilo do site dele */
+.algo{position:relative;background:#0A0A0A;color:#fff;border-radius:18px;padding:26px 26px 26px 34px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(23,18,27,.45);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.algo::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:#C9A24A}
+.algo-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:34px}
+.algo-top b{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#C9A24A}
+.algo-top i{font-style:normal;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:#C9A24A;border:1px solid rgba(201,162,74,.5);border-radius:999px;padding:7px 12px;white-space:nowrap}
+.algo-h{font-family:var(--serif);font-size:clamp(26px,4.4vw,40px);line-height:1.08;letter-spacing:-.01em}
+.algo-s{color:rgba(255,255,255,.5);font-size:14px;margin:8px 0 22px}
+.algo-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.algo-chips i{font-style:normal;font-size:11px;font-weight:600;color:#0A0A0A;background:#C9A24A;border-radius:999px;padding:6px 11px}
+.case:hover .algo{transform:translateY(-6px)}
+
+/* SERVIÇOS */
+.serv{padding:96px 0}
+.serv-list{list-style:none;margin-top:44px;border-top:1px solid var(--line)}
+.serv-list li{display:grid;grid-template-columns:44px 1fr;gap:12px;padding:26px 0;border-bottom:1px solid var(--line)}
+.sn{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--purple);line-height:1.2}
+.serv-list h3{font-family:var(--display);font-weight:800;font-size:clamp(30px,6vw,52px);line-height:.95;letter-spacing:-.04em;margin-bottom:10px}
+.serv-list p{color:var(--gray);max-width:520px;font-size:15.5px}
+/* PRÉVIA */
+.previa{padding:96px 0;background:var(--soft)}
+.previa-grid,.insta-grid{display:grid;gap:44px}
+.previa-sub{color:var(--gray);font-size:17px;max-width:460px;margin:22px 0 28px}
+.passos{list-style:none;display:grid;gap:14px;counter-reset:p}
+.passos li{display:grid;grid-template-columns:42px 1fr;gap:14px;align-items:start;background:#fff;border-radius:16px;padding:20px}
+.passos b{font-family:var(--display);font-weight:800;font-size:22px;width:42px;height:42px;border-radius:50%;background:var(--purple);color:#fff;display:flex;align-items:center;justify-content:center}
+.passos span{color:var(--gray);font-size:15.5px;padding-top:8px}
+.passos strong{color:var(--ink)}
+/* INSTAGRAM */
+.insta{padding:96px 0}
+.reels{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:560px}
+.reels a{text-decoration:none;display:block}
+.reels img{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:16px;transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+.reels a:hover img{transform:translateY(-6px)}
+.reels span{display:block;margin-top:10px;font-weight:600;font-size:14px}
+/* RODAPÉ */
+footer{padding:96px 0 120px}
+footer .wrap{display:block}
+.foot-cta{display:grid;gap:22px;justify-items:start;padding-bottom:56px;border-bottom:1px solid var(--line)}
+.foot-links{display:grid;gap:0;margin:8px 0 40px}
+.foot-links a{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:20px 0;border-bottom:1px solid var(--line);font-family:var(--display);font-weight:800;font-size:clamp(24px,5vw,36px);letter-spacing:-.03em;text-decoration:none}
+.foot-links a small{font-family:var(--body);font-weight:500;font-size:14px;letter-spacing:0;color:var(--gray)}
+.foot-links a:hover{color:var(--purple)}
+.foot-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:14px}
+.foot-bottom img{height:24px;width:auto}
+@media(min-width:760px){
+  .serv-list li{grid-template-columns:90px 1fr 1fr;gap:24px;align-items:baseline}
+  .serv-list h3{margin:0}
+  .previa-grid,.insta-grid{grid-template-columns:1fr 1fr;align-items:center;gap:64px}
+  .reels{justify-self:end;width:100%}
+}
+.links a.igual{color:var(--purple);border-color:var(--purple)}
+.links a.igual:hover{background:var(--purple);color:#fff;border-radius:999px;padding:8px 12px 2px;border-color:transparent}
+
+/* TOPO: faixa do diagnóstico + menu */
+.diag{display:flex;align-items:center;justify-content:center;gap:14px;padding:8px var(--pad);background:var(--lav);color:var(--ink);text-decoration:none;font-weight:600;font-size:14px}
+.diag-pill{display:inline-flex;align-items:center;gap:7px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--purple);background:#fff;border-radius:999px;padding:5px 11px;white-space:nowrap}
+.diag-pill::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--purple)}
+.diag-go{font-size:12px;background:var(--purple);color:#fff;border-radius:999px;padding:6px 12px;white-space:nowrap}
+.diag-txt{display:none}
+.nav{display:none;gap:26px}
+.nav a{font-size:14px;font-weight:500;text-decoration:none;color:var(--gray)}
+.nav a:hover{color:var(--purple)}
+section[id],footer[id]{scroll-margin-top:110px}
+@media(max-width:759px){.diag{justify-content:space-between;gap:8px}}
+@media(max-width:350px){.diag-pill{font-size:10px;letter-spacing:.06em;padding:5px 8px}.diag-go{font-size:11px;padding:6px 9px}}
+.nav a{padding:10px 0}
+@media(min-width:760px){.diag-txt{display:inline}}
+@media(min-width:1000px){.nav{display:flex}}
+</style>
+</head>
+<body>
+
+<header>
+<a class="diag" href="https://wa.me/5531984783473?text=Oi%2C%20quero%20o%20diagn%C3%B3stico%20do%20meu%20perfil%21" target="_blank"><span class="diag-pill">Diagnóstico grátis</span><span class="diag-txt">Eu analiso o seu perfil e te mando o que mudar.</span><span class="diag-go">Quero o meu →</span></a>
+<div class="wrap">
+  <a href="#"><img class="logo" src="logo-inside.png" alt="Inside.co" width="128" height="28"></a>
+  <nav class="nav"><a href="#cases">Cases</a><a href="#servicos">Serviços</a><a href="#previa">Prévia grátis</a><a href="#instagram">Instagram</a><a href="#contato">Contato</a></nav>
+  <a class="top-cta" href="#contato">Contato</a>
+</div></header>
+
+<!-- CAPA -->
+<section class="capa"><div class="wrap">
+  <div class="corners"><span class="micro">Inside.co — Portfólio</span><span class="micro">Instagram · Site · Automação</span></div>
+  <div class="capa-grid">
+    <h1><span class="ln">Instagram, site e</span> <span class="ln" style="animation-delay:.08s">automação pra</span> <span class="ln" style="animation-delay:.16s">negócio local</span> <span class="ln" style="animation-delay:.24s"><em class="s">vender</em> mais.</span></h1>
+    <figure class="capa-foto">
+      <img src="gustavo.webp" alt="Gustavo, fundador da Inside.co" width="720" height="900">
+      <span class="tag">Gustavo · <b>fundador</b></span>
+    </figure>
+  </div>
+  <p class="capa-sub">Eu cuido do seu Instagram, do seu site e do que dá pra automatizar no atendimento. Tudo pensado pra virar cliente, não só pra ficar bonito.</p>
+  <div class="capa-ctas">
+    <a class="btn btn-p" href="https://wa.me/5531984783473?text=Oi%2C%20quero%20o%20diagn%C3%B3stico%20gr%C3%A1tis" target="_blank">Diagnóstico grátis no WhatsApp <span class="arrow">→</span></a>
+    <a class="btn btn-g" href="#cases">Ver cases <span class="arrow">↓</span></a>
+  </div>
+</div></section>
+
+<!-- NÚMEROS -->
+<section class="numeros"><div class="wrap">
+  <div class="corners"><span class="micro">02 — Números</span><span class="micro">Só números reais</span></div>
+  <div class="num-grid">
+    <div class="num rv"><span class="big">21<small>+</small></span><p><strong>projetos entregues</strong> entre sites, lojas, Instagram, identidade visual e automação.</p></div>
+    <div class="num rv"><span class="big nowrap">64 <em class="s">→</em> 311</span><p><strong>cliques no link da bio</strong> da LP Barbearia no primeiro mês de gestão do Instagram.</p></div>
+    <div class="num rv"><span class="big">+73%</span><p><strong>alcance do Instagram da LP Barbearia</strong> no primeiro mês com a gente.</p></div>
+  </div>
+</div></section>
+
+<!-- CASES -->
+<section class="cases" id="cases"><div class="wrap">
+  <div class="corners"><span class="micro">03 — Cases</span><span class="micro">14 projetos · material real</span></div>
+  <div class="cases-intro rv">
+    <h2 class="h2">Trabalho <em class="s">de verdade</em>, com link pra conferir.</h2>
+    <p>Print do site no ar, peça entregue e número real. Clica e confere.</p>
+  </div>
+
+  <article class="rv case">
+    <div class="case-text">
+      <div class="case-top"><span class="case-n">01</span><span class="micro">Instagram · Vídeo · Site · App</span></div>
+      <h3>LP <em class="s">Barbearia</em></h3>
+      <p class="case-desc">Gestão do Instagram com pauta semanal, Reels e stories. Site novo com o Clube LP e as duas unidades, linktree que abre o app ou a loja certa no celular e página que ensina o cliente a baixar o app e agendar.</p>
+      <div class="case-res"><span>+73%<small>alcance no 1º mês</small></span><span>64 → 311<small>cliques no link da bio</small></span></div>
+      <div class="links"><a href="https://barbearialp.com.br/" target="_blank">Ver site →</a><a href="https://barbearialp.com.br/links/" target="_blank">Linktree →</a><a href="https://barbearialp.com.br/app/" target="_blank">Página do app →</a><a href="https://www.instagram.com/barbearialpbh/" target="_blank">Instagram →</a><a class="igual" href="https://wa.me/5531984783473?text=Oi%21%20Vi%20o%20case%20da%20LP%20Barbearia%20no%20portf%C3%B3lio%20e%20quero%20algo%20parecido." target="_blank">Quero igual →</a></div>
+    </div>
+    <div class="case-media"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>barbearialp.com.br</span></div><img src="case-lp.webp" alt="Site da LP Barbearia" loading="lazy" width="1000" height="457"></div></div>
+  </article>
+
+  <article class="rv case flip">
+    <div class="case-text">
+      <div class="case-top"><span class="case-n">02</span><span class="micro">Material editorial · 16 páginas</span></div>
+      <h3>Sólia <em class="s">Company</em></h3>
+      <p class="case-desc">Portfólio comercial para escritório de arquitetura em BH: tipografia serifada, fotos dos projetos reais e proposta de valor clara.</p>
+      <div class="links"><a href="https://soliacompany.com" target="_blank">Ver site →</a><a href="https://guhspm.github.io/portfolio/soliacompany_portfolio.pdf" target="_blank">Ver o PDF →</a><a class="igual" href="https://wa.me/5531984783473?text=Oi%21%20Vi%20o%20case%20da%20S%C3%B3lia%20no%20portf%C3%B3lio%20e%20quero%20algo%20parecido." target="_blank">Quero igual →</a></div>
+    </div>
+    <div class="case-media"><div class="paper"><img src="case-solia.webp" alt="Capa do portfólio da Sólia" loading="lazy" width="900" height="1273"><img src="case-solia-2.webp" alt="Página interna do portfólio da Sólia" loading="lazy" width="900" height="1273"></div></div>
+  </article>
+
+  <article class="rv case">
+    <div class="case-text">
+      <div class="case-top"><span class="case-n">03</span><span class="micro">Landing page · Instagram</span></div>
+      <h3>Clube <em class="s">MV</em></h3>
+      <p class="case-desc">Landing page de vendas para o clube de assinatura da médica Helena Albuquerque, com checkout integrado via Hotmart. Hoje também cuidamos do Instagram.</p>
+      <div class="links"><a href="https://clubemv.com.br/clube-mv/" target="_blank">Ver site →</a><a href="https://www.instagram.com/clubemv.oficial/" target="_blank">Instagram →</a><a class="igual" href="https://wa.me/5531984783473?text=Oi%21%20Vi%20o%20case%20do%20Clube%20MV%20no%20portf%C3%B3lio%20e%20quero%20algo%20parecido." target="_blank">Quero igual →</a></div>
+    </div>
+    <div class="case-media"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>clubemv.com.br</span></div><img src="case-clubemv.webp" alt="Landing page do Clube MV" loading="lazy" width="1000" height="431"></div></div>
+  </article>
+
+  <article class="rv case flip">
+    <div class="case-text">
+      <div class="case-top"><span class="case-n">04</span><span class="micro">Identidade visual · Site</span></div>
+      <h3>Facilita <em class="s">Energia</em></h3>
+      <p class="case-desc">Marca e site one-page para startup de assessoria elétrica, com mascote próprio e WhatsApp em cada seção.</p>
+      <div class="links"><a href="https://www.facilitaenergia.com.br" target="_blank">Ver site →</a><a class="igual" href="https://wa.me/5531984783473?text=Oi%21%20Vi%20o%20case%20da%20Facilita%20Energia%20no%20portf%C3%B3lio%20e%20quero%20algo%20parecido." target="_blank">Quero igual →</a></div>
+    </div>
+    <div class="case-media"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>facilitaenergia.com.br</span></div><img src="case-facilita.webp" alt="Site da Facilita Energia" loading="lazy" width="765" height="710"></div></div>
+  </article>
+
+  <article class="rv case">
+    <div class="case-text">
+      <div class="case-top"><span class="case-n">05</span><span class="micro">Loja virtual · WooCommerce</span></div>
+      <h3><em class="s">Memoriei</em></h3>
+      <p class="case-desc">Loja de ímãs de foto e bottons personalizados: vitrine dos kits, passo a passo, Pix e cartão, envio pro Brasil todo ou retirada local.</p>
+      <div class="links"><a href="https://memorieioficial.com.br/" target="_blank">Ver loja →</a><a class="igual" href="https://wa.me/5531984783473?text=Oi%21%20Vi%20o%20case%20da%20Memoriei%20no%20portf%C3%B3lio%20e%20quero%20algo%20parecido." target="_blank">Quero igual →</a></div>
+    </div>
+    <div class="case-media"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>memorieioficial.com.br</span></div><img src="case-memoriei.webp" alt="Loja virtual da Memoriei" loading="lazy" width="1000" height="434"></div></div>
+  </article>
+
+  <article class="rv case flip">
+    <div class="case-text">
+      <div class="case-top"><span class="case-n">06</span><span class="micro">E-commerce · Moda</span></div>
+      <h3><em class="s">Kendak</em></h3>
+      <p class="case-desc">Loja de roupas e acessórios do universo surf, skate e rua, com vitrine de coleções e pagamento pelo Mercado Pago.</p>
+      <div class="links"><a href="https://kendak.com.br" target="_blank">Ver loja →</a><a class="igual" href="https://wa.me/5531984783473?text=Oi%21%20Vi%20o%20case%20da%20Kendak%20no%20portf%C3%B3lio%20e%20quero%20algo%20parecido." target="_blank">Quero igual →</a></div>
+    </div>
+    <div class="case-media"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>kendak.com.br</span></div><img src="case-kendak.webp" alt="Loja da Kendak" loading="lazy" width="1000" height="457"></div></div>
+  </article>
+
+  <article class="rv case">
+    <div class="case-text">
+      <div class="case-top"><span class="case-n">07</span><span class="micro">Site institucional</span></div>
+      <h3>WEB &amp; <em class="s">SEG</em></h3>
+      <p class="case-desc">Site focado em conversão para consultoria de saúde e segurança do trabalho em Salvador, com formulário que cai direto no WhatsApp.</p>
+      <div class="links"><a href="https://webeseg.com.br" target="_blank">Ver site →</a><a class="igual" href="https://wa.me/5531984783473?text=Oi%21%20Vi%20o%20case%20da%20WEB%20%26%20SEG%20no%20portf%C3%B3lio%20e%20quero%20algo%20parecido." target="_blank">Quero igual →</a></div>
+    </div>
+    <div class="case-media"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>webeseg.com.br</span></div><img src="case-webeseg.webp" alt="Site da WEB &amp; SEG" loading="lazy" width="1000" height="457"></div></div>
+  </article>
+
+  <article class="rv case flip">
+    <div class="case-text">
+      <div class="case-top"><span class="case-n">08</span><span class="micro">Site institucional · Agência</span></div>
+      <h3><em class="s">Paralelo</em></h3>
+      <p class="case-desc">Site para agência criativa de creators, com a troca "Sou creator / Sou marca" que muda o conteúdo pra cada público, animações de rolagem e formulário de parcerias.</p>
+      <div class="links"><a href="https://agenciaparalelo.netlify.app" target="_blank">Ver site →</a><a class="igual" href="https://wa.me/5531984783473?text=Oi%21%20Vi%20o%20case%20da%20Paralelo%20no%20portf%C3%B3lio%20e%20quero%20algo%20parecido." target="_blank">Quero igual →</a></div>
+    </div>
+    <div class="case-media"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>agenciaparalelo.netlify.app</span></div><img src="case-paralelo.webp" alt="Site da agência Paralelo" loading="lazy" width="1000" height="457"></div></div>
+  </article>
+
+  <article class="rv case">
+    <div class="case-text">
+      <div class="case-top"><span class="case-n">09</span><span class="micro">Landing page · Infoproduto</span></div>
+      <h3>Algoritmo da <em class="s">Personalidade</em></h3>
+      <p class="case-desc">Landing page para infoproduto de psicologia, com avaliações, tabela de preços e Google Tag Manager pro tráfego pago.</p>
+      <div class="links"><a href="https://algoritmodapersonalidade.com.br" target="_blank">Ver site →</a><a class="igual" href="https://wa.me/5531984783473?text=Oi%21%20Vi%20o%20case%20do%20Algoritmo%20da%20Personalidade%20no%20portf%C3%B3lio%20e%20quero%20algo%20parecido." target="_blank">Quero igual →</a></div>
+    </div>
+    <div class="case-media"><div class="algo">
+        <span class="algo-top"><b>Algoritmo da Personalidade</b><i>Quero entrar</i></span>
+        <p class="algo-h">Você sabe que deveria agir diferente.</p>
+        <p class="algo-s">Mas continua preso no mesmo ciclo.</p>
+        <p class="algo-h">Percebe os sinais.<br>Percebe a repetição.</p>
+        <span class="algo-chips"><i>Avaliações</i><i>Tabela de preços</i><i>Google Tag Manager</i></span>
+      </div></div>
+  </article>
+
+  <article class="rv case flip">
+    <div class="case-text">
+      <div class="case-top"><span class="case-n">10</span><span class="micro">Automação · Python</span></div>
+      <h3>Robô de <em class="s">auditoria</em></h3>
+      <p class="case-desc">Conciliação automática de faturamento e detecção de divergências em arquivos posicionais.</p>
+      <div class="links"><a href="https://github.com/guhspm/auditoria-financeira-automatizada" target="_blank">Ver código →</a><a class="igual" href="https://wa.me/5531984783473?text=Oi%21%20Vi%20o%20case%20do%20rob%C3%B4%20de%20auditoria%20no%20portf%C3%B3lio%20e%20quero%20algo%20parecido." target="_blank">Quero igual →</a></div>
+    </div>
+    <div class="case-media"><div class="panel dark"><span class="micro">12.847 registros</span><span class="giant nowrap">4 h <em class="s">→</em> 4 min</span></div></div>
+  </article>
+
+  <article class="rv case">
+    <div class="case-text">
+      <div class="case-top"><span class="case-n">11</span><span class="micro">Identidade visual</span></div>
+      <h3>Aevum <em class="s">Incensaria</em></h3>
+      <p class="case-desc">Marca completa: logo em 6 cores, rótulo pronto pra gráfica, capas de destaque e manual da marca.</p>
+      <div class="links"><a href="Aevum_Manual_da_Marca.pdf" target="_blank">Ver manual →</a><a class="igual" href="https://wa.me/5531984783473?text=Oi%21%20Vi%20o%20case%20da%20Aevum%20no%20portf%C3%B3lio%20e%20quero%20algo%20parecido." target="_blank">Quero igual →</a></div>
+    </div>
+    <div class="case-media"><div class="paper"><img src="case-aevum.webp" alt="Capa do manual da Aevum" loading="lazy" width="900" height="506"><img src="case-aevum-versoes.webp" alt="Versões da logo da Aevum" loading="lazy" width="900" height="506"></div></div>
+  </article>
+
+  <article class="rv case flip">
+    <div class="case-text">
+      <div class="case-top"><span class="case-n">12</span><span class="micro">Identidade visual · Instagram</span></div>
+      <h3>Hohanna <em class="s">Rodrigues</em></h3>
+      <p class="case-desc">Marca para psicóloga: símbolo feito à mão, paleta azul e sálvia, templates de feed e capas de destaque.</p>
+      <div class="links"><a href="hohanna-previa.jpg" target="_blank">Prévia do Instagram →</a><a href="Hohanna_Manual_da_Marca.pdf" target="_blank">Ver manual →</a><a class="igual" href="https://wa.me/5531984783473?text=Oi%21%20Vi%20o%20case%20da%20Hohanna%20no%20portf%C3%B3lio%20e%20quero%20algo%20parecido." target="_blank">Quero igual →</a></div>
+    </div>
+    <div class="case-media"><img class="strip" src="case-hohanna.webp" alt="Prévia do Instagram da Hohanna" loading="lazy" width="1400" height="376"></div>
+  </article>
+
+  <article class="rv case">
+    <div class="case-text">
+      <div class="case-top"><span class="case-n">13 + 14</span><span class="micro">Vídeo · Captação e edição</span></div>
+      <h3>Budega e <em class="s">Lost In</em></h3>
+      <p class="case-desc">Três vídeos pra cachaçaria no Mercado Central de BH, filmados e editados no celular, e três clipes de divulgação pro evento de música eletrônica Lost In.</p>
+      <div class="links"><a href="https://www.instagram.com/reel/Dc1wOKEKdzR/" target="_blank">Reel da Budega →</a><a href="https://www.instagram.com/reel/DczJ3DQOvqn/" target="_blank">Reel do Lost In →</a><a class="igual" href="https://wa.me/5531984783473?text=Oi%21%20Vi%20o%20case%20dos%20v%C3%ADdeos%20da%20Budega%20e%20do%20Lost%20In%20no%20portf%C3%B3lio%20e%20quero%20algo%20parecido." target="_blank">Quero igual →</a></div>
+    </div>
+    <div class="case-media"><div class="panel soft"><span class="micro">6 vídeos entregues</span><span class="giant">Reels <em class="s">prontos</em></span></div></div>
+  </article>
+</div></section>
+
+<section class="mais"><div class="wrap">
+  <div class="corners"><span class="micro">Mais projetos</span><span class="micro">Sites · Automação · Material</span></div>
+  <ul>
+    <li><b>Exercite-se em Casa</b><span>Vitrine de afiliados com 51 produtos</span><a href="https://exerciteseemcasa2026.com" target="_blank">Ver →</a></li>
+    <li><b>MAIS Planos Recife</b><span>Auditoria técnica: erro 500 resolvido no site Top 3 do Google</span><a href="https://mplanosdesaude.com.br" target="_blank">Ver →</a></li>
+    <li><b>JC Manutenção</b><span>Portfólio comercial de 17 páginas</span><a href="https://guhspm.github.io/portfolio/JC_Manutencao_Portfolio.pdf" target="_blank">Ver →</a></li>
+    <li><b>Dropshipping Shopee</b><span>Loja que roda sozinha, com estoque e preço sincronizados</span><a href="https://github.com/guhspm" target="_blank">Ver →</a></li>
+    <li><b>RPA de faturamento</b><span>Extrai impostos e valores de notas em PDF</span><a href="https://github.com/guhspm/robo-faturamento-unimed" target="_blank">Ver →</a></li>
+    <li><b>Relatórios automáticos</b><span>3 relatórios gerenciais gerados sozinhos</span><a href="https://github.com/guhspm/automacao-relatorios-excel" target="_blank">Ver →</a></li>
+  </ul>
+</div></section>
+
+<!-- SERVIÇOS -->
+<section class="serv" id="servicos"><div class="wrap">
+  <div class="corners"><span class="micro">04 — Serviços</span><span class="micro">Do Instagram à automação</span></div>
+  <h2 class="h2 rv">O que a gente <em class="s">faz</em>.</h2>
+  <ol class="serv-list">
+    <li class="rv"><span class="sn">01</span><div><h3>Gestão de <em class="s">Instagram</em></h3><p>Pauta, Reels, artes e stories com a cara da sua marca, e relatório todo mês com o que mudou.</p></div></li>
+    <li class="rv"><span class="sn">02</span><div><h3>Sites e <em class="s">lojas</em></h3><p>Site, landing page ou loja virtual rápida no celular, com WhatsApp e rastreamento de anúncio configurados.</p></div></li>
+    <li class="rv"><span class="sn">03</span><div><h3><em class="s">Automação</em></h3><p>Robôs e integrações que tiram do seu time o trabalho repetitivo: atendimento, planilha, relatório.</p></div></li>
+    <li class="rv"><span class="sn">04</span><div><h3>Identidade <em class="s">visual</em></h3><p>Logo, cores, tipografia e manual da marca, prontos pra usar no Instagram e no impresso.</p></div></li>
+    <li class="rv"><span class="sn">05</span><div><h3><em class="s">Vídeo</em></h3><p>Captação e edição de Reels pro feed e vídeos de divulgação.</p></div></li>
+  </ol>
+</div></section>
+
+<!-- PRÉVIA GRÁTIS -->
+<section class="previa" id="previa"><div class="wrap">
+  <div class="corners"><span class="micro">05 — Prévia grátis</span><span class="micro">Antes de fechar</span></div>
+  <div class="previa-grid">
+    <div class="rv">
+      <h2 class="h2">Como ficaria o <em class="s">seu</em> perfil.</h2>
+      <p class="previa-sub">Antes de falar de preço, a gente monta 3 posts no estilo do seu negócio e mostra no topo do seu perfil. Você vê o resultado antes de decidir.</p>
+      <a class="btn btn-p" href="https://wa.me/5531984783473?text=Oi%21%20Quero%20ver%20como%20ficaria%20o%20meu%20perfil%20%28pr%C3%A9via%20gr%C3%A1tis%29." target="_blank">Quero ver o meu perfil <span class="arrow">→</span></a>
+    </div>
+    <ol class="passos rv">
+      <li><b>1</b><span><strong>Você manda o @</strong> e conta o que vende.</span></li>
+      <li><b>2</b><span><strong>A gente monta 3 posts</strong> no seu nicho: um de gancho, um de produto e um de prova.</span></li>
+      <li><b>3</b><span><strong>Você vê no seu perfil</strong> como ficaria, com os valores do mês junto.</span></li>
+    </ol>
+  </div>
+</div></section>
+
+<!-- INSTAGRAM -->
+<section class="insta" id="instagram"><div class="wrap">
+  <div class="corners"><span class="micro">06 — Instagram</span><span class="micro">@studioinside.co</span></div>
+  <div class="insta-grid">
+    <div class="rv">
+      <h2 class="h2">Bastidores <em class="s">toda</em> semana.</h2>
+      <p class="previa-sub">Gravação, edição e o que acontece por trás de cada projeto.</p>
+      <a class="btn btn-g" href="https://www.instagram.com/studioinside.co/" target="_blank">Seguir @studioinside.co <span class="arrow">→</span></a>
+    </div>
+    <div class="reels rv">
+      <a href="https://www.instagram.com/reel/De0JxqlunyH/" target="_blank"><img src="reel-1.webp" alt="Reel: Você é criador de conteúdo?" loading="lazy" width="450" height="797"><span>Assistir →</span></a>
+      <a href="https://www.instagram.com/reel/Det98iUvk49/" target="_blank"><img src="reel-2.webp" alt="Reel: 1 mês de posts em uma noite" loading="lazy" width="450" height="797"><span>Assistir →</span></a>
+    </div>
+  </div>
+</div></section>
+
+<!-- DEPOIMENTOS -->
+<section class="depo"><div class="wrap">
+  <div class="corners"><span class="micro">07 — Depoimentos</span><span class="micro">Texto como o cliente escreveu</span></div>
+  <h2 class="h2 rv">Quem já <em class="s">trabalhou</em> com a gente.</h2>
+  <div class="depo-list">
+    <div class="q rv"><blockquote>Profissional, atencioso, didático. Experiência incrível, superou minhas expectativas. 100/10. Construímos um projeto sólido e de longo prazo, ele esteve comigo desde o dia 1 até HOJE, explicando cada processo. O serviço tem um PÓS-VENDA, com o qual até agora mantemos contato. Mais que recomendado!!</blockquote><cite><b>Katherine</b> · 99Freelas · Loja automatizada na Shopee</cite></div>
+    <div class="q rv"><blockquote>Que portfólio mais lindo! Eu amei! Ficou perfeito! Muito obrigada por toda a atenção e cuidado que você teve com a minha empresa! Você entendeu exatamente o que eu precisava e conseguiu expressar a essência da Sólia! Ainda vamos fazer muitos trabalhos juntos!</blockquote><cite><b>Yanê</b> · Sólia Company · Portfólio comercial</cite></div>
+    <div class="q rv"><blockquote>O Gustavo foi um profissional extremamente dinâmico e parceiro do nosso time! Ele atendeu com excelência a elaboração do perfil da marca Facilita, trazendo ideias incríveis e muita agilidade em todo o processo. Recomendamos demais o trabalho dele!</blockquote><cite><b>Michel e Isaac</b> · Facilita Energia · Identidade visual e landing page</cite></div>
+    <div class="q rv"><blockquote>O Gustavo realizou um projeto para mim e superou minhas expectativas. Foi extremamente profissional em todas as etapas do trabalho. Sempre atencioso, respondeu rápido e se mostrou acessível para futuras dúvidas. Recomendo sem dúvidas pela qualidade e agilidade do serviço.</blockquote><cite><b>Ruan Indrigo</b> · 99Freelas · Blog de produtos</cite></div>
+    <div class="q rv"><blockquote>Rápido e Eficaz.</blockquote><cite><b>Cliente verificado</b> · 99Freelas · Landing page</cite></div>
+  </div>
+</div></section>
+
+<footer id="contato"><div class="wrap">
+  <div class="foot-cta">
+    <span class="micro">08 — Contato</span>
+    <h2 class="h2">Bora <em class="s">conversar</em>?</h2>
+    <a class="btn btn-p" href="https://wa.me/5531984783473?text=Oi%2C%20quero%20o%20diagn%C3%B3stico%20gr%C3%A1tis" target="_blank">Diagnóstico grátis no WhatsApp <span class="arrow">→</span></a>
+  </div>
+  <div class="foot-links">
+    <a href="https://wa.me/5531984783473" target="_blank">WhatsApp<small>(31) 9 8478-3473</small></a>
+    <a href="https://www.instagram.com/studioinside.co/" target="_blank">Instagram<small>@studioinside.co</small></a>
+    <a href="https://www.linkedin.com/in/gustavo-henriquesp/" target="_blank">LinkedIn<small>Gustavo Henrique</small></a>
+  </div>
+  <div class="foot-bottom"><img src="logo-inside.png" alt="Inside.co" width="120" height="27"><span class="micro">© 2026 Inside.co · atendimento em todo o Brasil</span></div>
+</div></footer>
+
+<a class="float-wa" href="https://wa.me/5531984783473?text=Oi%2C%20quero%20o%20diagn%C3%B3stico%20gr%C3%A1tis" target="_blank">WhatsApp</a>
+<script>
 (function(){
-    const filterBtns=document.querySelectorAll('.filter-btn');
-    const catCards=document.querySelectorAll('.projects-grid [data-cat]');
-    const slides=document.querySelectorAll('#projectRotator .feature-slide');
-    if(!filterBtns.length)return;
-
-    filterBtns.forEach(btn=>{
-        btn.addEventListener('click',()=>{
-            filterBtns.forEach(b=>b.classList.remove('active'));
-            btn.classList.add('active');
-            const f=btn.dataset.filter;
-            catCards.forEach(c=>{
-                const cats=c.dataset.cat.split(',');
-                const show=(f==='todos'||cats.includes(f));
-                c.style.display=show?'':'none';
-                if(show)c.classList.add('visible');
-            });
-            slides.forEach(s=>{
-                const cats=s.dataset.cat.split(',');
-                s.dataset.hiddenByFilter=(f==='todos'||cats.includes(f))?'':'1';
-            });
-            const current=document.querySelector('#projectRotator .feature-slide.active');
-            if(current&&current.dataset.hiddenByFilter==='1'){
-                for(let i=0;i<slides.length;i++){
-                    if(slides[i].dataset.hiddenByFilter!=='1'){goToSlide(i);break;}
-                }
-            }
-        });
-    });
-
-    const dotsWrap=document.getElementById('rotatorDots');
-    let idx=0;
-    slides.forEach((_,i)=>{
-        const d=document.createElement('button');
-        if(i===0)d.classList.add('active');
-        d.setAttribute('aria-label','Ver case '+(i+1));
-        d.addEventListener('click',()=>{goToSlide(i);resetRotatorTimer();});
-        dotsWrap.appendChild(d);
-    });
-    const dots=dotsWrap.querySelectorAll('button');
-    function goToSlide(i){
-        slides[idx].classList.remove('active');
-        dots[idx].classList.remove('active');
-        idx=i;
-        slides[idx].classList.add('active');
-        dots[idx].classList.add('active');
-    }
-    const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    let rotatorTimer;
-    function resetRotatorTimer(){
-        if(reduceMotion)return;
-        clearInterval(rotatorTimer);
-        rotatorTimer=setInterval(()=>{
-            let next=(idx+1)%slides.length,tries=0;
-            while(slides[next].dataset.hiddenByFilter==='1'&&tries<slides.length){next=(next+1)%slides.length;tries++;}
-            goToSlide(next);
-        },6000);
-    }
-    resetRotatorTimer();
-    const rotatorEl=document.getElementById('projectRotator');
-    function step(dir){
-        let n=idx,tries=0;
-        do{n=(n+dir+slides.length)%slides.length;tries++;}while(slides[n].dataset.hiddenByFilter==='1'&&tries<slides.length);
-        goToSlide(n);resetRotatorTimer();
-    }
-    document.getElementById('rotPrev').addEventListener('click',()=>step(-1));
-    document.getElementById('rotNext').addEventListener('click',()=>step(1));
-    rotatorEl.addEventListener('pointerenter',e=>{if(e.pointerType==='mouse')clearInterval(rotatorTimer);});
-    rotatorEl.addEventListener('pointerleave',e=>{if(e.pointerType==='mouse')resetRotatorTimer();});
-    let tx=null,ty=null;
-    rotatorEl.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;ty=e.touches[0].clientY;},{passive:true});
-    rotatorEl.addEventListener('touchend',e=>{
-        if(tx===null)return;
-        const dx=e.changedTouches[0].clientX-tx,dy=e.changedTouches[0].clientY-ty;
-        if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy))step(dx<0?1:-1);
-        tx=null;
-    },{passive:true});
-})();
-
-/* PÍLULAS, MENU ATIVO E VOLTAR AO TOPO */
-(function(){
-    const pills=document.getElementById('secPills'),hero=document.getElementById('hero');
-    const ids=['sobre','servicos','projetos','instagram','depoimentos','contato'];
-    const secs=ids.map(id=>document.getElementById(id)).filter(Boolean);
-    function onScroll(){
-        const y=scrollY,h=innerHeight;
-        pills.classList.toggle('show',y>hero.offsetTop+hero.offsetHeight-120);
-        document.body.classList.toggle('near-bottom',y+h>document.documentElement.scrollHeight-h*1.2);
-        let cur=null;
-        secs.forEach(sc=>{if(sc.getBoundingClientRect().top<h*.35)cur=sc.id;});
-        pills.querySelectorAll('a').forEach(a=>{
-            const on=a.dataset.sec===cur;
-            if(on&&!a.classList.contains('is-active')){a.classList.add('is-active');pills.scrollTo({left:a.offsetLeft-pills.clientWidth/2+a.clientWidth/2,behavior:'smooth'});}
-            else if(!on)a.classList.remove('is-active');
-        });
-        document.querySelectorAll('.mm-link').forEach(a=>a.classList.toggle('is-active',a.getAttribute('href')==='#'+cur));
-        document.querySelectorAll('.nav-links a').forEach(a=>a.classList.toggle('is-active',a.getAttribute('href')==='#'+cur));
-    }
-    addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);onScroll();
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}})},{rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(e,i){if(e.classList.contains('num')||e.classList.contains('q'))e.style.transitionDelay=(i%3)*0.1+'s';io.observe(e)});
+  var n=document.querySelector('.num .big');
+  if(n){var t=21,io2=new IntersectionObserver(function(es){if(es[0].isIntersecting){io2.disconnect();var s=performance.now();(function st(now){var p=Math.min((now-s)/1200,1),v=Math.round(t*(1-Math.pow(1-p,3)));n.firstChild.nodeValue=v;if(p<1)requestAnimationFrame(st)})(s)}});io2.observe(n)}
 })();
 </script>
 </body>
