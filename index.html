@@ -412,6 +412,175 @@ footer.dark .foot-bottom img{filter:brightness(0) invert(1)}
  .h2 em.s::after{transform:scaleX(1);transition:none}
  .serv-list li::after{transform:scaleX(1)}
 }
+/* ===== V6 · 3D, destaques, índice, serviços (06/11) ===== */
+::selection{background:#5B2A9E;color:#fff}
+html{scrollbar-color:#5B2A9E #F0EEF4}
+.tagc{display:inline-block;font-weight:600;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gray)}
+.dark .tagc{color:rgba(255,255,255,.62)}
+.links a{background:linear-gradient(currentColor,currentColor) 0 100%/0 1.5px no-repeat;transition:background-size .35s var(--ease-out),color .2s}
+@media(hover:hover) and (pointer:fine){.links a:not(.igual):hover{background-size:100% 1.5px}}
+.dark .links a:not(.igual){color:#fff;border-color:rgba(255,255,255,.3)}
+.dark .links a.igual{background:var(--roxo);color:#fff}
+/* capa 3D */
+.capa{padding:24px 0 64px;overflow:hidden}
+.capa2{display:grid;gap:30px;align-items:center}
+.capa-txt h1{font-size:clamp(42px,11vw,96px)}
+.capa-fato{margin-top:26px;font-size:15px;color:var(--gray);max-width:420px}
+.capa-fato b{font-family:var(--display);font-weight:900;font-size:30px;color:var(--beri);margin-right:6px;font-variant-numeric:tabular-nums;letter-spacing:-.03em}
+.stage{perspective:1300px;height:clamp(300px,82vw,440px);position:relative}
+.scene{position:absolute;inset:0;transform-style:preserve-3d;will-change:transform}
+.s-browser{position:absolute;left:0;top:8%;width:92%;transform:translateZ(0) rotateY(-10deg);box-shadow:0 40px 80px -36px rgba(43,24,56,.45)}
+.scr{position:relative;overflow:hidden}
+.s-browser .scr{aspect-ratio:1000/440;background:#F0EEF4}
+.scr img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;opacity:0;transform:scale(1.04);transition:opacity .9s var(--ease-out),transform 1.2s var(--ease-out)}
+.scr img.on{opacity:1;transform:none}
+.s-phone{position:absolute;right:2%;bottom:0;width:30%;max-width:170px;border:7px solid #1A1020;border-radius:28px;background:#1A1020;transform:translateZ(90px) rotateY(-14deg);box-shadow:0 40px 70px -30px rgba(43,24,56,.6);animation:bob 6s ease-in-out infinite}
+.s-phone .scr{aspect-ratio:450/797;border-radius:21px}
+.s-badge{position:absolute;left:4%;bottom:6%;display:flex;align-items:center;gap:10px;background:#fff;border:1px solid #F0EEF4;border-radius:999px;padding:6px 16px 6px 6px;transform:translateZ(150px);box-shadow:0 20px 40px -18px rgba(43,24,56,.35);animation:bob 7s ease-in-out -2s infinite}
+.s-badge img{width:46px;height:46px;border-radius:50%;object-fit:cover;object-position:center 18%}
+.s-badge span{font-weight:700;font-size:14px;line-height:1.1;color:var(--beri)}
+.s-badge b{display:block;font-weight:500;font-size:12px;color:var(--gray)}
+@keyframes bob{50%{translate:0 -10px}}
+@media(min-width:1000px){.capa2{grid-template-columns:1.05fr 1fr;min-height:calc(100svh - var(--hdr,100px) - 90px)}.capa-txt h1{font-size:clamp(54px,4.9vw,86px);padding-right:0}.stage{height:520px}}
+/* destaques */
+.destaques{padding:100px 0 60px}
+.dq{margin-top:56px}
+.dq-step{padding:0 0 64px}
+.dq-step h3{font-family:var(--display);font-weight:900;text-transform:lowercase;font-size:clamp(42px,8vw,80px);line-height:.92;letter-spacing:-.05em;margin:10px 0 16px;color:#fff}
+.dq-step h3 em.s{color:var(--lilas);text-transform:none}
+.dq-step p{color:rgba(255,255,255,.75);font-size:17px;max-width:460px}
+.dq-mob{margin-top:28px}
+.dq-mob .browser{border-color:rgba(255,255,255,.1)}
+.dq-stage{display:none}
+@media(min-width:1000px){
+ .dq{display:grid;grid-template-columns:5fr 7fr;gap:48px}
+ .dq-step{min-height:78vh;display:flex;flex-direction:column;justify-content:center;padding:0;opacity:.35;transition:opacity .5s var(--ease-out)}
+ .dq-step.act{opacity:1}
+ .dq-mob{display:none}
+ .dq-stage{display:block;position:sticky;top:calc(50vh - 190px);height:420px;perspective:1600px}
+ .dq-deck{position:relative;height:100%;transform-style:preserve-3d}
+ .dq-card{position:absolute;left:0;right:0;top:40px;transform-origin:50% 100%;transition:transform .9s cubic-bezier(.77,0,.175,1),opacity .6s var(--ease-out);will-change:transform}
+ .dq-card .browser{box-shadow:0 50px 90px -40px rgba(0,0,0,.7);border-color:rgba(255,255,255,.08)}
+ .dq-card[data-p="0"]{transform:translate3d(0,0,0) rotateY(-12deg) rotateX(4deg);opacity:1;z-index:3}
+ .dq-card[data-p="1"]{transform:translate3d(46px,-46px,-180px) rotateY(-12deg) rotateX(4deg);opacity:.5;z-index:2}
+ .dq-card[data-p="2"]{transform:translate3d(92px,-92px,-360px) rotateY(-12deg) rotateX(4deg);opacity:.22;z-index:1}
+ .dq-card[data-p="-1"]{transform:translate3d(-40px,160px,160px) rotateX(-28deg);opacity:0;z-index:4}
+}
+/* índice */
+.projetos{padding:96px 0;position:relative}
+.idx{list-style:none;margin-top:48px;border-top:1px solid var(--line)}
+.idx-row{display:grid;gap:14px;padding:28px 0;border-bottom:1px solid var(--line);position:relative}
+.idx-thumb{width:100%;height:auto;max-height:260px;object-fit:cover;object-position:top;border-radius:12px;border:1px solid #F0EEF4;box-shadow:0 18px 40px -24px rgba(43,24,56,.25)}
+.idx-name h3{font-family:var(--display);font-weight:900;text-transform:lowercase;font-size:clamp(32px,6vw,52px);line-height:.95;letter-spacing:-.05em;margin-bottom:6px}
+.idx-name h3 em.s{text-transform:none}
+.idx-body p{color:var(--gray);max-width:560px}
+.idx-body .links{margin-top:10px}
+.idx-body .case-res{margin-top:14px}
+.tambem{margin-top:56px}
+.tb-t{font-family:var(--serif);font-style:italic;font-weight:400;font-size:34px;color:var(--roxo);margin-bottom:8px}
+.tambem ul{list-style:none}
+.idx-prev{display:none}
+@media(min-width:1000px){
+ .idx-row{grid-template-columns:5fr 7fr;gap:40px;align-items:start;padding:34px 0}
+ .idx-thumb{display:none}
+ .idx-name h3{transition:transform .45s var(--ease-out)}
+ .idx-row[data-img]{cursor:none}
+ .idx-row:hover .idx-name h3{transform:translateX(12px)}
+ .idx-prev{display:block;position:fixed;left:0;top:0;width:360px;pointer-events:none;z-index:60;opacity:0;transform:translate3d(-999px,0,0);transition:opacity .25s ease}
+ .idx-prev.on{opacity:1}
+ .idx-prev img{display:block;width:100%;height:auto;border-radius:14px;box-shadow:0 40px 80px -30px rgba(43,24,56,.55);border:1px solid #F0EEF4;transform:scale(.92);transition:transform .35s var(--ease-out)}
+ .idx-prev.on img{transform:scale(1)}
+ .idx-prev::after{content:"ver projeto";position:absolute;left:50%;top:50%;translate:-50% -50%;background:var(--roxo);color:#fff;font-weight:600;font-size:13px;padding:9px 14px;border-radius:999px}
+}
+/* serviços */
+.sv{margin-top:48px}
+.sv-list{list-style:none;counter-reset:s}
+.sv-list li{padding:26px 0;border-bottom:1px solid rgba(255,255,255,.14)}
+.sv-list h3{font-family:var(--display);font-weight:900;text-transform:lowercase;font-size:clamp(32px,6.4vw,56px);line-height:.95;letter-spacing:-.05em;color:#fff;margin-bottom:10px}
+.sv-list h3 em.s{color:var(--lilas);text-transform:none}
+.sv-list p{color:rgba(255,255,255,.72);max-width:460px}
+.sv-mob{margin-top:20px;max-width:420px}
+.sv-mob .v-phone{max-width:150px}
+.v-phone{border:7px solid #0E0812;border-radius:26px;overflow:hidden;background:#0E0812;box-shadow:0 30px 60px -30px rgba(0,0,0,.7)}
+.v-phone img{display:block;width:100%;height:auto;border-radius:19px}
+.v-strip img{display:block;width:100%;height:auto;border-radius:12px}
+.v-flow svg{width:100%;height:auto;display:block}
+.v-flow .ln{fill:none;stroke:rgba(201,184,232,.45);stroke-width:2;stroke-dasharray:6 6}
+.v-flow .pl{fill:#C9B8E8}
+.v-flow .nd rect{fill:rgba(255,255,255,.06);stroke:rgba(255,255,255,.25)}
+.v-flow .nd.mid rect{fill:#5B2A9E;stroke:#5B2A9E}
+.v-flow text{fill:#fff;font:600 17px Inter,system-ui,sans-serif;text-anchor:middle}
+.sv-stage{display:none}
+@media(min-width:1000px){
+ .sv{display:grid;grid-template-columns:6fr 6fr;gap:56px}
+ .sv-mob{display:none}
+ .sv-list li{cursor:default;opacity:.45;transition:opacity .4s var(--ease-out)}
+ .sv-list li.act{opacity:1}
+ .sv-list li h3{transition:transform .45s var(--ease-out)}
+ .sv-list li.act h3{transform:translateX(10px)}
+ .sv-stage{display:block;position:sticky;top:calc(50vh - 220px);height:440px;perspective:1400px}
+ .sv-deck{position:relative;height:100%;transform-style:preserve-3d}
+ .sv-card{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transform:rotateY(50deg) translateZ(-200px);transition:transform .8s cubic-bezier(.77,0,.175,1),opacity .5s var(--ease-out)}
+ .sv-card.on{opacity:1;transform:rotateY(-8deg)}
+ .sv-card.out{transform:rotateY(-60deg) translateZ(-200px)}
+ .sv-card .v-phone{width:220px}
+ .sv-card .browser,.sv-card .v-strip,.sv-card .v-flow{width:100%}
+}
+/* instagram: celulares em leque */
+.reels{perspective:1200px}
+.reels a img{border:7px solid #0E0812;border-radius:26px;background:#0E0812}
+.reels a:nth-child(1) img{transform:rotateY(18deg) rotateZ(-2deg)}
+.reels a:nth-child(2) img{transform:rotateY(-18deg) rotateZ(2deg)}
+@media(hover:hover) and (pointer:fine){.reels a:hover img{transform:rotateY(0) translateY(-8px)}}
+/* depoimento em destaque */
+.q.big{grid-column:1/-1;padding:40px 36px}
+.q.big blockquote{font-size:clamp(28px,4.2vw,48px);line-height:1.08}
+/* anel 3D do rodapé */
+footer .foot-cta{position:relative}
+.ring{height:250px;perspective:1100px;margin:40px 0 8px;overflow:hidden;-webkit-mask:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.ring-in{position:relative;width:200px;height:120px;margin:60px auto 0;transform-style:preserve-3d;animation:spin 36s linear infinite}
+.ring-in img{position:absolute;inset:0;width:200px;height:120px;object-fit:cover;object-position:top;border-radius:10px;transform:rotateY(calc(var(--i)*45deg)) translateZ(300px);backface-visibility:hidden;box-shadow:0 20px 40px -20px rgba(0,0,0,.6)}
+@keyframes spin{to{transform:rotateY(-360deg)}}
+.ring.paused .ring-in,.ring:hover .ring-in{animation-play-state:paused}
+.ring-btn{display:block;margin:0 auto 32px;background:none;border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.75);border-radius:999px;padding:8px 14px;font:600 12px var(--body);letter-spacing:.1em;text-transform:uppercase;cursor:pointer;min-height:36px}
+.ring-btn:focus-visible{outline:2px solid var(--lilas)}
+@media(min-width:760px){.ring{height:300px}.ring-in{width:260px;height:150px}.ring-in img{width:260px;height:150px;transform:rotateY(calc(var(--i)*45deg)) translateZ(400px)}}
+@media(prefers-reduced-motion:reduce){
+ .s-phone,.s-badge{animation:none}
+ .ring-in{animation:none}
+ .dq-card,.sv-card{transition:opacity .4s ease}
+ .scr img{transition:opacity .4s ease;transform:none}
+}
+
+/* mobile: mesmo deck 3D fixo no topo enquanto o texto rola */
+@media(max-width:999px){
+ .dq{display:flex;flex-direction:column}
+ .dq-stage{display:block;order:-1;position:sticky;top:calc(var(--hdr,100px) + 6px);z-index:3;height:clamp(190px,56vw,330px);perspective:1000px;background:var(--beri);margin:0 calc(var(--pad)*-1);padding:0 var(--pad);box-shadow:0 18px 24px -18px rgba(43,24,56,.9)}
+ .dq-deck{position:relative;height:100%;transform-style:preserve-3d}
+ .dq-card{position:absolute;left:4%;right:10%;top:28px;transform-origin:50% 100%;transition:transform .9s cubic-bezier(.77,0,.175,1),opacity .6s var(--ease-out)}
+ .dq-card .browser{box-shadow:0 30px 50px -26px rgba(0,0,0,.75);border-color:rgba(255,255,255,.08)}
+ .dq-card[data-p="0"]{transform:translate3d(0,0,0) rotateY(-12deg) rotateX(4deg);opacity:1;z-index:3}
+ .dq-card[data-p="1"]{transform:translate3d(22px,-20px,-120px) rotateY(-12deg) rotateX(4deg);opacity:.5;z-index:2}
+ .dq-card[data-p="2"]{transform:translate3d(44px,-40px,-240px) rotateY(-12deg) rotateX(4deg);opacity:.22;z-index:1}
+ .dq-card[data-p="-1"]{transform:translate3d(-20px,110px,110px) rotateX(-28deg);opacity:0;z-index:4}
+ .dq-mob{display:none}
+ .dq-step{min-height:0;padding:26px 0 24vh;opacity:.35;transition:opacity .5s var(--ease-out)}
+ .dq-step.act{opacity:1}
+ .sv{display:flex;flex-direction:column}
+ .sv-stage{display:block;order:-1;position:sticky;top:calc(var(--hdr,100px) + 6px);z-index:3;height:clamp(230px,64vw,340px);perspective:1000px;background:var(--beri);margin:0 calc(var(--pad)*-1);padding:14px var(--pad);box-shadow:0 18px 24px -18px rgba(43,24,56,.9)}
+ .sv-deck{position:relative;height:100%;transform-style:preserve-3d}
+ .sv-card{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transform:rotateY(50deg) translateZ(-160px);transition:transform .8s cubic-bezier(.77,0,.175,1),opacity .5s var(--ease-out)}
+ .sv-card.on{opacity:1;transform:rotateY(-8deg)}
+ .sv-card.out{transform:rotateY(-60deg) translateZ(-160px)}
+ .sv-card .v-phone{width:auto;height:100%;aspect-ratio:450/797;display:flex}
+ .sv-card .v-phone img{height:100%;width:auto}
+ .sv-card .browser,.sv-card .v-strip{width:92%}
+ .sv-card .v-flow{width:min(100%,380px)}
+ .sv-mob{display:none}
+ .sv-list li{min-height:0;padding-bottom:20vh;opacity:.4;transition:opacity .4s var(--ease-out)}
+ .sv-list li.act{opacity:1}
+}
+@media(max-width:999px) and (prefers-reduced-motion:reduce){.dq-card,.sv-card{transition:opacity .4s ease}}
 </style>
 </head>
 <body>
@@ -421,191 +590,65 @@ footer.dark .foot-bottom img{filter:brightness(0) invert(1)}
 <a class="diag" href="https://wa.me/5531984783473?text=Oi%2C%20quero%20o%20diagn%C3%B3stico%20do%20meu%20perfil%21" target="_blank"><span class="diag-pill">Diagnóstico grátis</span><span class="diag-txt">Eu analiso o seu perfil e te mando o que mudar.</span><span class="diag-go">Quero o meu →</span></a>
 <div class="wrap">
   <a href="#topo" aria-label="Inside.co, voltar ao topo"><img class="logo" src="logo-inside.png" alt="Inside.co" width="128" height="28"></a>
-  <nav class="nav"><a href="#cases">Cases</a><a href="#servicos">Serviços</a><a href="#previa">Prévia grátis</a><a href="#instagram">Instagram</a><a href="#contato">Contato</a></nav>
+  <nav class="nav"><a href="#cases">Cases</a><a href="#projetos">Projetos</a><a href="#servicos">Serviços</a><a href="#previa">Prévia grátis</a><a href="#instagram">Instagram</a><a href="#contato">Contato</a></nav>
   <a class="top-cta" href="#contato">Contato</a>
 </div></header>
 <main>
 
-<!-- CAPA -->
-<section class="capa" id="topo"><div class="wrap">
-  <div class="corners"><span class="micro">Inside.co — Portfólio</span><span class="micro">Instagram · Site · Automação</span></div>
-  <div class="capa-grid">
+<section class="capa" id="topo"><div class="wrap capa2">
+  <div class="capa-txt">
     <h1><span class="ln">Instagram, site e</span> <span class="ln" style="animation-delay:.08s">automação pra</span> <span class="ln" style="animation-delay:.16s">negócio local</span> <span class="ln" style="animation-delay:.24s"><em class="s">vender</em> mais.</span></h1>
-    <figure class="capa-foto">
-      <img src="gustavo.webp" alt="Gustavo, fundador da Inside.co" width="720" height="900" fetchpriority="high">
-      <span class="tag">Gustavo · <b>fundador</b></span>
-    </figure>
+    <p class="capa-sub">Eu cuido do seu Instagram, do seu site e do que dá pra automatizar no atendimento. Tudo pensado pra virar cliente, não só pra ficar bonito.</p>
+    <div class="capa-ctas">
+      <a class="btn btn-p" href="https://wa.me/5531984783473?text=Oi%2C%20quero%20o%20diagn%C3%B3stico%20gr%C3%A1tis" target="_blank">Diagnóstico grátis no WhatsApp <span class="arrow">→</span></a>
+      <a class="btn btn-g" href="#cases">Ver cases <span class="arrow">↓</span></a>
+    </div>
+    <p class="capa-fato"><b><span class="cnt" data-to="50">50</span>+</b> negócios atendidos com site, loja, Instagram, marca e automação.</p>
   </div>
-  <p class="capa-sub">Eu cuido do seu Instagram, do seu site e do que dá pra automatizar no atendimento. Tudo pensado pra virar cliente, não só pra ficar bonito.</p>
-  <div class="capa-ctas">
-    <a class="btn btn-p" href="https://wa.me/5531984783473?text=Oi%2C%20quero%20o%20diagn%C3%B3stico%20gr%C3%A1tis" target="_blank">Diagnóstico grátis no WhatsApp <span class="arrow">→</span></a>
-    <a class="btn btn-g" href="#cases">Ver cases <span class="arrow">↓</span></a>
-  </div>
+  <div class="stage" aria-hidden="true"><div class="scene" id="scene">
+    <div class="s-browser browser"><div class="bar"><i></i><i></i><i></i><span class="s-url">clubemv.com.br</span></div><div class="scr">
+      <img class="on" src="case-clubemv.webp" alt="" width="1000" height="431" fetchpriority="high" data-url="clubemv.com.br"><img src="case-kendak.webp" alt="" width="1000" height="457" data-url="kendak.com.br"><img src="case-memoriei.webp" alt="" width="1000" height="434" data-url="memorieioficial.com.br"></div></div>
+    <div class="s-phone"><div class="scr"><img class="on" src="reel-1.webp" alt="" width="450" height="797"><img src="reel-2.webp" alt="" width="450" height="797"></div></div>
+    <div class="s-badge"><img src="gustavo.webp" alt="" width="720" height="900"><span>Gustavo<b>fundador da Inside</b></span></div>
+  </div></div>
 </div></section>
 
-<!-- NÚMEROS -->
-<section class="numeros dark"><div class="wrap">
-  <div class="corners"><span class="micro">02 — Números</span><span class="micro">Só números reais</span></div>
-  <div class="num-grid">
-    <div class="num rv"><span class="big"><span class="cnt" data-to="50">50</span><small>+</small></span><p><strong>negócios atendidos</strong> entre sites, lojas, Instagram, identidade visual e automação.</p></div>
-    <div class="num rv"><span class="big nowrap"><span class="cnt" data-to="64">64</span> <em class="s">→</em> <span class="cnt" data-to="311" data-from="64">311</span></span><p><strong>cliques no link da bio</strong> da LP Barbearia no primeiro mês de gestão do Instagram.</p></div>
-    <div class="num rv"><span class="big">+<span class="cnt" data-to="73">73</span>%</span><p><strong>alcance do Instagram da LP Barbearia</strong> no primeiro mês com a gente.</p></div>
-  </div>
+<section class="destaques dark" id="cases"><div class="wrap">
+  <h2 class="h2">trabalho <em class="s">de verdade</em>, com link pra conferir.</h2>
+  <div class="dq"><div class="dq-steps"><article class="dq-step" data-i="0"><span class="tagc">Landing page · Instagram</span><h3>Clube <em class="s">MV</em></h3><p>Landing page de vendas para o clube de assinatura da médica Helena Albuquerque, com checkout integrado via Hotmart. Hoje também cuidamos do Instagram.</p><div class="links"><a href="https://clubemv.com.br/clube-mv/" target="_blank">Ver site →</a><a href="https://www.instagram.com/clubemv.oficial/" target="_blank">Instagram →</a><a class="igual" href="https://wa.me/5531984783473?text=Oi%21%20Vi%20o%20case%20do%20Clube%20MV%20no%20portf%C3%B3lio%20e%20quero%20algo%20parecido." target="_blank">Quero igual →</a></div><div class="dq-mob"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>clubemv.com.br</span></div><img src="case-clubemv.webp" alt="Print do site Clube MV" width="1000" height="431" loading="lazy"></div></div></article>
+<article class="dq-step" data-i="1"><span class="tagc">E-commerce · Moda</span><h3><em class="s">Kendak</em></h3><p>Loja de roupas e acessórios do universo surf, skate e rua, com vitrine de coleções e pagamento pelo Mercado Pago.</p><div class="links"><a href="https://kendak.com.br" target="_blank">Ver loja →</a><a class="igual" href="https://wa.me/5531984783473?text=Oi%21%20Vi%20o%20case%20da%20Kendak%20no%20portf%C3%B3lio%20e%20quero%20algo%20parecido." target="_blank">Quero igual →</a></div><div class="dq-mob"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>kendak.com.br</span></div><img src="case-kendak.webp" alt="Print do site Kendak" width="1000" height="457" loading="lazy"></div></div></article>
+<article class="dq-step" data-i="2"><span class="tagc">Loja virtual · WooCommerce</span><h3><em class="s">Memoriei</em></h3><p>Loja de ímãs de foto e bottons personalizados: vitrine dos kits, passo a passo, Pix e cartão, envio pro Brasil todo ou retirada local.</p><div class="links"><a href="https://memorieioficial.com.br/" target="_blank">Ver loja →</a><a class="igual" href="https://wa.me/5531984783473?text=Oi%21%20Vi%20o%20case%20da%20Memoriei%20no%20portf%C3%B3lio%20e%20quero%20algo%20parecido." target="_blank">Quero igual →</a></div><div class="dq-mob"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>memorieioficial.com.br</span></div><img src="case-memoriei.webp" alt="Print do site Memoriei" width="1000" height="434" loading="lazy"></div></div></article>
+</div><div class="dq-stage" aria-hidden="true"><div class="dq-deck" id="deck"><div class="dq-card" data-i="0"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>clubemv.com.br</span></div><img src="case-clubemv.webp" alt="" width="1000" height="431" loading="lazy"></div></div><div class="dq-card" data-i="1"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>kendak.com.br</span></div><img src="case-kendak.webp" alt="" width="1000" height="457" loading="lazy"></div></div><div class="dq-card" data-i="2"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>memorieioficial.com.br</span></div><img src="case-memoriei.webp" alt="" width="1000" height="434" loading="lazy"></div></div></div></div></div>
 </div></section>
 
-<!-- CASES -->
-<section class="cases" id="cases"><div class="wrap">
-  <div class="corners"><span class="micro">03 — Cases</span><span class="micro">13 projetos · material real</span></div>
-  <div class="cases-intro rv">
-    <h2 class="h2">Trabalho <em class="s">de verdade</em>, com link pra conferir.</h2>
-    <p>Print do site no ar, peça entregue e número real. Clica e confere.</p>
-  </div>
-
-  <article class="rv case">
-    <div class="case-text">
-      <div class="case-top"><span class="case-n">01</span><span class="micro">Landing page · Instagram</span></div>
-      <h3>Clube <em class="s">MV</em></h3>
-      <p class="case-desc">Landing page de vendas para o clube de assinatura da médica Helena Albuquerque, com checkout integrado via Hotmart. Hoje também cuidamos do Instagram.</p>
-      <div class="links"><a href="https://clubemv.com.br/clube-mv/" target="_blank">Ver site →</a><a href="https://www.instagram.com/clubemv.oficial/" target="_blank">Instagram →</a><a class="igual" href="https://wa.me/5531984783473?text=Oi%21%20Vi%20o%20case%20do%20Clube%20MV%20no%20portf%C3%B3lio%20e%20quero%20algo%20parecido." target="_blank">Quero igual →</a></div>
-    </div>
-    <div class="case-media"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>clubemv.com.br</span></div><img src="case-clubemv.webp" alt="Landing page do Clube MV" loading="lazy" width="1000" height="431"></div></div>
-  </article>
-  <article class="rv case flip">
-    <div class="case-text">
-      <div class="case-top"><span class="case-n">02</span><span class="micro">Material editorial · 16 páginas</span></div>
-      <h3>Sólia <em class="s">Company</em></h3>
-      <p class="case-desc">Portfólio comercial para escritório de arquitetura em BH: tipografia serifada, fotos dos projetos reais e proposta de valor clara.</p>
-      <div class="links"><a href="https://soliacompany.com" target="_blank">Ver site →</a><a href="https://guhspm.github.io/portfolio/soliacompany_portfolio.pdf" target="_blank">Ver o PDF →</a><a class="igual" href="https://wa.me/5531984783473?text=Oi%21%20Vi%20o%20case%20da%20S%C3%B3lia%20no%20portf%C3%B3lio%20e%20quero%20algo%20parecido." target="_blank">Quero igual →</a></div>
-    </div>
-    <div class="case-media"><div class="paper"><img src="case-solia.webp" alt="Capa do portfólio da Sólia" loading="lazy" width="900" height="1273"><img src="case-solia-2.webp" alt="Página interna do portfólio da Sólia" loading="lazy" width="900" height="1273"></div></div>
-  </article>
-  <article class="rv case">
-    <div class="case-text">
-      <div class="case-top"><span class="case-n">03</span><span class="micro">Instagram · Vídeo · Site · App</span></div>
-      <h3>LP <em class="s">Barbearia</em></h3>
-      <p class="case-desc">Gestão do Instagram com pauta semanal, Reels e stories. Site novo com o Clube LP e as duas unidades, linktree que abre o app ou a loja certa no celular e página que ensina o cliente a baixar o app e agendar.</p>
-      <div class="case-res"><span>+73%<small>alcance no 1º mês</small></span><span>64 → 311<small>cliques no link da bio</small></span></div>
-      <div class="links"><a href="https://barbearialp.com.br/" target="_blank">Ver site →</a><a href="https://barbearialp.com.br/links/" target="_blank">Linktree →</a><a href="https://barbearialp.com.br/app/" target="_blank">Página do app →</a><a href="https://www.instagram.com/barbearialpbh/" target="_blank">Instagram →</a><a class="igual" href="https://wa.me/5531984783473?text=Oi%21%20Vi%20o%20case%20da%20LP%20Barbearia%20no%20portf%C3%B3lio%20e%20quero%20algo%20parecido." target="_blank">Quero igual →</a></div>
-    </div>
-    <div class="case-media"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>barbearialp.com.br</span></div><img src="case-lp.webp" alt="Site da LP Barbearia" loading="lazy" width="1000" height="457"></div></div>
-  </article>
-  <article class="rv case flip">
-    <div class="case-text">
-      <div class="case-top"><span class="case-n">04</span><span class="micro">Identidade visual · Site</span></div>
-      <h3>Facilita <em class="s">Energia</em></h3>
-      <p class="case-desc">Marca e site one-page para startup de assessoria elétrica, com mascote próprio e WhatsApp em cada seção.</p>
-      <div class="links"><a href="https://www.facilitaenergia.com.br" target="_blank">Ver site →</a><a class="igual" href="https://wa.me/5531984783473?text=Oi%21%20Vi%20o%20case%20da%20Facilita%20Energia%20no%20portf%C3%B3lio%20e%20quero%20algo%20parecido." target="_blank">Quero igual →</a></div>
-    </div>
-    <div class="case-media"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>facilitaenergia.com.br</span></div><img src="case-facilita.webp" alt="Site da Facilita Energia" loading="lazy" width="765" height="710"></div></div>
-  </article>
-  <article class="rv case">
-    <div class="case-text">
-      <div class="case-top"><span class="case-n">05</span><span class="micro">Loja virtual · WooCommerce</span></div>
-      <h3><em class="s">Memoriei</em></h3>
-      <p class="case-desc">Loja de ímãs de foto e bottons personalizados: vitrine dos kits, passo a passo, Pix e cartão, envio pro Brasil todo ou retirada local.</p>
-      <div class="links"><a href="https://memorieioficial.com.br/" target="_blank">Ver loja →</a><a class="igual" href="https://wa.me/5531984783473?text=Oi%21%20Vi%20o%20case%20da%20Memoriei%20no%20portf%C3%B3lio%20e%20quero%20algo%20parecido." target="_blank">Quero igual →</a></div>
-    </div>
-    <div class="case-media"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>memorieioficial.com.br</span></div><img src="case-memoriei.webp" alt="Loja virtual da Memoriei" loading="lazy" width="1000" height="434"></div></div>
-  </article>
-  <article class="rv case flip">
-    <div class="case-text">
-      <div class="case-top"><span class="case-n">06</span><span class="micro">E-commerce · Moda</span></div>
-      <h3><em class="s">Kendak</em></h3>
-      <p class="case-desc">Loja de roupas e acessórios do universo surf, skate e rua, com vitrine de coleções e pagamento pelo Mercado Pago.</p>
-      <div class="links"><a href="https://kendak.com.br" target="_blank">Ver loja →</a><a class="igual" href="https://wa.me/5531984783473?text=Oi%21%20Vi%20o%20case%20da%20Kendak%20no%20portf%C3%B3lio%20e%20quero%20algo%20parecido." target="_blank">Quero igual →</a></div>
-    </div>
-    <div class="case-media"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>kendak.com.br</span></div><img src="case-kendak.webp" alt="Loja da Kendak" loading="lazy" width="1000" height="457"></div></div>
-  </article>
-  <article class="rv case">
-    <div class="case-text">
-      <div class="case-top"><span class="case-n">07</span><span class="micro">Site institucional</span></div>
-      <h3>WEB &amp; <em class="s">SEG</em></h3>
-      <p class="case-desc">Site focado em conversão para consultoria de saúde e segurança do trabalho em Salvador, com formulário que cai direto no WhatsApp.</p>
-      <div class="links"><a href="https://webeseg.com.br" target="_blank">Ver site →</a><a class="igual" href="https://wa.me/5531984783473?text=Oi%21%20Vi%20o%20case%20da%20WEB%20%26%20SEG%20no%20portf%C3%B3lio%20e%20quero%20algo%20parecido." target="_blank">Quero igual →</a></div>
-    </div>
-    <div class="case-media"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>webeseg.com.br</span></div><img src="case-webeseg.webp" alt="Site da WEB &amp; SEG" loading="lazy" width="1000" height="457"></div></div>
-  </article>
-  <article class="rv case flip">
-    <div class="case-text">
-      <div class="case-top"><span class="case-n">08</span><span class="micro">Site institucional · Agência</span></div>
-      <h3><em class="s">Paralelo</em></h3>
-      <p class="case-desc">Site para agência criativa de creators, com a troca "Sou creator / Sou marca" que muda o conteúdo pra cada público, animações de rolagem e formulário de parcerias.</p>
-      <div class="links"><a href="https://agenciaparalelo.netlify.app" target="_blank">Ver site →</a><a class="igual" href="https://wa.me/5531984783473?text=Oi%21%20Vi%20o%20case%20da%20Paralelo%20no%20portf%C3%B3lio%20e%20quero%20algo%20parecido." target="_blank">Quero igual →</a></div>
-    </div>
-    <div class="case-media"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>agenciaparalelo.netlify.app</span></div><img src="case-paralelo.webp" alt="Site da agência Paralelo" loading="lazy" width="1000" height="457"></div></div>
-  </article>
-  <article class="rv case">
-    <div class="case-text">
-      <div class="case-top"><span class="case-n">09</span><span class="micro">Landing page · Infoproduto</span></div>
-      <h3>Algoritmo da <em class="s">Personalidade</em></h3>
-      <p class="case-desc">Landing page para infoproduto de psicologia, com avaliações, tabela de preços e Google Tag Manager pro tráfego pago.</p>
-      <div class="links"><a href="https://algoritmodapersonalidade.com.br" target="_blank">Ver site →</a><a class="igual" href="https://wa.me/5531984783473?text=Oi%21%20Vi%20o%20case%20do%20Algoritmo%20da%20Personalidade%20no%20portf%C3%B3lio%20e%20quero%20algo%20parecido." target="_blank">Quero igual →</a></div>
-    </div>
-    <div class="case-media"><div class="algo">
-        <span class="algo-top"><b>Algoritmo da Personalidade</b><i>Quero entrar</i></span>
-        <p class="algo-h">Você sabe que deveria agir diferente.</p>
-        <p class="algo-s">Mas continua preso no mesmo ciclo.</p>
-        <p class="algo-h">Percebe os sinais.<br>Percebe a repetição.</p>
-        <span class="algo-chips"><i>Avaliações</i><i>Tabela de preços</i><i>Google Tag Manager</i></span>
-      </div></div>
-  </article>
-  <article class="rv case flip">
-    <div class="case-text">
-      <div class="case-top"><span class="case-n">10</span><span class="micro">Identidade visual</span></div>
-      <h3>Aevum <em class="s">Incensaria</em></h3>
-      <p class="case-desc">Marca completa: logo em 6 cores, rótulo pronto pra gráfica, capas de destaque e manual da marca.</p>
-      <div class="links"><a href="Aevum_Manual_da_Marca.pdf" target="_blank">Ver manual →</a><a class="igual" href="https://wa.me/5531984783473?text=Oi%21%20Vi%20o%20case%20da%20Aevum%20no%20portf%C3%B3lio%20e%20quero%20algo%20parecido." target="_blank">Quero igual →</a></div>
-    </div>
-    <div class="case-media"><div class="paper"><img src="case-aevum.webp" alt="Capa do manual da Aevum" loading="lazy" width="900" height="506"><img src="case-aevum-versoes.webp" alt="Versões da logo da Aevum" loading="lazy" width="900" height="506"></div></div>
-  </article>
-  <article class="rv case">
-    <div class="case-text">
-      <div class="case-top"><span class="case-n">11</span><span class="micro">Identidade visual · Instagram</span></div>
-      <h3>Hohanna <em class="s">Rodrigues</em></h3>
-      <p class="case-desc">Marca para psicóloga: símbolo feito à mão, paleta azul e sálvia, templates de feed e capas de destaque.</p>
-      <div class="links"><a href="hohanna-previa.jpg" target="_blank">Prévia do Instagram →</a><a href="Hohanna_Manual_da_Marca.pdf" target="_blank">Ver manual →</a><a class="igual" href="https://wa.me/5531984783473?text=Oi%21%20Vi%20o%20case%20da%20Hohanna%20no%20portf%C3%B3lio%20e%20quero%20algo%20parecido." target="_blank">Quero igual →</a></div>
-    </div>
-    <div class="case-media"><img class="strip" src="case-hohanna.webp" alt="Prévia do Instagram da Hohanna" loading="lazy" width="1400" height="376"></div>
-  </article>
-  <article class="rv case flip">
-    <div class="case-text">
-      <div class="case-top"><span class="case-n">12 + 13</span><span class="micro">Vídeo · Captação e edição</span></div>
-      <h3>Budega e <em class="s">Lost In</em></h3>
-      <p class="case-desc">Três vídeos pra cachaçaria no Mercado Central de BH, filmados e editados no celular, e três clipes de divulgação pro evento de música eletrônica Lost In.</p>
-      <div class="links"><a href="https://www.instagram.com/reel/Dc1wOKEKdzR/" target="_blank">Reel da Budega →</a><a href="https://www.instagram.com/reel/DczJ3DQOvqn/" target="_blank">Reel do Lost In →</a><a class="igual" href="https://wa.me/5531984783473?text=Oi%21%20Vi%20o%20case%20dos%20v%C3%ADdeos%20da%20Budega%20e%20do%20Lost%20In%20no%20portf%C3%B3lio%20e%20quero%20algo%20parecido." target="_blank">Quero igual →</a></div>
-    </div>
-    <div class="case-media"><div class="panel soft"><span class="micro">6 vídeos entregues</span><span class="giant">Reels <em class="s">prontos</em></span></div></div>
-  </article>
-</div></section>
-
-<section class="mais"><div class="wrap">
-  <div class="corners"><span class="micro">Mais projetos</span><span class="micro">Sites · Automação · Material</span></div>
-  <ul>
+<section class="projetos" id="projetos"><div class="wrap">
+  <h2 class="h2">mais projetos <em class="s">entregues</em>.</h2>
+  <ul class="idx"><li class="idx-row" data-img="case-lp.webp" data-ar="2.188"><img class="idx-thumb" src="case-lp.webp" alt="Print do projeto LP Barbearia" width="1000" height="457" loading="lazy"><div class="idx-name"><h3>LP <em class="s">Barbearia</em></h3><span class="tagc">Instagram · Vídeo · Site · App</span></div><div class="idx-body"><p>Gestão do Instagram com pauta semanal, Reels e stories. Site novo com o Clube LP e as duas unidades, linktree que abre o app ou a loja certa no celular e página que ensina o cliente a baixar o app e agendar.</p><div class="case-res"><span>+73%<small>alcance no 1º mês</small></span><span>64 → 311<small>cliques no link da bio</small></span></div><div class="links"><a href="https://barbearialp.com.br/" target="_blank">Ver site →</a><a href="https://barbearialp.com.br/links/" target="_blank">Linktree →</a><a href="https://barbearialp.com.br/app/" target="_blank">Página do app →</a><a href="https://www.instagram.com/barbearialpbh/" target="_blank">Instagram →</a><a class="igual" href="https://wa.me/5531984783473?text=Oi%21%20Vi%20o%20case%20da%20LP%20Barbearia%20no%20portf%C3%B3lio%20e%20quero%20algo%20parecido." target="_blank">Quero igual →</a></div></div></li>
+<li class="idx-row" data-img="case-solia.webp" data-ar="0.707"><img class="idx-thumb" src="case-solia.webp" alt="Print do projeto Sólia Company" width="900" height="1273" loading="lazy"><div class="idx-name"><h3>Sólia <em class="s">Company</em></h3><span class="tagc">Material editorial · 16 páginas</span></div><div class="idx-body"><p>Portfólio comercial para escritório de arquitetura em BH: tipografia serifada, fotos dos projetos reais e proposta de valor clara.</p><div class="links"><a href="https://soliacompany.com" target="_blank">Ver site →</a><a href="https://guhspm.github.io/portfolio/soliacompany_portfolio.pdf" target="_blank">Ver o PDF →</a><a class="igual" href="https://wa.me/5531984783473?text=Oi%21%20Vi%20o%20case%20da%20S%C3%B3lia%20no%20portf%C3%B3lio%20e%20quero%20algo%20parecido." target="_blank">Quero igual →</a></div></div></li>
+<li class="idx-row" data-img="case-webeseg.webp" data-ar="2.188"><img class="idx-thumb" src="case-webeseg.webp" alt="Print do projeto WEB &amp; SEG" width="1000" height="457" loading="lazy"><div class="idx-name"><h3>WEB &amp; <em class="s">SEG</em></h3><span class="tagc">Site institucional</span></div><div class="idx-body"><p>Site focado em conversão para consultoria de saúde e segurança do trabalho em Salvador, com formulário que cai direto no WhatsApp.</p><div class="links"><a href="https://webeseg.com.br" target="_blank">Ver site →</a><a class="igual" href="https://wa.me/5531984783473?text=Oi%21%20Vi%20o%20case%20da%20WEB%20%26%20SEG%20no%20portf%C3%B3lio%20e%20quero%20algo%20parecido." target="_blank">Quero igual →</a></div></div></li>
+<li class="idx-row" data-img="case-paralelo.webp" data-ar="2.188"><img class="idx-thumb" src="case-paralelo.webp" alt="Print do projeto Paralelo" width="1000" height="457" loading="lazy"><div class="idx-name"><h3><em class="s">Paralelo</em></h3><span class="tagc">Site institucional · Agência</span></div><div class="idx-body"><p>Site para agência criativa de creators, com a troca "Sou creator / Sou marca" que muda o conteúdo pra cada público, animações de rolagem e formulário de parcerias.</p><div class="links"><a href="https://agenciaparalelo.netlify.app" target="_blank">Ver site →</a><a class="igual" href="https://wa.me/5531984783473?text=Oi%21%20Vi%20o%20case%20da%20Paralelo%20no%20portf%C3%B3lio%20e%20quero%20algo%20parecido." target="_blank">Quero igual →</a></div></div></li>
+<li class="idx-row"><div class="idx-name"><h3>Algoritmo da <em class="s">Personalidade</em></h3><span class="tagc">Landing page · Infoproduto</span></div><div class="idx-body"><p>Landing page para infoproduto de psicologia, com avaliações, tabela de preços e Google Tag Manager pro tráfego pago.</p><div class="links"><a href="https://algoritmodapersonalidade.com.br" target="_blank">Ver site →</a><a class="igual" href="https://wa.me/5531984783473?text=Oi%21%20Vi%20o%20case%20do%20Algoritmo%20da%20Personalidade%20no%20portf%C3%B3lio%20e%20quero%20algo%20parecido." target="_blank">Quero igual →</a></div></div></li>
+<li class="idx-row" data-img="case-aevum.webp" data-ar="1.779"><img class="idx-thumb" src="case-aevum.webp" alt="Print do projeto Aevum Incensaria" width="900" height="506" loading="lazy"><div class="idx-name"><h3>Aevum <em class="s">Incensaria</em></h3><span class="tagc">Identidade visual</span></div><div class="idx-body"><p>Marca completa: logo em 6 cores, rótulo pronto pra gráfica, capas de destaque e manual da marca.</p><div class="links"><a href="Aevum_Manual_da_Marca.pdf" target="_blank">Ver manual →</a><a class="igual" href="https://wa.me/5531984783473?text=Oi%21%20Vi%20o%20case%20da%20Aevum%20no%20portf%C3%B3lio%20e%20quero%20algo%20parecido." target="_blank">Quero igual →</a></div></div></li>
+<li class="idx-row" data-img="case-hohanna.webp" data-ar="3.723"><img class="idx-thumb" src="case-hohanna.webp" alt="Print do projeto Hohanna Rodrigues" width="1400" height="376" loading="lazy"><div class="idx-name"><h3>Hohanna <em class="s">Rodrigues</em></h3><span class="tagc">Identidade visual · Instagram</span></div><div class="idx-body"><p>Marca para psicóloga: símbolo feito à mão, paleta azul e sálvia, templates de feed e capas de destaque.</p><div class="links"><a href="hohanna-previa.jpg" target="_blank">Prévia do Instagram →</a><a href="Hohanna_Manual_da_Marca.pdf" target="_blank">Ver manual →</a><a class="igual" href="https://wa.me/5531984783473?text=Oi%21%20Vi%20o%20case%20da%20Hohanna%20no%20portf%C3%B3lio%20e%20quero%20algo%20parecido." target="_blank">Quero igual →</a></div></div></li>
+<li class="idx-row"><div class="idx-name"><h3>Budega e <em class="s">Lost In</em></h3><span class="tagc">Vídeo · Captação e edição</span></div><div class="idx-body"><p>Três vídeos pra cachaçaria no Mercado Central de BH, filmados e editados no celular, e três clipes de divulgação pro evento de música eletrônica Lost In.</p><div class="links"><a href="https://www.instagram.com/reel/Dc1wOKEKdzR/" target="_blank">Reel da Budega →</a><a href="https://www.instagram.com/reel/DczJ3DQOvqn/" target="_blank">Reel do Lost In →</a><a class="igual" href="https://wa.me/5531984783473?text=Oi%21%20Vi%20o%20case%20dos%20v%C3%ADdeos%20da%20Budega%20e%20do%20Lost%20In%20no%20portf%C3%B3lio%20e%20quero%20algo%20parecido." target="_blank">Quero igual →</a></div></div></li>
+</ul>
+  <div class="tambem"><h3 class="tb-t">e também</h3><ul>
     <li><b>Exercite-se em Casa</b><span>Vitrine de afiliados com 51 produtos</span><a href="https://exerciteseemcasa2026.com" target="_blank">Ver →</a></li>
     <li><b>MAIS Planos Recife</b><span>Auditoria técnica: erro 500 resolvido no site Top 3 do Google</span><a href="https://mplanosdesaude.com.br" target="_blank">Ver →</a></li>
     <li><b>JC Manutenção</b><span>Portfólio comercial de 17 páginas</span><a href="https://guhspm.github.io/portfolio/JC_Manutencao_Portfolio.pdf" target="_blank">Ver →</a></li>
     <li><b>Dropshipping Shopee</b><span>Loja que roda sozinha, com estoque e preço sincronizados</span><a href="https://github.com/guhspm" target="_blank">Ver →</a></li>
     <li><b>RPA de faturamento</b><span>Extrai impostos e valores de notas em PDF</span><a href="https://github.com/guhspm/robo-faturamento-unimed" target="_blank">Ver →</a></li>
     <li><b>Relatórios automáticos</b><span>3 relatórios gerenciais gerados sozinhos</span><a href="https://github.com/guhspm/automacao-relatorios-excel" target="_blank">Ver →</a></li>
-  </ul>
-</div></section>
+  </ul></div>
+</div><div class="idx-prev" id="idxPrev" aria-hidden="true"><img alt=""></div></section>
 
-<!-- SERVIÇOS -->
 <section class="serv dark" id="servicos"><div class="wrap">
-  <div class="corners"><span class="micro">04 — Serviços</span><span class="micro">Do Instagram à automação</span></div>
-  <h2 class="h2 rv">O que a gente <em class="s">faz</em>.</h2>
-  <ol class="serv-list">
-    <li class="rv"><span class="sn">01</span><div><h3>Gestão de <em class="s">Instagram</em></h3><p>Pauta, Reels, artes e stories com a cara da sua marca, e relatório todo mês com o que mudou.</p></div></li>
-    <li class="rv"><span class="sn">02</span><div><h3>Sites e <em class="s">lojas</em></h3><p>Site, landing page ou loja virtual rápida no celular, com WhatsApp e rastreamento de anúncio configurados.</p></div></li>
-    <li class="rv"><span class="sn">03</span><div><h3><em class="s">Automação</em></h3><p>Robôs e integrações que tiram do seu time o trabalho repetitivo: atendimento, planilha, relatório.</p></div></li>
-    <li class="rv"><span class="sn">04</span><div><h3>Identidade <em class="s">visual</em></h3><p>Logo, cores, tipografia e manual da marca, prontos pra usar no Instagram e no impresso.</p></div></li>
-    <li class="rv"><span class="sn">05</span><div><h3><em class="s">Vídeo</em></h3><p>Captação e edição de Reels pro feed e vídeos de divulgação.</p></div></li>
-  </ol>
+  <h2 class="h2">o que a gente <em class="s">faz</em>.</h2>
+  <div class="sv"><ol class="sv-list" id="svList"><li data-i="0"><h3>Gestão de <em class="s">Instagram</em></h3><p>Pauta, Reels, artes e stories com a cara da sua marca, e relatório todo mês com o que mudou.</p><div class="sv-mob" aria-hidden="true"><div class="v-phone"><img src="reel-1.webp" alt="" width="450" height="797" loading="lazy"></div></div></li><li data-i="1"><h3>Sites e <em class="s">lojas</em></h3><p>Site, landing page ou loja virtual rápida no celular, com WhatsApp e rastreamento de anúncio configurado.</p><div class="sv-mob" aria-hidden="true"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>kendak.com.br</span></div><img src="case-kendak.webp" alt="" width="1000" height="457" loading="lazy"></div></div></li><li data-i="2"><h3><em class="s">Automação</em></h3><p>Robôs e integrações que tiram do seu time o trabalho repetitivo: atendimento, planilha, relatório.</p><div class="sv-mob" aria-hidden="true"><div class="v-flow"><svg viewBox="0 0 420 300" role="img" aria-label="Exemplo de fluxo: mensagem no WhatsApp vira linha na planilha e relatório pronto"><path class="ln" d="M110 70 C210 70 210 150 300 150"/><path class="ln" d="M300 150 C210 150 210 230 110 230"/><circle class="pl" r="5"><animateMotion dur="2.8s" repeatCount="indefinite" path="M110 70 C210 70 210 150 300 150"/></circle><circle class="pl" r="5"><animateMotion dur="2.8s" begin="1.4s" repeatCount="indefinite" path="M300 150 C210 150 210 230 110 230"/></circle><g class="nd"><rect x="10" y="44" width="150" height="52" rx="14"/><text x="85" y="76">WhatsApp</text></g><g class="nd mid"><rect x="250" y="124" width="160" height="52" rx="14"/><text x="330" y="156">planilha</text></g><g class="nd"><rect x="10" y="204" width="150" height="52" rx="14"/><text x="85" y="236">relatório</text></g></svg></div></div></li><li data-i="3"><h3>Identidade <em class="s">visual</em></h3><p>Logo, cores, tipografia e manual da marca, prontos pra usar no Instagram e no impresso.</p><div class="sv-mob" aria-hidden="true"><div class="v-strip"><img src="case-hohanna.webp" alt="" width="1400" height="376" loading="lazy"></div></div></li><li data-i="4"><h3><em class="s">Vídeo</em></h3><p>Captação e edição de Reels pro feed e vídeos de divulgação.</p><div class="sv-mob" aria-hidden="true"><div class="v-phone"><img src="reel-2.webp" alt="" width="450" height="797" loading="lazy"></div></div></li></ol><div class="sv-stage" aria-hidden="true"><div class="sv-deck" id="svDeck"><div class="sv-card" data-i="0"><div class="v-phone"><img src="reel-1.webp" alt="" width="450" height="797" loading="lazy"></div></div><div class="sv-card" data-i="1"><div class="browser"><div class="bar"><i></i><i></i><i></i><span>kendak.com.br</span></div><img src="case-kendak.webp" alt="" width="1000" height="457" loading="lazy"></div></div><div class="sv-card" data-i="2"><div class="v-flow"><svg viewBox="0 0 420 300" role="img" aria-label="Exemplo de fluxo: mensagem no WhatsApp vira linha na planilha e relatório pronto"><path class="ln" d="M110 70 C210 70 210 150 300 150"/><path class="ln" d="M300 150 C210 150 210 230 110 230"/><circle class="pl" r="5"><animateMotion dur="2.8s" repeatCount="indefinite" path="M110 70 C210 70 210 150 300 150"/></circle><circle class="pl" r="5"><animateMotion dur="2.8s" begin="1.4s" repeatCount="indefinite" path="M300 150 C210 150 210 230 110 230"/></circle><g class="nd"><rect x="10" y="44" width="150" height="52" rx="14"/><text x="85" y="76">WhatsApp</text></g><g class="nd mid"><rect x="250" y="124" width="160" height="52" rx="14"/><text x="330" y="156">planilha</text></g><g class="nd"><rect x="10" y="204" width="150" height="52" rx="14"/><text x="85" y="236">relatório</text></g></svg></div></div><div class="sv-card" data-i="3"><div class="v-strip"><img src="case-hohanna.webp" alt="" width="1400" height="376" loading="lazy"></div></div><div class="sv-card" data-i="4"><div class="v-phone"><img src="reel-2.webp" alt="" width="450" height="797" loading="lazy"></div></div></div></div></div>
 </div></section>
 
 <!-- PRÉVIA GRÁTIS -->
 <section class="previa" id="previa"><div class="wrap">
-  <div class="corners"><span class="micro">05 — Prévia grátis</span><span class="micro">Antes de fechar</span></div>
   <div class="previa-grid">
     <div class="rv">
       <h2 class="h2">Como ficaria o <em class="s">seu</em> perfil.</h2>
@@ -620,9 +663,7 @@ footer.dark .foot-bottom img{filter:brightness(0) invert(1)}
   </div>
 </div></section>
 
-<!-- INSTAGRAM -->
 <section class="insta dark" id="instagram"><div class="wrap">
-  <div class="corners"><span class="micro">06 — Instagram</span><span class="micro">@studioinside.co</span></div>
   <div class="insta-grid">
     <div class="rv">
       <h2 class="h2">Bastidores <em class="s">toda</em> semana.</h2>
@@ -636,12 +677,10 @@ footer.dark .foot-bottom img{filter:brightness(0) invert(1)}
   </div>
 </div></section>
 
-<!-- DEPOIMENTOS -->
 <section class="depo light"><div class="wrap">
-  <div class="corners"><span class="micro">07 — Depoimentos</span><span class="micro">Texto como o cliente escreveu</span></div>
   <h2 class="h2 rv">Quem já <em class="s">trabalhou</em> com a gente.</h2>
   <div class="depo-list">
-    <div class="q rv"><blockquote>Profissional, atencioso, didático. Experiência incrível, superou minhas expectativas. 100/10. Construímos um projeto sólido e de longo prazo, ele esteve comigo desde o dia 1 até HOJE, explicando cada processo. O serviço tem um PÓS-VENDA, com o qual até agora mantemos contato. Mais que recomendado!!</blockquote><cite><b>Katherine</b> · 99Freelas · Loja automatizada na Shopee</cite></div>
+    <div class="q rv big"><blockquote>Profissional, atencioso, didático. Experiência incrível, superou minhas expectativas. 100/10. Construímos um projeto sólido e de longo prazo, ele esteve comigo desde o dia 1 até HOJE, explicando cada processo. O serviço tem um PÓS-VENDA, com o qual até agora mantemos contato. Mais que recomendado!!</blockquote><cite><b>Katherine</b> · 99Freelas · Loja automatizada na Shopee</cite></div>
     <div class="q rv"><blockquote>Que portfólio mais lindo! Eu amei! Ficou perfeito! Muito obrigada por toda a atenção e cuidado que você teve com a minha empresa! Você entendeu exatamente o que eu precisava e conseguiu expressar a essência da Sólia! Ainda vamos fazer muitos trabalhos juntos!</blockquote><cite><b>Yanê</b> · Sólia Company · Portfólio comercial</cite></div>
     <div class="q rv"><blockquote>O Gustavo foi um profissional extremamente dinâmico e parceiro do nosso time! Ele atendeu com excelência a elaboração do perfil da marca Facilita, trazendo ideias incríveis e muita agilidade em todo o processo. Recomendamos demais o trabalho dele!</blockquote><cite><b>Michel e Isaac</b> · Facilita Energia · Identidade visual e landing page</cite></div>
     <div class="q rv"><blockquote>O Gustavo realizou um projeto para mim e superou minhas expectativas. Foi extremamente profissional em todas as etapas do trabalho. Sempre atencioso, respondeu rápido e se mostrou acessível para futuras dúvidas. Recomendo sem dúvidas pela qualidade e agilidade do serviço.</blockquote><cite><b>Ruan Indrigo</b> · 99Freelas · Blog de produtos</cite></div>
@@ -652,10 +691,10 @@ footer.dark .foot-bottom img{filter:brightness(0) invert(1)}
 </main>
 <footer id="contato" class="dark"><div class="wrap">
   <div class="foot-cta">
-    <span class="micro">08 — Contato</span>
-    <h2 class="h2">quer que eu olhe o seu <em class="s">perfil</em>?</h2>
+        <h2 class="h2">quer que eu olhe o seu <em class="s">perfil</em>?</h2>
     <a class="btn btn-c" href="https://wa.me/5531984783473?text=Oi%2C%20quero%20o%20diagn%C3%B3stico%20gr%C3%A1tis" target="_blank">Diagnóstico grátis no WhatsApp <span class="arrow">→</span></a>
   </div>
+  <div class="ring" aria-hidden="true"><div class="ring-in" id="ring"><img src="case-clubemv.webp" alt="" width="1000" height="431" loading="lazy" style="--i:0"><img src="case-kendak.webp" alt="" width="1000" height="457" loading="lazy" style="--i:1"><img src="case-memoriei.webp" alt="" width="1000" height="434" loading="lazy" style="--i:2"><img src="case-lp.webp" alt="" width="1000" height="457" loading="lazy" style="--i:3"><img src="case-paralelo.webp" alt="" width="1000" height="457" loading="lazy" style="--i:4"><img src="case-webeseg.webp" alt="" width="1000" height="457" loading="lazy" style="--i:5"><img src="case-aevum.webp" alt="" width="900" height="506" loading="lazy" style="--i:6"><img src="case-clubemv.webp" alt="" width="1000" height="431" loading="lazy" style="--i:7"></div></div><button class="ring-btn" id="ringBtn" type="button" aria-pressed="false">pausar</button>
   <div class="foot-links">
     <a href="https://wa.me/5531984783473" target="_blank">WhatsApp<small>(31) 9 8478-3473</small></a>
     <a href="https://www.instagram.com/studioinside.co/" target="_blank">Instagram<small>@studioinside.co</small></a>
@@ -702,6 +741,52 @@ function upd(){tick=false;var y=scrollY,H=document.documentElement.scrollHeight-
   if(foto){foto.style.transform=(innerWidth>=1000&&y<innerHeight*1.2)?'translateY('+(-y*0.06).toFixed(1)+'px)':''}
   if(innerWidth>=760)meds.forEach(function(m){var r=m.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;var c=(r.top+r.height/2-innerHeight/2)/innerHeight;m.style.transform='translateY('+(c*-28).toFixed(1)+'px)'})}
 addEventListener('scroll',function(){if(!tick){tick=true;requestAnimationFrame(upd)}},{passive:true});upd();
+})();
+</script>
+<script>
+(function(){
+var RM=matchMedia('(prefers-reduced-motion: reduce)').matches,FINE=matchMedia('(hover:hover) and (pointer:fine)').matches;
+function vis(el,cb){var io=new IntersectionObserver(function(e){cb(e[0].isIntersecting)});io.observe(el)}
+// troca de telas (capa e anel) só quando visível
+function cycler(box,ms,onChange){var imgs=box.querySelectorAll('img'),i=0,t=null,inV=true;function go(){imgs[i].classList.remove('on');i=(i+1)%imgs.length;imgs[i].classList.add('on');onChange&&onChange(imgs[i])}
+ function run(){if(t||RM||!inV)return;t=setInterval(go,ms)}function stop(){clearInterval(t);t=null}
+ vis(box,function(v){inV=v;v?run():stop()});document.addEventListener('visibilitychange',function(){document.hidden?stop():run()});run()}
+var url=document.querySelector('.s-url');
+var bs=document.querySelector('.s-browser .scr');if(bs)cycler(bs,3400,function(im){if(url)url.textContent=im.dataset.url});
+var ps=document.querySelector('.s-phone .scr');if(ps)cycler(ps,2900);
+// cena 3D da capa: mouse + scroll, com amortecimento
+var sc=document.getElementById('scene');
+if(sc&&!RM){var tx=0,ty=0,cx=0,cy=0,sy=0,raf=0,capa=document.querySelector('.capa');
+ function loop(){cx+=(tx-cx)*.08;cy+=(ty-cy)*.08;var p=Math.min(scrollY/innerHeight,1);
+  sc.style.transform='rotateY('+(cx*12).toFixed(2)+'deg) rotateX('+(-cy*8+p*14).toFixed(2)+'deg) translate3d(0,'+(p*40).toFixed(1)+'px,'+(-p*120).toFixed(1)+'px)';
+  if(Math.abs(tx-cx)>.001||Math.abs(ty-cy)>.001)raf=requestAnimationFrame(loop);else raf=0}
+ function kick(){if(!raf)raf=requestAnimationFrame(loop)}
+ if(FINE)capa.addEventListener('pointermove',function(e){var r=capa.getBoundingClientRect();tx=(e.clientX-r.left)/r.width-.5;ty=(e.clientY-r.top)/r.height-.5;kick()});
+ capa.addEventListener('pointerleave',function(){tx=0;ty=0;kick()});
+ addEventListener('scroll',function(){if(scrollY<innerHeight*1.2)kick()},{passive:true});kick()}
+// destaques: deck 3D segue o texto
+var steps=[].slice.call(document.querySelectorAll('.dq-step')),cards=[].slice.call(document.querySelectorAll('.dq-card'));
+function setDq(a){steps.forEach(function(s,i){s.classList.toggle('act',i===a)});cards.forEach(function(c,i){c.setAttribute('data-p',i<a?-1:i-a)})}
+if(steps.length){setDq(0);var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)setDq(+e.target.dataset.i)})},{rootMargin:innerWidth<1000?'-55% 0px -40% 0px':'-45% 0px -45% 0px'});steps.forEach(function(s){io.observe(s)})}
+// serviços: cartão 3D troca no hover/foco e no scroll
+var sl=[].slice.call(document.querySelectorAll('#svList li')),sc2=[].slice.call(document.querySelectorAll('.sv-card')),cur=-1;
+function setSv(a){if(a===cur)return;sl.forEach(function(l,i){l.classList.toggle('act',i===a)});sc2.forEach(function(c,i){c.classList.toggle('on',i===a);c.classList.toggle('out',i<a)});cur=a}
+if(sl.length){setSv(0);sl.forEach(function(l,i){l.tabIndex=0;l.addEventListener('pointerenter',function(){setSv(i)});l.addEventListener('focus',function(){setSv(i)})});
+ var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)setSv(+e.target.dataset.i)})},{rootMargin:innerWidth<1000?'-55% 0px -40% 0px':'-48% 0px -48% 0px'});sl.forEach(function(l){io2.observe(l)})}
+// índice: prévia segue o cursor
+var pv=document.getElementById('idxPrev');
+if(pv&&FINE&&innerWidth>=1000){var pim=pv.querySelector('img'),mx=0,my=0,px=0,py=0,vx=0,on=false,r2=0;
+ function mv(){var nx=px+(mx-px)*.16,ny=py+(my-py)*.16;vx=nx-px;px=nx;py=ny;var rot=RM?0:Math.max(-8,Math.min(8,vx*.4));pv.style.transform='translate3d('+(px+24).toFixed(1)+'px,'+(py-120).toFixed(1)+'px,0) rotate('+rot.toFixed(2)+'deg)';if(on||Math.abs(mx-px)>.5)r2=requestAnimationFrame(mv);else r2=0}
+ document.querySelectorAll('.idx-row[data-img]').forEach(function(row){
+  row.addEventListener('pointerenter',function(e){pim.src=row.dataset.img;var ar=+row.dataset.ar;pv.style.width=(ar<1?220:360)+'px';if(!on){px=mx=e.clientX;py=my=e.clientY}on=true;pv.classList.add('on');if(!r2)r2=requestAnimationFrame(mv)});
+  row.addEventListener('pointermove',function(e){mx=e.clientX;my=e.clientY});
+  row.addEventListener('pointerleave',function(){on=false;pv.classList.remove('on')});
+  row.addEventListener('click',function(e){if(e.target.closest('a'))return;var a=row.querySelector('.links a');if(a)a.click()})})}
+// anel 3D: pausa fora da tela e no botão
+var ring=document.querySelector('.ring'),rb=document.getElementById('ringBtn');
+if(ring){if(RM){ring.classList.add('paused');if(rb)rb.hidden=true}
+ vis(ring,function(v){if(!rb||rb.getAttribute('aria-pressed')!=='true')ring.classList.toggle('paused',!v||RM)});
+ if(rb)rb.addEventListener('click',function(){var p=rb.getAttribute('aria-pressed')!=='true';rb.setAttribute('aria-pressed',p);rb.textContent=p?'girar':'pausar';ring.classList.toggle('paused',p)})}
 })();
 </script>
 </body>
